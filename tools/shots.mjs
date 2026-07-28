@@ -42,6 +42,8 @@ const SITES = [
   ['pozos-neuquina',                'https://mpodeley.github.io/pozos-neuquina/',                3000, false],
   ['ep-americas',                   'https://mpodeley.github.io/ep-americas/',                   3000, false],
   ['neuquina',                      'https://neuquina.podeley.ar',                               6000, false],
+  // Tier-0 choropleth paints on load; 6 s covers IGN tiles + agregados.json.
+  ['catastro-minero-argentina',     'https://mpodeley.github.io/catastro-minero-argentina/',    6000, false],
 ];
 
 // Walk the page (triggers lazy loads), then center the LARGEST visual

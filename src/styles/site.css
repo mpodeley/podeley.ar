@@ -10,6 +10,10 @@
   /* the signature "measurement field" motif — masked, so it takes its colour
      from --pd-rule / --pd-rule-alpha */
   --pd-field: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22132%22%20height%3D%2220%22%20viewBox%3D%220%200%20132%2020%22%3E%3Cg%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%3E%3Cline%20x1%3D%221.1%22%20y1%3D%229.6%22%20x2%3D%2213.5%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%2216.0%22%20y1%3D%228.4%22%20x2%3D%2228.0%22%20y2%3D%2211.6%22%2F%3E%3Cline%20x1%3D%2230.6%22%20y1%3D%228.7%22%20x2%3D%2242.7%22%20y2%3D%2211.3%22%2F%3E%3Cline%20x1%3D%2245.1%22%20y1%3D%2210.3%22%20x2%3D%2257.5%22%20y2%3D%229.7%22%2F%3E%3Cline%20x1%3D%2260.1%22%20y1%3D%2212.0%22%20x2%3D%2271.9%22%20y2%3D%228.0%22%2F%3E%3Cline%20x1%3D%2275.0%22%20y1%3D%2212.5%22%20x2%3D%2286.3%22%20y2%3D%227.5%22%2F%3E%3Cline%20x1%3D%2289.3%22%20y1%3D%2211.4%22%20x2%3D%22101.4%22%20y2%3D%228.6%22%2F%3E%3Cline%20x1%3D%22103.8%22%20y1%3D%229.6%22%20x2%3D%22116.2%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%22118.7%22%20y1%3D%228.4%22%20x2%3D%22130.6%22%20y2%3D%2211.6%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  /* Denser than the token default (.18): the print brochure runs this motif at
+     .55 opacity over ~176mm. Stretched across a 1440px viewport it reads far
+     weaker, and it is the one piece of ornament the site has. */
+  --pd-rule-alpha: .3;
   color-scheme: light;
 }
 
@@ -64,11 +68,14 @@ a, button { color: inherit; }
 /* Used between every major section, the way the print brochure uses it. */
 
 .rule {
-  height: 20px; width: 100%; border: 0; margin: 0; flex: none;
+  height: 20px; width: 100%; border: 0; flex: none;
+  margin: calc(var(--pd-section) * .6) 0 0;
   background-color: rgba(var(--pd-rule), var(--pd-rule-alpha));
   -webkit-mask: var(--pd-field) repeat-x center / 132px 20px;
   mask: var(--pd-field) repeat-x center / 132px 20px;
 }
+/* the hero already carries its own bottom padding */
+.hero + .rule { margin-top: 0; }
 
 /* ---------- 3. Masthead --------------------------------------------------- */
 
@@ -156,7 +163,9 @@ a, button { color: inherit; }
 
 /* ---------- 6. Sections --------------------------------------------------- */
 
-.pd-section { padding: calc(var(--pd-section) * .75) 0; }
+/* Top padding only. Adjacent sections (como-trabajo → quien) would otherwise
+   stack two full section gaps; the rule and the footer bring their own. */
+.pd-section { padding: calc(var(--pd-section) * .75) 0 0; }
 .section-head { max-width: 54rem; }
 .pd-section h2 {
   font-family: var(--pd-font-display); font-weight: 500;

@@ -175,7 +175,7 @@ for (const p of pages) {
   const out = outFor(p.slug, p.lang)
   await mkdir(dirname(out), { recursive: true })
   await writeFile(out, html)
-  console.log(`  ${urlFor(p.slug, p.lang).padEnd(16)} ← src/pages/${p.file}`)
+  console.log(`  ${out.slice(DIST.length + 1).padEnd(24)} ← src/pages/${p.file}`)
 }
 
 /* --- sitemap ------------------------------------------------------------- */

@@ -1,0 +1,50 @@
+site_name: Matías Podeley
+site_url: https://podeley.ar/
+site_description: >-
+  Casos por segmento: E&P, minería, comercialización de gas y energía.
+  Construidos sobre datos públicos. Elegí tu área.
+site_author: Matías Podeley
+
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/favicon.svg
+  logo: assets/favicon.svg
+  font: false # self-hosted Space Grotesk / IBM Plex in extra.css
+  palette: # light-only
+    - scheme: default
+  features:
+    - navigation.top
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  # no search: 5-page funnel, cleaner header
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: es
+          name: Español
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Inicio: Home
+            Minería: Mining
+            Gas y energía: Gas & power
+
+nav:
+  - Inicio: index.md
+  - E&P: ep.md
+  - Minería: mineria.md
+  - Gas y energía: energia.md
+  - Research: research.md

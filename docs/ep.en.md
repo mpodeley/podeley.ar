@@ -1,0 +1,99 @@
+---
+title: Public data for E&P — Matías Podeley
+description: >-
+  Competitor activity, per-well decline, ground deformation and emissions by
+  operator across the Neuquén basin, from public data. Six live cases.
+hide: [navigation, toc]
+---
+
+<div class="pd-hero">
+<p class="kicker">E&amp;P · NEUQUÉN BASIN &amp; AMERICAS · PUBLIC DATA</p>
+<h1>What competitors are doing, how wells decline, what's happening underground.</h1>
+<p class="hero-sub">Six live tools that answer those questions with public data: SecEnergía records, Sentinel-1 radar and free satellite imagery. No data purchases, no field instruments, everything auditable.</p>
+<p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=E%26P%20inquiry%20%E2%80%94%20podeley.ar%2Fep&amp;body=Hi%20Matias%2C%0A%0A">Email me</a> <a class="link-plain" href="#casos">See the cases <span class="arw">↓</span></a></p>
+</div>
+
+<hr class="rule">
+
+<div class="pd-section" id="casos">
+<p class="eyebrow">CASES</p>
+<h2>Six cases, all live.</h2>
+
+<div class="cards">
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/pozos-neuquina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: per-well production and decline"></figure>
+<h3><a href="https://mpodeley.github.io/pozos-neuquina/" target="_blank" rel="noopener">Benchmark decline and EUR without buying data</a></h3>
+<p class="pitch">Per-well production, Arps fits and type wells by block and operator, ready to set against your own. Built on public SecEnergía records.</p>
+<p class="meta"><span class="proj">pozos-neuquina</span><a href="https://github.com/mpodeley/pozos-neuquina" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/neuquina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: Neuquén basin map"></figure>
+<h3><a href="https://neuquina.podeley.ar" target="_blank" rel="noopener">Who operates what, and what they plan to invest</a></h3>
+<p class="pitch">Interactive map of the Neuquén basin: concessions, operators and planned investment through 2029, in a single view.</p>
+<p class="meta"><span class="proj">neuquina</span><a href="https://github.com/mpodeley/neuquina" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/vaca-muerta-nightlights.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: activity from night-lights"></figure>
+<h3><a href="https://mpodeley.github.io/vaca-muerta-nightlights/" target="_blank" rel="noopener">Know where competitors drill and frack</a></h3>
+<p class="pitch">Drilling, fracking and flaring activity by operator, read from satellite night-lights and validated against 20,178 public well events (~71%).</p>
+<p class="meta"><span class="proj">vaca-muerta-nightlights</span><a href="https://github.com/mpodeley/vaca-muerta-nightlights" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/vaca-muerta-insar.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: ground deformation over Vaca Muerta"></figure>
+<h3><a href="https://mpodeley.github.io/vaca-muerta-insar/" target="_blank" rel="noopener">Watch ground deformation without field instruments</a></h3>
+<p class="pitch">A 2019–2026 velocity map and per-well time series, in millimetres per year, cross-referenced with production, injection and seismicity. Free Sentinel-1 radar; preprint available.</p>
+<p class="meta"><span class="proj">vaca-muerta-insar</span><span class="tag t-status">Preprint</span><a href="https://github.com/mpodeley/vaca-muerta-insar" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/vaca-muerta-emisiones.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: emissions by operator"></figure>
+<h3><a href="https://mpodeley.github.io/vaca-muerta-emisiones/" target="_blank" rel="noopener">Compare emissions intensity by operator</a></h3>
+<p class="pitch">Flaring CO₂ and methane by operator, per barrel, from satellite data and public production. The production side is done; the satellite side is still being built.</p>
+<p class="meta"><span class="proj">vaca-muerta-emisiones</span><span class="tag t-status">In progress</span><a href="https://github.com/mpodeley/vaca-muerta-emisiones" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/ep-americas.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: E&P company screener"></figure>
+<h3><a href="https://mpodeley.github.io/ep-americas/" target="_blank" rel="noopener">Build a short list of E&amp;P companies across the Americas</a></h3>
+<p class="pitch">An E&amp;P company screener for M&amp;A or business development, with market and regulatory metrics. Market data plus SEC EDGAR.</p>
+<p class="meta"><span class="proj">ep-americas</span><a href="https://github.com/mpodeley/ep-americas" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+</div>
+
+<p class="aside-link">Beyond the cases: what each Earth-observation satellite sees — <a href="https://mpodeley.github.io/satelites-eo/" target="_blank" rel="noopener">visual guide with a 3D globe</a>.</p>
+
+<p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=E%26P%20inquiry%20%E2%80%94%20podeley.ar%2Fep&amp;body=Hi%20Matias%2C%0A%0A">If this looks like your problem, email me <span class="arw">→</span></a></p>
+</div>
+
+<div class="pd-section" id="como-trabajo">
+<p class="eyebrow">HOW I WORK</p>
+<h2>Three rules.</h2>
+<div class="principles">
+<div class="principle"><p>Start from the problem, not the tool.</p></div>
+<div class="principle"><p>Public data; auditable inputs and results.</p></div>
+<div class="principle"><p>Limits and null results ship with the finding.</p></div>
+</div>
+</div>
+
+<div class="pd-section" id="quien">
+<p class="eyebrow">WHO'S BEHIND THIS</p>
+<p class="bio-text">Matías Podeley. Eighteen years in energy — reservoir engineering, then business development, mostly on the side that hires the specialists. I build these tools myself, with public data and AI. Buenos Aires.</p>
+</div>
+
+<div class="pd-section pd-end" id="contacto">
+<p class="eyebrow">CONTACT</p>
+<h2>Contact</h2>
+<p class="intro">If this looks like your problem, let's talk: a project, an advisory role, or custom development.</p>
+<div class="contact-actions">
+<a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=E%26P%20inquiry%20%E2%80%94%20podeley.ar%2Fep&amp;body=Hi%20Matias%2C%0A%0A">Email me</a>
+<a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener">LinkedIn</a>
+<!-- TODO(matias): paste the booking URL here (Google Calendar / Cal.com, + ?utm_source=ep) -->
+<a class="btn btn--outline" href="#" data-placeholder="booking" data-segment="ep" title="URL pending">Book a call</a>
+</div>
+<p class="contact-note">mpodeley@gmail.com · Buenos Aires</p>
+</div>

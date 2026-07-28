@@ -1,0 +1,65 @@
+---
+title: AI interpretability & safety — Matías Podeley
+description: >-
+  An original interpretability paper, the first consolidated Spanish-language
+  mech-interp course, and a rigorous null replication. Toward evals and safety
+  cases for AI acting inside energy infrastructure.
+hide: [navigation, toc]
+---
+
+<div class="pd-hero">
+<p class="kicker">AI SAFETY · INTERPRETABILITY · INDEPENDENT</p>
+<h1>AI will operate energy infrastructure. Someone has to show when it's safe.</h1>
+<p class="hero-sub">I work toward evals and safety cases for agentic AI in critical energy systems — pipelines, grids, reservoirs — after eighteen years inside the industry. Below: one original paper, one course, one null result.</p>
+<p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Research%20%E2%80%94%20podeley.ar%2Fresearch&amp;body=Hi%20Matias%2C%0A%0A">Email me</a> <a class="link-plain" href="#casos">See the work <span class="arw">↓</span></a></p>
+</div>
+
+<hr class="rule">
+
+<div class="pd-section" id="casos">
+<p class="eyebrow">WORK</p>
+<h2>One paper, one course, one null.</h2>
+
+<div class="cards">
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/assembled-thought.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: interactive paper demo"></figure>
+<h3><a href="https://mpodeley.github.io/assembled-thought/" target="_blank" rel="noopener">How a model builds an answer</a></h3>
+<p class="pitch">Original paper: operator–operand factorization in language models, with a bilingual interactive demo. Submitted to BlackboxNLP 2026.</p>
+<p class="meta"><span class="proj">assembled-thought</span><span class="tag t-status">Paper</span><a href="https://github.com/mpodeley/assembled-thought" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/interpretabilidad-mecanicista.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: interpretability course in Spanish"></figure>
+<h3><a href="https://mpodeley.github.io/interpretabilidad-mecanicista/" target="_blank" rel="noopener">Mechanistic interpretability, in Spanish</a></h3>
+<p class="pitch">The first consolidated mechanistic-interpretability course in Spanish: how large language models work on the inside.</p>
+<p class="meta"><span class="proj">interpretabilidad-mecanicista</span><a href="https://github.com/mpodeley/interpretabilidad-mecanicista" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+<article class="card">
+<figure class="shot"><img src="/assets/shots/jspace-qwen.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: replicating a published method"></figure>
+<h3><a href="https://mpodeley.github.io/jspace-qwen/" target="_blank" rel="noopener">Replicating a published method</a></h3>
+<p class="pitch">A rigorous reproduction of an interpretability method on open models: it did not beat the baseline, and it ships anyway.</p>
+<p class="meta"><span class="proj">jspace-qwen</span><span class="tag t-status">Null result</span><a href="https://github.com/mpodeley/jspace-qwen" target="_blank" rel="noopener">Code →</a></p>
+</article>
+
+</div>
+</div>
+
+<div class="pd-section" id="quien">
+<p class="eyebrow">WHO'S BEHIND THIS</p>
+<p class="bio-text">Matías Podeley. Eighteen years in energy in Argentina — reservoir engineering, then business development. Now independent interpretability research. Buenos Aires.</p>
+</div>
+
+<div class="pd-section pd-end" id="contacto">
+<p class="eyebrow">IF YOU WORK IN THIS</p>
+<h2>Funders and collaborators</h2>
+<p class="intro">If you fund research in this area, run a fellowship or incubator, or work in AI safety and want a collaborator who knows energy operations from the inside — email me.</p>
+<div class="contact-actions">
+<a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Research%20%E2%80%94%20podeley.ar%2Fresearch&amp;body=Hi%20Matias%2C%0A%0A">Email me</a>
+<a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener">LinkedIn</a>
+<!-- TODO(matias): paste the booking URL here (+ ?utm_source=research) -->
+<a class="btn btn--outline" href="#" data-placeholder="booking" data-segment="research" title="URL pending">Book a call</a>
+</div>
+<p class="contact-note">mpodeley@gmail.com · Buenos Aires</p>
+</div>

@@ -1,0 +1,323 @@
+/* ============================================================================
+   site.css — podeley.ar. Consumes tokens.css (--pd-*), light-only.
+   Ported from the v3 design, minus the ~90 lines that existed only to fight
+   MkDocs Material's chrome. Masthead / wrap / section rhythm follow
+   curso-ia-energia; the editorial devices (measurement-field rule as a section
+   separator, colour-ruled three-up, mono chips) follow the print brochure.
+   ============================================================================ */
+
+:root {
+  /* the signature "measurement field" motif — masked, so it takes its colour
+     from --pd-rule / --pd-rule-alpha */
+  --pd-field: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22132%22%20height%3D%2220%22%20viewBox%3D%220%200%20132%2020%22%3E%3Cg%20stroke%3D%22%23000%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%3E%3Cline%20x1%3D%221.1%22%20y1%3D%229.6%22%20x2%3D%2213.5%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%2216.0%22%20y1%3D%228.4%22%20x2%3D%2228.0%22%20y2%3D%2211.6%22%2F%3E%3Cline%20x1%3D%2230.6%22%20y1%3D%228.7%22%20x2%3D%2242.7%22%20y2%3D%2211.3%22%2F%3E%3Cline%20x1%3D%2245.1%22%20y1%3D%2210.3%22%20x2%3D%2257.5%22%20y2%3D%229.7%22%2F%3E%3Cline%20x1%3D%2260.1%22%20y1%3D%2212.0%22%20x2%3D%2271.9%22%20y2%3D%228.0%22%2F%3E%3Cline%20x1%3D%2275.0%22%20y1%3D%2212.5%22%20x2%3D%2286.3%22%20y2%3D%227.5%22%2F%3E%3Cline%20x1%3D%2289.3%22%20y1%3D%2211.4%22%20x2%3D%22101.4%22%20y2%3D%228.6%22%2F%3E%3Cline%20x1%3D%22103.8%22%20y1%3D%229.6%22%20x2%3D%22116.2%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%22118.7%22%20y1%3D%228.4%22%20x2%3D%22130.6%22%20y2%3D%2211.6%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  color-scheme: light;
+}
+
+/* ---------- 1. Base ------------------------------------------------------- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+
+body {
+  margin: 0;
+  background: var(--pd-bg);
+  color: var(--pd-text);
+  font-family: var(--pd-font-body);
+  font-size: 1rem;
+  line-height: var(--pd-lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: color-mix(in srgb, var(--pd-orange) 28%, transparent); }
+
+a, button { color: inherit; }
+
+:where(a, button, [tabindex], summary):focus-visible {
+  outline: 2px solid var(--pd-focus);
+  outline-offset: 2px;
+  border-radius: var(--pd-r-1);
+}
+
+[id] { scroll-margin-top: 4.75rem; }
+
+/* The cards grid and the 16:10 shots are calibrated for the wide measure. */
+.wrap {
+  width: 100%;
+  max-width: var(--pd-maxw-wide);
+  margin-inline: auto;
+  padding-inline: var(--pd-gutter);
+}
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus {
+  left: var(--pd-gutter); top: .5rem; z-index: 100;
+  background: var(--pd-bg); border: 1px solid var(--pd-border);
+  border-radius: var(--pd-r-1); padding: .5rem .8rem;
+  font-size: var(--pd-fs-sm); font-weight: 600; text-decoration: none;
+}
+
+/* ---------- 2. The divider ------------------------------------------------ */
+/* Used between every major section, the way the print brochure uses it. */
+
+.rule {
+  height: 20px; width: 100%; border: 0; margin: 0; flex: none;
+  background-color: rgba(var(--pd-rule), var(--pd-rule-alpha));
+  -webkit-mask: var(--pd-field) repeat-x center / 132px 20px;
+  mask: var(--pd-field) repeat-x center / 132px 20px;
+}
+
+/* ---------- 3. Masthead --------------------------------------------------- */
+
+.masthead {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--pd-bg);
+  border-bottom: 1px solid var(--pd-border-soft);
+}
+.masthead-inner {
+  display: flex; align-items: center; gap: var(--pd-sp-4);
+  min-height: 3.5rem;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: .55rem;
+  text-decoration: none; color: var(--pd-text); margin-right: auto;
+}
+.brand svg { width: 1.35rem; height: 1.35rem; border-radius: .32rem; flex: none; }
+.brand .name {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: 1rem; letter-spacing: .01em; white-space: nowrap;
+}
+.nav { display: flex; gap: var(--pd-sp-5); align-items: center; }
+.nav a {
+  font-size: var(--pd-fs-sm); color: var(--pd-text-muted);
+  text-decoration: none; white-space: nowrap;
+  transition: color var(--pd-dur-2);
+}
+.nav a:hover { color: var(--pd-text); }
+.nav a[aria-current] {
+  color: var(--pd-text); font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--pd-primary);
+}
+.lang-toggle {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  font-weight: 500; letter-spacing: .08em;
+  color: var(--pd-text-faint); text-decoration: none;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-1);
+  padding: .18rem .42rem; flex: none;
+  transition: color var(--pd-dur-2), border-color var(--pd-dur-2);
+}
+.lang-toggle:hover { color: var(--pd-link); border-color: var(--pd-primary); }
+
+/* ---------- 4. Hero ------------------------------------------------------- */
+
+.hero { padding: calc(var(--pd-section) * .7) 0 calc(var(--pd-section) * .55); }
+.kicker,
+.eyebrow {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: .13em; text-transform: uppercase;
+  color: var(--pd-text-faint); margin: 0;
+}
+.hero h1 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h1); line-height: var(--pd-lh-tight);
+  letter-spacing: -.01em; margin: .9rem 0 .8rem; max-width: 24ch;
+}
+.hero-sub {
+  max-width: 60ch; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-lead); line-height: var(--pd-lh-body);
+  margin: 0 0 1.5rem;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+
+/* ---------- 5. Buttons and inline links ----------------------------------- */
+
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--pd-font-body); font-weight: 600;
+  font-size: var(--pd-fs-sm); line-height: 1;
+  padding: .72rem 1.1rem; border-radius: var(--pd-r-1);
+  border: 1px solid transparent; text-decoration: none;
+  cursor: pointer; white-space: nowrap;
+  transition: filter var(--pd-dur-2), border-color var(--pd-dur-2), color var(--pd-dur-2);
+}
+.btn--primary { background: var(--pd-btn-primary-bg); color: var(--pd-btn-primary-fg); }
+.btn--primary:hover { filter: brightness(.94); }
+.btn--outline { background: transparent; color: var(--pd-text); border-color: var(--pd-border); }
+.btn--outline:hover { border-color: var(--pd-primary); color: var(--pd-link); }
+.link-plain {
+  font-weight: 600; font-size: var(--pd-fs-sm);
+  color: var(--pd-text-muted); text-decoration: none;
+}
+.link-plain:hover { color: var(--pd-link); }
+.arw { font-family: var(--pd-font-mono); opacity: .85; }
+
+/* ---------- 6. Sections --------------------------------------------------- */
+
+.pd-section { padding: calc(var(--pd-section) * .75) 0; }
+.section-head { max-width: 54rem; }
+.pd-section h2 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h2); line-height: 1.16;
+  letter-spacing: -.01em; margin: .75rem 0 .5rem;
+}
+.intro {
+  color: var(--pd-text-muted); font-size: var(--pd-fs-lead);
+  line-height: var(--pd-lh-body); max-width: 60ch; margin: 0;
+}
+
+/* ---------- 7. Case cards ------------------------------------------------- */
+
+.cards {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.5rem; row-gap: 3.5rem; margin-top: 2rem;
+}
+.card { position: relative; display: flex; flex-direction: column; gap: .6rem; margin: 0; }
+.card .shot { margin: 0; }
+.card .shot img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 16/10; object-fit: cover;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
+  background: var(--pd-surface-2); transition: border-color var(--pd-dur-2);
+}
+.card:hover .shot img { border-color: #b9bec6; }
+.card h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: .35rem 0 0;
+}
+.card h3 a { text-decoration: none; color: var(--pd-text); }
+.card h3 a::after { content: ""; position: absolute; inset: 0; }
+.card:hover h3 a { color: var(--pd-link); }
+.card .pitch { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.card .meta {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .45rem .8rem; margin: .15rem 0 0;
+  font-family: var(--pd-font-mono); font-size: .62rem;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.card .meta a {
+  position: relative; z-index: 1;
+  color: var(--pd-link); text-decoration: none; font-weight: 600;
+}
+.card .meta a:hover { text-decoration: underline; }
+.proj { font-family: var(--pd-font-mono); color: var(--pd-text-faint); text-transform: none; letter-spacing: 0; }
+
+/* mono chip — the brochure's session-number treatment */
+.tag {
+  font-family: var(--pd-font-mono); font-size: .62rem; font-weight: 500;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--pd-text-muted);
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-1);
+  padding: .16rem .42rem; line-height: 1.3; white-space: nowrap;
+}
+.tag.t-status { color: var(--pd-caveat); border-color: color-mix(in srgb, var(--pd-caveat) 45%, transparent); }
+
+.aside-link { margin: 2rem 0 0; font-size: var(--pd-fs-sm); color: var(--pd-text-muted); }
+.aside-link a { font-weight: 600; text-decoration: none; color: var(--pd-link); }
+.aside-link a:hover { text-decoration: underline; }
+
+.cta-strip { margin: 3.4rem 0 0; font-size: var(--pd-fs-lead); }
+.cta-strip a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
+.cta-strip a:hover { text-decoration: underline; }
+
+/* ---------- 8. Three-up ("Tres reglas") ----------------------------------- */
+/* The brochure's colour-ruled three-column block, replacing v3's stacked
+   hairline rows. Colours are the ink variants — they read on white. */
+
+.principles {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--pd-sp-5); margin-top: var(--pd-sp-6);
+}
+.principle {
+  border-top: 2px solid var(--pd-orange-ink);
+  padding-top: var(--pd-sp-3); margin: 0;
+}
+.principle:nth-child(2) { border-top-color: var(--pd-blue-ink); }
+.principle:nth-child(3) { border-top-color: var(--pd-green-ink); }
+.principle p { margin: 0; color: var(--pd-text); font-size: var(--pd-fs-sm); line-height: 1.55; }
+
+/* ---------- 9. Bio and contact -------------------------------------------- */
+
+.bio-text {
+  max-width: 60ch; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); margin: .6rem 0 0;
+}
+.contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; align-items: center; }
+.contact-note {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  color: var(--pd-text-faint); margin: 1rem 0 0;
+}
+
+/* ---------- 10. Home selector --------------------------------------------- */
+
+.seg-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.seg-card {
+  position: relative; display: flex; flex-direction: column; gap: .45rem;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-2);
+  padding: 1.5rem; margin: 0; transition: border-color var(--pd-dur-2);
+}
+.seg-card:hover { border-color: var(--pd-primary); }
+.seg-card .path {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: .08em; color: var(--pd-text-faint); margin: 0;
+}
+.seg-card h2 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: 0;
+}
+.seg-card h2 a { text-decoration: none; color: var(--pd-text); }
+.seg-card h2 a::after { content: ""; position: absolute; inset: 0; }
+.seg-card:hover h2 a { color: var(--pd-link); }
+.seg-card p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.seg-card--quiet { border-style: dashed; border-color: var(--pd-border-soft); }
+
+.other-line { margin: 2.5rem 0 0; font-size: var(--pd-fs-lead); }
+.other-line a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
+.other-line a:hover { text-decoration: underline; }
+
+/* ---------- 11. Footer ---------------------------------------------------- */
+/* The brochure's foot: hairline, mono captions, split left/right. */
+
+.site-footer {
+  border-top: 1px solid var(--pd-border-soft);
+  margin-top: var(--pd-section);
+  padding: var(--pd-sp-5) 0 var(--pd-sp-7);
+}
+.foot-inner {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: baseline; gap: .5rem var(--pd-sp-6);
+}
+.foot-map,
+.foot-note,
+.foot-fine {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  line-height: 1.7; color: var(--pd-text-faint); margin: 0;
+  letter-spacing: .03em;
+}
+.foot-map a,
+.foot-note a { color: var(--pd-text-muted); text-decoration: none; }
+.foot-map a:hover,
+.foot-note a:hover { color: var(--pd-text); }
+.foot-fine { margin-top: var(--pd-sp-3); max-width: 60ch; }
+
+/* ---------- 12. Responsive ------------------------------------------------ */
+
+@media (max-width: 860px) {
+  .principles { grid-template-columns: 1fr; gap: var(--pd-sp-4); }
+}
+@media (max-width: 760px) {
+  .masthead-inner { flex-wrap: wrap; padding-block: .55rem; row-gap: .5rem; min-height: 0; }
+  .nav { order: 3; width: 100%; gap: var(--pd-sp-4); overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .cards,
+  .seg-cards { grid-template-columns: 1fr; }
+  .cards { row-gap: 2.75rem; }
+}
+@media (max-width: 620px) {
+  .hero h1 { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .nav a, .lang-toggle, .card .shot img, .seg-card { transition: none; }
+}

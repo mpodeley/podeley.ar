@@ -1,0 +1,13 @@
+{
+  "name": "podeley.ar",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Segment funnel: E&P, mining, gas & power, research. Static, ES/EN, no dependencies.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && python3 -m http.server -d dist 8080",
+    "deploy": "node build.mjs && npx --yes gh-pages@6 -d dist -t",
+    "shots": "node tools/shots.mjs"
+  }
+}

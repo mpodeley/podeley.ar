@@ -8,6 +8,8 @@
     "build": "node build.mjs",
     "serve": "node build.mjs && python3 -m http.server -d dist 8080",
     "deploy": "node build.mjs && npx --yes gh-pages@6 -d dist -t",
-    "shots": "node tools/shots.mjs"
+    "shots": "node tools/shots.mjs",
+    "sync": "node tools/sync-identity.mjs",
+    "sync:check": "node tools/sync-identity.mjs --check"
   }
 }

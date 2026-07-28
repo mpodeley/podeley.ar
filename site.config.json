@@ -1,0 +1,14 @@
+{
+  "origin": "https://podeley.ar",
+  "brand": "Matías Podeley",
+  "repo": "https://github.com/mpodeley/podeley.ar",
+  "ogImage": "/assets/og.png",
+  "langs": ["es", "en"],
+  "nav": [
+    { "key": "ep", "slug": "ep", "es": "E&P", "en": "E&P" },
+    { "key": "mineria", "slug": "mineria", "es": "Minería", "en": "Mining" },
+    { "key": "energia", "slug": "energia", "es": "Gas y energía", "en": "Gas & power" },
+    { "key": "research", "slug": "research", "es": "Research", "en": "Research" }
+  ],
+  "backlink": null
+}

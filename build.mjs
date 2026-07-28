@@ -1,74 +1,78 @@
-/* build.mjs — podeley.ar static build. Zero dependencies, no runtime JS shipped.
-   Replaces MkDocs Material + mkdocs-static-i18n, which only bought us three
-   things: ES/EN routing, the OG tags and the sitemap. All three live here now.
+/* build.mjs — podeley identity kit. Zero dependencies, ships no runtime JS.
+   Vendored into each site by tools/sync-identity.mjs; do not edit the copy,
+   edit podeley/identity and re-sync.
 
-   Each page is plain HTML for <main>, preceded by a JSON metadata comment:
+   Assembles dist/ from:
+     site.config.json          what differs between sites (origin, nav, langs…)
+     src/layout.html           the shell
+     src/pages/<slug>.<lang>.html   the copy, each opening with a JSON <!--meta>
+     src/styles/*.css          tokens + chrome + demo/portfolio
+     static/                   fonts, assets, CNAME, robots.txt
 
-     <!--meta
-     { "title": "...", "description": "...", "nav": "ep" }
-     -->
-     <section class="hero wrap"> ...
+   The first language in config.langs is served at the root; the others under
+   /<lang>/. A one-language site therefore gets no prefix and no toggle.
 
-   JSON, not YAML, on purpose: JSON.parse is built in.
+   Usage: node build.mjs   →   dist/ */
 
-   Usage: node build.mjs   →   dist/   (ES at the root, EN under /en/) */
-
-import { readFile, writeFile, mkdir, rm, cp, readdir } from 'node:fs/promises'
+import { readFile, writeFile, mkdir, rm, cp, readdir, access } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const ROOT = dirname(fileURLToPath(import.meta.url))
+const ROOT = process.cwd()
 const SRC = join(ROOT, 'src')
 const DIST = join(ROOT, 'dist')
-const ORIGIN = 'https://podeley.ar'
 
-/* Segment nav — order matters, it is the funnel's order. `key` is what a page
-   names in meta.nav to get aria-current. */
-const NAV = [
-  { key: 'ep', slug: 'ep', es: 'E&P', en: 'E&P' },
-  { key: 'mineria', slug: 'mineria', es: 'Minería', en: 'Mining' },
-  { key: 'energia', slug: 'energia', es: 'Gas y energía', en: 'Gas & power' },
-  { key: 'research', slug: 'research', es: 'Research', en: 'Research' },
-]
+const config = JSON.parse(await readFile(join(ROOT, 'site.config.json'), 'utf8'))
+const {
+  origin,
+  brand = 'Matías Podeley',
+  ogImage = '/assets/og.png',
+  repo = 'https://github.com/podeley',
+  langs = ['es'],
+  nav = [],
+  backlink = null,
+  footerLinks = null,
+} = config
 
-/* The only translated text outside the page files: the shell. */
+if (!origin) throw new Error('site.config.json: "origin" is required (e.g. "https://vm.podeley.ar")')
+const DEFAULT_LANG = langs[0]
+
+/* Chrome strings live here, not in each site — that is the point of the kit. */
 const STRINGS = {
   es: {
-    ogLocale: 'es_AR',
-    navLabel: 'Secciones',
-    skip: 'Ir al contenido',
-    altLabel: 'EN',
+    ogLocale: 'es_AR', navLabel: 'Secciones', skip: 'Ir al contenido', altLabel: 'EN',
     footNote: '© 2026 · Buenos Aires · Sitio estático en GitHub Pages',
     footSource: 'código del sitio',
-    footFine:
-      'El trabajo se describe por sector; la identidad de los clientes es reservada.',
+    footFine: 'El trabajo se describe por sector; la identidad de los clientes es reservada.',
   },
   en: {
-    ogLocale: 'en',
-    navLabel: 'Sections',
-    skip: 'Skip to content',
-    altLabel: 'ES',
+    ogLocale: 'en', navLabel: 'Sections', skip: 'Skip to content', altLabel: 'ES',
     footNote: '© 2026 · Buenos Aires · Static site on GitHub Pages',
     footSource: 'site source',
     footFine: 'Work is described by sector; client identities are private.',
   },
 }
 
-const REPO = 'https://github.com/mpodeley/podeley.ar'
+/* Every site's footer leads back into the funnel unless the site overrides it. */
+const DEFAULT_FOOTER_LINKS = [
+  { href: 'https://podeley.ar/', es: 'podeley.ar', en: 'podeley.ar' },
+  { href: 'https://podeley.ar/ep/', es: 'E&P', en: 'E&P' },
+  { href: 'https://podeley.ar/mineria/', es: 'Minería', en: 'Mining' },
+  { href: 'https://podeley.ar/energia/', es: 'Gas y energía', en: 'Gas & power' },
+  { href: 'https://podeley.ar/research/', es: 'Research', en: 'Research' },
+]
 
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-/* ES lives at the root, EN under /en/ — the same URL scheme v3 served, so no
-   inbound link and no mailto `subject=` breaks. */
 const urlFor = (slug, lang) => {
-  const base = lang === 'es' ? '/' : '/en/'
+  const base = lang === DEFAULT_LANG ? '/' : `/${lang}/`
   return slug === 'index' ? base : `${base}${slug}/`
 }
 
 const outFor = (slug, lang) => {
   if (slug === '404') return join(DIST, '404.html')
-  const dir = lang === 'es' ? DIST : join(DIST, 'en')
+  const dir = lang === DEFAULT_LANG ? DIST : join(DIST, lang)
   return slug === 'index' ? join(dir, 'index.html') : join(dir, slug, 'index.html')
 }
 
@@ -89,22 +93,32 @@ function parsePage(raw, file) {
   return { meta, body: raw.slice(m[0].length).trimEnd() }
 }
 
+/* A site has either a segment nav (the portfolio) or a backlink (a demo). */
 function navHtml(lang, active) {
-  return NAV.map((i) => {
+  const items = nav.map((i) => {
     const current = i.key === active ? ' aria-current="page"' : ''
-    return `<a href="${urlFor(i.slug, lang)}"${current}>${esc(i[lang])}</a>`
-  }).join('\n      ')
+    return `<a href="${urlFor(i.slug, lang)}"${current}>${esc(i[lang] ?? i.es)}</a>`
+  })
+  if (backlink) {
+    items.push(`<a class="backlink" href="${backlink.href}">${esc(backlink[lang] ?? backlink.es)}</a>`)
+  }
+  return items.join('\n      ')
 }
 
 function footerHtml(lang) {
   const s = STRINGS[lang]
-  const map = [
-    `<a href="${urlFor('index', lang)}">podeley.ar</a>`,
-    ...NAV.map((i) => `<a href="${urlFor(i.slug, lang)}">${esc(i[lang])}</a>`),
-  ].join(' · ')
+  // A site with its own segment nav (the portfolio) links the footer map to its
+  // own pages, in the current language. A demo links out to podeley.ar.
+  const links =
+    footerLinks ??
+    (nav.length
+      ? [{ href: urlFor('index', lang), es: 'podeley.ar', en: 'podeley.ar' },
+         ...nav.map((i) => ({ href: urlFor(i.slug, lang), es: i.es, en: i.en ?? i.es }))]
+      : DEFAULT_FOOTER_LINKS)
+  const map = links.map((l) => `<a href="${l.href}">${esc(l[lang] ?? l.es)}</a>`).join(' · ')
   return `  <div class="wrap foot-inner">
     <p class="foot-map">${map}</p>
-    <p class="foot-note">${s.footNote} · <a href="${REPO}">${s.footSource}</a></p>
+    <p class="foot-note">${s.footNote} · <a href="${repo}">${s.footSource}</a></p>
   </div>
   <p class="wrap foot-fine">${s.footFine}</p>`
 }
@@ -114,9 +128,10 @@ function footerHtml(lang) {
 const files = (await readdir(join(SRC, 'pages'))).filter((f) => f.endsWith('.html')).sort()
 const pages = []
 for (const file of files) {
-  const m = file.match(/^(.+)\.(es|en)\.html$/)
-  if (!m) throw new Error(`src/pages/${file}: name must be <slug>.<es|en>.html`)
+  const m = file.match(/^(.+)\.([a-z]{2})\.html$/)
+  if (!m) throw new Error(`src/pages/${file}: name must be <slug>.<lang>.html`)
   const [, slug, lang] = m
+  if (!langs.includes(lang)) throw new Error(`src/pages/${file}: "${lang}" is not in config.langs`)
   const raw = await readFile(join(SRC, 'pages', file), 'utf8')
   pages.push({ file, slug, lang, ...parsePage(raw, `src/pages/${file}`) })
 }
@@ -130,28 +145,48 @@ const layout = await readFile(join(SRC, 'layout.html'), 'utf8')
 
 await rm(DIST, { recursive: true, force: true })
 await mkdir(DIST, { recursive: true })
-await cp(join(ROOT, 'static'), DIST, { recursive: true })
+const hasStatic = await access(join(ROOT, 'static')).then(() => true, () => false)
+if (hasStatic) await cp(join(ROOT, 'static'), DIST, { recursive: true })
 await cp(join(SRC, 'styles'), join(DIST, 'styles'), { recursive: true })
+
+/* Stylesheets are whatever src/styles/ holds, cascade-ordered: identity layers
+   first, the site's own last. No config, no layout edit when a layer is added. */
+const ORDER = ['tokens.css', 'chrome.css', 'demo.css', 'portfolio.css', 'site.css']
+const sheets = (await readdir(join(SRC, 'styles')))
+  .filter((f) => f.endsWith('.css'))
+  .sort((a, b) => {
+    const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b)
+    return (ia < 0 ? ORDER.length : ia) - (ib < 0 ? ORDER.length : ib) || a.localeCompare(b)
+  })
+if (!sheets.includes('tokens.css')) {
+  throw new Error('src/styles/tokens.css is missing — run node tools/sync-identity.mjs')
+}
+const stylesHtml = sheets.map((f) => `<link rel="stylesheet" href="/styles/${f}">`).join('\n')
 
 for (const p of pages) {
   const s = STRINGS[p.lang]
-  const other = p.lang === 'es' ? 'en' : 'es'
-  const url = ORIGIN + urlFor(p.slug, p.lang)
+  const other = langs.find((l) => l !== p.lang)
+  const url = origin + urlFor(p.slug, p.lang)
 
-  // 404 is Spanish-only and must not be indexed or cross-linked as a variant;
-  // its toggle falls back to the other language's home.
-  const translated = have.has(`${p.slug}.${other}`)
-  const altHref = translated ? urlFor(p.slug, other) : urlFor('index', other)
+  // 404 must not be indexed or cross-linked as a language variant.
+  const isErrorPage = p.slug === '404'
+  const translated = other ? have.has(`${p.slug}.${other}`) && !isErrorPage : false
 
-  const canonical = p.slug === '404' ? '<meta name="robots" content="noindex">'
+  const canonical = isErrorPage
+    ? '<meta name="robots" content="noindex">'
     : `<link rel="canonical" href="${url}">`
   const alternates = translated
-    ? [
-        `<link rel="alternate" hreflang="es" href="${ORIGIN}${urlFor(p.slug, 'es')}">`,
-        `<link rel="alternate" hreflang="en" href="${ORIGIN}${urlFor(p.slug, 'en')}">`,
-        `<link rel="alternate" hreflang="x-default" href="${ORIGIN}${urlFor(p.slug, 'es')}">`,
-      ].join('\n')
+    ? langs
+        .map((l) => `<link rel="alternate" hreflang="${l}" href="${origin}${urlFor(p.slug, l)}">`)
+        .concat(`<link rel="alternate" hreflang="x-default" href="${origin}${urlFor(p.slug, DEFAULT_LANG)}">`)
+        .join('\n')
     : ''
+
+  // One language, or no counterpart page → no toggle at all.
+  const toggle =
+    other && !isErrorPage
+      ? `<a class="lang-toggle" href="${translated ? urlFor(p.slug, other) : urlFor('index', other)}" hreflang="${other}" lang="${other}">${STRINGS[other].altLabel}</a>`
+      : ''
 
   const html = layout
     .replaceAll('{{lang}}', p.lang)
@@ -159,18 +194,20 @@ for (const p of pages) {
     .replaceAll('{{title}}', esc(p.meta.title))
     .replaceAll('{{description}}', esc(p.meta.description))
     .replaceAll('{{url}}', url)
+    .replaceAll('{{origin}}', origin)
+    .replaceAll('{{og_image}}', ogImage.startsWith('http') ? ogImage : origin + ogImage)
     .replaceAll('{{canonical}}', canonical)
     .replaceAll('{{alternates}}', alternates)
+    .replaceAll('{{styles}}', stylesHtml)
     .replaceAll('{{skip}}', esc(s.skip))
     .replaceAll('{{nav_label}}', esc(s.navLabel))
+    .replaceAll('{{brand}}', esc(brand))
     .replaceAll('{{home}}', urlFor('index', p.lang))
     .replaceAll('{{nav}}', navHtml(p.lang, p.meta.nav))
-    .replaceAll('{{alt_href}}', altHref)
-    .replaceAll('{{alt_lang}}', other)
-    .replaceAll('{{alt_label}}', s.altLabel)
+    .replaceAll('{{lang_toggle}}', toggle)
     .replaceAll('{{footer}}', footerHtml(p.lang))
     .replaceAll('{{body}}', p.body)
-    .replace(/\n{2,}(?=<(?:link|meta)\b)/g, '\n') // an empty slot must not leave a gap in <head>
+    .replace(/\n{2,}(?=<(?:link|meta)\b)/g, '\n') // an empty slot must not gap <head>
 
   const out = outFor(p.slug, p.lang)
   await mkdir(dirname(out), { recursive: true })
@@ -182,7 +219,7 @@ for (const p of pages) {
 
 const locs = pages
   .filter((p) => p.slug !== '404')
-  .map((p) => ORIGIN + urlFor(p.slug, p.lang))
+  .map((p) => origin + urlFor(p.slug, p.lang))
   .sort()
 await writeFile(
   join(DIST, 'sitemap.xml'),

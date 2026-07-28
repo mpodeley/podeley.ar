@@ -13,16 +13,15 @@
 <meta property="og:locale" content="{{og_locale}}">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
-<meta property="og:image" content="https://podeley.ar/assets/og.png">
+<meta property="og:image" content="{{og_image}}">
 <meta property="og:url" content="{{url}}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{title}}">
 <meta name="twitter:description" content="{{description}}">
-<meta name="twitter:image" content="https://podeley.ar/assets/og.png">
+<meta name="twitter:image" content="{{og_image}}">
 <link rel="preload" href="/fonts/space-grotesk-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles/tokens.css">
-<link rel="stylesheet" href="/styles/site.css">
+{{styles}}
 </head>
 <body>
 
@@ -37,12 +36,12 @@
         <circle cx="15" cy="21" r="3" fill="#4EA8DE"/><circle cx="49" cy="21" r="3" fill="#FF7B54"/>
         <circle cx="32" cy="37" r="3" fill="#F2C14E"/><circle cx="15" cy="47" r="3" fill="#43C59E"/>
       </svg>
-      <span class="name">Matías Podeley</span>
+      <span class="name">{{brand}}</span>
     </a>
     <nav class="nav" aria-label="{{nav_label}}">
       {{nav}}
     </nav>
-    <a class="lang-toggle" href="{{alt_href}}" hreflang="{{alt_lang}}" lang="{{alt_lang}}">{{alt_label}}</a>
+    {{lang_toggle}}
   </div>
 </header>
 

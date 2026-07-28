@@ -19,8 +19,13 @@
      .55 opacity over ~176mm. Stretched across a viewport it reads far weaker,
      and it is the one piece of ornament the identity has. */
   --pd-rule-alpha: .3;
-  color-scheme: light;
 }
+
+/* tokens.css is dark-canonical; the marketing pages opt into light via
+   <html data-theme="light">. Follow whatever the document declares instead of
+   hardcoding, so a dark data app can load this same file. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"], :root:not([data-theme]) { color-scheme: dark; }
 
 /* ---------- base ---------------------------------------------------------- */
 

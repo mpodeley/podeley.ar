@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Datos satelitales para minería — Matías Podeley</title>
+<meta name="description" content="Quién tiene derechos sobre el suelo en 6 provincias, targets de exploración validados a ciegas, volumen excavado auditado por satélite y monitoreo de salares en bombeo. Cuatro casos en línea.">
+<link rel="canonical" href="https://podeley.github.io/mineria/">
+<link rel="alternate" hreflang="es" href="https://podeley.github.io/mineria/">
+<link rel="alternate" hreflang="en" href="https://podeley.github.io/en/mineria/">
+<link rel="alternate" hreflang="x-default" href="https://podeley.github.io/mineria/">
+<link rel="icon" href="/assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="podeley.ar">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Datos satelitales para minería — Matías Podeley">
+<meta property="og:description" content="Quién tiene derechos sobre el suelo en 6 provincias, targets de exploración validados a ciegas, volumen excavado auditado por satélite y monitoreo de salares en bombeo. Cuatro casos en línea.">
+<meta property="og:image" content="https://podeley.github.io/assets/og.png">
+<meta property="og:url" content="https://podeley.github.io/mineria/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Datos satelitales para minería — Matías Podeley">
+<meta name="twitter:description" content="Quién tiene derechos sobre el suelo en 6 provincias, targets de exploración validados a ciegas, volumen excavado auditado por satélite y monitoreo de salares en bombeo. Cuatro casos en línea.">
+<meta name="twitter:image" content="https://podeley.github.io/assets/og.png">
+<link rel="preload" href="/fonts/space-grotesk-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles/tokens.css">
+<link rel="stylesheet" href="/styles/chrome.css">
+<link rel="stylesheet" href="/styles/site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Ir al contenido</a>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="64" height="64" rx="12" fill="#0f1012"/>
+        <path d="M15 47 V21 L32 37 L49 21 V47" fill="none" stroke="#f4f4f2" stroke-width="4.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="15" cy="21" r="3" fill="#4EA8DE"/><circle cx="49" cy="21" r="3" fill="#FF7B54"/>
+        <circle cx="32" cy="37" r="3" fill="#F2C14E"/><circle cx="15" cy="47" r="3" fill="#43C59E"/>
+      </svg>
+      <span class="name">Matías Podeley</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="/ep/">E&amp;P</a>
+      <a href="/mineria/" aria-current="page">Minería</a>
+      <a href="/energia/">Gas y energía</a>
+      <a href="/research/">Research</a>
+    </nav>
+    <a class="lang-toggle" href="/en/mineria/" hreflang="en" lang="en">ES</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero wrap">
+  <p class="kicker">Minería · Exploración y monitoreo · Datos satelitales</p>
+  <h1>Quién tiene el suelo, dónde perforar, cuánta roca se movió.</h1>
+  <p class="hero-sub">Cuatro casos en línea: el catastro minero de seis provincias unificado en un mapa, targets de exploración priorizados desde espectrometría satelital y validados a ciegas, volumen excavado medido desde elevación satelital, y radar sobre salares en bombeo. Todo con datos públicos, antes de pagar una campaña de campo.</p>
+  <p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Escribime</a> <a class="link-plain" href="#casos">Ver los casos <span class="arw">↓</span></a></p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="casos">
+  <div class="section-head">
+    <p class="eyebrow">Casos</p>
+    <h2>Cuatro casos, todos en línea.</h2>
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+      <figure class="shot"><img src="/assets/shots/catastro-minero-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: mapa nacional de derechos mineros por provincia"></figure>
+      <h3><a href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener">Saber quién tiene el suelo antes de mover una ficha</a></h3>
+      <p class="pitch">Argentina no tiene catastro minero nacional: cada provincia publica el suyo con formato distinto, y varias no publican nada. Esto unifica seis en un mapa — 19,671 derechos, 22 millones de hectáreas — con el titular, el mineral y el expediente de cada polígono. San Juan tiene el 66.4% de su territorio bajo derecho minero; Jujuy, el 66.2%.</p>
+      <p class="meta"><span class="proj">catastro-minero-argentina</span><span class="tag t-status">Dataset abierto</span></p>
+    </article>
+
+    <article class="card">
+      <figure class="shot"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: targets minerales por espectrometría"></figure>
+      <h3><a href="https://podeley.github.io/sat-exploracion/" target="_blank" rel="noopener">Priorizar targets antes de pagar la campaña de campo</a></h3>
+      <p class="pitch">Targets rankeados desde espectrometría satelital (ASTER, EMIT), validados a ciegas re-encontrando minas conocidas — Pirquitas, Chinchillas. Hay paper y un caso previo en San Juan.</p>
+      <p class="meta"><span class="proj">rinconada-espectrometria</span><span class="tag t-status">Paper</span></p>
+    </article>
+
+    <article class="card">
+      <figure class="shot"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: volumen excavado por diferencia de DEMs"></figure>
+      <h3><a href="https://podeley.github.io/sat-volumen/" target="_blank" rel="noopener">Auditar cuánta roca movió una mina, desde afuera</a></h3>
+      <p class="pitch">Volumen excavado estimado comparando modelos de elevación satelitales: ≈285 Mm³ en Veladero; una mina de carbón en China contrastada contra lo declarado. Útil donde los datos del operador son opacos.</p>
+      <p class="meta"><span class="proj">mineria-dem</span></p>
+    </article>
+
+    <article class="card">
+      <figure class="shot"><img src="/assets/shots/litio-subsidencia.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: radar sobre salares de litio"></figure>
+      <h3><a href="https://podeley.github.io/sat-litio/" target="_blank" rel="noopener">Detectar temprano cómo responde el salar al bombeo</a></h3>
+      <p class="pitch">Radar satelital sobre salares de litio en extracción (Hombre Muerto): la deformación existe pero es chica, cerca del piso de ruido. Se publica igual.</p>
+      <p class="meta"><span class="proj">litio-subsidencia</span><span class="tag t-status">Señal chica</span></p>
+    </article>
+
+  </div>
+
+  <p class="aside-link">Fuera de los casos: qué ve cada satélite de observación terrestre — <a href="https://podeley.github.io/sat-guia/" target="_blank" rel="noopener">guía visual con globo 3D</a>.</p>
+
+  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Si esto se parece a tu problema, escribime <span class="arw">→</span></a></p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="como-trabajo">
+  <div class="section-head">
+    <p class="eyebrow">Cómo trabajo</p>
+    <h2>Tres reglas.</h2>
+  </div>
+  <div class="principles">
+    <div class="principle"><p>Empezar por el problema, no por la herramienta.</p></div>
+    <div class="principle"><p>Datos públicos; entradas y resultados auditables.</p></div>
+    <div class="principle"><p>Los límites y los resultados nulos se publican con el hallazgo.</p></div>
+  </div>
+</section>
+
+<section class="pd-section wrap" id="quien">
+  <div class="section-head">
+    <p class="eyebrow">Quién está detrás</p>
+  </div>
+  <p class="bio-text">Matías Podeley. Dieciocho años en energía — ingeniería de reservorios, después desarrollo de negocio, casi siempre del lado que contrata a los especialistas. Estas herramientas las construyo yo, con datos públicos e IA. Buenos Aires.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contacto">
+  <div class="section-head">
+    <p class="eyebrow">Contacto</p>
+    <h2>Contacto</h2>
+    <p class="intro">Si esto se parece a tu problema, hablemos: proyecto, asesoría o desarrollo a medida.</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Escribime</a>
+    <a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener">LinkedIn</a>
+    <!-- TODO(matias): pegar acá el link de agenda (+ ?utm_source=mineria) -->
+    <a class="btn btn--outline" href="#" data-placeholder="booking" data-segment="mineria" title="URL por definir">Agendar una charla</a>
+  </div>
+  <p class="contact-note">mpodeley@gmail.com · Buenos Aires</p>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <p class="foot-map"><a href="/">podeley.ar</a> · <a href="/ep/">E&amp;P</a> · <a href="/mineria/">Minería</a> · <a href="/energia/">Gas y energía</a> · <a href="/research/">Research</a></p>
+    <p class="foot-note">© 2026 · Buenos Aires · Sitio estático en GitHub Pages · <a href="https://github.com/podeley/podeley.github.io">código del sitio</a></p>
+  </div>
+  <p class="wrap foot-fine">El trabajo se describe por sector; la identidad de los clientes es reservada.</p>
+</footer>
+
+</body>
+</html>

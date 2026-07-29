@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://podeley.ar/sitemap.xml

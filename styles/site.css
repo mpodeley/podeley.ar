@@ -1,0 +1,122 @@
+/* ============================================================================
+   site.css — bloques propios del portfolio. Se carga después de
+   tokens.css + chrome.css, que vienen del kit (podeley/identity) y no se
+   editan acá: se corre `npm run sync`.
+
+   Acá viven sólo las piezas que no tiene ninguna demo: la grilla de casos con
+   captura, el selector de área del home, el three-up de «Tres reglas» y el
+   bloque de contacto.
+   ============================================================================ */
+
+/* ---------- grilla de casos ----------------------------------------------- */
+
+.cards {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.5rem; row-gap: 3.5rem; margin-top: 2rem;
+}
+.card { position: relative; display: flex; flex-direction: column; gap: .6rem; margin: 0; }
+.card .shot { margin: 0; }
+.card .shot img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 16/10; object-fit: cover;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
+  background: var(--pd-surface-2); transition: border-color var(--pd-dur-2);
+}
+.card:hover .shot img { border-color: #b9bec6; }
+.card h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: .35rem 0 0;
+}
+.card h3 a { text-decoration: none; color: var(--pd-text); }
+.card h3 a::after { content: ""; position: absolute; inset: 0; }
+.card:hover h3 a { color: var(--pd-link); }
+.card .pitch { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.card .meta {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .45rem .8rem; margin: .15rem 0 0;
+  font-family: var(--pd-font-mono); font-size: .62rem;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.card .meta a {
+  position: relative; z-index: 1;
+  color: var(--pd-link); text-decoration: none; font-weight: 600;
+}
+.card .meta a:hover { text-decoration: underline; }
+.proj { font-family: var(--pd-font-mono); color: var(--pd-text-faint); text-transform: none; letter-spacing: 0; }
+
+.aside-link { margin: 2rem 0 0; font-size: var(--pd-fs-sm); color: var(--pd-text-muted); }
+.aside-link a { font-weight: 600; text-decoration: none; color: var(--pd-link); }
+.aside-link a:hover { text-decoration: underline; }
+
+.cta-strip { margin: 3.4rem 0 0; font-size: var(--pd-fs-lead); }
+.cta-strip a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
+.cta-strip a:hover { text-decoration: underline; }
+
+/* ---------- «Tres reglas» ------------------------------------------------- */
+/* El three-up con regla de color del brochure. Mismo patrón que .findings en
+   las demos, pero acá las reglas no llevan título. */
+
+.principles {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--pd-sp-5); margin-top: var(--pd-sp-6);
+}
+.principle {
+  border-top: 2px solid var(--pd-orange-ink);
+  padding-top: var(--pd-sp-3); margin: 0;
+}
+.principle:nth-child(2) { border-top-color: var(--pd-blue-ink); }
+.principle:nth-child(3) { border-top-color: var(--pd-green-ink); }
+.principle p { margin: 0; color: var(--pd-text); font-size: var(--pd-fs-sm); line-height: 1.55; }
+
+/* ---------- bio y contacto ------------------------------------------------ */
+
+.bio-text {
+  max-width: 60ch; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); margin: .6rem 0 0;
+}
+.contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; align-items: center; }
+.contact-note {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  color: var(--pd-text-faint); margin: 1rem 0 0;
+}
+
+/* ---------- selector de área (home) --------------------------------------- */
+
+.seg-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.seg-card {
+  position: relative; display: flex; flex-direction: column; gap: .45rem;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-2);
+  padding: 1.5rem; margin: 0; transition: border-color var(--pd-dur-2);
+}
+.seg-card:hover { border-color: var(--pd-primary); }
+.seg-card .path {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: .08em; color: var(--pd-text-faint); margin: 0;
+}
+.seg-card h2 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: 0;
+}
+.seg-card h2 a { text-decoration: none; color: var(--pd-text); }
+.seg-card h2 a::after { content: ""; position: absolute; inset: 0; }
+.seg-card:hover h2 a { color: var(--pd-link); }
+.seg-card p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.seg-card--quiet { border-style: dashed; border-color: var(--pd-border-soft); }
+
+.other-line { margin: 2.5rem 0 0; font-size: var(--pd-fs-lead); }
+.other-line a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
+.other-line a:hover { text-decoration: underline; }
+
+/* ---------- responsive ---------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .principles { grid-template-columns: 1fr; gap: var(--pd-sp-4); }
+}
+@media (max-width: 760px) {
+  .cards,
+  .seg-cards { grid-template-columns: 1fr; }
+  .cards { row-gap: 2.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card .shot img, .seg-card { transition: none; }
+}

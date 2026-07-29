@@ -27,13 +27,13 @@ mkdirSync(OUT, { recursive: true });
 // toFigure: text-heavy docs sites — scroll to the first large figure/map so the
 // shot shows a visual, not a wall of text.
 const SITES = [
-  ['estado-del-sistema',            'https://mpodeley.github.io/estado-del-sistema/',            3000, false],
+  ['estado-red-gas',            'https://mpodeley.github.io/estado-red-gas/',            3000, false],
   ['simulador-subastas-peru',       'https://mpodeley.github.io/simulador-subastas-peru/',       3000, false],
   ['gasoductos',                    'https://gasoductos.podeley.ar',                             6000, false],
   ['vaca-muerta-insar',             'https://mpodeley.github.io/vaca-muerta-insar/',             6000, true],
   ['vaca-muerta-nightlights',       'https://mpodeley.github.io/vaca-muerta-nightlights/',       3000, false],
   ['vaca-muerta-emisiones',         'https://mpodeley.github.io/vaca-muerta-emisiones/',         3000, true],
-  ['litio-insar',                   'https://mpodeley.github.io/litio-insar/',                   3000, true],
+  ['litio-subsidencia',                   'https://mpodeley.github.io/litio-subsidencia/',                   3000, true],
   ['mineria-dem',                   'https://mpodeley.github.io/mineria-dem/',                   6000, true],
   ['rinconada-espectrometria',      'https://mpodeley.github.io/rinconada-espectrometria/',      3000, true],
   ['assembled-thought',             'https://mpodeley.github.io/assembled-thought/',             3000, false],

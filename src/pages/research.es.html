@@ -1,15 +1,15 @@
 <!--meta
 {
   "title": "Interpretabilidad y seguridad de IA — Matías Podeley",
-  "description": "Un paper original de interpretabilidad y el primer curso consolidado de interpretabilidad mecanicista en español. Hacia evals y safety cases para IA en infraestructura energética.",
+  "description": "Un paper original de interpretabilidad, el primer curso consolidado del tema en español, y un cuaderno de laboratorio abierto. Investigación independiente desde Buenos Aires.",
   "nav": "research"
 }
 -->
 
 <section class="hero wrap">
   <p class="kicker">Seguridad de IA · Interpretabilidad · Independiente</p>
-  <h1>La IA va a operar infraestructura energética. Alguien tiene que demostrar cuándo es segura.</h1>
-  <p class="hero-sub">Trabajo hacia evals y safety cases para IA agéntica en sistemas energéticos críticos — gasoductos, redes, reservorios — después de dieciocho años dentro de la industria. Abajo: un paper original y un curso.</p>
+  <h1>Interpretabilidad mecanicista, hecha desde afuera del campo y publicada con sus nulos.</h1>
+  <p class="hero-sub">Investigo qué hace un modelo de lenguaje por dentro. Hay un paper original enviado a BlackboxNLP 2026, el primer curso consolidado del tema en español, y un proyecto nuevo publicado antes de tener resultados. Vengo de dieciocho años en energía, y hacia ahí apunta esto.</p>
   <p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Research%20%E2%80%94%20podeley.ar%2Fresearch&amp;body=Hola%20Matias%2C%0A%0A">Escribime</a> <a class="link-plain" href="#casos">Ver el trabajo <span class="arw">↓</span></a></p>
 </section>
 
@@ -18,7 +18,7 @@
 <section class="pd-section wrap" id="casos">
   <div class="section-head">
     <p class="eyebrow">Trabajo</p>
-    <h2>Un paper y un curso.</h2>
+    <h2>Un paper, un curso y un cuaderno abierto.</h2>
   </div>
 
   <div class="cards">
@@ -26,18 +26,39 @@
     <article class="card">
       <figure class="shot"><img src="/assets/shots/assembled-thought.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: demo interactiva del paper"></figure>
       <h3><a href="https://mpodeley.github.io/assembled-thought/" target="_blank" rel="noopener">Cómo un modelo arma una respuesta</a></h3>
-      <p class="pitch">Paper original: factorización operador–operando en modelos de lenguaje, con demo interactiva bilingüe. Enviado a BlackboxNLP 2026.</p>
+      <p class="pitch">El pensamiento de un modelo sobre un hecho se separa en piezas — la cosa y la pregunta que se le hace — y esas piezas alcanzan: se promedian, se recombinan, se escriben de vuelta adentro, y el modelo dice la respuesta. Tres modelos, dos dominios donde funciona y dos donde no. Con demo interactiva.</p>
       <p class="meta"><span class="proj">assembled-thought</span><span class="tag t-status">Paper</span><a href="https://github.com/mpodeley/assembled-thought" target="_blank" rel="noopener">Código →</a></p>
     </article>
 
     <article class="card">
       <figure class="shot"><img src="/assets/shots/interpretabilidad-mecanicista.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: curso de interpretabilidad en español"></figure>
       <h3><a href="https://mpodeley.github.io/interpretabilidad-mecanicista/" target="_blank" rel="noopener">Interpretabilidad mecanicista, en español</a></h3>
-      <p class="pitch">El primer curso consolidado de interpretabilidad mecanicista en español: cómo funcionan por dentro los modelos de lenguaje grandes.</p>
+      <p class="pitch">El primer curso consolidado del tema en castellano: seis páginas de "qué es un token" a los grafos de atribución. Al lado, el mapa de los seis pilares de la seguridad de IA, diez líneas de investigación abiertas y recursos curados link por link.</p>
       <p class="meta"><span class="proj">interpretabilidad-mecanicista</span><a href="https://github.com/mpodeley/interpretabilidad-mecanicista" target="_blank" rel="noopener">Código →</a></p>
     </article>
 
+    <article class="card">
+      <figure class="shot"><img src="/assets/shots/jspace-qwen.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: figuras del cuaderno de laboratorio"></figure>
+      <h3><a href="https://mpodeley.github.io/jspace-qwen/findings/" target="_blank" rel="noopener">La investigación mientras pasa, sin maquillar</a></h3>
+      <p class="pitch">El cuaderno de laboratorio: 989 líneas en orden cronológico con los experimentos, los bugs de medición que encontré construyendo, y la réplica que no replicó bajo controles y de la que salió el paper. Cada número se recomputa desde los artefactos.</p>
+      <p class="meta"><span class="proj">jspace-qwen</span><a href="https://github.com/mpodeley/jspace-qwen" target="_blank" rel="noopener">Código →</a></p>
+    </article>
+
   </div>
+
+  <p class="aside-link">Lo último, todavía sin resultados: <a href="https://github.com/mpodeley/residual-gauge" target="_blank" rel="noopener">residual-gauge</a> — importar una base para el estado interno desde una simetría de la tarea, con los umbrales preregistrados antes de correr nada.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="hacia-donde">
+  <div class="section-head">
+    <p class="eyebrow">Hacia dónde va</p>
+    <h2>La seguridad de IA va a llegar a la energía. Todavía no llegó.</h2>
+    <p class="intro">El uso de modelos frontera por fuera de los controles ya está medido dentro de organizaciones de infraestructura crítica. Cuando los agentes pasen de asesorar a actuar sobre un ducto o una red, alguien va a tener que demostrar cuándo eso es seguro. Vengo de dieciocho años adentro de esa industria y me parece el lugar donde esto termina.</p>
+  </div>
+  <p class="bio-text">Lo que no puedo afirmar: nada de lo que investigo hoy se aplica a una decisión de operación. Mis experimentos separan "Italia" de "capital-de" en el estado interno de un modelo chico, en inglés, sobre relaciones factuales de juguete. Entre eso y auditar a un agente con autoridad sobre un ducto hay un salto que prefiero enunciar antes que disimular.</p>
+  <p class="aside-link">Los seis pilares de la seguridad de IA, dónde cae la interpretabilidad entre ellos, y los cuatro escalones que faltan para cerrar ese salto: <a href="https://mpodeley.github.io/interpretabilidad-mecanicista/seguridad/" target="_blank" rel="noopener">el mapa completo</a>.</p>
 </section>
 
 <div class="rule" role="presentation"></div>

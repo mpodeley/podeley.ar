@@ -76,6 +76,11 @@ Necesita `playwright-core` + chromium y `sharp`; ver el encabezado de `tools/sho
 
 ## Deploy
 
-GitHub Pages desde la rama `gh-pages`, dominio propio vía `static/CNAME`.
-`npm run deploy` hace build y push. No hay GitHub Action: el token de `gh` no tiene
-scope `workflow`.
+El sitio se sirve desde la rama `gh-pages` de **`podeley/podeley.github.io`**, que es a
+donde `npm run deploy` hace build y push (por eso el `-r` explícito en el script: sin él,
+`gh-pages` empujaría a `origin`, que es otro repo).
+
+El dominio propio `podeley.ar` todavía no está conectado: no hay `CNAME` en ningún lado
+y Pages no tiene custom domain configurado.
+
+No hay GitHub Action: el token de `gh` no tiene scope `workflow`.

@@ -77,8 +77,34 @@
 }
 .principle h3 + p { color: var(--pd-text-muted); }
 
-/* El párrafo de equipo, debajo de las reglas. */
-.team-note {
+/* El mismo three-up sirve de tira de prueba en el home, con la cifra arriba y
+   el bloque entero clickeable al segmento que la produce. Quien llega de un
+   grupo de WhatsApp no eligió su área: la prueba tiene que entrar antes que
+   el menú. */
+.principles--proof .principle { position: relative; }
+.principles--proof .fig {
+  display: block; font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.15;
+  margin: 0 0 .45rem; color: var(--pd-text);
+}
+.principles--proof .fig a { text-decoration: none; color: inherit; }
+.principles--proof .fig a::after { content: ""; position: absolute; inset: 0; }
+.principles--proof .principle:hover .fig a { color: var(--pd-link); }
+
+/* La figura del hero, sólo en el home. */
+.hero-figure { margin: var(--pd-sp-6) 0 0; }
+.hero-figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-2);
+}
+.hero-figure figcaption {
+  margin: .8rem 0 0; max-width: 68ch;
+  color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55;
+}
+
+/* El párrafo de equipo, debajo de las reglas, y la nota de límite del home. */
+.team-note,
+.note-limit {
   max-width: 68ch; color: var(--pd-text-muted);
   font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body);
   margin: var(--pd-sp-6) 0 0;
@@ -109,13 +135,13 @@
   font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
   letter-spacing: .08em; color: var(--pd-text-faint); margin: 0;
 }
-.seg-card h2 {
+.seg-card h3 {
   font-family: var(--pd-font-display); font-weight: 500;
   font-size: var(--pd-fs-h3); line-height: 1.25; margin: 0;
 }
-.seg-card h2 a { text-decoration: none; color: var(--pd-text); }
-.seg-card h2 a::after { content: ""; position: absolute; inset: 0; }
-.seg-card:hover h2 a { color: var(--pd-link); }
+.seg-card h3 a { text-decoration: none; color: var(--pd-text); }
+.seg-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.seg-card:hover h3 a { color: var(--pd-link); }
 .seg-card p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
 .seg-card--quiet { border-style: dashed; border-color: var(--pd-border-soft); }
 

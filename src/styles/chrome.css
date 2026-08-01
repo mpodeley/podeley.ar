@@ -130,7 +130,9 @@ a, button { color: inherit; }
 
 /* ---------- hero ---------------------------------------------------------- */
 
-.hero { padding: calc(var(--pd-section) * .7) 0 calc(var(--pd-section) * .55); }
+/* padding-block, not the shorthand: a horizontal 0 overrides the padding-inline
+   .wrap contributes as the gutter, leaving text flush to the edges on phones. */
+.hero { padding-block: calc(var(--pd-section) * .7) calc(var(--pd-section) * .55); }
 .kicker,
 .eyebrow {
   font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
@@ -176,7 +178,7 @@ a, button { color: inherit; }
 
 /* Top padding only. Adjacent sections would otherwise stack two full section
    gaps; the rule and the footer bring their own. */
-.pd-section { padding: calc(var(--pd-section) * .75) 0 0; }
+.pd-section { padding-block: calc(var(--pd-section) * .75) 0; }
 .section-head { max-width: 54rem; }
 .pd-section h2 {
   font-family: var(--pd-font-display); font-weight: 500;

@@ -1,15 +1,15 @@
 <!--meta
 {
   "title": "Datos satelitales para minería — Matías Podeley",
-  "description": "Quién tiene derechos sobre el suelo en 6 provincias, targets de exploración validados a ciegas, volumen excavado auditado por satélite y monitoreo de salares en bombeo. Cuatro casos en línea.",
+  "description": "Quién tiene derechos sobre el suelo en 6 provincias, blancos de exploración validados a ciegas, volumen excavado auditado por satélite y la obra de los salares de litio año por año. Cuatro casos en línea.",
   "nav": "mineria"
 }
 -->
 
 <section class="hero wrap">
   <p class="kicker">Minería · Exploración y monitoreo · Datos satelitales</p>
-  <h1>Quién tiene el suelo, dónde perforar, cuánta roca se movió.</h1>
-  <p class="hero-sub">Cuatro casos en línea: el catastro minero de seis provincias unificado en un mapa, targets de exploración priorizados desde espectrometría satelital y validados a ciegas, volumen excavado medido desde elevación satelital, y radar sobre salares en bombeo. Todo con datos públicos, antes de pagar una campaña de campo.</p>
+  <h1>Quién tiene el suelo, dónde perforar, cuánta roca se movió</h1>
+  <p class="hero-sub">Cuatro herramientas para decidir antes de pagar: el catastro de seis provincias unificado en un mapa, blancos de exploración validados a ciegas, volumen excavado medido desde el espacio y la obra de los salares de litio año por año. Todo con datos públicos y gratuitos, y el método a la vista.</p>
   <p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Escribime</a> <a class="link-plain" href="#casos">Ver los casos <span class="arw">↓</span></a></p>
 </section>
 
@@ -17,8 +17,8 @@
 
 <section class="pd-section wrap" id="casos">
   <div class="section-head">
-    <p class="eyebrow">Casos</p>
-    <h2>Cuatro casos, todos en línea.</h2>
+    <p class="eyebrow">Qué resuelve</p>
+    <h2>Cuatro decisiones que hoy se toman a ciegas o pagando campaña</h2>
   </div>
 
   <div class="cards">
@@ -26,36 +26,36 @@
     <article class="card">
       <figure class="shot"><img src="/assets/shots/catastro-minero-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: mapa nacional de derechos mineros por provincia"></figure>
       <h3><a href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener">Saber quién tiene el suelo antes de mover una ficha</a></h3>
-      <p class="pitch">Argentina no tiene catastro minero nacional: cada provincia publica el suyo con formato distinto, y varias no publican nada. Esto unifica seis en un mapa — 19,671 derechos, 22 millones de hectáreas — con el titular, el mineral y el expediente de cada polígono. San Juan tiene el 66.4% de su territorio bajo derecho minero; Jujuy, el 66.2%.</p>
-      <p class="meta"><span class="proj">catastro-minero-argentina</span><span class="tag t-status">Dataset abierto</span></p>
+      <p class="pitch">Argentina no tiene catastro minero nacional: cada provincia publica el suyo con formato distinto, y varias no publican nada. Esto unifica seis en un mapa — 19,671 derechos, 22 millones de hectáreas, 2,418 titulares — con el mineral y el expediente detrás de cada polígono. San Juan tiene el 66.4% de su territorio bajo derecho minero, y las provincias que no publican se dibujan como ausencia explícita, nunca como territorio libre.</p>
+      <p class="meta"><span class="proj">Catastros provinciales · 6 provincias · 2026-07</span><span class="tag t-status">Dataset abierto</span></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: targets minerales por espectrometría"></figure>
-      <h3><a href="https://podeley.github.io/sat-exploracion/" target="_blank" rel="noopener">Priorizar targets antes de pagar la campaña de campo</a></h3>
-      <p class="pitch">Targets rankeados desde espectrometría satelital (ASTER, EMIT), validados a ciegas re-encontrando minas conocidas — Pirquitas, Chinchillas. Hay paper y un caso previo en San Juan.</p>
-      <p class="meta"><span class="proj">rinconada-espectrometria</span><span class="tag t-status">Paper</span></p>
+      <figure class="shot"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: blancos minerales por espectrometría"></figure>
+      <h3><a href="https://exploracion.podeley.ar/" target="_blank" rel="noopener">Priorizar blancos antes de pagar la campaña de campo</a></h3>
+      <p class="pitch">El bloque tiene 1,877 km² útiles y el screening lo reduce a 15 blancos con coordenadas: la campaña de reconocimiento deja de ser un barrido y pasa a ser la visita a una lista corta. Que funcione se prueba a ciegas — el método re-encuentra Pirquitas y Chinchillas a 20 y 80 metros de la huella de alteración ya mapeada. El entregable es shapefile y GeoJSON para abrir en tu SIG, no una imagen.</p>
+      <p class="meta"><span class="proj">ASTER + EMIT · 48 × 35 km, Puna de Jujuy · escena 2003</span><span class="tag t-status">Paper</span></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: volumen excavado por diferencia de DEMs"></figure>
-      <h3><a href="https://podeley.github.io/sat-volumen/" target="_blank" rel="noopener">Auditar cuánta roca movió una mina, desde afuera</a></h3>
-      <p class="pitch">Volumen excavado estimado comparando modelos de elevación satelitales: ≈285 Mm³ en Veladero; una mina de carbón en China contrastada contra lo declarado. Útil donde los datos del operador son opacos.</p>
-      <p class="meta"><span class="proj">mineria-dem</span></p>
+      <figure class="shot"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: volumen excavado por diferencia de modelos de elevación"></figure>
+      <h3><a href="https://volumen.podeley.ar/" target="_blank" rel="noopener">Auditar cuánta roca movió una mina, desde afuera</a></h3>
+      <p class="pitch">Dimensionar por tu cuenta el material que movió una operación, antes de comprarla o financiarla. Restando modelos de elevación de fechas distintas, Veladero da 424 Mm³ excavados y 497 depositados entre 2000 y 2024, y ahí hay reportes con qué contrastar. En Haerwusu, la mayor mina de carbón a cielo abierto de China, no hay producción declarada: los 1,742 Mm³ son la única cifra independiente que existe.</p>
+      <p class="meta"><span class="proj">SRTM 2000 + ASTER estéreo · Veladero y Haerwusu · 2000–2024</span></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/litio-subsidencia.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: radar sobre salares de litio"></figure>
-      <h3><a href="https://podeley.github.io/sat-litio/" target="_blank" rel="noopener">Detectar temprano cómo responde el salar al bombeo</a></h3>
-      <p class="pitch">Radar satelital sobre salares de litio en extracción (Hombre Muerto): la deformación existe pero es chica, cerca del piso de ruido. Se publica igual.</p>
-      <p class="meta"><span class="proj">litio-subsidencia</span><span class="tag t-status">Señal chica</span></p>
+      <figure class="shot"><img src="/assets/shots/sat-litio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Captura: superficie de piletas de evaporación por salar, 1985–2025"></figure>
+      <h3><a href="https://litio.podeley.ar/" target="_blank" rel="noopener">Seguir la expansión de un salar sin pisar el terreno</a></h3>
+      <p class="pitch">Una ampliación anunciada que no viene con pileta construida se nota: la obra es grande, visible desde el aire y queda fechada año por año. Atacama tiene 30.3 km² de piletas contra 9.0 en Hombre Muerto, y la superficie construida correlaciona 0.81 con las exportaciones declaradas al desfasarla dos años, que es lo que tarda la salmuera en recorrer la cadena. Superficie no es producción: la extracción directa produce con muchas menos piletas.</p>
+      <p class="meta"><span class="proj">Landsat · Atacama y 4 salares de la Puna · 1985–2025</span></p>
     </article>
 
   </div>
 
-  <p class="aside-link">Fuera de los casos: qué ve cada satélite de observación terrestre — <a href="https://podeley.github.io/sat-guia/" target="_blank" rel="noopener">guía visual con globo 3D</a>.</p>
+  <p class="aside-link">Qué mineral alcanza a distinguir cada sensor, y cuál no — <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener">guía visual con globo 3D</a>.</p>
 
-  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Si esto se parece a tu problema, escribime <span class="arw">→</span></a></p>
+  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">¿Querés esto sobre tu propiedad o tu distrito? Escribime <span class="arw">→</span></a></p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -63,12 +63,37 @@
 <section class="pd-section wrap" id="como-trabajo">
   <div class="section-head">
     <p class="eyebrow">Cómo trabajo</p>
-    <h2>Tres reglas.</h2>
+    <h2>Tres reglas, y un equipo distinto en cada proyecto</h2>
   </div>
   <div class="principles">
-    <div class="principle"><p>Empezar por el problema, no por la herramienta.</p></div>
-    <div class="principle"><p>Datos públicos; entradas y resultados auditables.</p></div>
-    <div class="principle"><p>Los límites y los resultados nulos se publican con el hallazgo.</p></div>
+    <div class="principle"><p>Primero la decisión que hay que tomar; después, si hace falta, el satélite.</p></div>
+    <div class="principle"><p>Todo sale de fuentes abiertas, así que tu geólogo puede revisar el camino completo.</p></div>
+    <div class="principle"><p>Si el dato no alcanza para sostener una conclusión, eso se dice antes de que salga la campaña, no después.</p></div>
+  </div>
+  <p class="team-note">No hay un equipo fijo: se arma para cada proyecto. Lo que pongo yo es la lectura de negocio y el desarrollo; alrededor entran los técnicos que el trabajo pida — geología económica, teledetección, procesamiento de imágenes, SIG, programación. A veces son socios míos y a veces es tu propio equipo, que suele ser lo mejor que puede pasar: el que conoce el distrito sabe qué blanco vale la pena caminar.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="que-obtenes">
+  <div class="section-head">
+    <p class="eyebrow">Qué obtenés</p>
+    <h2>Tres formas de empezar</h2>
+  </div>
+  <!-- TODO(matias): si querés, agregá el plazo típico de cada modo (p. ej. «dos a tres semanas» en el diagnóstico). -->
+  <div class="principles">
+    <div class="principle">
+      <h3>Diagnóstico</h3>
+      <p>Una pregunta concreta sobre tu propiedad, contra datos públicos. Te llevás un documento breve: qué se ve, qué no se ve y de dónde salió cada número.</p>
+    </div>
+    <div class="principle">
+      <h3>Proyecto</h3>
+      <p>El screening, el mapa o el monitoreo sobre tu área, con el equipo que el caso pida. Volvés con las capas listas para tu SIG.</p>
+    </div>
+    <div class="principle">
+      <h3>Asesoría</h3>
+      <p>Acompañamiento sobre qué conviene mirar desde el satélite y qué exige terreno, antes de cerrar el presupuesto de campaña.</p>
+    </div>
   </div>
 </section>
 
@@ -85,7 +110,7 @@
   <div class="section-head">
     <p class="eyebrow">Contacto</p>
     <h2>Contacto</h2>
-    <p class="intro">Si esto se parece a tu problema, hablemos: proyecto, asesoría o desarrollo a medida.</p>
+    <p class="intro">Decime sobre qué propiedad o qué distrito estás decidiendo, y te digo qué alcanza a verse desde el satélite.</p>
   </div>
   <div class="contact-actions">
     <a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Consulta%20Miner%C3%ADa%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hola%20Matias%2C%0A%0A">Escribime</a>

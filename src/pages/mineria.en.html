@@ -1,15 +1,15 @@
 <!--meta
 {
   "title": "Satellite data for mining — Matías Podeley",
-  "description": "Who holds mining title across 6 provinces, blind-validated ranked exploration targets, satellite-audited excavated volume, and monitoring of pumped salars. Four live cases.",
+  "description": "Who holds mining title across 6 provinces, blind-validated exploration targets, satellite-audited excavated volume, and lithium salar buildout year by year. Four live cases.",
   "nav": "mineria"
 }
 -->
 
 <section class="hero wrap">
   <p class="kicker">Mining · Exploration &amp; monitoring · Satellite data</p>
-  <h1>Who holds the ground, where to drill, how much rock moved.</h1>
-  <p class="hero-sub">Four live cases: the mining cadastre of six provinces unified into one map, exploration targets ranked from satellite spectrometry and blind-validated, excavated volume measured from satellite elevation, and radar over pumped salars. All public data, before paying for a field campaign.</p>
+  <h1>Who holds the ground, where to drill, how much rock moved</h1>
+  <p class="hero-sub">Four tools for deciding before you pay: the mining cadastre of six provinces unified into one map, exploration targets blind-validated against known deposits, excavated volume measured from orbit, and lithium salar buildout year by year. All from free public data, with the method left in the open.</p>
   <p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Mining%20inquiry%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hi%20Matias%2C%0A%0A">Email me</a> <a class="link-plain" href="#casos">See the cases <span class="arw">↓</span></a></p>
 </section>
 
@@ -17,8 +17,8 @@
 
 <section class="pd-section wrap" id="casos">
   <div class="section-head">
-    <p class="eyebrow">Cases</p>
-    <h2>Four cases, all live.</h2>
+    <p class="eyebrow">What it solves</p>
+    <h2>Four decisions currently made blind or by paying for a field campaign</h2>
   </div>
 
   <div class="cards">
@@ -26,36 +26,36 @@
     <article class="card">
       <figure class="shot"><img src="/assets/shots/catastro-minero-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: national map of mining tenements by province"></figure>
       <h3><a href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener">Know who holds the ground before making a move</a></h3>
-      <p class="pitch">Argentina has no national mining cadastre: each province publishes its own in a different format, and several publish nothing at all. This unifies six into one map — 19,671 tenements, 22 million hectares — with the holder, the mineral and the file number behind every polygon. San Juan has 66.4% of its territory under mining title; Jujuy, 66.2%.</p>
-      <p class="meta"><span class="proj">catastro-minero-argentina</span><span class="tag t-status">Open dataset</span></p>
+      <p class="pitch">Argentina has no national mining cadastre: each province publishes its own in a different format, and several publish nothing at all. This unifies six into one map — 19,671 tenements, 22 million hectares, 2,418 holders — with the mineral and the file number behind every polygon. San Juan has 66.4% of its territory under mining title, and the provinces that publish nothing are drawn as explicit absence, never as open ground.</p>
+      <p class="meta"><span class="proj">Provincial cadastres · 6 provinces · 2026-07</span><span class="tag t-status">Open dataset</span></p>
     </article>
 
     <article class="card">
       <figure class="shot"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: mineral targets from spectrometry"></figure>
-      <h3><a href="https://podeley.github.io/sat-exploracion/" target="_blank" rel="noopener">Rank drill targets before paying for the field campaign</a></h3>
-      <p class="pitch">Targets ranked from satellite spectrometry (ASTER, EMIT), blind-validated by re-finding known mines — Pirquitas, Chinchillas. Paper available, plus an earlier San Juan case.</p>
-      <p class="meta"><span class="proj">rinconada-espectrometria</span><span class="tag t-status">Paper</span></p>
+      <h3><a href="https://exploracion.podeley.ar/" target="_blank" rel="noopener">Rank drill targets before paying for the field campaign</a></h3>
+      <p class="pitch">The block holds 1,877 km² of usable ground, and screening cuts it to 15 targets with coordinates: reconnaissance stops being a sweep and becomes a visit to a short list. Whether it works is settled blind — the method re-finds Pirquitas and Chinchillas within 20 and 80 meters of the alteration footprint already mapped. The deliverable is shapefile and GeoJSON for your GIS, not a picture.</p>
+      <p class="meta"><span class="proj">ASTER + EMIT · 48 × 35 km, Jujuy Puna · 2003 scene</span><span class="tag t-status">Paper</span></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: excavated volume from DEM differencing"></figure>
-      <h3><a href="https://podeley.github.io/sat-volumen/" target="_blank" rel="noopener">Audit how much rock a mine moved, from the outside</a></h3>
-      <p class="pitch">Excavated volume estimated by differencing satellite elevation models: ≈285 Mm³ at Veladero; a Chinese coal mine checked against reported figures. Useful where operator data is opaque.</p>
-      <p class="meta"><span class="proj">mineria-dem</span></p>
+      <figure class="shot"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: excavated volume from elevation-model differencing"></figure>
+      <h3><a href="https://volumen.podeley.ar/" target="_blank" rel="noopener">Audit how much rock a mine moved, from the outside</a></h3>
+      <p class="pitch">Size up for yourself how much material an operation has moved, before buying into it or financing it. Differencing elevation models from different dates, Veladero gives 424 Mm³ excavated and 497 Mm³ deposited between 2000 and 2024, and there are reports to check that against. At Haerwusu, China's largest open-pit coal mine, no production is declared: the 1,742 Mm³ is the only independent figure that exists.</p>
+      <p class="meta"><span class="proj">SRTM 2000 + ASTER stereo · Veladero and Haerwusu · 2000–2024</span></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/litio-subsidencia.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: radar over lithium salars"></figure>
-      <h3><a href="https://podeley.github.io/sat-litio/" target="_blank" rel="noopener">Early warning of how the salar responds to pumping</a></h3>
-      <p class="pitch">Satellite radar over pumped lithium salars (Hombre Muerto): deformation is there, but small — near the noise floor. Published anyway.</p>
-      <p class="meta"><span class="proj">litio-subsidencia</span><span class="tag t-status">Small signal</span></p>
+      <figure class="shot"><img src="/assets/shots/sat-litio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: evaporation-pond area by salar, 1985–2025"></figure>
+      <h3><a href="https://litio.podeley.ar/" target="_blank" rel="noopener">Track a salar's buildout without setting foot on it</a></h3>
+      <p class="pitch">An announced expansion that arrives without ponds under construction gives itself away: the works are large, visible from orbit and dated year by year. Atacama holds 30.3 km² of ponds against 9.0 at Hombre Muerto, and built area correlates 0.81 with declared exports once you lag it two years, which is how long brine takes to work through the pond chain. Area is not production: direct extraction produces with far fewer ponds.</p>
+      <p class="meta"><span class="proj">Landsat · Atacama and 4 Puna salars · 1985–2025</span></p>
     </article>
 
   </div>
 
-  <p class="aside-link">Beyond the cases: what each Earth-observation satellite sees — <a href="https://podeley.github.io/sat-guia/" target="_blank" rel="noopener">visual guide with a 3D globe</a>.</p>
+  <p class="aside-link">Which minerals a given sensor can actually tell apart, and which it can't — <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener">visual guide with a 3D globe</a>.</p>
 
-  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Mining%20inquiry%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hi%20Matias%2C%0A%0A">If this looks like your problem, email me <span class="arw">→</span></a></p>
+  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Mining%20inquiry%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hi%20Matias%2C%0A%0A">Want this over your property or your district? Email me <span class="arw">→</span></a></p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -63,12 +63,37 @@
 <section class="pd-section wrap" id="como-trabajo">
   <div class="section-head">
     <p class="eyebrow">How I work</p>
-    <h2>Three rules.</h2>
+    <h2>Three rules, and a different team on every project</h2>
   </div>
   <div class="principles">
-    <div class="principle"><p>Start from the problem, not the tool.</p></div>
-    <div class="principle"><p>Public data; auditable inputs and results.</p></div>
-    <div class="principle"><p>Limits and null results ship with the finding.</p></div>
+    <div class="principle"><p>The decision comes first; the satellite comes after, and only if it earns its place.</p></div>
+    <div class="principle"><p>Everything comes from open sources, so your geologist can walk the whole path back.</p></div>
+    <div class="principle"><p>If the data won't carry a conclusion, that gets said before the campaign ships, not after.</p></div>
+  </div>
+  <p class="team-note">There is no standing team: one gets built for each project. What I put in is the business read and the development; around that come the technical people the work needs — economic geology, remote sensing, image processing, GIS, programming. Sometimes they're partners of mine and sometimes they're your own crew, which is usually the best thing that can happen: whoever knows the district knows which target is worth walking.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="que-obtenes">
+  <div class="section-head">
+    <p class="eyebrow">What you get</p>
+    <h2>Three ways to start</h2>
+  </div>
+  <!-- TODO(matias): optionally add the typical duration of each mode (e.g. "two to three weeks" for the diagnostic). -->
+  <div class="principles">
+    <div class="principle">
+      <h3>Diagnostic</h3>
+      <p>One concrete question about your property, against public data. You come away with a brief document: what shows up, what doesn't, and where every number came from.</p>
+    </div>
+    <div class="principle">
+      <h3>Project</h3>
+      <p>The screening, the map or the monitoring over your ground, with whatever team the case calls for. You get back layers ready to drop into your GIS.</p>
+    </div>
+    <div class="principle">
+      <h3>Advisory</h3>
+      <p>Ongoing input on what's worth looking at from orbit and what demands boots on the ground, before the campaign budget closes.</p>
+    </div>
   </div>
 </section>
 
@@ -85,7 +110,7 @@
   <div class="section-head">
     <p class="eyebrow">Contact</p>
     <h2>Contact</h2>
-    <p class="intro">If this looks like your problem, let's talk: a project, an advisory role, or custom development.</p>
+    <p class="intro">Tell me which property or district you're deciding on, and I'll tell you what can be seen from orbit.</p>
   </div>
   <div class="contact-actions">
     <a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Mining%20inquiry%20%E2%80%94%20podeley.ar%2Fmineria&amp;body=Hi%20Matias%2C%0A%0A">Email me</a>

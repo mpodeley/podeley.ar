@@ -26,20 +26,23 @@ mkdirSync(OUT, { recursive: true });
 // slug -> [url, settle(ms), toFigure] ; settle covers map tiles / 3D globes.
 // toFigure: text-heavy docs sites — scroll to the first large figure/map so the
 // shot shows a visual, not a wall of text.
+// Las demos se renombraron a `sat-*` y se mudaron a la org `podeley`: la URL vieja
+// en `mpodeley` da 404 y la captura salía en blanco sin avisar. El slug de la
+// izquierda es el nombre del archivo que citan las páginas, no el del repo.
 const SITES = [
-  ['estado-red-gas',            'https://mpodeley.github.io/estado-red-gas/',            3000, false],
+  ['estado-red-gas',                'https://mpodeley.github.io/estado-red-gas/',                3000, false],
   ['simulador-subastas-peru',       'https://mpodeley.github.io/simulador-subastas-peru/',       3000, false],
   ['gasoductos',                    'https://gasoductos.podeley.ar',                             6000, false],
-  ['sat-subsidencia',               'https://podeley.github.io/sat-subsidencia/',                6000, true],
-  ['vaca-muerta-nightlights',       'https://mpodeley.github.io/vaca-muerta-nightlights/',       3000, false],
-  ['vaca-muerta-emisiones',         'https://mpodeley.github.io/vaca-muerta-emisiones/',         3000, true],
-  ['litio-subsidencia',                   'https://mpodeley.github.io/litio-subsidencia/',                   3000, true],
-  ['mineria-dem',                   'https://mpodeley.github.io/mineria-dem/',                   6000, true],
-  ['rinconada-espectrometria',      'https://mpodeley.github.io/rinconada-espectrometria/',      3000, true],
+  ['sat-subsidencia',               'https://subsidencia.podeley.ar/',                6000, true],
+  ['vaca-muerta-nightlights',       'https://actividad.podeley.ar/',                  3000, true],
+  ['vaca-muerta-emisiones',         'https://emisiones.podeley.ar/',                  3000, true],
+  ['sat-litio',                     'https://litio.podeley.ar/',                      3000, true],
+  ['mineria-dem',                   'https://volumen.podeley.ar/',                    6000, true],
+  ['rinconada-espectrometria',      'https://exploracion.podeley.ar/',                3000, true],
   ['assembled-thought',             'https://mpodeley.github.io/assembled-thought/',             3000, false],
   ['interpretabilidad-mecanicista', 'https://mpodeley.github.io/interpretabilidad-mecanicista/', 3000, false],
   ['jspace-qwen',                   'https://mpodeley.github.io/jspace-qwen/',                   3000, true],
-  ['pozos-neuquina',                'https://mpodeley.github.io/pozos-neuquina/',                3000, false],
+  ['pozos-neuquina',                'https://vm.podeley.ar/',                             3000, false],
   ['ep-americas',                   'https://mpodeley.github.io/ep-americas/',                   3000, false],
   ['neuquina',                      'https://neuquina.podeley.ar',                               6000, false],
   // Tier-0 choropleth paints on load; 6 s covers IGN tiles + agregados.json.

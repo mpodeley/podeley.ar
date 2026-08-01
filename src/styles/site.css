@@ -68,6 +68,22 @@
 .principle:nth-child(3) { border-top-color: var(--pd-green-ink); }
 .principle p { margin: 0; color: var(--pd-text); font-size: var(--pd-fs-sm); line-height: 1.55; }
 
+/* El mismo three-up sirve para «Qué obtenés», donde cada bloque sí lleva
+   título: arriba el modo de trabajo, abajo el entregable. */
+.principle h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-sm); line-height: 1.25;
+  margin: 0 0 .45rem; color: var(--pd-text);
+}
+.principle h3 + p { color: var(--pd-text-muted); }
+
+/* El párrafo de equipo, debajo de las reglas. */
+.team-note {
+  max-width: 68ch; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body);
+  margin: var(--pd-sp-6) 0 0;
+}
+
 /* ---------- bio y contacto ------------------------------------------------ */
 
 .bio-text {

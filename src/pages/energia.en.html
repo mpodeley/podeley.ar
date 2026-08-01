@@ -1,15 +1,15 @@
 <!--meta
 {
   "title": "Data for gas & power marketing — Matías Podeley",
-  "description": "The Argentine pipeline network with its flows and bottlenecks, and bid simulation for power auctions with the risk quantified. Two live cases.",
+  "description": "The Argentine gas transport network month by month, with its flows and constraints, and bid-price simulation for power auctions with the risk quantified. Two live cases.",
   "nav": "energia"
 }
 -->
 
 <section class="hero wrap">
   <p class="kicker">Gas &amp; power · Trading &amp; marketing · Public data</p>
-  <h1>The state of the system, before the desk opens.</h1>
-  <p class="hero-sub">The Argentine pipeline network with its flows and its bottlenecks, and a simulator that prices a bid with the risk quantified. Public data, assumptions in plain sight.</p>
+  <h1>Where the network binds, and what price is worth bidding</h1>
+  <p class="hero-sub">Two tools for decisions that won't wait: the gas transport network month by month, with its flows and its constraints, and a simulator that prices a bid and shows what overshooting or undershooting costs. Public data, and the assumptions left in plain sight so the desk can argue with them.</p>
   <p class="hero-cta"><a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Gas%20%26%20power%20inquiry%20%E2%80%94%20podeley.ar%2Fenergia&amp;body=Hi%20Matias%2C%0A%0A">Email me</a> <a class="link-plain" href="#casos">See the cases <span class="arw">↓</span></a></p>
 </section>
 
@@ -17,29 +17,29 @@
 
 <section class="pd-section wrap" id="casos">
   <div class="section-head">
-    <p class="eyebrow">Cases</p>
-    <h2>Two cases, both live.</h2>
+    <p class="eyebrow">What it solves</p>
+    <h2>Two decisions, before the desk opens</h2>
   </div>
 
   <div class="cards">
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/gasoductos.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: gas-pipeline network"></figure>
-      <h3><a href="https://gasoductos.podeley.ar" target="_blank" rel="noopener">See the network, its flows and its bottlenecks</a></h3>
-      <p class="pitch">Argentina's gas-pipeline network over time: flows, constraints and supply mix, in an interactive map.</p>
-      <p class="meta"><span class="proj">gasoductos</span><a href="https://github.com/mpodeley/gasoductos" target="_blank" rel="noopener">Code →</a></p>
+      <figure class="shot"><img src="/assets/shots/gasoductos.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: gas-pipeline network with flows and constraints"></figure>
+      <h3><a href="https://gasoductos.podeley.ar" target="_blank" rel="noopener">See where the network binds before committing a volume</a></h3>
+      <p class="pitch">A contract gets signed against transport capacity that isn't always where it's assumed to be. Argentina's full network month by month, with per-segment flows, the segments under stress and the supply mix behind them — conventional, unconventional, Bolivia, LNG — on a map you move through time.</p>
+      <p class="meta"><span class="proj">GCIE snapshot · national transport network · monthly</span><a href="https://github.com/mpodeley/gasoductos" target="_blank" rel="noopener">Code →</a></p>
     </article>
 
     <article class="card">
-      <figure class="shot"><img src="/assets/shots/simulador-subastas-peru.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: power-auction bid simulator"></figure>
+      <figure class="shot"><img src="/assets/shots/simulador-subastas-peru.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Screenshot: bid-price simulator for power auctions"></figure>
       <h3><a href="https://mpodeley.github.io/simulador-subastas-peru/" target="_blank" rel="noopener">Price a bid with the risk quantified</a></h3>
-      <p class="pitch">Merit-order dispatch plus Monte Carlo P&amp;L for Peru's SEIN auctions: what price to bid and what over- or under-bidding costs. Runs in the browser, unit-tested.</p>
-      <p class="meta"><span class="proj">simulador-subastas-peru</span><a href="https://github.com/mpodeley/simulador-subastas-peru" target="_blank" rel="noopener">Code →</a></p>
+      <p class="pitch">The question in an auction is never what the expected marginal cost is, but what being wrong costs in each direction. Merit-order dispatch plus Monte Carlo over hydrology, demand, gas price and renewable resource for Peru's SEIN: what price to bid, and what you lose by overshooting or undershooting. It runs entirely in the browser and the dispatch engine is unit-tested.</p>
+      <p class="meta"><span class="proj">COES + NASA POWER · SEIN, Peru · kept current</span><a href="https://github.com/mpodeley/simulador-subastas-peru" target="_blank" rel="noopener">Code →</a></p>
     </article>
 
   </div>
 
-  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Gas%20%26%20power%20inquiry%20%E2%80%94%20podeley.ar%2Fenergia&amp;body=Hi%20Matias%2C%0A%0A">If this looks like your problem, email me <span class="arw">→</span></a></p>
+  <p class="cta-strip"><a href="mailto:mpodeley@gmail.com?subject=Gas%20%26%20power%20inquiry%20%E2%80%94%20podeley.ar%2Fenergia&amp;body=Hi%20Matias%2C%0A%0A">Need this over your portfolio or your market? Email me <span class="arw">→</span></a></p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -47,12 +47,37 @@
 <section class="pd-section wrap" id="como-trabajo">
   <div class="section-head">
     <p class="eyebrow">How I work</p>
-    <h2>Three rules.</h2>
+    <h2>Three rules, and specialists who join as the case requires</h2>
   </div>
   <div class="principles">
-    <div class="principle"><p>Start from the problem, not the tool.</p></div>
-    <div class="principle"><p>Public data; auditable inputs and results.</p></div>
-    <div class="principle"><p>Limits and null results ship with the finding.</p></div>
+    <div class="principle"><p>The tool gets picked after working out which decision is stuck.</p></div>
+    <div class="principle"><p>Open sources and explicit assumptions: the desk argues with the number instead of guessing it.</p></div>
+    <div class="principle"><p>An assumption that can't be defended is labeled an assumption; it doesn't get dressed up as a result.</p></div>
+  </div>
+  <p class="team-note">The problem defines the team, not an org chart. What I contribute is the bridge between the commercial decision and the tool; specialists cover the rest — gas and power systems engineering, market modeling, programming, cybersecurity and AI safety. I work with partners, and also with people already on your payroll: whoever runs dispatch every day knows things no model ships with.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="que-obtenes">
+  <div class="section-head">
+    <p class="eyebrow">What you get</p>
+    <h2>Three ways to start</h2>
+  </div>
+  <!-- TODO(matias): optionally add the typical duration of each mode (e.g. "two to three weeks" for the diagnostic). -->
+  <div class="principles">
+    <div class="principle">
+      <h3>Diagnostic</h3>
+      <p>One market question against public data. The result is a memo: the number, the uncertainty around it, and the assumptions holding it up.</p>
+    </div>
+    <div class="principle">
+      <h3>Project</h3>
+      <p>The model or the dashboard over your market and your portfolio, with whatever team the case calls for. You get back the tool running wherever you want it.</p>
+    </div>
+    <div class="principle">
+      <h3>Advisory</h3>
+      <p>Ongoing input on what to watch each morning and which data is worth buying, if any of it is.</p>
+    </div>
   </div>
 </section>
 
@@ -69,7 +94,7 @@
   <div class="section-head">
     <p class="eyebrow">Contact</p>
     <h2>Contact</h2>
-    <p class="intro">If this looks like your problem, let's talk: a project, an advisory role, or custom development.</p>
+    <p class="intro">Tell me which deal you're about to close and we'll see whether a public number improves it.</p>
   </div>
   <div class="contact-actions">
     <a class="btn btn--primary" href="mailto:mpodeley@gmail.com?subject=Gas%20%26%20power%20inquiry%20%E2%80%94%20podeley.ar%2Fenergia&amp;body=Hi%20Matias%2C%0A%0A">Email me</a>

@@ -1,0 +1,31 @@
+{
+  "$comment": "Verdad canónica de los números que el sitio repite entre páginas. Se actualiza acá primero; tools/site-check.mjs señala cada archivo que quedó viejo. Los conteos del registro ciber no van acá: salen del dataset y los recita ciber-check.mjs.",
+  "metrics": [
+    { "id": "ep-rezago", "es": "13.5", "en": "13.5",
+      "files": { "es": ["src/pages/ep.es.html", "src/pages/index.es.html"],
+                 "en": ["src/pages/ep.en.html", "src/pages/index.en.html"] },
+      "og": { "es": "13.5 meses", "en": "13.5 months" } },
+
+    { "id": "mineria-derechos", "es": "21,386", "en": "21,386",
+      "files": { "es": ["src/pages/mineria.es.html", "src/pages/index.es.html"],
+                 "en": ["src/pages/mineria.en.html", "src/pages/index.en.html"] },
+      "og": { "es": "21,386 derechos", "en": "21,386 claims" } },
+
+    { "id": "mineria-provincias", "es": "siete provincias", "en": "seven provinces",
+      "files": { "es": ["src/pages/mineria.es.html", "src/pages/index.es.html"],
+                 "en": ["src/pages/mineria.en.html", "src/pages/index.en.html"] },
+      "og": { "es": "siete provincias", "en": "seven provinces" } },
+
+    { "id": "mineria-provincias-cifra", "es": "7 provincias", "en": "7 provinces",
+      "files": { "es": ["src/pages/mineria.es.html"], "en": ["src/pages/mineria.en.html"] } },
+
+    { "id": "mineria-hectareas", "es": "25.8", "en": "25.8",
+      "files": { "es": ["src/pages/mineria.es.html"], "en": ["src/pages/mineria.en.html"] } },
+
+    { "id": "mineria-titulares", "es": "2,991", "en": "2,991",
+      "files": { "es": ["src/pages/mineria.es.html"], "en": ["src/pages/mineria.en.html"] } },
+
+    { "id": "mineria-sanjuan", "es": "66.4%", "en": "66.4%",
+      "files": { "es": ["src/pages/mineria.es.html"], "en": ["src/pages/mineria.en.html"] } }
+  ]
+}

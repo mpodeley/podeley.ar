@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://podeley.ar/data/ciber-incidentes.schema.json",
+  "title": "Registro de ciberincidentes en energía e infraestructura crítica argentina",
+  "description": "Esquema del dataset publicado en https://podeley.ar/data/ciber-incidentes.json. Cada incidente separa lo que declaró la organización de lo que reclamó el atacante; el campo confianza califica la existencia del incidente, no la veracidad del reclamo.",
+  "type": "object",
+  "required": [
+    "titulo",
+    "actualizado",
+    "licencia",
+    "nota_metodo",
+    "nota_correcciones",
+    "correcciones",
+    "campos",
+    "incidentes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "titulo": { "type": "string" },
+    "actualizado": { "$ref": "#/$defs/fecha" },
+    "licencia": { "type": "string" },
+    "nota_metodo": { "type": "string" },
+    "nota_correcciones": { "type": "string" },
+    "correcciones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fecha", "que_cambio"],
+        "additionalProperties": false,
+        "properties": {
+          "fecha": { "$ref": "#/$defs/fecha" },
+          "tipo": {
+            "description": "fila = corrección de un incidente; esquema = cambio en la estructura del dataset.",
+            "enum": ["fila", "esquema"]
+          },
+          "fila": {
+            "description": "id del incidente corregido, cuando tipo = fila.",
+            "type": "string"
+          },
+          "que_cambio": { "type": "string" },
+          "senalado_por": { "type": "string" }
+        }
+      }
+    },
+    "campos": {
+      "description": "Glosario de campos no evidentes.",
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "incidentes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/incidente" }
+    },
+    "contexto_internacional": {
+      "description": "Precedentes extranjeros curados. No es un registro: es una selección de casos de alta confianza que iluminan los hallazgos argentinos.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/contexto" }
+    }
+  },
+  "$defs": {
+    "fecha": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "fuentes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^https?://" }
+    },
+    "confianza": { "enum": ["alta", "media", "baja"] },
+    "incidente": {
+      "type": "object",
+      "required": [
+        "id",
+        "org",
+        "subsector",
+        "fecha_incidente",
+        "fecha_publica",
+        "canal_divulgacion",
+        "actor",
+        "actor_tipo",
+        "sistemas_segun_empresa",
+        "sistemas_segun_actor",
+        "datos_publicados",
+        "impacto_operativo_declarado",
+        "confianza",
+        "fuentes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+-\\d{4}-\\d{2}$" },
+        "org": { "type": "string" },
+        "subsector": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "fecha_incidente": { "$ref": "#/$defs/fecha" },
+        "fecha_publica": { "$ref": "#/$defs/fecha" },
+        "fecha_divulgacion_empresa": { "$ref": "#/$defs/fecha" },
+        "canal_divulgacion": {
+          "anyOf": [
+            { "enum": ["prensa", "leak-site", "cnv", "organismo"] },
+            { "type": "string", "pattern": "^leak-site, luego (cnv|prensa|organismo)$" }
+          ]
+        },
+        "actor": { "type": "string" },
+        "actor_tipo": { "enum": ["ransomware", "raas", "desconocido"] },
+        "sistemas_segun_empresa": { "type": ["string", "null"] },
+        "sistemas_segun_actor": { "type": ["string", "null"] },
+        "datos_publicados": { "enum": ["si", "no", "sin confirmar"] },
+        "impacto_operativo_declarado": { "type": ["string", "null"] },
+        "vector_reportado": { "type": "string" },
+        "confianza": { "$ref": "#/$defs/confianza" },
+        "confianza_atribucion": { "$ref": "#/$defs/confianza" },
+        "nota": { "type": "string" },
+        "fuentes": { "$ref": "#/$defs/fuentes" }
+      }
+    },
+    "contexto": {
+      "type": "object",
+      "required": [
+        "id",
+        "org",
+        "pais",
+        "region",
+        "subsector",
+        "fecha_publica",
+        "actor",
+        "actor_tipo",
+        "capa_afectada",
+        "nota",
+        "fuentes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+-\\d{4}-\\d{2}$" },
+        "org": { "type": "string" },
+        "pais": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "region": { "enum": ["latam", "global"] },
+        "subsector": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "fecha_incidente": { "$ref": "#/$defs/fecha" },
+        "fecha_publica": { "$ref": "#/$defs/fecha" },
+        "actor": { "type": "string" },
+        "actor_tipo": { "enum": ["ransomware", "raas", "estatal", "desconocido"] },
+        "capa_afectada": {
+          "description": "Dónde pegó el ataque. La columna existe para mapear cada precedente a los hallazgos argentinos: la capa comercial que programa el flujo físico es distinta de la IT corporativa y del control industrial.",
+          "enum": [
+            "it-corporativa",
+            "capa-comercial-despacho",
+            "ot-control-industrial",
+            "sis-seguridad-instrumentada"
+          ]
+        },
+        "nota": { "type": "string" },
+        "fuentes": { "$ref": "#/$defs/fuentes" }
+      }
+    }
+  }
+}

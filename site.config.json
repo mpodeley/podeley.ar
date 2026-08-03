@@ -3,6 +3,12 @@
   "brand": "Matías Podeley",
   "repo": "https://github.com/podeley/podeley.github.io",
   "ogImage": "/assets/og.png",
+  "analytics": {
+    "src": "https://gc.zgo.at/count.js",
+    "attrs": {
+      "data-goatcounter": "https://mpodeley.goatcounter.com/count"
+    }
+  },
   "langs": [
     "es",
     "en"

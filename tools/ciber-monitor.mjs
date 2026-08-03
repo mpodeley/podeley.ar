@@ -9,9 +9,9 @@
    necesita leer lo que declaró la empresa, que ningún endpoint devuelve. Esto
    sólo avisa cuándo hay que sentarse a escribir una fila nueva.
 
-   Por qué ransomware.live y no un feed de prensa: de las trece filas del registro,
-   nueve nunca tuvieron una línea publicada. El sitio de filtración del atacante es
-   el único canal que las cubre a todas — a costa de que lo que dice es la versión
+   Por qué ransomware.live y no un feed de prensa: la mayoría de las filas del
+   registro nunca tuvieron una línea publicada. El sitio de filtración del atacante
+   es el único canal que las cubre a todas — a costa de que lo que dice es la versión
    del atacante, no un hecho verificado. Por eso la salida es un borrador, no una fila. */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises'

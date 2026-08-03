@@ -4,7 +4,24 @@
   "description": "A sector register of fourteen cyber incidents across Argentine energy and critical infrastructure, sourced row by row, with international context and the state of the legal landscape. Seven of them are known only because the attacker published the victim.",
   "ogImage": "/assets/og/ciber.en.png",
   "ogImageAlt": "Seven of fourteen cyber incidents in Argentina's energy sector are known only because the attacker published them",
-  "nav": "ciber"
+  "nav": "ciber",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Registry of cyber incidents in Argentine energy and critical infrastructure",
+    "url": "https://podeley.ar/en/ciber/",
+    "description": "A sector register of fourteen cyber incidents across Argentine energy and critical infrastructure, sourced row by row, with international context and the state of the legal landscape.",
+    "inLanguage": "es",
+    "creator": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
+    "dateModified": "2026-08-03",
+    "temporalCoverage": "2020/..",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      { "@type": "DataDownload",
+        "contentUrl": "https://podeley.ar/data/ciber-incidentes.json",
+        "encodingFormat": "application/json" }
+    ]
+  }
 }
 -->
 
@@ -275,6 +292,7 @@
   <p class="bio-text">A monitor runs against that same interface, crosses every new Argentine victim against a sector lexicon and flags when a row needs writing. The row itself I write by hand: no endpoint returns what the company declared, and that column is half the value of this.</p>
   <p class="bio-text">The CNV sweep ran over the public filing sheets of the Autopista de la Información Financiera: 30 energy issuers, some 44,000 filings since 2000, scanned by title in two lexicon passes, plus a row-by-row manual review in the windows of the incidents already known. The method's limit sits in the title: a cyber material event with an opaque heading goes undetected — and there are issuers that title theirs "HR" and nothing else. The attachments were not read; that is the first item on the roadmap.</p>
   <p class="note-limit">Corrections that arrive are applied to the row and dated in the <span class="path">correcciones</span> array of the data file, with what changed and who flagged it. Nothing is edited silently. The request is above, with the address: <a href="#aviso">back to the notice</a>.</p>
+  <p class="aside-link">The data file is published under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> license: use it anywhere, with attribution. Every new row and every correction also goes out through the <a href="/ciber/feed.xml">Atom feed</a>.</p>
 </section>
 
 <div class="rule" role="presentation"></div>

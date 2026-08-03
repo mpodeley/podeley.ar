@@ -76,7 +76,7 @@ console.log('\nDataset de /ciber/')
     const rawMeta = t.match(/^\s*<!--meta\s*([\s\S]*?)-->/)
     if (!rawMeta) { fail(`${file}: no encuentro el bloque <!--meta>`); continue }
     const stamp = JSON.parse(rawMeta[1]).jsonld?.dateModified
-    if (!stamp) warn(`${file}: sin Dataset JSON-LD todavía`)
+    if (!stamp) fail(`${file}: sin Dataset JSON-LD (dateModified)`)
     else if (stamp === actualizado) ok(`${file} dateModified = ${actualizado}`)
     else fail(`${file} dateModified "${stamp}" ≠ "${actualizado}" del JSON del registro`)
   }

@@ -4,7 +4,24 @@
   "description": "Registro sectorial de catorce ciberincidentes en energía e infraestructura crítica argentina, con fuente por fila, contexto internacional y el estado del marco normativo. Siete de ellos se conocen solo porque el atacante los publicó.",
   "ogImage": "/assets/og/ciber.es.png",
   "ogImageAlt": "Siete de catorce ciberincidentes del sector energético argentino se conocen solo porque el atacante los publicó",
-  "nav": "ciber"
+  "nav": "ciber",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Registro de ciberincidentes en energía e infraestructura crítica argentina",
+    "url": "https://podeley.ar/ciber/",
+    "description": "Registro sectorial de catorce ciberincidentes en energía e infraestructura crítica argentina, con fuente por fila, contexto internacional y el estado del marco normativo.",
+    "inLanguage": "es",
+    "creator": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
+    "dateModified": "2026-08-03",
+    "temporalCoverage": "2020/..",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      { "@type": "DataDownload",
+        "contentUrl": "https://podeley.ar/data/ciber-incidentes.json",
+        "encodingFormat": "application/json" }
+    ]
+  }
 }
 -->
 
@@ -275,6 +292,7 @@
   <p class="bio-text">Un monitor corre contra esa misma interfaz, cruza cada víctima argentina nueva contra un léxico del sector y avisa cuando hay que escribir una fila. La fila la escribo a mano: ningún endpoint devuelve lo que declaró la empresa, y esa columna es la mitad del valor de esto.</p>
   <p class="bio-text">La pasada por la CNV se hizo sobre las fichas públicas de la Autopista de la Información Financiera: 30 emisoras energéticas, unas 44,000 presentaciones desde 2000, escaneadas por título en dos pasadas de léxico, más revisión manual fila por fila en las ventanas de los incidentes ya conocidos. El límite del método está en el título: un hecho relevante ciber con carátula opaca no se detecta — y hay emisoras que titulan "HR" a secas. Los adjuntos no se leyeron; ese es el primer ítem de la hoja de ruta.</p>
   <p class="note-limit">Las correcciones que lleguen se aplican a la fila y quedan anotadas con fecha en el arreglo <span class="path">correcciones</span> del archivo de datos, con qué cambió y quién lo señaló. Nada se edita en silencio. El pedido está arriba, con la dirección: <a href="#aviso">volver al aviso</a>.</p>
+  <p class="aside-link">El archivo de datos se publica bajo licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a>: usalo donde quieras, citando la fuente. Cada fila nueva y cada corrección salen también por el <a href="/ciber/feed.xml">feed Atom</a>.</p>
 </section>
 
 <div class="rule" role="presentation"></div>

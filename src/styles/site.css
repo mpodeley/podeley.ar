@@ -167,6 +167,81 @@
 .other-line a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
 .other-line a:hover { text-decoration: underline; }
 
+/* ---------- registro de incidentes (/ciber/) ------------------------------ */
+
+/* Trece filas por seis columnas no entran en un teléfono sin romper algo. Se
+   elige que scrollee la tabla y no la página: el ancho de la columna de fecha
+   queda fijo en la mono, así el ojo puede seguir el orden cronológico mientras
+   arrastra el resto. */
+/* El aviso va arriba y no en el pie: el registro nombra empresas y se publica sin
+   consultarlas antes, así que la salvedad tiene que leerse antes que la tabla. */
+.aviso {
+  max-width: 68ch; margin: var(--pd-sp-6) 0 0;
+  padding: var(--pd-sp-5); border: 1px solid var(--pd-caveat); border-radius: var(--pd-r-2);
+  background: var(--pd-data-bg);
+}
+.aviso-t {
+  margin: 0 0 var(--pd-sp-3); color: var(--pd-caveat);
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); text-transform: uppercase;
+}
+.aviso p:not(.aviso-t) {
+  margin: 0; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body);
+}
+.aviso p + p:not(.aviso-t) { margin-top: var(--pd-sp-4); }
+
+/* El hero del registro no cierra en un botón: lo que corresponde ahí es cuándo
+   se actualizó y por dónde entrar. */
+.hero-meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--pd-sp-5);
+  margin: var(--pd-sp-6) 0 0;
+}
+.hero-when {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+}
+
+.reg-scroll { margin: var(--pd-sp-6) 0 0; overflow-x: auto; }
+/* En un teléfono la tabla se corta contra el borde y nada avisa que sigue. */
+.reg-hint { display: none; }
+@media (max-width: 760px) {
+  .reg-hint {
+    display: block; margin: var(--pd-sp-3) 0 0;
+    font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+    letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+  }
+}
+.reg { border-collapse: collapse; width: 100%; min-width: 46rem; font-size: var(--pd-fs-sm); }
+.reg-cap {
+  caption-side: bottom; margin-top: var(--pd-sp-3); text-align: left;
+  color: var(--pd-text-faint); font-size: var(--pd-fs-cap); line-height: 1.5;
+}
+.reg th {
+  text-align: left; font-family: var(--pd-font-mono); font-weight: 500;
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono);
+  text-transform: uppercase; color: var(--pd-text-faint);
+  padding: 0 var(--pd-sp-4) var(--pd-sp-3) 0; border-bottom: 1px solid var(--pd-border);
+}
+.reg td {
+  padding: var(--pd-sp-3) var(--pd-sp-4) var(--pd-sp-3) 0; vertical-align: top;
+  border-bottom: 1px solid var(--pd-border-soft); color: var(--pd-text-muted);
+}
+.reg tbody tr:hover td { background: var(--pd-data-bg); }
+.reg td:nth-child(2) { color: var(--pd-text); }
+.reg-d { font-family: var(--pd-font-mono); white-space: nowrap; color: var(--pd-text-faint); }
+
+/* La confianza es la columna que decide cómo leer la fila, así que se lee como
+   etiqueta y no como texto corrido. Media usa el color de reserva del sistema,
+   el mismo que marca los límites en el resto del sitio. */
+.conf {
+  display: inline-block; padding: .1rem .45rem; border-radius: var(--pd-r-pill);
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); border: 1px solid currentColor;
+}
+.conf--alta { color: var(--pd-primary); }
+.conf--media { color: var(--pd-caveat); }
+
 /* ---------- responsive ---------------------------------------------------- */
 
 @media (max-width: 860px) {

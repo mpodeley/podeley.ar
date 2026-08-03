@@ -50,6 +50,9 @@ const CARDS = [
   { slug: 'energia', lang: 'en', eyebrow: 'Gas & power · Trading desks', fig: 'Month by month',
     title: "Argentina's gas transport grid, segment by segment" },
 
+  { slug: 'ciber', lang: 'es', eyebrow: 'Registro sectorial · Infraestructura crítica argentina', fig: '8 de 13',
+    title: 'incidentes que se conocen solo porque el atacante los publicó' },
+
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',
     title: 'Interpretabilidad mecanicista, publicada con sus nulos' },
   { slug: 'research', lang: 'en', eyebrow: 'AI safety · Interpretability',

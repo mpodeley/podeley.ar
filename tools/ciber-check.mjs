@@ -113,6 +113,7 @@ const N = data.incidentes.length
 const leakOnly = data.incidentes.filter((i) => i.canal_divulgacion === 'leak-site').length
 const notLeakOnly = N - leakOnly
 const alta = data.incidentes.filter((i) => i.confianza === 'alta').length
+const media = data.incidentes.filter((i) => i.confianza === 'media').length
 const years = data.incidentes.map((i) => Number(i.fecha_publica.slice(0, 4)))
 const spanYears = Math.max(...years) - Math.min(...years)
 
@@ -128,9 +129,9 @@ const WORDS = {
 }
 
 console.log(`\nconteos (desde el dataset): ${N} incidentes · ${leakOnly} solo leak-site · ` +
-  `${notLeakOnly} con otra fuente · ${alta} de confianza alta · ${spanYears} años de rango`)
+  `${notLeakOnly} con otra fuente · ${alta} alta · ${media} media · ${spanYears} años de rango`)
 
-const allowed = new Set([N, leakOnly, notLeakOnly, alta, spanYears])
+const allowed = new Set([N, leakOnly, notLeakOnly, alta, media, spanYears])
 
 for (const lang of ['es', 'en']) {
   const wordN = WORDS[lang][N]
@@ -200,9 +201,11 @@ const pageText = { es: await readFile(PAGES.es, 'utf8'), en: await readFile(PAGE
 if (checkLinks) {
   console.log('\nlinks')
 
-  /* Dominios que responden 403/desafío a cualquier cliente sin navegador real.
-     Se reportan aparte: hay que mirarlos a mano, no son links rotos. */
-  const ANTIBOT = ['lanacion.com.ar', 'infobae.com', 'ambito.com', 'iprofesional.com', 'clarin.com']
+  /* Dominios que fallan ante cualquier cliente automatizado pero andan en un
+     navegador real. Se reportan aparte: hay que mirarlos a mano, no son links
+     rotos. hcdn.gob.ar sirve una cadena de certificados incompleta que el
+     navegador repara solo y curl no. */
+  const ANTIBOT = ['lanacion.com.ar', 'infobae.com', 'ambito.com', 'iprofesional.com', 'clarin.com', 'hcdn.gob.ar']
 
   const urls = new Set()
   const collect = (node) => {
@@ -214,25 +217,34 @@ if (checkLinks) {
   for (const text of Object.values(pageText))
     for (const m of text.matchAll(/href="(https?:\/\/[^"]+)"/g)) urls.add(m[1].replace(/&amp;/g, '&'))
 
+  /* curl y no fetch: el fetch de Node negocia HTTP/2 y algunos servidores cierran
+     la sesión con GOAWAY, que se emite como 'error' fuera de la promesa y voltea
+     el proceso entero sin pasar por el catch. curl aísla cada URL en su proceso. */
+  const { execFile } = await import('node:child_process')
+  /* EDGAR (sec.gov) rechaza user-agents de navegador sin contacto: su política de
+     fair access pide identificarse. Al resto se le habla como Firefox. */
+  const ua = (u) =>
+    new URL(u).hostname.endsWith('sec.gov')
+      ? 'podeley.ar ciber-check matias@podeley.ar'
+      : 'Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0'
+  const curl = (u) =>
+    new Promise((resolve) => {
+      execFile(
+        'curl',
+        ['-sS', '-o', '/dev/null', '-w', '%{http_code}', '-L', '--max-time', '20', '-A', ua(u), '--', u],
+        { timeout: 25000 },
+        (err, stdout) => {
+          const status = Number(stdout) || 0
+          resolve({ u, status, err: status ? undefined : (err?.message?.split('\n')[0] ?? 'sin respuesta') })
+        },
+      )
+    })
+
   const queue = [...urls]
   const results = []
   const workers = Array.from({ length: 6 }, async () => {
     let u
-    while ((u = queue.shift())) {
-      try {
-        const res = await fetch(u, {
-          redirect: 'follow',
-          signal: AbortSignal.timeout(20000),
-          headers: {
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0',
-            accept: 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
-          },
-        })
-        results.push({ u, status: res.status })
-      } catch (e) {
-        results.push({ u, status: 0, err: e.name === 'TimeoutError' ? 'timeout' : e.cause?.code ?? e.message })
-      }
-    }
+    while ((u = queue.shift())) results.push(await curl(u))
   })
   await Promise.all(workers)
 

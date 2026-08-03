@@ -5,12 +5,43 @@
   "licencia": "CC BY 4.0",
   "nota_metodo": "Cada fila separa lo que declaró la organización de lo que reclamó el atacante. Nunca se colapsan en un solo campo: en varios casos se contradicen. El campo confianza califica la existencia del incidente, no la veracidad de lo que reclama el atacante. Las URL .onion de los sitios de filtración están registradas pero no se publican.",
   "nota_correcciones": "Este registro se publicó sin consultar antes a las organizaciones nombradas. Las correcciones que lleguen se aplican a la fila y se anotan en el arreglo correcciones, con fecha, qué cambió y quién lo señaló. Nada se edita en silencio.",
-  "correcciones": [],
+  "correcciones": [
+    {
+      "fecha": "2026-08-03",
+      "tipo": "esquema",
+      "que_cambio": "Se renombró contexto_regional a contexto_internacional, ampliado de 2 a 12 casos verificados contra fuente primaria u oficial, con campos nuevos region, subsector, capa_afectada y actor_tipo. Se publicó además el esquema formal del dataset (ciber-incidentes.schema.json), al que el campo $schema apuntaba desde el inicio."
+    },
+    {
+      "fecha": "2026-08-03",
+      "tipo": "fila",
+      "fila": "absa-2021-01",
+      "que_cambio": "Se agregó el incidente de Aguas Bonaerenses (enero de 2021), no registrado hasta ahora: entra por el mismo criterio que AySA. El registro pasa de 13 a 14 filas."
+    },
+    {
+      "fecha": "2026-08-03",
+      "tipo": "fila",
+      "fila": "albanesi-2023-02",
+      "que_cambio": "El canal de divulgación decía 'leak-site' y la confianza era media. La pasada por las fichas públicas de la AIF encontró que las tres emisoras del grupo presentaron un hecho relevante 'Ciber ataque' ante la CNV el 16 de febrero de 2023, dos días después de la publicación del atacante: el canal pasa a 'leak-site, luego cnv', la confianza a alta, y Oldelval deja de ser el primer hecho relevante ciber del sector."
+    },
+    {
+      "fecha": "2026-08-03",
+      "tipo": "fila",
+      "fila": "oldelval-2026-07",
+      "que_cambio": "La fecha de divulgación de la empresa decía 2 de agosto de 2026, que es la fecha de la prensa. El hecho relevante ante la CNV está cargado el 31 de julio de 2026 a las 15:50: la asimetría con la publicación del atacante es de ocho días, no de diez."
+    },
+    {
+      "fecha": "2026-08-03",
+      "tipo": "fila",
+      "fila": "colonial-2021-05",
+      "que_cambio": "La nota decía que Colonial cortó el ducto 'ante la imposibilidad de facturar'; esa formulación viene de prensa y no está en el acta oficial de la audiencia del Senado de EE.UU. Se reescribió con lo documentado: decisión del operador ante la incertidumbre sobre el alcance, y la imputación posterior del regulador de ductos por la falta de plan de operación manual."
+    }
+  ],
   "campos": {
     "confianza": "alta = confirmado por la organización, un regulador o prensa con fuente directa. media = solo aparece en el sitio de filtración del atacante o en una compilación secundaria. baja = la fuente primaria no se pudo verificar.",
     "canal_divulgacion": "como se enteró el público: cnv (hecho relevante), prensa, leak-site (solo el post del atacante), organismo (comunicado oficial).",
     "fecha_incidente": "fecha del ataque o de su detección, cuando se conoce.",
-    "fecha_publica": "primera fecha en que el hecho fue públicamente conocible, por cualquier canal."
+    "fecha_publica": "primera fecha en que el hecho fue públicamente conocible, por cualquier canal.",
+    "capa_afectada": "solo en contexto_internacional: dónde pegó el ataque. it-corporativa; capa-comercial-despacho (la capa que convierte contratos en flujo físico programado); ot-control-industrial; sis-seguridad-instrumentada (la última barrera antes del accidente físico)."
   },
   "incidentes": [
     {
@@ -33,6 +64,26 @@
         "https://www.lanacion.com.ar/tecnologia/un-ataque-informatico-enel-italia-afecto-levemente-nid2381249/",
         "https://www.proteccioninformatica.com/2020/06/edesur-entre-los-afectados-por-ekans-snake/",
         "https://www.ransomware.live/id/RW5lbCBBcmdlbnRpbmEgRWRlc3VyIFMuQS4gQnVlbm9zIEFpcmVzQHNuYWtl"
+      ]
+    },
+    {
+      "id": "absa-2021-01",
+      "org": "Aguas Bonaerenses S.A. (ABSA)",
+      "subsector": "agua-saneamiento",
+      "fecha_incidente": "2021-01-26",
+      "fecha_publica": "2021-01-26",
+      "canal_divulgacion": "prensa",
+      "actor": "sin atribuir",
+      "actor_tipo": "desconocido",
+      "sistemas_segun_empresa": "Vulneraron la seguridad informática e ingresaron a los sistemas, con dificultades y complicaciones en la operatividad: atención telefónica y servicios web afectados pese a los mecanismos de contingencia. La empresa afirmó que la base de datos personales de los usuarios no se vio afectada y denunció ante el Juzgado Federal N° 1 de La Plata.",
+      "sistemas_segun_actor": null,
+      "datos_publicados": "no",
+      "impacto_operativo_declarado": "dificultades en la atención al usuario; sin reporte de impacto sobre el servicio de agua",
+      "confianza": "alta",
+      "nota": "Sin reclamo público de ningún grupo: como YCRT, se conoce por la reacción de la organización y no por el atacante. Es el incidente más antiguo de agua y saneamiento del registro; se incluye por el mismo criterio que AySA. La fecha del incidente es la de su comunicación pública.",
+      "fuentes": [
+        "https://www.perfil.com/noticias/sociedad/hackearon-la-empresa-aguas-de-buenos-aires.phtml",
+        "https://www2.bdoargentina.com/eventos/Ciberincidentes%20relevantes%20en%20Argentina.pdf"
       ]
     },
     {
@@ -64,16 +115,21 @@
       "subsector": "generacion-y-comercializacion",
       "fecha_incidente": "2023-02-14",
       "fecha_publica": "2023-02-14",
-      "canal_divulgacion": "leak-site",
+      "fecha_divulgacion_empresa": "2023-02-16",
+      "canal_divulgacion": "leak-site, luego cnv",
       "actor": "LockBit 3.0",
       "actor_tipo": "raas",
-      "sistemas_segun_empresa": null,
+      "sistemas_segun_empresa": "Hecho relevante 'Ciber ataque' ante la CNV de las tres emisoras del grupo (Generación Mediterránea, Central Térmica Roca y Albanesi Energía), dos días después de la publicación del atacante. El índice público de la AIF muestra título, categoría y adjunto; el texto del comunicado no se puede descargar en forma automatizada.",
       "sistemas_segun_actor": "Publicación del dominio albanesi.com.ar en el sitio de filtración.",
       "datos_publicados": "sin confirmar",
       "impacto_operativo_declarado": null,
-      "confianza": "media",
+      "confianza": "alta",
+      "nota": "El primer hecho relevante ciber del sector energético argentino ante la CNV, tres años antes que el de Oldelval — y nadie lo registró como precedente hasta la pasada por la AIF del 3 de agosto de 2026. Las tres presentaciones cargan el mismo PDF.",
       "fuentes": [
         "https://www.ransomware.live/id/YWxiYW5lc2kuY29tLmFyQGxvY2tiaXQz",
+        "https://aif2.cnv.gov.ar/Presentations/publicview/6f86d562-cdd3-4413-bfb6-f3958362230b",
+        "https://aif2.cnv.gov.ar/Presentations/publicview/cd837ed9-34b5-412e-848a-a896b08ef7c9",
+        "https://aif2.cnv.gov.ar/Presentations/publicview/f3cdc183-9b4f-45ed-aa99-f39f5b1375f6",
         "https://www2.bdoargentina.com/eventos/Ciberincidentes%20relevantes%20en%20Argentina.pdf"
       ]
     },
@@ -236,7 +292,7 @@
       "subsector": "transporte-crudo",
       "fecha_incidente": "2026-07-23",
       "fecha_publica": "2026-07-23",
-      "fecha_divulgacion_empresa": "2026-08-02",
+      "fecha_divulgacion_empresa": "2026-07-31",
       "canal_divulgacion": "leak-site, luego cnv",
       "actor": "The Gentlemen",
       "actor_tipo": "raas",
@@ -245,32 +301,217 @@
       "datos_publicados": "sin confirmar",
       "impacto_operativo_declarado": "ninguno",
       "confianza": "alta",
-      "nota": "El atacante publicó el 23 de julio de 2026; el hecho relevante a la CNV y la cobertura de prensa son del 2 de agosto. Diez días de asimetría entre lo que sabía el atacante y lo que sabía el mercado. La divulgación llegó por vía de mercado de capitales, no por un regulador energético.",
+      "nota": "El atacante publicó el 23 de julio de 2026; el hecho relevante ante la CNV está cargado el 31 de julio a las 15:50, y la cobertura de prensa llegó el 2 de agosto. Ocho días de asimetría entre lo que sabía el atacante y lo que sabía el mercado. La divulgación llegó por vía de mercado de capitales, no por un regulador energético.",
       "fuentes": [
+        "https://aif2.cnv.gov.ar/Presentations/publicview/0f2ad865-753e-490e-82c5-75236041868e",
         "https://www.infobae.com/economia/2026/08/02/la-operadora-del-oleoducto-por-el-que-circula-el-75-del-petroleo-de-vaca-muerta-sufrio-un-ciberataque-en-sus-sistemas/",
         "https://www.ambito.com/hackers-atacaron-oldelval-que-opera-el-mayor-oleoducto-la-argentina-n6306082",
         "https://www.ransomware.live/id/T2xkZWx2YWwgT2xlb2R1Y3RvcyBkZWwgVmFsbGVAdGhlZ2VudGxlbWVu"
       ]
     }
   ],
-  "contexto_regional": [
+  "contexto_internacional": [
     {
-      "id": "colonial-2021-05",
-      "org": "Colonial Pipeline",
-      "pais": "US",
-      "fecha_publica": "2021-05-07",
+      "id": "pemex-2019-11",
+      "org": "Petróleos Mexicanos (Pemex)",
+      "pais": "MX",
+      "region": "latam",
+      "subsector": "petroleo-gas",
+      "fecha_incidente": "2019-11-10",
+      "fecha_publica": "2019-11-11",
+      "actor": "DoppelPaymer",
+      "actor_tipo": "ransomware",
+      "capa_afectada": "it-corporativa",
+      "nota": "El ransomware congeló computadoras y sistemas administrativos de pago en todo el país; la producción siguió y la empresa anunció que no pagaría el rescate de 565 BTC. Sin comunicado propio con URL estable: la fuente durable es Reuters, que vio la nota de rescate.",
+      "fuentes": [
+        "https://web.archive.org/web/20191112064031/https://www.reuters.com/article/us-mexico-pemex-cyber/mexicos-pemex-says-operations-normal-after-cyber-attack-idUSKBN1XM07U",
+        "https://web.archive.org/web/20191114021458/https://www.reuters.com/article/us-mexico-pemex-cyber/mexicos-pemex-wont-pay-ransom-after-cyberattack-energy-minister-idUSKBN1XN2J3"
+      ]
+    },
+    {
+      "id": "copel-2021-02",
+      "org": "Copel (Companhia Paranaense de Energia)",
+      "pais": "BR",
+      "region": "latam",
+      "subsector": "electricidad",
+      "fecha_publica": "2021-02-01",
       "actor": "DarkSide",
-      "nota": "Referencia obligada: el operador cortó el ducto por decisión propia, ante la imposibilidad de facturar. El sistema de control no fue el comprometido.",
-      "fuentes": ["https://www.ambito.com/hackers-atacaron-oldelval-que-opera-el-mayor-oleoducto-la-argentina-n6306082"]
+      "actor_tipo": "raas",
+      "capa_afectada": "it-corporativa",
+      "nota": "La empresa suspendió por decisión propia su entorno computarizado para proteger la integridad de la información, con suministro normal, y lo comunicó al mercado por 6-K ante la SEC el mismo día. DarkSide reclamó cerca de 1,000 GB; la empresa no nombró actor.",
+      "fuentes": [
+        "https://www.sec.gov/Archives/edgar/data/1041792/000129281421000277/elp20210201_6k.htm",
+        "https://www.bleepingcomputer.com/news/security/eletrobras-copel-energy-companies-hit-by-ransomware-attacks/"
+      ]
+    },
+    {
+      "id": "eletrobras-2021-02",
+      "org": "Eletrobras (Eletronuclear)",
+      "pais": "BR",
+      "region": "latam",
+      "subsector": "nuclear",
+      "fecha_publica": "2021-02-03",
+      "actor": "sin identificar",
+      "actor_tipo": "ransomware",
+      "capa_afectada": "it-corporativa",
+      "nota": "Ransomware en servidores de la red administrativa de Eletronuclear, aislada por diseño de la operación de Angra 1 y 2; divulgado por 6-K ante la SEC y reportado al CERT gubernamental brasileño. El actor nunca se publicó — dos días después de Copel, sin conexión confirmada.",
+      "fuentes": [
+        "https://www.sec.gov/Archives/edgar/data/1439124/000129281421000319/ebr20210203_6k1.htm"
+      ]
+    },
+    {
+      "id": "epm-2022-12",
+      "org": "EPM (Empresas Públicas de Medellín)",
+      "pais": "CO",
+      "region": "latam",
+      "subsector": "multiservicios",
+      "fecha_incidente": "2022-12-12",
+      "fecha_publica": "2022-12-13",
+      "actor": "BlackCat/ALPHV",
+      "actor_tipo": "raas",
+      "capa_afectada": "capa-comercial-despacho",
+      "nota": "La capa comercial pasó a contingencia manual: 304,000 clientes de energía prepago y 27,700 de agua prepago quedaron sin canal digital de recarga, con oficinas físicas y carrotanques como respaldo, según la propia empresa. BlackCat se adjudicó el ataque y publicó archivos; la empresa nunca confirmó el grupo.",
+      "fuentes": [
+        "https://www.epm.com.co/institucional/sala-de-prensa/noticias-y-novedades/epm-se-permite-informar-en-relacion-con-el-incidente-de-ciberseguridad/",
+        "https://www.eltiempo.com/colombia/medellin/blackcat-el-grupo-que-se-adjudico-el-ataque-cibernetico-a-epm-729363"
+      ]
     },
     {
       "id": "ecopetrol-2026-07",
       "org": "Ecopetrol",
       "pais": "CO",
+      "region": "latam",
+      "subsector": "petroleo-gas",
+      "fecha_incidente": "2026-07-17",
       "fecha_publica": "2026-07-17",
       "actor": "The Gentlemen",
-      "nota": "Mismo actor que Oldelval, seis días antes. La empresa reportó cerca de 3,300 cuentas de usuario y datos de 15 empresas del grupo comprometidos, y dijo haber evitado el cifrado masivo.",
-      "fuentes": ["https://www.infobae.com/colombia/2026/07/22/asi-funciona-the-gentlemen-el-grupo-de-ransomware-que-robo-los-datos-de-ecopetrol/"]
+      "actor_tipo": "raas",
+      "capa_afectada": "it-corporativa",
+      "nota": "Mismo actor que Oldelval, seis días antes. Según los 6-K ante la SEC: acceso a almacenamiento en la nube de unas 15 empresas del grupo, datos de cerca de 3,300 cuentas descargados y luego publicados, intento de cifrado bloqueado, sin impacto en producción. La divulgación llegó por canal de mercado de capitales, igual que en el caso argentino.",
+      "fuentes": [
+        "https://www.sec.gov/Archives/edgar/data/1444406/000129281426003810/ex99-1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1444406/000129281426003936/ex99-1.htm",
+        "https://www.infobae.com/colombia/2026/07/22/asi-funciona-the-gentlemen-el-grupo-de-ransomware-que-robo-los-datos-de-ecopetrol/"
+      ]
+    },
+    {
+      "id": "ucrania-2015-12",
+      "org": "Prykarpattyaoblenergo, Kyivoblenergo y Chernivtsioblenergo",
+      "pais": "UA",
+      "region": "global",
+      "subsector": "distribucion-electrica",
+      "fecha_incidente": "2015-12-23",
+      "fecha_publica": "2016-02-25",
+      "actor": "Sandworm (GRU, Unidad 74455)",
+      "actor_tipo": "estatal",
+      "capa_afectada": "ot-control-industrial",
+      "nota": "Operación remota de los SCADA de tres distribuidoras: cerca de 225,000 usuarios sin luz durante horas, estaciones de trabajo borradas y firmware de conversores corrompido para entorpecer la restauración. Atribución formal: acusación del Departamento de Justicia de EE.UU. contra seis oficiales del GRU (2020).",
+      "fuentes": [
+        "https://www.cisa.gov/news-events/ics-alerts/ir-alert-h-16-056-01",
+        "https://web.archive.org/web/20191226222051/https://ics.sans.org/media/E-ISAC_SANS_Ukraine_DUC_5.pdf",
+        "https://www.justice.gov/archives/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and"
+      ]
+    },
+    {
+      "id": "ucrania-2016-12",
+      "org": "Ukrenergo (subestación del norte de Kyiv)",
+      "pais": "UA",
+      "region": "global",
+      "subsector": "transmision-electrica",
+      "fecha_incidente": "2016-12-17",
+      "fecha_publica": "2017-06-12",
+      "actor": "Sandworm (GRU, Unidad 74455)",
+      "actor_tipo": "estatal",
+      "capa_afectada": "ot-control-industrial",
+      "nota": "Industroyer, el primer malware que habla los protocolos de subestación (IEC-101, IEC-104, IEC 61850, OPC DA), cortó parte de Kyiv durante cerca de una hora. Mismo actor y misma acusación formal que el corte de 2015.",
+      "fuentes": [
+        "https://www.welivesecurity.com/2017/06/12/industroyer-biggest-threat-industrial-control-systems-since-stuxnet/",
+        "https://www.justice.gov/archives/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and"
+      ]
+    },
+    {
+      "id": "ucrania-2022-04",
+      "org": "operadora eléctrica ucraniana (no nombrada)",
+      "pais": "UA",
+      "region": "global",
+      "subsector": "electricidad",
+      "fecha_incidente": "2022-04-08",
+      "fecha_publica": "2022-04-12",
+      "actor": "Sandworm / UAC-0082",
+      "actor_tipo": "estatal",
+      "capa_afectada": "ot-control-industrial",
+      "nota": "Industroyer2, compilado con parámetros propios por subestación de alta tensión, más limpiadores para Windows y Linux, con desconexión programada para la tarde del 8 de abril de 2022. Frustrado, según CERT-UA, en plena invasión.",
+      "fuentes": [
+        "https://cert.gov.ua/article/39518",
+        "https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/"
+      ]
+    },
+    {
+      "id": "triton-2017-08",
+      "org": "planta petroquímica en Medio Oriente (reportada como Petro Rabigh)",
+      "pais": "SA",
+      "region": "global",
+      "subsector": "petroquimica",
+      "fecha_publica": "2017-12-14",
+      "actor": "TsNIIKhM (instituto estatal ruso)",
+      "actor_tipo": "estatal",
+      "capa_afectada": "sis-seguridad-instrumentada",
+      "nota": "Triton reprogramó controladores de seguridad instrumentada Triconex — la última barrera antes del accidente físico — y un fallo del intento mandó la planta a parada segura. Único caso público de malware contra la capa SIS. Sanción del Tesoro de EE.UU. (2020) y acusación formal desellada en 2022.",
+      "fuentes": [
+        "https://home.treasury.gov/news/press-releases/sm1162",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-083a",
+        "https://cloud.google.com/blog/topics/threat-intelligence/attackers-deploy-new-ics-attack-framework-triton"
+      ]
+    },
+    {
+      "id": "norskhydro-2019-03",
+      "org": "Norsk Hydro",
+      "pais": "NO",
+      "region": "global",
+      "subsector": "aluminio",
+      "fecha_incidente": "2019-03-19",
+      "fecha_publica": "2019-03-19",
+      "actor": "LockerGoga",
+      "actor_tipo": "ransomware",
+      "capa_afectada": "it-corporativa",
+      "nota": "La red global cayó y las plantas pasaron a operación manual. La empresa se negó a pagar, restauró desde respaldos y publicó todo el proceso, con un costo estimado por ella misma en unos NOK 800 millones. El contraejemplo exacto del patrón de divulgación que documenta este registro.",
+      "fuentes": [
+        "https://www.hydro.com/en/global/media/on-the-agenda/cyber-attack/"
+      ]
+    },
+    {
+      "id": "colonial-2021-05",
+      "org": "Colonial Pipeline",
+      "pais": "US",
+      "region": "global",
+      "subsector": "transporte-combustibles",
+      "fecha_incidente": "2021-05-07",
+      "fecha_publica": "2021-05-08",
+      "actor": "DarkSide",
+      "actor_tipo": "raas",
+      "capa_afectada": "it-corporativa",
+      "nota": "El ransomware alcanzó solo la red informática y el operador paró el ducto entero — cerca del 45% del combustible de la costa este — por decisión propia durante cinco días, ante la incertidumbre sobre el alcance, según declaró su CEO ante el Senado. El regulador de ductos le imputó después la falta de un plan de operación manual. La referencia obligada de este registro: el sistema de control no fue el comprometido y el flujo físico se detuvo igual.",
+      "fuentes": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a",
+        "https://www.govinfo.gov/content/pkg/CHRG-117shrg46569/pdf/CHRG-117shrg46569.pdf",
+        "https://primis.phmsa.dot.gov/enforcement-documents/32022026NOPV/32022026NOPV_Consent%20Agreement%20and%20Order_09012023_(20-173062).pdf"
+      ]
+    },
+    {
+      "id": "dinamarca-2023-05",
+      "org": "22 operadoras de energía danesas (miembros de SektorCERT)",
+      "pais": "DK",
+      "region": "global",
+      "subsector": "electricidad",
+      "fecha_incidente": "2023-05-11",
+      "fecha_publica": "2023-11",
+      "actor": "sin atribuir",
+      "actor_tipo": "desconocido",
+      "capa_afectada": "ot-control-industrial",
+      "nota": "Ataque coordinado vía una vulnerabilidad de firewalls Zyxel: 16 objetivos preseleccionados comprometidos en la primera ola sin un solo tiro errado, acceso a sistemas de control industrial y varias empresas en operación aislada. Se detectó por la red de sensores del CERT sectorial: el mecanismo de intercambio entre pares cuya ausencia documenta este registro.",
+      "fuentes": [
+        "https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf"
+      ]
     }
   ]
 }

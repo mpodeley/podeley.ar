@@ -1,22 +1,22 @@
 <!--meta
 {
   "title": "Cyber incidents in Argentine energy, 2020–2026 — Matías Podeley",
-  "description": "A sector register of thirteen cyber incidents across Argentine energy and critical infrastructure, sourced row by row. Eight of them are known only because the attacker published the victim.",
+  "description": "A sector register of fourteen cyber incidents across Argentine energy and critical infrastructure, sourced row by row, with international context and the state of the legal landscape. Seven of them are known only because the attacker published the victim.",
   "ogImage": "/assets/og/ciber.en.png",
-  "ogImageAlt": "Eight of thirteen cyber incidents in Argentina's energy sector are known only because the attacker published them",
-  "nav": "energia"
+  "ogImageAlt": "Seven of fourteen cyber incidents in Argentina's energy sector are known only because the attacker published them",
+  "nav": "ciber"
 }
 -->
 
 <section class="hero wrap">
   <p class="kicker">Sector register · Energy and critical infrastructure · Argentina</p>
-  <h1>Thirteen incidents in six years, and eight of them never got a single published line</h1>
+  <h1>Fourteen incidents in six years, and seven of them never got a single published line</h1>
   <p class="hero-sub">This is the register of known cyber incidents across Argentina's energy sector between 2020 and 2026, with a source for every row. It is built by crossing press coverage, filings to the Comisión Nacional de Valores (CNV, the securities regulator) and the sites where attackers publish their victims. It records what happened and what was said to have happened, in separate columns, because in several cases the two do not match.</p>
-  <p class="hero-meta"><span class="hero-when">Updated August 3, 2026</span> <a class="link-plain" href="#registro">Go to the register <span class="arw">↓</span></a></p>
+  <p class="hero-meta"><span class="hero-when">Updated August 3, 2026</span> <a class="link-plain" href="#registro">Go to the register <span class="arw">↓</span></a> <a class="link-plain" href="#contexto">International context <span class="arw">↓</span></a> <a class="link-plain" href="#normativo">Legal landscape <span class="arw">↓</span></a></p>
 
   <aside class="aviso" id="aviso">
     <p class="aviso-t">Notice, and a request</p>
-    <p>This register is built from public sources and published without consulting the organizations named beforehand. It records what was published about each incident; it does not assess anyone's security nor claim that any of them was unprepared. Eight of the thirteen rows come solely from the site of the group that attacked, which is an interested party with an incentive to exaggerate.</p>
+    <p>This register is built from public sources and published without consulting the organizations named beforehand. It records what was published about each incident; it does not assess anyone's security nor claim that any of them was unprepared. Seven of the fourteen rows come solely from the site of the group that attacked, which is an interested party with an incentive to exaggerate.</p>
     <p>If you work at one of these organizations and a row is wrong, <a href="mailto:matias@podeley.ar?subject=Correction%20to%20the%20register%20%E2%80%94%20podeley.ar%2Fen%2Fciber&amp;body=Hi%20Matias%2C%0A%0ARow%3A%20%0AWhat%20is%20wrong%3A%20%0ASource%3A%20%0A%0A">email me with the source</a> and I will correct it. The same if an incident is missing, or if you need a row taken down that you cannot publicly stand behind. Every correction is dated in the data file, so there is a record of what changed and why.</p>
   </aside>
 </section>
@@ -27,7 +27,7 @@
   <div class="section-head">
     <p class="eyebrow">The register</p>
     <h2>What happened to the sector, row by row</h2>
-    <p class="intro">Thirteen incidents across energy and critical infrastructure, from June 2020 to August 2026. The confidence column says where each row comes from: high when the organization, a regulator or press with direct sources confirmed it; medium when the attacker's notice is all there is.</p>
+    <p class="intro">Fourteen incidents across energy and critical infrastructure, from June 2020 to August 2026. The confidence column says where each row comes from: high when the organization, a regulator or press with direct sources confirmed it; medium when the attacker's notice is all there is.</p>
   </div>
 
   <div class="reg-scroll">
@@ -38,8 +38,9 @@
       </thead>
       <tbody>
         <tr><td class="reg-d">2020-06-07</td><td>Edesur (Enel Argentina)</td><td>Power distribution</td><td>Snake / EKANS</td><td>Press</td><td><span class="conf conf--alta">high</span></td></tr>
+        <tr><td class="reg-d">2021-01-26</td><td>Aguas Bonaerenses (ABSA)</td><td>Water and sanitation</td><td>Unattributed</td><td>Press</td><td><span class="conf conf--alta">high</span></td></tr>
         <tr><td class="reg-d">2022-04-05</td><td>Transportadora de Gas del Sur (TGS)</td><td>Gas transport</td><td>Unattributed</td><td>Press</td><td><span class="conf conf--alta">high</span></td></tr>
-        <tr><td class="reg-d">2023-02-14</td><td>Grupo Albanesi</td><td>Generation and marketing</td><td>LockBit 3.0</td><td>Leak site</td><td><span class="conf conf--media">medium</span></td></tr>
+        <tr><td class="reg-d">2023-02-14</td><td>Grupo Albanesi</td><td>Generation and marketing</td><td>LockBit 3.0</td><td>Leak site, then CNV</td><td><span class="conf conf--alta">high</span></td></tr>
         <tr><td class="reg-d">2023-07-13</td><td>BTU S.A.</td><td>Energy services</td><td>8Base</td><td>Leak site</td><td><span class="conf conf--media">medium</span></td></tr>
         <tr><td class="reg-d">2024-06-13</td><td>Amarilla Gas</td><td>LPG distribution</td><td>Play</td><td>Leak site</td><td><span class="conf conf--media">medium</span></td></tr>
         <tr><td class="reg-d">2024-12-18</td><td>Comisión Nacional de Energía Atómica (CNEA)</td><td>Nuclear</td><td>Money Message</td><td>Press</td><td><span class="conf conf--alta">high</span></td></tr>
@@ -55,7 +56,7 @@
   </div>
   <p class="reg-hint">→ the table scrolls sideways</p>
 
-  <p class="note-limit">Hidrocarburos Argentinos appears twice, five months and two different groups apart. Neither appearance got any coverage. AySA is not energy: it is included because it is an essential service with operational technology and millions of users, which is the category that matters here.</p>
+  <p class="note-limit">Hidrocarburos Argentinos appears twice, five months and two different groups apart. Neither appearance got any coverage. AySA and ABSA are not energy: they are included because they are essential services with operational technology and millions of users, which is the category that matters here. Transport and defense stay out, for now: EANA — the air-traffic control operator — and the state railway company ADIF surfaced on leak sites in 2026 without a single published line, and that boundary of the criterion is stated below.</p>
 
   <p class="aside-link">The full data, with what each organization declared, what each attacker claimed and the sources behind every row: <a href="/data/ciber-incidentes.json">ciber-incidentes.json</a>.</p>
 </section>
@@ -66,10 +67,11 @@
   <div class="section-head">
     <p class="eyebrow">Finding</p>
     <h2>The sector finds out from the attacker, or not at all</h2>
-    <p class="intro">Of the thirteen incidents, eight are known only because the group that attacked chose to publish its victim. No statement, no article, no obligation to say anything.</p>
+    <p class="intro">Of the fourteen incidents, seven are known only because the group that attacked chose to publish its victim. No statement, no article, no obligation to say anything.</p>
   </div>
-  <p class="bio-text">The Oldelval case measures the gap precisely. The group The Gentlemen posted the company on its site on July 23, 2026; the material-event filing to the CNV and the first press pieces are dated August 2. For ten days the information existed and circulated, on the attacker's side. Nobody had it on the other side: not the market, not the operators who ship through that same pipeline.</p>
-  <p class="bio-text">The detail that orders everything else is which channel it was. Oldelval reported to the CNV, the capital-markets regulator, because it is listed and a material event must be filed. No equivalent duty exists toward any energy regulator. A sector company that is not listed and gets no phone call owes nobody an account of having been compromised — and eight rows of this register show that, indeed, it gives none.</p>
+  <p class="bio-text">The Oldelval case measures the gap precisely. The group The Gentlemen posted the company on its site on July 23, 2026; the material-event filing to the CNV is stamped July 31, and the first press pieces are dated August 2. For eight days the information existed and circulated, on the attacker's side. Nobody had it on the other side: not the market, not the operators who ship through that same pipeline.</p>
+  <p class="bio-text">The detail that orders everything else is which channel it was. Oldelval reported to the CNV, the capital-markets regulator, because it issues debt there and a material event must be filed. No equivalent duty exists toward any energy regulator. A sector company that is not listed and gets no phone call owes nobody an account of having been compromised — and seven rows of this register show that, indeed, it gives none.</p>
+  <p class="bio-text">That channel has a history nobody had looked at. The sweep of the CNV's public filings behind this update — 30 energy issuers, some 44,000 filings since 2000 — found exactly two incidents ever reported: Oldelval's, and an earlier one no timeline records, the "Cyber attack" material-event filing that the three issuers of the Albanesi group submitted on February 16, 2023, two days after LockBit published them. On the other side, TGS and Edesur were also issuers when they were attacked, and neither has a cyber material event anywhere in its filing history. The rule leaves the materiality call to each issuer; the aggregate result is a channel that exists and almost never gets used.</p>
   <p class="bio-text">The consequence is that no operator learns from its neighbor's incident. The sector has no peer information-sharing mechanism of the kind other countries run for electricity and for oil and gas. Each company faces the same groups, one at a time, without knowing what worked for the previous one.</p>
 </section>
 
@@ -100,6 +102,80 @@
 
 <div class="rule" role="presentation"></div>
 
+<section class="pd-section wrap" id="contexto">
+  <div class="section-head">
+    <p class="eyebrow">Context</p>
+    <h2>Elsewhere this story already has more chapters</h2>
+    <p class="intro">Twelve foreign precedents, with the selection criterion said out loud: a case enters if it illuminates something that already happened here, and if its source is official or the company's own. This is not a register like the one above — it is the part of the map Argentina has not been dealt yet.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Date = the incident's own; where only the month is defensible, the month is shown. The affected layer is what connects each case to the Argentine register.</caption>
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">Organization</th><th scope="col">Subsector</th><th scope="col">Actor</th><th scope="col">Affected layer</th><th scope="col">What happened</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="reg-d">2015-12-23</td><td>Three distributors (Ukraine)</td><td>Power distribution</td><td>Sandworm (GRU)</td><td>OT / industrial control</td><td>225,000 users in the dark; SCADA driven remotely</td></tr>
+        <tr><td class="reg-d">2016-12-17</td><td>Ukrenergo (Ukraine)</td><td>Power transmission</td><td>Sandworm (GRU)</td><td>OT / industrial control</td><td>Industroyer: one hour of outage in part of Kyiv</td></tr>
+        <tr><td class="reg-d">2017-08</td><td>Petrochemical plant (Saudi Arabia)</td><td>Petrochemicals</td><td>TsNIIKhM (Russian state)</td><td>Safety instrumented systems</td><td>Reprogrammed the last barrier before the accident; the plant tripped itself</td></tr>
+        <tr><td class="reg-d">2019-03-19</td><td>Norsk Hydro (Norway)</td><td>Aluminum</td><td>LockerGoga</td><td>Corporate IT</td><td>Plants on manual; refused to pay, published everything: NOK 800 million</td></tr>
+        <tr><td class="reg-d">2019-11-10</td><td>Pemex (Mexico)</td><td>Oil and gas</td><td>DoppelPaymer</td><td>Corporate IT</td><td>Administrative payments frozen; production went on</td></tr>
+        <tr><td class="reg-d">2021-02-01</td><td>Copel (Brazil)</td><td>Electricity</td><td>DarkSide</td><td>Corporate IT</td><td>Suspended its own systems by choice; 6-K to the SEC that day</td></tr>
+        <tr><td class="reg-d">2021-02-03</td><td>Eletrobras (Brazil)</td><td>Nuclear</td><td>Unidentified</td><td>Corporate IT</td><td>Eletronuclear's administrative network; 6-K to the SEC</td></tr>
+        <tr><td class="reg-d">2021-05-07</td><td>Colonial Pipeline (US)</td><td>Fuel transport</td><td>DarkSide</td><td>Corporate IT</td><td>Five days of pipeline down, by the operator's own decision</td></tr>
+        <tr><td class="reg-d">2022-04-08</td><td>Power operator (Ukraine)</td><td>Electricity</td><td>Sandworm</td><td>OT / industrial control</td><td>Industroyer2, thwarted mid-invasion</td></tr>
+        <tr><td class="reg-d">2022-12-12</td><td>EPM (Colombia)</td><td>Multi-utility</td><td>BlackCat/ALPHV</td><td>Commercial / dispatch</td><td>304,000 prepaid customers with no top-up channel</td></tr>
+        <tr><td class="reg-d">2023-05-11</td><td>22 operators (Denmark)</td><td>Electricity</td><td>Unattributed</td><td>OT / industrial control</td><td>The sector CERT's sensors caught the sweep</td></tr>
+        <tr><td class="reg-d">2026-07-17</td><td>Ecopetrol (Colombia)</td><td>Oil and gas</td><td>The Gentlemen</td><td>Corporate IT</td><td>Same actor as Oldelval, six days earlier</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reg-hint">→ the table scrolls sideways</p>
+
+  <p class="bio-text">The regional half of the table is the same economy that produced the Argentine register: criminal ransomware against the administrative layer of energy companies, with physical operations intact and data held hostage. Two details connect straight to Argentina. Copel, Eletrobras and Ecopetrol told the market about their incidents through 6-K filings to the SEC, which is the same channel through which Oldelval's case surfaced: disclosure through the securities regulator instead of the energy one is a regional pattern, not a local quirk. And the group that published Oldelval had published Ecopetrol six days earlier — to a ransomware operator, the region is a single market.</p>
+  <p class="bio-text">The global half is the ladder that sits above the administrative layer. Colonial Pipeline is the rung this register most needs to look at: the ransomware came in through the IT network and the operator shut down the entire pipeline for five days, by its own decision and in doubt about the reach; the pipeline regulator later charged it with having no plan to run on manual. The three Ukrainian cases and the Saudi one are the rungs above, and they are no longer economic crime but state operations with formal indictments behind them: substation controls driven remotely in 2015 and 2016, the attempt repeated mid-invasion in 2022, and the reprogramming of a petrochemical plant's safety controllers — the last barrier before the physical accident.</p>
+  <p class="bio-text">Two cases in the table work as counterexamples more than as threats. Denmark's power sector caught a coordinated sweep against 22 operators within days because its sector CERT had sensors on member networks: that is the working version of the peer-exchange mechanism whose absence the disclosure section records. And Norsk Hydro answered its ransomware by publishing the entire process, with the cost put in numbers by the company itself — the exact inverse of the disclosure pattern this register documents.</p>
+
+  <p class="aside-link">The twelve cases with their primary sources — SEC 6-Ks, formal indictments, CERT reports: in the data file, under the <span class="path">contexto_internacional</span> key of <a href="/data/ciber-incidentes.json">ciber-incidentes.json</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="normativo">
+  <div class="section-head">
+    <p class="eyebrow">The rules</p>
+    <h2>Who must be told: nobody</h2>
+    <p class="intro">Argentina's legal landscape explains the shape of this register. Every claim in this section comes from the official text linked next to it; the reading is descriptive, dated August 3, 2026.</p>
+  </div>
+  <p class="bio-text">What exists is a definition with no obligations attached. <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/325000-329999/328599/norma.htm">Resolution 1523/2019</a> defines critical infrastructure and lists eleven sectors, energy included, but imposes nothing on any operator. <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/350000-354999/351345/norma.htm">Administrative Decision 641/2021</a> sets minimum requirements and a 48-hour reporting duty, for the national public administration only. CERT.ar answers incidents from the National Cybersecurity Center, created by <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/337032/20260102">emergency decree</a> in late 2025, but cannot demand a report from a private company. And the electricity and gas framework mentions cyber-incident reporting nowhere: not laws 24.065 and 24.076, not the brand-new ENRGE that <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/410000-414999/414812/norma.htm">merged ENRE and ENARGAS</a> in 2025.</p>
+  <p class="bio-text">The clocks that do run in Argentina sit elsewhere. The CNV's: an issuer reports "immediately" any event that could affect its securities — the <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/215000-219999/219405/texact-TituloXII-CapI.htm">rule</a> never mentions cyber incidents —, and that general clause is how the sector's only two reported cases surfaced, Albanesi in 2023 and Oldelval in 2026. The central bank's: since 2025, a financial institution reports a cyber incident <a href="https://www.bcra.gob.ar/Pdfs/comytexord/A8280.pdf">within the first hour</a>. A bank has one hour; a gas transporter, no obligation at all.</p>
+  <p class="bio-text">The absence is not an oversight: bills existed, and they lapsed. The one creating a national institute with mandatory reporting for essential-service operators <a href="https://www.senado.gob.ar/parlamentario/comisiones/verExp/1616.19/S/PL">lapsed in 2021</a> without a committee report, and lapsed again when reintroduced. A national critical-infrastructure plan specific to energy <a href="https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=0146-D-2023">lapsed twice</a> in the lower house. The period's only effective decision, the National Cybersecurity Center, arrived by decree — without passing through Congress, and without any reporting duty for private companies.</p>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Who must tell whom, and how fast. Texts in force as of August 3, 2026.</caption>
+      <thead>
+        <tr><th scope="col">Jurisdiction</th><th scope="col">Rule</th><th scope="col">Who it binds</th><th scope="col">Clock</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Argentina · energy</td><td>none exists</td><td>nobody</td><td class="reg-d">none</td><td>the bills lapsed without a committee report</td></tr>
+        <tr><td>Argentina · market</td><td><a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/205000-209999/206592/texact.htm">Law 26.831, art. 99</a></td><td>listed issuers, through the general clause</td><td class="reg-d">immediate</td><td>no cyber mention; the sector used it twice</td></tr>
+        <tr><td>Argentina · banks</td><td><a href="https://www.bcra.gob.ar/Pdfs/comytexord/A8280.pdf">BCRA Communication "A" 8280</a></td><td>financial institutions and payment providers</td><td class="reg-d">1 hour</td><td>in force since 2025</td></tr>
+        <tr><td>Chile</td><td><a href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/04/08/43820/01/2475674.pdf">Law 21.663 (ANCI)</a></td><td>~1,150 operators of vital importance, energy included</td><td class="reg-d">3 hours</td><td>in force; fuels entered in July 2026</td></tr>
+        <tr><td>US · pipelines</td><td><a href="https://www.tsa.gov/sites/default/files/signed_security-directive-pipeline-2021-01g-and-transmittal-memo_508c.pdf">TSA security directives</a></td><td>designated pipeline operators</td><td class="reg-d">72 hours</td><td>renewed every year since Colonial</td></tr>
+        <tr><td>US · market</td><td><a href="https://www.federalregister.gov/documents/2023/08/04/2023-16194/cybersecurity-risk-management-strategy-governance-and-incident-disclosure">SEC, Form 8-K Item 1.05</a></td><td>listed issuers</td><td class="reg-d">4 business days</td><td>in force since December 2023</td></tr>
+        <tr><td>European Union</td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555">NIS2, article 23</a></td><td>essential operators; energy opens Annex I</td><td class="reg-d">24 h / 72 h</td><td>4 countries taken to court over transposition</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reg-hint">→ the table scrolls sideways</p>
+
+  <p class="bio-text">The nearest mirror is Chile. Electricity entered the first roster of operators of vital importance in December 2025; fuels and pipelines, the second, in July 2026. The reporting duty that does not exist on this side of the mountains runs on a 3-hour clock across them. And the closest parallel to the Argentine channel is the SEC's: the same kind of securities regulator that received Oldelval's filing here named cyber incidents in its form there, and gave them a clock of their own.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
 <section class="pd-section wrap" id="ia">
   <div class="section-head">
     <p class="eyebrow">What comes next</p>
@@ -118,10 +194,69 @@
     <p class="eyebrow">Limits</p>
     <h2>What these data cannot support</h2>
   </div>
-  <p class="bio-text">It cannot be said that these thirteen are all there are. They are the ones that left a public trace, and the register itself shows that the trace depends on whether the attacker chose to publish and whether the company is listed. An incident resolved quietly, with no exfiltration and no listing, appears neither here nor anywhere.</p>
+  <p class="bio-text">It cannot be said that these fourteen are all there are. They are the ones that left a public trace, and the register itself shows that the trace depends on whether the attacker chose to publish and whether the company is listed. An incident resolved quietly, with no exfiltration and no listing, appears neither here nor anywhere.</p>
   <p class="bio-text">It cannot be said that the eight medium-confidence rows happened the way the attacker tells them. A ransomware group publishes victims to apply pressure, and has an incentive to exaggerate the reach, the volume and the sensitivity of what it took. What is verifiable is that the publication exists, not what it says.</p>
   <p class="bio-text">Nothing can be said about the state of security of any of these organizations. Appearing in the register means they were attacked, not that they were unprepared; several of them contained the incident with no service interruption. Absence from the register does not mean the opposite either.</p>
-  <p class="bio-text">And it cannot be said that the nomination and dispatch layer is the preferred way in. That is two cases with a known system, out of thirteen incidents. It is a hypothesis the available evidence makes reasonable, and one that needs checking with people who operate those systems.</p>
+  <p class="bio-text">It cannot be said that the nomination and dispatch layer is the preferred way in. That is two cases with a known system, out of fourteen incidents. It is a hypothesis the available evidence makes reasonable, and one that needs checking with people who operate those systems.</p>
+  <p class="bio-text">The international table cannot be read as a census. It is a curated set of twelve cases under the criterion its section declares: the world had far more incidents than these, and the selection picked them because they illuminate Argentine findings, not because they represent anything.</p>
+  <p class="bio-text">And the rules section cannot be taken as legal opinion. It describes texts in force as of August 3, 2026, several of them moving — the permanent US pipeline rule is still a proposal, the ENRGE is still being stood up —, and it does not judge whether other countries' rules work: it records only which obligation exists and which does not.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="roadmap">
+  <div class="section-head">
+    <p class="eyebrow">Roadmap</p>
+    <h2>What is missing, and what would unlock it</h2>
+    <p class="intro">Four open lines of work. Each one closes a concrete limit from the section above, and none of them needs anyone's permission to start.</p>
+  </div>
+  <ul class="ruta">
+    <li>
+      <h3>Extend the CNV sweep</h3>
+      <p>The sweep behind this update read the titles of some 44,000 filings from 30 issuers; it did not read the attachments, nor cover the small provincial distributors, nor run on its own. What follows: read the content of material events with opaque titles, add the missing issuers, and automate the sweep of each public filing sheet with the same mechanics as the ransomware.live monitor. It shrinks the limit of "these fourteen are not necessarily all".</p>
+    </li>
+    <li>
+      <h3>Check the hypothesis with the people who run those systems</h3>
+      <p>Eight to ten conversations with operator staff — the people who use the nomination, balance and dispatch systems —, aggregated and anonymized into a two-page annex. It closes the register's most uncomfortable limit: the commercial-layer hypothesis currently rests on two cases with a known system.</p>
+    </li>
+    <li>
+      <h3>Measure AI agents on the nomination and dispatch layer</h3>
+      <p>A test bench with scenarios drawn from the incidents in this register, on a synthetic nomination and dispatch layer. The artificial-intelligence section leaves a question posed; the literature measures substations and controllers, and nobody measures this layer.</p>
+    </li>
+    <li>
+      <h3>Size a peer information-sharing mechanism</h3>
+      <p>A technical note on the minimum version of the Danish model that fits a sector with fourteen known incidents and zero reporting obligation: who deploys the sensors, who sees what, and what gets shared without exposing anyone. It closes the finding that every operator faces the same groups alone.</p>
+    </li>
+  </ul>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="recursos">
+  <div class="section-head">
+    <p class="eyebrow">Resources</p>
+    <h2>Where to look, besides here</h2>
+    <p class="intro">Eleven entries, each with its purpose stated. Whatever does not serve a reader of this register stayed out — four organizations whose cyber work is members-only or nonexistent were cut.</p>
+  </div>
+
+  <p class="rsrc-g">Tracking and response</p>
+  <ul class="rsrc">
+    <li><a href="https://www.argentina.gob.ar/jefatura/innovacion-ciencia-y-tecnologia/centro-nacional-de-ciberseguridad/certar">CERT.ar</a>: the national incident-response team, today under the National Cybersecurity Center; where the public sector reports, and the source of the official statistics.</li>
+    <li><a href="https://www.ransomware.live/">ransomware.live</a>: the open tracker of ransomware victims that feeds this register's monitor; data and API free of charge.</li>
+    <li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories?f%5B0%5D=advisory_type%3A95">CISA ICS Advisories</a>: the official US advisories on vulnerabilities in industrial control equipment, by vendor and by product.</li>
+    <li><a href="https://www.cci-es.org/">Centro de Ciberseguridad Industrial (CCI)</a>: the Spanish-speaking industrial cybersecurity network, with an active Argentine chapter and free basic membership.</li>
+    <li><a href="https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf">SektorCERT, the 2023 attack report</a>: the best public post-mortem of a coordinated attack on a power sector, written by the CERT that detected it (PDF).</li>
+    <li><a href="https://oneisac.org/">ONE-ISAC</a>: the North American oil &amp; gas peer-exchange center: the model of sector collaboration missing here.</li>
+  </ul>
+
+  <p class="rsrc-g">Technical reference</p>
+  <ul class="rsrc">
+    <li><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">NIST SP 800-82 rev. 3</a>: the free reference guide for securing operational technology; the starting point when a program has to be built from zero.</li>
+    <li><a href="https://www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/">SANS, Five ICS Cybersecurity Critical Controls</a>: the five controls an energy company should have before anything else, in 20 pages a manager can read; asks for a free account.</li>
+    <li><a href="https://isagca.org/isa-iec-62443-standards">ISA/IEC 62443</a>: the industrial cybersecurity standard, explained for free by its authors in the ISAGCA guides; the full standard text is paid.</li>
+    <li><a href="https://attack.mitre.org/matrices/ics/">MITRE ATT&amp;CK for ICS</a>: the standard catalog of attack tactics against industrial systems: the vocabulary of the technical reports this register cites.</li>
+    <li><a href="https://www.dragos.com/ot-cybersecurity-year-in-review">Dragos, OT Cybersecurity Report</a>: the sector's most-cited annual report on threats to industrial systems; the 2026 edition asks for an email to download.</li>
+  </ul>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -131,8 +266,9 @@
     <p class="eyebrow">How it is made</p>
     <h2>Sources, updates and corrections</h2>
   </div>
-  <p class="bio-text">Rows come through three channels. Argentina's specialized press and the organizations' own communications give five rows, of which four reach high confidence: YCRT stays at medium because its only source is a secondary compilation. The sites where ransomware groups publish their victims give the other eight, and are consulted through the public interface of ransomware.live, which to date lists 178 Argentine victims across all sectors. The leak-site addresses are on record and are not published.</p>
+  <p class="bio-text">Rows come through three channels. The specialized press, the organizations' own communications and the material-event filings to the CNV give seven rows, of which six reach high confidence: YCRT stays at medium because its only source is a secondary compilation. The sites where ransomware groups publish their victims give the other seven, and are consulted through the public interface of ransomware.live, which as of August 3, 2026 lists 178 posts about Argentine victims across all sectors. The leak-site addresses are on record and are not published.</p>
   <p class="bio-text">A monitor runs against that same interface, crosses every new Argentine victim against a sector lexicon and flags when a row needs writing. The row itself I write by hand: no endpoint returns what the company declared, and that column is half the value of this.</p>
+  <p class="bio-text">The CNV sweep ran over the public filing sheets of the Autopista de la Información Financiera: 30 energy issuers, some 44,000 filings since 2000, scanned by title in two lexicon passes, plus a row-by-row manual review in the windows of the incidents already known. The method's limit sits in the title: a cyber material event with an opaque heading goes undetected — and there are issuers that title theirs "HR" and nothing else. The attachments were not read; that is the first item on the roadmap.</p>
   <p class="note-limit">Corrections that arrive are applied to the row and dated in the <span class="path">correcciones</span> array of the data file, with what changed and who flagged it. Nothing is edited silently. The request is above, with the address: <a href="#aviso">back to the notice</a>.</p>
 </section>
 

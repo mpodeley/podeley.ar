@@ -242,6 +242,32 @@
 .conf--alta { color: var(--pd-primary); }
 .conf--media { color: var(--pd-caveat); }
 
+/* La hoja de ruta se lee como agenda, no como promesa: cada ítem nombra el
+   límite que cierra. Mismo patrón apilado que .roles en /perfil/. */
+.ruta { list-style: none; margin: var(--pd-sp-6) 0 0; padding: 0; }
+.ruta li + li { margin-top: var(--pd-sp-5); padding-top: var(--pd-sp-5); border-top: 1px solid var(--pd-border-soft); }
+.ruta h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: 0;
+}
+.ruta p {
+  max-width: 68ch; margin: .5rem 0 0; color: var(--pd-text-muted);
+  font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body);
+}
+
+/* Recursos: el nombre lleva el link y la línea de al lado dice para qué sirve.
+   Once entradas anotadas, no un directorio. */
+.rsrc-g {
+  margin: var(--pd-sp-6) 0 0; font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono);
+  text-transform: uppercase; color: var(--pd-text-faint);
+}
+.rsrc { list-style: none; margin: var(--pd-sp-4) 0 0; padding: 0; max-width: 68ch; }
+.rsrc li + li { margin-top: var(--pd-sp-3); }
+.rsrc li { color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
+.rsrc a { font-weight: 600; text-decoration: none; color: var(--pd-link); }
+.rsrc a:hover { text-decoration: underline; }
+
 /* ---------- responsive ---------------------------------------------------- */
 
 @media (max-width: 860px) {

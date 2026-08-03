@@ -5,8 +5,8 @@
   "type": "module",
   "description": "Segment funnel: E&P, mining, gas & power, research. Static, ES/EN, no dependencies.",
   "scripts": {
-    "build": "node build.mjs",
-    "serve": "node build.mjs && python3 -m http.server -d dist 8080",
+    "build": "node build.mjs && node tools/postbuild.mjs",
+    "serve": "npm run build && python3 -m http.server -d dist 8080",
     "check": "node tools/ciber-check.mjs && node tools/site-check.mjs",
     "deploy": "node tools/predeploy.mjs && node build.mjs && npx --yes gh-pages@6 -d dist -t -r https://github.com/podeley/podeley.github.io.git",
     "shots": "node tools/shots.mjs",

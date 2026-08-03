@@ -31,6 +31,12 @@
       "slug": "research",
       "es": "Research",
       "en": "Research"
+    },
+    {
+      "key": "perfil",
+      "slug": "perfil",
+      "es": "Perfil",
+      "en": "Profile"
     }
   ],
   "backlink": null

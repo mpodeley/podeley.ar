@@ -4,3 +4,6 @@ node_modules/
 # v3 leftovers, in case they reappear
 site/
 .venv/
+
+# el CV crudo: la copia publicable vive en static/assets/
+raw/

@@ -110,6 +110,24 @@
   margin: var(--pd-sp-6) 0 0;
 }
 
+/* ---------- trayectoria (/perfil/) ---------------------------------------- */
+
+/* Un recruiter escanea empresa, rol y fechas antes de leer una línea, así que
+   los tres van arriba y la prosa abajo. La fecha va en la mono de los datos
+   para que la columna se lea de un saque. */
+.roles { list-style: none; margin: var(--pd-sp-6) 0 0; padding: 0; }
+.role + .role { margin-top: var(--pd-sp-5); padding-top: var(--pd-sp-5); border-top: 1px solid var(--pd-border-soft); }
+.role-when {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: .06em; color: var(--pd-text-faint); margin: 0;
+}
+.role h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; margin: .3rem 0 0;
+}
+.role-where { margin: .2rem 0 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); }
+.role p:last-child { max-width: 68ch; margin: .6rem 0 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+
 /* ---------- bio y contacto ------------------------------------------------ */
 
 .bio-text {

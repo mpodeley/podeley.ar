@@ -40,10 +40,10 @@ const CARDS = [
   { slug: 'ep', lang: 'en', eyebrow: 'E&P · Neuquén basin', fig: '13.5 months',
     title: 'ahead of the official activity registry' },
 
-  { slug: 'mineria', lang: 'es', eyebrow: 'Minería · Catastro y exploración', fig: '19,671 derechos',
-    title: 'de seis provincias, unificados en un solo mapa' },
-  { slug: 'mineria', lang: 'en', eyebrow: 'Mining · Title and exploration', fig: '19,671 claims',
-    title: 'from six provinces, merged into a single map' },
+  { slug: 'mineria', lang: 'es', eyebrow: 'Minería · Catastro y exploración', fig: '21,386 derechos',
+    title: 'de siete provincias, unificados en un solo mapa' },
+  { slug: 'mineria', lang: 'en', eyebrow: 'Mining · Title and exploration', fig: '21,386 claims',
+    title: 'from seven provinces, merged into a single map' },
 
   { slug: 'energia', lang: 'es', eyebrow: 'Gas y energía · Mesas y comercialización', fig: 'Mes a mes',
     title: 'la red nacional de transporte de gas, tramo por tramo' },

@@ -31,9 +31,9 @@ const { chromium } = require('playwright-core')
    páginas que no tienen un número al frente abren por la frase. */
 const CARDS = [
   { slug: 'home', lang: 'es', eyebrow: 'Soluciones y herramientas para energía y minería',
-    title: 'Todos esperan el dato. Vos ya lo tenés' },
+    title: 'El dato oficial tarda. Vos podés medirlo hoy' },
   { slug: 'home', lang: 'en', eyebrow: 'Solutions and tools for energy and mining',
-    title: 'Everyone waits for the data. You already have it' },
+    title: 'The official data runs late. You can measure it today' },
 
   { slug: 'ep', lang: 'es', eyebrow: 'E&P · Cuenca Neuquina', fig: '13.5 meses',
     title: 'de anticipo sobre el registro oficial de actividad' },
@@ -54,6 +54,11 @@ const CARDS = [
     title: 'incidentes que se conocen solo porque el atacante los publicó' },
   { slug: 'ciber', lang: 'en', eyebrow: 'Sector register · Argentine critical infrastructure', fig: '7 of 14',
     title: 'incidents known only because the attacker published them' },
+
+  { slug: 'consultoria', lang: 'es', eyebrow: 'Consultoría · Petróleo, gas y minería', fig: 'Gratis',
+    title: 'la charla inicial y la propuesta, con maqueta incluida' },
+  { slug: 'consultoria', lang: 'en', eyebrow: 'Consulting · Oil, gas & mining', fig: 'Free',
+    title: 'the first call and the proposal, mockup included' },
 
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',
     title: 'Interpretabilidad mecanicista, publicada con sus nulos' },

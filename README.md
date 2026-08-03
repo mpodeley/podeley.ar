@@ -78,9 +78,14 @@ Necesita `playwright-core` + chromium y `sharp`; ver el encabezado de `tools/sho
 
 El sitio se sirve desde la rama `gh-pages` de **`podeley/podeley.github.io`**, que es a
 donde `npm run deploy` hace build y push (por eso el `-r` explícito en el script: sin él,
-`gh-pages` empujaría a `origin`, que es otro repo).
+`gh-pages` empujaría a `origin`, que es otro repo). El dominio `podeley.ar` está conectado
+(CNAME en `static/`, DNS en Porkbun).
 
-El dominio propio `podeley.ar` todavía no está conectado: no hay `CNAME` en ningún lado
-y Pages no tiene custom domain configurado.
+`npm run deploy` corre primero `tools/predeploy.mjs`: aborta si el working tree está sucio
+o si HEAD no coincide con `origin/main` — `gh-pages` publica el árbol, no lo commiteado, y
+con más de una sesión trabajando eso ya mandó a producción trabajo a medias una vez.
+Salteo consciente: `PREDEPLOY_SKIP=1 npm run deploy`.
 
-No hay GitHub Action: el token de `gh` no tiene scope `workflow`.
+No hay GitHub Action activa: el token de `gh` no tiene scope `workflow`. El workflow listo
+para activar está en `tools/deploy.workflow.yml`, con los pasos de activación en su
+encabezado (PAT de la org como secret + mover el archivo a `.github/workflows/`).

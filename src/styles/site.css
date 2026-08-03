@@ -91,6 +91,28 @@
 .principles--proof .fig a::after { content: ""; position: absolute; inset: 0; }
 .principles--proof .principle:hover .fig a { color: var(--pd-link); }
 
+/* El proceso de consultoría: pasos apilados, número grande, la misma regla de
+   color del three-up extendida al cuarto paso con la tinta dorada. */
+.steps { display: grid; gap: var(--pd-sp-5); margin-top: var(--pd-sp-6); }
+.step {
+  display: grid; grid-template-columns: 3.2rem 1fr; gap: var(--pd-sp-4);
+  border-top: 2px solid var(--pd-orange-ink); padding-top: var(--pd-sp-3);
+}
+.step:nth-child(2) { border-top-color: var(--pd-blue-ink); }
+.step:nth-child(3) { border-top-color: var(--pd-green-ink); }
+.step:nth-child(4) { border-top-color: var(--pd-gold-ink); }
+.step-n {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h2); line-height: 1; margin: 0;
+  color: var(--pd-text-faint);
+}
+.step h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25;
+  margin: 0 0 .45rem; color: var(--pd-text);
+}
+.step p:not(.step-n) { margin: 0; color: var(--pd-text-muted); }
+
 /* La figura del hero, sólo en el home. */
 .hero-figure { margin: var(--pd-sp-6) 0 0; }
 .hero-figure img {
@@ -287,4 +309,17 @@
   display: block; width: 168px; height: 168px; object-fit: cover;
   border: 1px solid var(--pd-border); border-radius: var(--pd-r-2);
   margin: var(--pd-sp-5) 0 0;
+}
+
+/* Con seis secciones el nav móvil scrollea y "Perfil" nace fuera de pantalla.
+   La sombra del borde derecho avisa que hay más; el fondo con attachment local
+   la tapa al llegar al final, así que desaparece sola. */
+@media (max-width: 760px) {
+  .nav {
+    background:
+      linear-gradient(to left, var(--pd-bg) 35%, rgba(255, 255, 255, 0)) right center / 44px 100%,
+      linear-gradient(to left, rgba(110, 116, 128, .25), rgba(110, 116, 128, 0)) right center / 26px 100%;
+    background-repeat: no-repeat;
+    background-attachment: local, scroll;
+  }
 }

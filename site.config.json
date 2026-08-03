@@ -39,6 +39,12 @@
       "en": "Cyber"
     },
     {
+      "key": "consultoria",
+      "slug": "consultoria",
+      "es": "Consultoría",
+      "en": "Consulting"
+    },
+    {
       "key": "perfil",
       "slug": "perfil",
       "es": "Perfil",

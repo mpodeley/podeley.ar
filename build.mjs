@@ -220,7 +220,10 @@ for (const p of pages) {
   // One language, or no counterpart page → no toggle at all.
   const toggle =
     other && !isErrorPage
-      ? `<a class="lang-toggle" href="${translated ? urlFor(p.slug, other) : urlFor('index', other)}" hreflang="${other}" lang="${other}">${STRINGS[other].altLabel}</a>`
+      // `altLabel` es la etiqueta que le corresponde a ESTA página, y ya vale
+      // el idioma de destino: STRINGS.es.altLabel === 'EN'. Buscarla por
+      // `other` daba el botón al revés — en español decía ES y llevaba a /en/.
+      ? `<a class="lang-toggle" href="${translated ? urlFor(p.slug, other) : urlFor('index', other)}" hreflang="${other}" lang="${other}">${STRINGS[p.lang].altLabel}</a>`
       : ''
 
   const html = layout

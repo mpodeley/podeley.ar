@@ -311,15 +311,9 @@
   margin: var(--pd-sp-5) 0 0;
 }
 
-/* Con seis secciones el nav móvil scrollea y "Perfil" nace fuera de pantalla.
-   La sombra del borde derecho avisa que hay más; el fondo con attachment local
-   la tapa al llegar al final, así que desaparece sola. */
+/* Con seis secciones el nav móvil scrolleaba y "Perfil" nacía fuera de pantalla.
+   Ahora envuelve a una segunda fila: se ve todo, sin scroll que adivinar. Pisa el
+   overflow-x del chrome.css vendoreado, que acá no se edita. */
 @media (max-width: 760px) {
-  .nav {
-    background:
-      linear-gradient(to left, var(--pd-bg) 35%, rgba(255, 255, 255, 0)) right center / 44px 100%,
-      linear-gradient(to left, rgba(110, 116, 128, .25), rgba(110, 116, 128, 0)) right center / 26px 100%;
-    background-repeat: no-repeat;
-    background-attachment: local, scroll;
-  }
+  .nav { flex-wrap: wrap; overflow-x: visible; row-gap: 0; }
 }

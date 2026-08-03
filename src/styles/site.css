@@ -255,3 +255,10 @@
 @media (prefers-reduced-motion: reduce) {
   .card .shot img, .seg-card { transition: none; }
 }
+
+/* La foto de /perfil/, entre el sub y el CTA. Cuadrada con el radio de la casa. */
+.perfil-photo {
+  display: block; width: 168px; height: 168px; object-fit: cover;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-2);
+  margin: var(--pd-sp-5) 0 0;
+}

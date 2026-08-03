@@ -30,10 +30,10 @@ const { chromium } = require('playwright-core')
 /* La cifra es el gancho; la línea de abajo dice de qué es. El home y las dos
    páginas que no tienen un número al frente abren por la frase. */
 const CARDS = [
-  { slug: 'home', lang: 'es', eyebrow: 'Reservorios · Desarrollo de negocio · Buenos Aires',
-    title: 'Datos públicos e IA para decisiones de energía y minería' },
-  { slug: 'home', lang: 'en', eyebrow: 'Reservoirs · Business development · Buenos Aires',
-    title: 'Public data and AI for energy and mining decisions' },
+  { slug: 'home', lang: 'es', eyebrow: 'Soluciones y herramientas para energía y minería',
+    title: 'Todos esperan el dato. Vos ya lo tenés' },
+  { slug: 'home', lang: 'en', eyebrow: 'Solutions and tools for energy and mining',
+    title: 'Everyone waits for the data. You already have it' },
 
   { slug: 'ep', lang: 'es', eyebrow: 'E&P · Cuenca Neuquina', fig: '13.5 meses',
     title: 'de anticipo sobre el registro oficial de actividad' },

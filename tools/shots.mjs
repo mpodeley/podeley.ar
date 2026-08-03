@@ -30,9 +30,8 @@ mkdirSync(OUT, { recursive: true });
 // en `mpodeley` da 404 y la captura salía en blanco sin avisar. El slug de la
 // izquierda es el nombre del archivo que citan las páginas, no el del repo.
 const SITES = [
-  ['estado-red-gas',                'https://mpodeley.github.io/estado-red-gas/',                3000, false],
+  ['gas',                           'https://podeley.ar/gas/#/mapa',                             6000, false],
   ['simulador-subastas-peru',       'https://mpodeley.github.io/simulador-subastas-peru/',       3000, false],
-  ['gasoductos',                    'https://gasoductos.podeley.ar',                             6000, false],
   ['sat-subsidencia',               'https://subsidencia.podeley.ar/',                6000, true],
   ['vaca-muerta-nightlights',       'https://actividad.podeley.ar/',                  3000, true],
   ['vaca-muerta-emisiones',         'https://emisiones.podeley.ar/',                  3000, true],

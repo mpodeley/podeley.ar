@@ -55,9 +55,9 @@ const CARDS = [
   { slug: 'ciber', lang: 'en', eyebrow: 'Sector register · Argentine critical infrastructure', fig: '7 of 14',
     title: 'incidents known only because the attacker published them' },
 
-  { slug: 'consultoria', lang: 'es', eyebrow: 'Consultoría · Petróleo, gas y minería', fig: 'Por mi cuenta',
+  { slug: 'consultoria', lang: 'es', eyebrow: 'Consultoría · Petróleo, gas y minería', fig: 'Sin cargo',
     title: 'la primera charla y la propuesta, con maqueta incluida' },
-  { slug: 'consultoria', lang: 'en', eyebrow: 'Consulting · Oil, gas & mining', fig: 'On me',
+  { slug: 'consultoria', lang: 'en', eyebrow: 'Consulting · Oil, gas & mining', fig: 'At no cost',
     title: 'the first call and the proposal, mockup included' },
 
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',

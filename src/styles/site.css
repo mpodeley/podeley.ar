@@ -333,3 +333,21 @@
   :root { --pd-gutter: 1.4rem; }
   .kicker-role { display: none; }
 }
+
+/* La foto de tapa: banda panorámica con pie de procedencia, tratada como una
+   .shot pero al ancho del hero. En teléfono se recorta para no quedar finita;
+   el object-position mantiene a las cuadrillas y la base del equipo en cuadro. */
+.hero-photo { margin: 2.6rem 0 0; }
+.hero-photo img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
+  background: var(--pd-surface-2);
+}
+.hero-photo figcaption {
+  margin-top: .55rem;
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+}
+@media (max-width: 600px) {
+  .hero-photo img { aspect-ratio: 16 / 10; height: auto; object-fit: cover; object-position: 50% 62%; }
+}

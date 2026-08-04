@@ -317,3 +317,19 @@
 @media (max-width: 760px) {
   .nav { flex-wrap: wrap; overflow-x: visible; row-gap: 0; }
 }
+
+/* La segunda mitad del hero del home: la prueba, un escalón abajo del pitch.
+   En teléfono el hero de un solo párrafo era un ladrillo de 14 líneas. */
+.hero-proof {
+  max-width: 60ch; color: var(--pd-text-muted);
+  font-size: 1rem; line-height: var(--pd-lh-body);
+  margin: 0 0 1.5rem;
+}
+
+/* En teléfono el gutter del kit clampa en ~17 px y el texto nace pegado al
+   borde. Se pisa el token acá y no en tokens.css, que es vendoreado. El rol
+   del kicker se oculta para que la línea de firma no envuelva. */
+@media (max-width: 480px) {
+  :root { --pd-gutter: 1.4rem; }
+  .kicker-role { display: none; }
+}

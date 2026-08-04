@@ -82,6 +82,13 @@
    grupo de WhatsApp no eligió su área: la prueba tiene que entrar antes que
    el menú. */
 .principles--proof .principle { position: relative; }
+.principles--proof .shot { margin: 0 0 .8rem; }
+.principles--proof .shot img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 16/10; object-fit: cover;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
+  background: var(--pd-surface-2);
+}
 .principles--proof .fig {
   display: block; font-family: var(--pd-font-display); font-weight: 500;
   font-size: var(--pd-fs-h3); line-height: 1.15;
@@ -333,4 +340,13 @@
 :root { --pd-gutter: clamp(1.6rem, 5vw, 2rem); }
 @media (max-width: 480px) {
   .kicker-role { display: none; }
+}
+
+/* Piso duro del margen, sin var() ni clamp(): en algunos webviews la cadena
+   var(clamp()) del token no resuelve y el padding colapsa a cero — el texto
+   nace en el borde físico de la pantalla. La base fija funciona en cualquier
+   navegador; el token la pisa solo donde el navegador demuestra resolverlo. */
+.wrap { padding-left: 1.6rem; padding-right: 1.6rem; }
+@supports (width: clamp(1rem, 2vw, 3rem)) {
+  .wrap { padding-left: var(--pd-gutter); padding-right: var(--pd-gutter); }
 }

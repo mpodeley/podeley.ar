@@ -15,8 +15,9 @@
    Si git falla o no conoce el archivo (clone raso, página nueva sin commit),
    el lastmod se omite — no se inventa. */
 
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, writeFile, readdir } from 'node:fs/promises'
 import { execFileSync } from 'node:child_process'
+import { createHash } from 'node:crypto'
 import { join } from 'node:path'
 
 const ROOT = process.cwd()
@@ -127,3 +128,30 @@ for (const [rel, link] of Object.entries(LINKS)) {
   await writeFile(p, html.replace('</head>', `${link}\n</head>`))
   console.log(`  ${rel.padEnd(24)}  ← autodiscovery del feed`)
 }
+
+/* --- 4. cache-busting de las hojas de estilo -------------------------------- */
+/* El CDN de Pages cachea /styles/*.css por 10 minutos, así que un deploy podía
+   entregar HTML nuevo con el CSS viejo del navegador: las capturas de "La
+   prueba" llegaron a un teléfono sin sus reglas y reventaron el ancho de la
+   página. Con ?v=<hash del contenido>, HTML y CSS viajan siempre en el mismo
+   tren. El hash sale del contenido, no del reloj: dos builds del mismo commit
+   siguen siendo byte-idénticos. */
+
+const cssVersion = {}
+for (const f of await readdir(join(DIST, 'styles'))) {
+  if (!f.endsWith('.css')) continue
+  const body = await readFile(join(DIST, 'styles', f))
+  cssVersion[f] = createHash('sha256').update(body).digest('hex').slice(0, 8)
+}
+let rewritten = 0
+const htmlFiles = (await readdir(DIST, { recursive: true })).filter((f) => f.endsWith('.html'))
+for (const rel of htmlFiles) {
+  const p = join(DIST, rel)
+  let html = await readFile(p, 'utf8')
+  const before = html
+  for (const [f, v] of Object.entries(cssVersion)) {
+    html = html.replaceAll(`href="/styles/${f}"`, `href="/styles/${f}?v=${v}"`)
+  }
+  if (html !== before) { await writeFile(p, html); rewritten++ }
+}
+console.log(`  styles/*.css?v=<hash>     ← ${Object.keys(cssVersion).length} hojas versionadas en ${rewritten} páginas`)

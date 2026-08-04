@@ -31,9 +31,9 @@ const { chromium } = require('playwright-core')
    páginas que no tienen un número al frente abren por la frase. */
 const CARDS = [
   { slug: 'home', lang: 'es', eyebrow: 'Consultoría para energía y minería',
-    title: 'El dato oficial tarda. Hoy se puede medir' },
+    title: 'Primero la pregunta de negocio. Después la herramienta' },
   { slug: 'home', lang: 'en', eyebrow: 'Consulting for energy and mining',
-    title: 'The official data runs late. You can measure it today' },
+    title: 'The business question first. Then the tool' },
 
   { slug: 'ep', lang: 'es', eyebrow: 'E&P · Cuenca Neuquina', fig: '13.5 meses',
     title: 'de anticipo sobre el registro oficial de actividad' },

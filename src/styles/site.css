@@ -326,10 +326,11 @@
   margin: 0 0 1.5rem;
 }
 
-/* En teléfono el gutter del kit clampa en ~17 px y el texto nace pegado al
-   borde. Se pisa el token acá y no en tokens.css, que es vendoreado. El rol
-   del kicker se oculta para que la línea de firma no envuelva. */
+/* El gutter del kit clampa en ~17 px en teléfono y el texto nace pegado al
+   borde. Se pisa el token acá (site.css carga después de tokens.css, que es
+   vendoreado y no se edita): piso de 1.6rem a todo ancho, mismo techo de
+   escritorio. El rol del kicker se oculta para que la firma no envuelva. */
+:root { --pd-gutter: clamp(1.6rem, 5vw, 2rem); }
 @media (max-width: 480px) {
-  :root { --pd-gutter: 1.4rem; }
   .kicker-role { display: none; }
 }

@@ -53,6 +53,11 @@
       "minItems": 1,
       "items": { "$ref": "#/$defs/incidente" }
     },
+    "actores": {
+      "description": "Ficha por grupo nombrado en el registro. El nombre coincide letra por letra con el campo actor de sus incidentes; la disciplina de atribución es la misma que la de las filas: solo lo que sostiene un aviso oficial o un reporte primario, con el estado fechado.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/actor" }
+    },
     "contexto_internacional": {
       "description": "Precedentes extranjeros curados. No es un registro: es una selección de casos de alta confianza que iluminan los hallazgos argentinos.",
       "type": "array",
@@ -75,12 +80,67 @@
       "items": { "type": "string", "pattern": "^https?://" }
     },
     "confianza": { "enum": ["alta", "media", "baja"] },
+    "provincia": {
+      "enum": [
+        "caba", "buenos-aires", "catamarca", "chaco", "chubut", "cordoba",
+        "corrientes", "entre-rios", "formosa", "jujuy", "la-pampa", "la-rioja",
+        "mendoza", "misiones", "neuquen", "rio-negro", "salta", "san-juan",
+        "san-luis", "santa-cruz", "santa-fe", "santiago-del-estero",
+        "tierra-del-fuego", "tucuman"
+      ]
+    },
+    "anioMes": {
+      "description": "Año, o año y mes, para primeras observaciones y cambios de estado: afirmar un día sería falsa precisión.",
+      "type": "string",
+      "pattern": "^\\d{4}(-\\d{2})?$"
+    },
+    "actor": {
+      "type": "object",
+      "required": ["id", "nombre", "tipo", "observado_desde", "estado", "modus_operandi", "incidentes", "fuentes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "nombre": {
+          "description": "Coincide letra por letra con incidentes[].actor: es la clave del cruce.",
+          "type": "string"
+        },
+        "alias": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tipo": {
+          "description": "raas = plataforma con afiliados; ransomware = grupo cerrado o sin clasificación pública, dicho en la nota.",
+          "enum": ["ransomware", "raas"]
+        },
+        "observado_desde": { "$ref": "#/$defs/anioMes" },
+        "estado": {
+          "description": "Al cierre de la fecha del campo actualizado. interrumpido = infraestructura incautada o detenciones; inactivo = sin actividad reportada, sin acción policial conocida; renombrado = sigue operando bajo otra marca, dicho en la nota.",
+          "enum": ["activo", "interrumpido", "inactivo", "renombrado"]
+        },
+        "estado_desde": { "$ref": "#/$defs/anioMes" },
+        "modus_operandi": { "type": "string" },
+        "nota": { "type": "string" },
+        "incidentes": {
+          "description": "ids de las filas de este registro que nombran al grupo.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "contexto": {
+          "description": "ids de casos de contexto_internacional del mismo grupo.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fuentes": { "$ref": "#/$defs/fuentes" }
+      }
+    },
     "incidente": {
       "type": "object",
       "required": [
         "id",
         "org",
         "subsector",
+        "provincias",
         "fecha_incidente",
         "fecha_publica",
         "canal_divulgacion",
@@ -98,6 +158,13 @@
         "id": { "type": "string", "pattern": "^[a-z0-9]+-\\d{4}-\\d{2}$" },
         "org": { "type": "string" },
         "subsector": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "provincias": {
+          "description": "Jurisdicciones del incidente; la primera es el ancla del mapa: la sede de los sistemas afectados (casi siempre administrativos), no la huella comercial. Investigado a mano; el criterio y sus límites van en ubicacion_nota cuando el ancla no es obvia.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/provincia" }
+        },
+        "ubicacion_nota": { "type": "string" },
         "fecha_incidente": { "$ref": "#/$defs/fecha" },
         "fecha_publica": { "$ref": "#/$defs/fecha" },
         "fecha_divulgacion_empresa": { "$ref": "#/$defs/fecha" },

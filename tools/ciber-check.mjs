@@ -131,7 +131,8 @@ const WORDS = {
 console.log(`\nconteos (desde el dataset): ${N} incidentes · ${leakOnly} solo leak-site · ` +
   `${notLeakOnly} con otra fuente · ${alta} alta · ${media} media · ${spanYears} años de rango`)
 
-const allowed = new Set([N, leakOnly, notLeakOnly, alta, media, spanYears])
+const allowed = new Set([N, leakOnly, notLeakOnly, alta, media, spanYears,
+  (data.actores ?? []).length, (data.contexto_internacional ?? []).length])
 
 for (const lang of ['es', 'en']) {
   const wordN = WORDS[lang][N]
@@ -176,6 +177,110 @@ for (const lang of ['es', 'en']) {
   }
 }
 
+/* --- anclas de fila --------------------------------------------------------- */
+/* El feed Atom publica https://podeley.ar/ciber/#<id> como id de cada entrada;
+   las fichas de actores y los mapas linkean a las mismas anclas. Cada id del
+   dataset tiene que existir como id="…" en las dos páginas. */
+
+console.log('\nanclas de fila')
+{
+  const rowIds = [...data.incidentes, ...(data.contexto_internacional ?? [])].map((r) => r.id)
+  for (const lang of ['es', 'en']) {
+    const page = await readFile(PAGES[lang], 'utf8')
+    const missing = rowIds.filter((id) => !page.includes(`id="${id}"`))
+    if (missing.length === 0) ok(`${PAGES[lang]}: las ${rowIds.length} filas tienen ancla`)
+    else fail(`${PAGES[lang]}: filas sin ancla — ${missing.join(', ')}`)
+  }
+}
+
+/* --- actores ↔ incidentes --------------------------------------------------- */
+/* Toda fila con actor nombrado tiene ficha, toda ficha lista exactamente sus
+   filas, y los cruces a contexto_internacional existen. El nombre de la ficha
+   es la clave del join: tiene que coincidir letra por letra con el campo actor. */
+
+console.log('\nactores')
+{
+  const actores = data.actores ?? []
+  const byName = new Map(actores.map((a) => [a.nombre, a]))
+  if (byName.size !== actores.length) fail('actores: hay nombres duplicados')
+
+  const conNombre = data.incidentes.filter((i) => i.actor_tipo !== 'desconocido')
+  for (const i of conNombre) {
+    const a = byName.get(i.actor)
+    if (!a) fail(`incidente ${i.id}: actor "${i.actor}" sin ficha en actores`)
+    else if (!a.incidentes.includes(i.id)) fail(`ficha ${a.id}: no lista su incidente ${i.id}`)
+  }
+
+  const idsInc = new Set(data.incidentes.map((i) => i.id))
+  const idsCtx = new Set((data.contexto_internacional ?? []).map((c) => c.id))
+  for (const a of actores) {
+    for (const id of a.incidentes) {
+      if (!idsInc.has(id)) { fail(`ficha ${a.id}: incidente inexistente ${id}`); continue }
+      const row = data.incidentes.find((i) => i.id === id)
+      if (row.actor !== a.nombre) fail(`ficha ${a.id}: ${id} nombra a "${row.actor}", no a "${a.nombre}"`)
+    }
+    for (const id of a.contexto ?? []) {
+      if (!idsCtx.has(id)) fail(`ficha ${a.id}: caso de contexto inexistente ${id}`)
+    }
+  }
+  ok(`${actores.length} fichas cruzan con ${conNombre.length} filas con actor nombrado`)
+}
+
+/* --- fichas y mapas en las páginas ------------------------------------------ */
+/* El HTML de fichas y mapas se escribe (o genera) por duplicado en es/en; acá
+   se verifica contra el dataset: una ficha por actor, un link por fila con
+   actor nombrado, y mapas que cuentan exactamente lo que cuentan los datos. */
+
+console.log('\nfichas y mapas en las páginas')
+{
+  const actores = data.actores ?? []
+  const ctx = data.contexto_internacional ?? []
+  const nombresFicha = new Set(actores.map((a) => a.nombre))
+  const linksEsperados = data.incidentes.filter((i) => i.actor_tipo !== 'desconocido').length +
+    ctx.filter((c) => nombresFicha.has(c.actor)).length
+
+  const tallyProv = {}
+  for (const i of data.incidentes) tallyProv[i.provincias[0]] = (tallyProv[i.provincias[0]] ?? 0) + 1
+  const tallyPais = {}
+  for (const c of ctx) tallyPais[c.pais] = (tallyPais[c.pais] ?? 0) + 1
+
+  const svgLimpio = {}
+  for (const lang of ['es', 'en']) {
+    const page = await readFile(PAGES[lang], 'utf8')
+
+    const nFichas = (page.match(/<details class="ficha"/g) ?? []).length
+    if (nFichas === actores.length) ok(`${PAGES[lang]}: ${nFichas} fichas, una por actor`)
+    else fail(`${PAGES[lang]}: ${nFichas} fichas para ${actores.length} actores`)
+    for (const a of actores) {
+      for (const id of [`ficha-${a.id}`, `actor-${a.id}`]) {
+        if (!page.includes(`id="${id}"`)) fail(`${PAGES[lang]}: falta id="${id}"`)
+      }
+    }
+
+    const nLinks = (page.match(/class="actor-link"/g) ?? []).length
+    if (nLinks === linksEsperados) ok(`${PAGES[lang]}: ${nLinks} links de actor en las tablas`)
+    else fail(`${PAGES[lang]}: ${nLinks} links de actor, esperados ${linksEsperados}`)
+
+    const mapProv = {}
+    for (const m of page.matchAll(/data-prov="([a-z-]+)" data-n="(\d+)"/g)) mapProv[m[1]] = Number(m[2])
+    if (JSON.stringify(Object.entries(mapProv).sort()) === JSON.stringify(Object.entries(tallyProv).sort()))
+      ok(`${PAGES[lang]}: el mapa argentino cuenta lo mismo que el dataset`)
+    else fail(`${PAGES[lang]}: mapa AR ${JSON.stringify(mapProv)} vs dataset ${JSON.stringify(tallyProv)}`)
+
+    const mapPais = {}
+    for (const m of page.matchAll(/data-pais="([A-Z]{2})"/g)) mapPais[m[1]] = (mapPais[m[1]] ?? 0) + 1
+    if (JSON.stringify(Object.entries(mapPais).sort()) === JSON.stringify(Object.entries(tallyPais).sort()))
+      ok(`${PAGES[lang]}: el mapamundi cuenta lo mismo que el dataset`)
+    else fail(`${PAGES[lang]}: mapamundi ${JSON.stringify(mapPais)} vs dataset ${JSON.stringify(tallyPais)}`)
+
+    svgLimpio[lang] = [...page.matchAll(/<svg[\s\S]*?<\/svg>/g)].map((m) =>
+      m[0].replace(/aria-label="[^"]*"/g, '').replace(/<text[^>]*>[^<]*<\/text>/g, ''),
+    ).join('\n')
+  }
+  if (svgLimpio.es === svgLimpio.en) ok('geometría de mapas idéntica entre es y en')
+  else fail('los SVG de es y en divergen fuera de los textos — regenerar con tools/ciber-maps.mjs')
+}
+
 /* --- paridad es/en ---------------------------------------------------------- */
 
 console.log('\nparidad es/en')
@@ -194,6 +299,13 @@ const pageText = { es: await readFile(PAGES.es, 'utf8'), en: await readFile(PAGE
 
   if (tables.es.join() === tables.en.join()) ok(`mismas tablas con las mismas filas (${tables.es.join(', ') || 'ninguna'})`)
   else fail(`filas de tabla distintas: es ${tables.es.join(', ')} vs en ${tables.en.join(', ')}`)
+
+  const details = {}
+  for (const lang of ['es', 'en']) {
+    details[lang] = [...pageText[lang].matchAll(/<details class="(?:ficha|gloss-item)" id="([^"]+)"/g)].map((m) => m[1])
+  }
+  if (details.es.join() === details.en.join()) ok(`mismos desplegables en el mismo orden (${details.es.length})`)
+  else fail(`desplegables distintos:\n    es: ${details.es.join(', ')}\n    en: ${details.en.join(', ')}`)
 }
 
 /* --- links ------------------------------------------------------------------ */

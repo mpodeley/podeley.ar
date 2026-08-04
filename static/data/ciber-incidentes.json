@@ -1,11 +1,22 @@
 {
   "$schema": "https://podeley.ar/data/ciber-incidentes.schema.json",
   "titulo": "Registro de ciberincidentes en energía e infraestructura crítica argentina",
-  "actualizado": "2026-08-03",
+  "actualizado": "2026-08-04",
   "licencia": "CC BY 4.0",
   "nota_metodo": "Cada fila separa lo que declaró la organización de lo que reclamó el atacante. Nunca se colapsan en un solo campo: en varios casos se contradicen. El campo confianza califica la existencia del incidente, no la veracidad de lo que reclama el atacante. Las URL .onion de los sitios de filtración están registradas pero no se publican.",
   "nota_correcciones": "Este registro se publicó sin consultar antes a las organizaciones nombradas. Las correcciones que lleguen se aplican a la fila y se anotan en el arreglo correcciones, con fecha, qué cambió y quién lo señaló. Nada se edita en silencio.",
   "correcciones": [
+    {
+      "fecha": "2026-08-04",
+      "tipo": "esquema",
+      "que_cambio": "Se agregaron el campo provincias (con ubicacion_nota) a cada incidente y el arreglo actores, con una ficha fechada por grupo nombrado, para los mapas y las fichas de la página. El ancla territorial de cada fila es la sede de los sistemas afectados, investigada a mano; no es la huella comercial de la organización."
+    },
+    {
+      "fecha": "2026-08-04",
+      "tipo": "fila",
+      "que_cambio": "Se corrigió actor_tipo de 8Base (btu-2023-07), Play (amarillagas-2024-05), Dire Wolf (elecpanamericana-2025-11) y SafePay (aysa-2025-12), de raas a ransomware: los reportes primarios (VMware, el aviso FBI/CISA AA23-352A, Trustwave y Huntress) los describen como grupos cerrados, no como plataformas de afiliados.",
+      "senalado_por": "verificación contra fuentes primarias al armar las fichas de actores"
+    },
     {
       "fecha": "2026-08-03",
       "tipo": "esquema",
@@ -41,13 +52,17 @@
     "canal_divulgacion": "como se enteró el público: cnv (hecho relevante), prensa, leak-site (solo el post del atacante), organismo (comunicado oficial).",
     "fecha_incidente": "fecha del ataque o de su detección, cuando se conoce.",
     "fecha_publica": "primera fecha en que el hecho fue públicamente conocible, por cualquier canal.",
-    "capa_afectada": "solo en contexto_internacional: dónde pegó el ataque. it-corporativa; capa-comercial-despacho (la capa que convierte contratos en flujo físico programado); ot-control-industrial; sis-seguridad-instrumentada (la última barrera antes del accidente físico)."
+    "capa_afectada": "solo en contexto_internacional: dónde pegó el ataque. it-corporativa; capa-comercial-despacho (la capa que convierte contratos en flujo físico programado); ot-control-industrial; sis-seguridad-instrumentada (la última barrera antes del accidente físico).",
+    "provincias": "jurisdicciones del incidente; la primera es el ancla del mapa: la sede de los sistemas afectados, que casi siempre son administrativos, no la huella comercial de la organización. Un ciberincidente no tiene provincia; el criterio del ancla está dicho y sus límites en ubicacion_nota.",
+    "actores": "ficha por grupo nombrado en el registro, con estado fechado y fuentes. Un nombre de grupo no es una organización estable: hay rebrandeos, infraestructura incautada y rotación de afiliados, y las fichas lo anotan caso por caso."
   },
   "incidentes": [
     {
       "id": "edesur-2020-06",
       "org": "Edesur (Enel Argentina)",
       "subsector": "distribucion-electrica",
+      "provincias": ["caba", "buenos-aires"],
+      "ubicacion_nota": "Sede central en Monserrat; el área de concesión abarca el sur de la ciudad y del conurbano.",
       "fecha_incidente": "2020-06-05",
       "fecha_publica": "2020-06-07",
       "canal_divulgacion": "prensa",
@@ -70,6 +85,8 @@
       "id": "absa-2021-01",
       "org": "Aguas Bonaerenses S.A. (ABSA)",
       "subsector": "agua-saneamiento",
+      "provincias": ["buenos-aires"],
+      "ubicacion_nota": "Administración en La Plata; opera en el interior de la provincia.",
       "fecha_incidente": "2021-01-26",
       "fecha_publica": "2021-01-26",
       "canal_divulgacion": "prensa",
@@ -90,6 +107,8 @@
       "id": "tgs-2022-04",
       "org": "Transportadora de Gas del Sur (TGS)",
       "subsector": "transporte-gas",
+      "provincias": ["caba", "neuquen", "rio-negro", "la-pampa", "buenos-aires", "chubut", "santa-cruz", "tierra-del-fuego"],
+      "ubicacion_nota": "El SPAC es la capa comercial y se opera desde la sede porteña; la red de gasoductos que programa cruza la Patagonia hasta Buenos Aires.",
       "fecha_incidente": "2022-04-03",
       "fecha_publica": "2022-04-05",
       "canal_divulgacion": "prensa",
@@ -113,6 +132,8 @@
       "id": "albanesi-2023-02",
       "org": "Grupo Albanesi",
       "subsector": "generacion-y-comercializacion",
+      "provincias": ["caba", "cordoba", "tucuman", "la-rioja", "rio-negro", "santiago-del-estero", "buenos-aires"],
+      "ubicacion_nota": "Sede corporativa en CABA; las centrales del grupo están en el interior.",
       "fecha_incidente": "2023-02-14",
       "fecha_publica": "2023-02-14",
       "fecha_divulgacion_empresa": "2023-02-16",
@@ -137,11 +158,13 @@
       "id": "btu-2023-07",
       "org": "BTU S.A.",
       "subsector": "servicios-energeticos",
+      "provincias": ["caba"],
+      "ubicacion_nota": "Sede en CABA; obras de infraestructura energética en varias provincias.",
       "fecha_incidente": "2023-07-13",
       "fecha_publica": "2023-07-13",
       "canal_divulgacion": "leak-site",
       "actor": "8Base",
-      "actor_tipo": "raas",
+      "actor_tipo": "ransomware",
       "sistemas_segun_empresa": null,
       "sistemas_segun_actor": "Ficha de víctima con captura de pantalla en el sitio de filtración.",
       "datos_publicados": "sin confirmar",
@@ -153,11 +176,13 @@
       "id": "amarillagas-2024-05",
       "org": "Amarilla Gas",
       "subsector": "distribucion-glp",
+      "provincias": ["caba", "chaco", "buenos-aires"],
+      "ubicacion_nota": "Administración central en CABA; la planta de origen está en Resistencia y las sucursales, en la provincia de Buenos Aires.",
       "fecha_incidente": "2024-05-14",
       "fecha_publica": "2024-06-13",
       "canal_divulgacion": "leak-site",
       "actor": "Play",
-      "actor_tipo": "raas",
+      "actor_tipo": "ransomware",
       "sistemas_segun_empresa": null,
       "sistemas_segun_actor": "Ficha de víctima con captura de pantalla en el sitio de filtración.",
       "datos_publicados": "sin confirmar",
@@ -170,6 +195,8 @@
       "id": "cnea-2024-11",
       "org": "Comisión Nacional de Energía Atómica (CNEA)",
       "subsector": "nuclear",
+      "provincias": ["caba", "buenos-aires", "rio-negro"],
+      "ubicacion_nota": "Sede en CABA; el actor reclamó sistemas administrativos de todas las sedes, con los centros atómicos de Constituyentes, Ezeiza y Bariloche entre ellas.",
       "fecha_incidente": "2024-11-28",
       "fecha_publica": "2024-12-18",
       "canal_divulgacion": "prensa",
@@ -191,6 +218,8 @@
       "id": "hasa-2025-01",
       "org": "Hidrocarburos Argentinos S.A. (HASA)",
       "subsector": "upstream",
+      "provincias": ["caba"],
+      "ubicacion_nota": "Domicilio fiscal y teléfono porteños; la empresa no publica dirección y su huella operativa no tiene fuente sólida.",
       "fecha_incidente": "2025-01-04",
       "fecha_publica": "2025-01-04",
       "canal_divulgacion": "leak-site",
@@ -207,6 +236,8 @@
       "id": "360energy-2025-02",
       "org": "360 Energy",
       "subsector": "generacion-solar",
+      "provincias": ["buenos-aires", "san-juan", "la-rioja", "catamarca"],
+      "ubicacion_nota": "Sede en Pilar; los parques solares están en San Juan, La Rioja y Catamarca.",
       "fecha_incidente": "2025-02-04",
       "fecha_publica": "2025-02-04",
       "canal_divulgacion": "leak-site",
@@ -223,6 +254,8 @@
       "id": "hasa-2025-05",
       "org": "Hidrocarburos Argentinos S.A. (HASA)",
       "subsector": "upstream",
+      "provincias": ["caba"],
+      "ubicacion_nota": "Domicilio fiscal y teléfono porteños; la empresa no publica dirección y su huella operativa no tiene fuente sólida.",
       "fecha_incidente": "2025-05-16",
       "fecha_publica": "2025-05-16",
       "canal_divulgacion": "leak-site",
@@ -240,6 +273,7 @@
       "id": "ycrt-2025-05",
       "org": "Yacimientos Carboníferos Río Turbio (YCRT)",
       "subsector": "carbon",
+      "provincias": ["santa-cruz"],
       "fecha_incidente": "2025-05-27",
       "fecha_publica": "2025-05-27",
       "canal_divulgacion": "prensa",
@@ -257,11 +291,13 @@
       "id": "elecpanamericana-2025-11",
       "org": "Electricidad Panamericana",
       "subsector": "servicios-electricos",
+      "provincias": ["buenos-aires"],
+      "ubicacion_nota": "Sede en Boulogne, partido de San Isidro.",
       "fecha_incidente": "2025-11-21",
       "fecha_publica": "2025-11-26",
       "canal_divulgacion": "leak-site",
       "actor": "Dire Wolf",
-      "actor_tipo": "raas",
+      "actor_tipo": "ransomware",
       "sistemas_segun_empresa": null,
       "sistemas_segun_actor": "100 GB reclamados, con captura de pantalla.",
       "datos_publicados": "sin confirmar",
@@ -273,11 +309,13 @@
       "id": "aysa-2025-12",
       "org": "AySA",
       "subsector": "agua-saneamiento",
+      "provincias": ["caba", "buenos-aires"],
+      "ubicacion_nota": "Sede en CABA; el área servida abarca el conurbano.",
       "fecha_incidente": "2025-12-14",
       "fecha_publica": "2025-12-14",
       "canal_divulgacion": "leak-site",
       "actor": "SafePay",
-      "actor_tipo": "raas",
+      "actor_tipo": "ransomware",
       "sistemas_segun_empresa": null,
       "sistemas_segun_actor": "Entrada de blog dedicada en el sitio de filtración, con captura de pantalla.",
       "datos_publicados": "sin confirmar",
@@ -290,6 +328,8 @@
       "id": "oldelval-2026-07",
       "org": "Oleoductos del Valle (Oldelval)",
       "subsector": "transporte-crudo",
+      "provincias": ["rio-negro", "neuquen", "la-pampa", "buenos-aires"],
+      "ubicacion_nota": "Sede en Cipolletti; el sistema de oleoductos va de la cuenca Neuquina a Puerto Rosales.",
       "fecha_incidente": "2026-07-23",
       "fecha_publica": "2026-07-23",
       "fecha_divulgacion_empresa": "2026-07-31",
@@ -307,6 +347,185 @@
         "https://www.infobae.com/economia/2026/08/02/la-operadora-del-oleoducto-por-el-que-circula-el-75-del-petroleo-de-vaca-muerta-sufrio-un-ciberataque-en-sus-sistemas/",
         "https://www.ambito.com/hackers-atacaron-oldelval-que-opera-el-mayor-oleoducto-la-argentina-n6306082",
         "https://www.ransomware.live/id/T2xkZWx2YWwgT2xlb2R1Y3RvcyBkZWwgVmFsbGVAdGhlZ2VudGxlbWVu"
+      ]
+    }
+  ],
+  "actores": [
+    {
+      "id": "snake-ekans",
+      "nombre": "Snake / EKANS",
+      "alias": ["EKANS", "SNAKEHOSE"],
+      "tipo": "ransomware",
+      "observado_desde": "2019-12",
+      "estado": "inactivo",
+      "estado_desde": "2020",
+      "modus_operandi": "Malware en Go que antes de cifrar ejecuta una lista fija de procesos a terminar, con software industrial incluido: interfaces de operador e historiadores de proceso. Dragos lo describe como terminación para liberar archivos, no sabotaje, con riesgo de interrupción grave en entornos industriales.",
+      "nota": "La inactividad es inferencia por ausencia de reportes desde mediados de 2020; no hubo cierre declarado ni acción policial conocida.",
+      "incidentes": ["edesur-2020-06"],
+      "fuentes": [
+        "https://www.dragos.com/blog/ekans-ransomware-misconceptions-and-misunderstandings",
+        "https://attack.mitre.org/software/S0605/",
+        "https://unit42.paloaltonetworks.com/threat-assessment-ekans-ransomware/"
+      ]
+    },
+    {
+      "id": "lockbit3",
+      "nombre": "LockBit 3.0",
+      "alias": ["LockBit Black"],
+      "tipo": "raas",
+      "observado_desde": "2022-06",
+      "estado": "interrumpido",
+      "estado_desde": "2024-02",
+      "modus_operandi": "Plataforma de afiliados con doble extorsión: terceros pagan por usar la marca, entran por servicios expuestos y phishing, exfiltran y cifran. La NCA constató que pagar no garantizaba el borrado de los datos.",
+      "nota": "La Operación Cronos (febrero de 2024) incautó el panel, el código fuente y más de mil claves de descifrado; el operador Dmitry Khoroshev fue identificado y sancionado en mayo de 2024 y sigue prófugo. La marca reapareció con LockBit 5.0 en 2025; la variante 3.0 que publicó a Albanesi quedó neutralizada.",
+      "incidentes": ["albanesi-2023-02"],
+      "fuentes": [
+        "https://www.nationalcrimeagency.gov.uk/news/nca-leads-international-investigation-targeting-worlds-most-harmful-ransomware-group",
+        "https://www.nationalcrimeagency.gov.uk/news/lockbit-leader-unmasked-and-sanctioned",
+        "https://www.ransomware.live/group/lockbit3"
+      ]
+    },
+    {
+      "id": "8base",
+      "nombre": "8Base",
+      "tipo": "ransomware",
+      "observado_desde": "2022-03",
+      "estado": "interrumpido",
+      "estado_desde": "2025-02",
+      "modus_operandi": "Grupo cerrado sobre una variante propia del ransomware Phobos, con doble extorsión y objetivos oportunistas, sin especialización sectorial.",
+      "nota": "La Operación Phobos Aetor (febrero de 2025) arrestó en Tailandia a cuatro señalados como cabecillas e incautó el sitio de filtración; sin resurgimiento reportado desde entonces.",
+      "incidentes": ["btu-2023-07"],
+      "fuentes": [
+        "https://blogs.vmware.com/security/2023/06/8base-ransomware-a-heavy-hitting-player.html",
+        "https://www.europol.europa.eu/media-press/newsroom/news/key-figures-behind-phobos-and-8base-ransomware-arrested-in-international-cybercrime-crackdown",
+        "https://www.ransomware.live/group/8base"
+      ]
+    },
+    {
+      "id": "play",
+      "nombre": "Play",
+      "alias": ["Playcrypt"],
+      "tipo": "ransomware",
+      "observado_desde": "2022-06",
+      "estado": "activo",
+      "modus_operandi": "El aviso conjunto del FBI y CISA lo presume grupo cerrado. Entra por cuentas válidas y servicios expuestos, recompila el cifrador para cada ataque, y su nota de rescate no trae monto: la víctima tiene que escribir a un correo.",
+      "nota": "Al aviso actualizado de junio de 2025, el FBI le constaban unas 900 organizaciones afectadas.",
+      "incidentes": ["amarillagas-2024-05"],
+      "fuentes": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-352a",
+        "https://www.ic3.gov/CSA/2025/250604.pdf",
+        "https://www.ransomware.live/group/play"
+      ]
+    },
+    {
+      "id": "moneymessage",
+      "nombre": "Money Message",
+      "tipo": "ransomware",
+      "observado_desde": "2023-03",
+      "estado": "activo",
+      "modus_operandi": "Doble extorsión sobre Windows y servidores de virtualización, con exfiltración previa al cifrado; documentado por firmas de seguridad, sin aviso oficial de ninguna agencia.",
+      "nota": "Sin clasificación pública de su modelo (cerrado o de afiliados); la escasez de literatura es en sí un dato.",
+      "incidentes": ["cnea-2024-11"],
+      "fuentes": [
+        "https://cyble.com/blog/demystifying-money-message-ransomware/",
+        "https://therecord.media/msi-micro-star-international-ransomware-money-message",
+        "https://www.ransomware.live/group/moneymessage"
+      ]
+    },
+    {
+      "id": "eldorado",
+      "nombre": "ElDorado",
+      "alias": ["Eldorado", "El Dorado"],
+      "tipo": "raas",
+      "observado_desde": "2024-03",
+      "estado": "renombrado",
+      "estado_desde": "2024",
+      "modus_operandi": "Programa de afiliados anunciado en un foro criminal, con cifrador multiplataforma propio para Windows, Linux y servidores de virtualización.",
+      "nota": "Dos firmas reportan que siguió operando como BlackLock, el grupo que volvió a publicar a HASA cinco meses después; la continuidad es hipótesis fuerte por solapamiento técnico y de operador, sin prueba forense pública.",
+      "incidentes": ["hasa-2025-01"],
+      "fuentes": [
+        "https://www.group-ib.com/blog/eldorado-ransomware/",
+        "https://darkatlas.io/blog/blacklock-ransomware-a-growing-threat-across-industries",
+        "https://www.resecurity.com/blog/article/blacklock-ransomware-a-late-holiday-gift-with-intrusion-into-the-threat-actors-infrastructure"
+      ]
+    },
+    {
+      "id": "akira",
+      "nombre": "Akira",
+      "tipo": "raas",
+      "observado_desde": "2023-03",
+      "estado": "activo",
+      "modus_operandi": "Entra sobre todo por accesos VPN sin doble factor, exfiltra en horas y extorsiona en dos frentes; el aviso conjunto de noviembre de 2025 lo declara amenaza inminente para infraestructura crítica.",
+      "nota": "El mismo aviso estima unos US$ 244 millones recaudados a fines de septiembre de 2025. El vínculo con el desaparecido Conti es análisis de blockchain de una firma, no un hecho establecido.",
+      "incidentes": ["360energy-2025-02"],
+      "fuentes": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-109a",
+        "https://www.ic3.gov/CSA/2025/251113.pdf",
+        "https://arcticwolf.com/resources/blog/conti-and-akira-chained-together/"
+      ]
+    },
+    {
+      "id": "blacklock",
+      "nombre": "BlackLock",
+      "alias": ["ElDorado (marca anterior, según dos firmas)"],
+      "tipo": "raas",
+      "observado_desde": "2024",
+      "estado": "inactivo",
+      "estado_desde": "2025-03",
+      "modus_operandi": "Plataforma de afiliados con doble extorsión; llegó a estar entre los grupos más activos del trimestre antes de caer.",
+      "nota": "Investigadores de Resecurity entraron a su sitio por una vulnerabilidad, recolectaron credenciales y avisaron a víctimas y autoridades antes de que el grupo publicara; la infraestructura quedó liquidada en marzo de 2025. Última víctima publicada: julio de 2025.",
+      "incidentes": ["hasa-2025-05"],
+      "fuentes": [
+        "https://www.resecurity.com/blog/article/blacklock-ransomware-a-late-holiday-gift-with-intrusion-into-the-threat-actors-infrastructure",
+        "https://www.ransomware.live/group/blacklock"
+      ]
+    },
+    {
+      "id": "direwolf",
+      "nombre": "Dire Wolf",
+      "tipo": "ransomware",
+      "observado_desde": "2025-05",
+      "estado": "activo",
+      "modus_operandi": "Operación dirigida con doble extorsión y un mes de plazo antes de publicar; cifrador en Go que apaga los registros de eventos y borra las copias de respaldo.",
+      "nota": "Sin acción policial conocida; la última víctima publicada es de junio de 2026.",
+      "incidentes": ["elecpanamericana-2025-11"],
+      "fuentes": [
+        "https://www.levelblue.com/blogs/spiderlabs-blog/dire-wolf-strikes-new-ransomware-group-targeting-global-sectors",
+        "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2025-082/",
+        "https://www.ransomware.live/group/direwolf"
+      ]
+    },
+    {
+      "id": "safepay",
+      "nombre": "SafePay",
+      "tipo": "ransomware",
+      "observado_desde": "2024-09",
+      "estado": "activo",
+      "modus_operandi": "Grupo cerrado, sin afiliados: el mismo equipo entra por VPN y escritorio remoto con credenciales válidas, exfiltra y cifra en menos de un día, sobre código emparentado con el filtrado de LockBit Black.",
+      "nota": "De los más activos de 2025; su sitio estuvo semanas caído a principios de 2026 por razones desconocidas, y volvió.",
+      "incidentes": ["aysa-2025-12"],
+      "fuentes": [
+        "https://www.huntress.com/blog/its-not-safe-to-pay-safepay",
+        "https://www.picussecurity.com/resource/blog/inside-safepay-analyzing-the-new-centralized-ransomware-group",
+        "https://www.ransomware.live/group/safepay"
+      ]
+    },
+    {
+      "id": "thegentlemen",
+      "nombre": "The Gentlemen",
+      "alias": ["Storm-2697"],
+      "tipo": "raas",
+      "observado_desde": "2025-07",
+      "estado": "activo",
+      "modus_operandi": "Herramientas propias para anular productos de seguridad mediante drivers vulnerables, despliegue por políticas de dominio y un cifrador autopropagante; abrió su programa de afiliados a fines de 2025.",
+      "nota": "Publicó a Ecopetrol seis días antes que a Oldelval: para el operador, la región es un solo mercado.",
+      "incidentes": ["oldelval-2026-07"],
+      "contexto": ["ecopetrol-2026-07"],
+      "fuentes": [
+        "https://www.trendmicro.com/en_us/research/25/i/unmasking-the-gentlemen-ransomware.html",
+        "https://unit42.paloaltonetworks.com/the-gentlemen-ransomware/",
+        "https://www.microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor/",
+        "https://www.ransomware.live/group/thegentlemen"
       ]
     }
   ],

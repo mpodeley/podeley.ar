@@ -259,6 +259,12 @@
 .reg tbody tr:hover td { background: var(--pd-data-bg); }
 .reg td:nth-child(2) { color: var(--pd-text); }
 .reg-d { font-family: var(--pd-font-mono); white-space: nowrap; color: var(--pd-text-faint); }
+/* Cada fila tiene ancla con el id del dataset: son el destino de las entradas del
+   feed Atom y de los links cruzados de fichas y mapas. La fila apuntada se marca. */
+.reg tbody tr:target td {
+  background: var(--pd-data-bg);
+  box-shadow: inset 2px 0 0 var(--pd-primary);
+}
 
 /* La confianza es la columna que decide cómo leer la fila, así que se lee como
    etiqueta y no como texto corrido. Media usa el color de reserva del sistema,
@@ -296,6 +302,117 @@
 .rsrc li { color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
 .rsrc a { font-weight: 600; text-decoration: none; color: var(--pd-link); }
 .rsrc a:hover { text-decoration: underline; }
+
+/* Fichas de actores: <details> nativo, sin JS. El summary tiene que leerse
+   cerrado (nombre + tipo + estado fechado): hojear el mazo sin abrir nada ya
+   enseña el ecosistema. */
+.fichas { display: grid; grid-template-columns: 1fr 1fr; gap: var(--pd-sp-4); align-items: start; margin: var(--pd-sp-6) 0 0; }
+@media (max-width: 760px) { .fichas { grid-template-columns: 1fr; } }
+.ficha { border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2); background: var(--pd-surface); }
+details.ficha[open] { border-color: var(--pd-border); }
+/* El resaltado al navegar a un ancla interna (fila→ficha) marca la card entera. */
+.ficha:has(:target) { border-color: var(--pd-primary); }
+.ficha summary {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--pd-sp-2) var(--pd-sp-3);
+  padding: var(--pd-sp-4); cursor: pointer; list-style: none;
+}
+.ficha summary::-webkit-details-marker { display: none; }
+.ficha summary::after {
+  content: "+"; margin-left: auto; font-family: var(--pd-font-mono);
+  color: var(--pd-text-faint);
+}
+details.ficha[open] summary::after { content: "–"; }
+.ficha-nombre { margin: 0; font-family: var(--pd-font-display); font-weight: 500; font-size: var(--pd-fs-h3); line-height: 1.25; }
+.ficha-meta { display: flex; gap: var(--pd-sp-2); }
+.tag {
+  display: inline-block; padding: .1rem .45rem; border-radius: var(--pd-r-pill);
+  border: 1px solid currentColor; font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+}
+.tag--activo { color: var(--pd-primary); }
+.tag--caveat { color: var(--pd-caveat); }
+.tag--quieto { color: var(--pd-text-faint); }
+.ficha-body { padding: 0 var(--pd-sp-4) var(--pd-sp-4); }
+.ficha-body p { margin: var(--pd-sp-3) 0 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
+.ficha-datos { margin: 0; display: grid; gap: .35rem; }
+.ficha-datos div { display: flex; gap: var(--pd-sp-3); }
+.ficha-datos dt {
+  flex: 0 0 9.5rem; padding-top: .15rem; font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono);
+  text-transform: uppercase; color: var(--pd-text-faint);
+}
+.ficha-datos dd { margin: 0; font-size: var(--pd-fs-sm); color: var(--pd-text-muted); }
+.ficha-fuentes { font-size: var(--pd-fs-cap); }
+/* "Sin atribuir" no colapsa: es la tesis del mazo y se lee siempre. */
+.ficha--abierta { margin: var(--pd-sp-5) 0 0; padding: var(--pd-sp-4); max-width: 68ch; border-style: dashed; }
+.ficha--abierta p { margin: var(--pd-sp-3) 0 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
+.ficha--abierta .ficha-nombre { margin: 0; }
+
+/* Columna Actor y términos del glosario: subrayado punteado, para distinguir
+   el link interno de referencia del link externo de fuente. */
+.actor-link, .gl {
+  color: inherit; text-decoration: underline dotted;
+  text-decoration-color: var(--pd-text-faint); text-underline-offset: .2em;
+}
+.actor-link:hover, .gl:hover { color: var(--pd-link); text-decoration-style: solid; }
+
+/* Glosario: lista de <details> compacta, un término por renglón. */
+.gloss { margin: var(--pd-sp-6) 0 0; max-width: 68ch; }
+.gloss-item { border-top: 1px solid var(--pd-border-soft); }
+.gloss-item:last-child { border-bottom: 1px solid var(--pd-border-soft); }
+.gloss-item summary { display: flex; padding: var(--pd-sp-3) 0; cursor: pointer; list-style: none; }
+.gloss-item summary::-webkit-details-marker { display: none; }
+.gloss-item summary::after { content: "+"; margin-left: auto; font-family: var(--pd-font-mono); color: var(--pd-text-faint); }
+.gloss-item[open] summary::after { content: "–"; }
+.gloss-item:target dfn { color: var(--pd-primary); }
+.gloss-item dfn { font-style: normal; font-weight: 600; }
+.gloss-item p { margin: 0 0 var(--pd-sp-4); color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
+
+/* Mapas: SVG inline generado por tools/ciber-maps.mjs. El conteo va siempre
+   visible dentro del punto (en táctil no hay hover) y la tabla de al lado es
+   la lectura canónica; el tooltip del mapamundi es decorativo. */
+.mapa { margin: var(--pd-sp-6) 0 0; }
+.mapa svg { display: block; width: 100%; height: auto; }
+.mapa--ar svg { max-width: 26rem; }
+.mapa figcaption { margin-top: var(--pd-sp-3); max-width: 68ch; color: var(--pd-text-faint); font-size: var(--pd-fs-cap); line-height: 1.5; }
+.map-prov { fill: var(--pd-surface-2); stroke: var(--pd-border); stroke-width: 1; }
+.map-land-path { fill: var(--pd-surface-2); stroke: var(--pd-border-soft); stroke-width: .5; }
+.map-leader { stroke: var(--pd-text-faint); stroke-width: 1; }
+.map-dot .dot { fill: var(--pd-primary); fill-opacity: .85; stroke: var(--pd-bg); stroke-width: 2; }
+.map-dot:hover .dot, .map-dot:focus-visible .dot { fill-opacity: 1; }
+.map-dot:focus-visible .dot { stroke: var(--pd-focus); stroke-width: 3; }
+.map-dot .dot--estatal { fill: var(--pd-blue-ink); }
+.map-dot .dot--nn { fill: none; stroke: var(--pd-text-faint); stroke-width: 2; stroke-dasharray: 3 2; }
+.dot-n {
+  fill: #fff; font-family: var(--pd-font-mono); font-size: 13px;
+  text-anchor: middle; dominant-baseline: central; pointer-events: none;
+}
+.map-dot .tip { opacity: 0; visibility: hidden; transition: opacity var(--pd-dur-2) var(--pd-ease); }
+.map-dot:hover .tip, .map-dot:focus-visible .tip { opacity: 1; visibility: visible; }
+.tip text {
+  fill: var(--pd-text); font-family: var(--pd-font-mono); font-size: 14px; text-anchor: middle;
+  paint-order: stroke; stroke: var(--pd-bg); stroke-width: 4px; stroke-linejoin: round;
+}
+.map-key {
+  margin: var(--pd-sp-3) 0 0; font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+}
+.key { display: inline-block; width: .7rem; height: .7rem; margin-right: .3rem; }
+.key--criminal { border-radius: 50%; background: var(--pd-primary); }
+.key--estatal { background: var(--pd-blue-ink); }
+.key--nn { border-radius: 50%; border: 2px dashed var(--pd-text-faint); }
+.map-list { list-style: none; margin: var(--pd-sp-4) 0 0; padding: 0; max-width: 68ch; }
+.map-list li { color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }
+.map-list li + li { margin-top: .35rem; }
+.map-list-prov {
+  margin-right: .5rem; font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); text-transform: uppercase; color: var(--pd-text-faint);
+}
+.map-list a { color: var(--pd-link); text-decoration: none; }
+.map-list a:hover { text-decoration: underline; }
+
+/* Ficción: la lista reusa .rsrc; el título de la obra lleva el peso. */
+.obra { font-weight: 600; color: var(--pd-text); }
 
 /* ---------- responsive ---------------------------------------------------- */
 

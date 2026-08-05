@@ -54,15 +54,11 @@ const withBase = (p) => (BASE === '/' ? p : p.replace(/^\//, BASE))
 const STRINGS = {
   es: {
     ogLocale: 'es_AR', navLabel: 'Secciones', skip: 'Ir al contenido', altLabel: 'EN',
-    footNote: '© 2026 · Buenos Aires · Sitio estático en GitHub Pages',
-    footSource: 'código del sitio',
-    footFine: 'El trabajo se describe por sector; la identidad de los clientes es reservada.',
+    footNote: '© 2026 · Buenos Aires',
   },
   en: {
     ogLocale: 'en', navLabel: 'Sections', skip: 'Skip to content', altLabel: 'ES',
-    footNote: '© 2026 · Buenos Aires · Static site on GitHub Pages',
-    footSource: 'site source',
-    footFine: 'Work is described by sector; client identities are private.',
+    footNote: '© 2026 · Buenos Aires',
   },
 }
 
@@ -153,9 +149,8 @@ function footerHtml(lang) {
   const map = links.map((l) => `<a href="${l.href}">${esc(l[lang] ?? l.es)}</a>`).join(' · ')
   return `  <div class="wrap foot-inner">
     <p class="foot-map">${map}</p>
-    <p class="foot-note">${s.footNote} · <a href="${repo}">${s.footSource}</a></p>
-  </div>
-  <p class="wrap foot-fine">${s.footFine}</p>`
+    <p class="foot-note">${s.footNote}</p>
+  </div>`
 }
 
 /* --- collect ------------------------------------------------------------- */

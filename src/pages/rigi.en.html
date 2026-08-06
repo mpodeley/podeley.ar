@@ -1,0 +1,720 @@
+<!--meta
+{
+  "title": "RIGI register: who committed how much, and by when — Matías Podeley",
+  "description": "Register of the projects admitted to Argentina's Large Investment Incentive Regime, built by reading the approval resolutions in the Official Gazette. Twenty-one approved and USD 29,485 M committed in computable assets, each with its schedule and deadline.",
+  "ogImage": "/assets/og/rigi.en.png",
+  "ogImageAlt": "Twenty-one projects approved under Argentina's RIGI, while the official site reports sixteen",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Register of projects admitted to Argentina's RIGI",
+    "url": "https://podeley.ar/en/rigi/",
+    "description": "Register of the projects admitted to Argentina's Large Investment Incentive Regime, with the amount committed in computable assets, the schedule and the article 176 deadline for each, taken from the resolution that approved it.",
+    "inLanguage": "en",
+    "creator": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/en/perfil/" },
+    "dateModified": "2026-08-06",
+    "temporalCoverage": "2024-07-08/..",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      { "@type": "DataDownload",
+        "contentUrl": "https://podeley.ar/data/rigi-proyectos.json",
+        "encodingFormat": "application/json" }
+    ]
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Sector register · RIGI · Argentina</p>
+  <h1>Twenty-one projects approved, and the official site reports sixteen</h1>
+  <p class="hero-sub">This is the register of projects admitted to Argentina's Large Investment Incentive Regime (RIGI), built by reading, one by one, the Official Gazette resolutions that approve them. Each row carries the amount committed in computable assets, the schedule the resolution sets, and the article 176 deadline. There is no official dataset: the Ministry of Economy's page publishes totals and a map, with nothing to download.</p>
+  <p class="hero-meta"><span class="hero-when">Updated August 6, 2026</span> <a class="link-plain" href="#registro">Go to the register <span class="arw">↓</span></a> <a class="link-plain" href="#plazos">Deadlines <span class="arw">↓</span></a> <a class="link-plain" href="#computables">What the figure measures <span class="arw">↓</span></a> <a class="link-plain" href="#limites">Limits <span class="arw">↓</span></a></p>
+
+  <aside class="aviso" id="aviso">
+    <p class="aviso-t">Notice, and a request</p>
+    <p>This register is built from public sources and published without contacting the companies named. It records what each applicant declared and what the enforcement authority resolved; it does not assess the merit of any project or claim that any is in breach. A commitment with no public evidence of execution shows as "no data", which is not the same as behind schedule.</p>
+    <p>If a row is wrong, <a href="mailto:matias@podeley.ar?subject=Correction%20to%20the%20RIGI%20register%20%E2%80%94%20podeley.ar%2Frigi&amp;body=Hi%20Matias%2C%0A%0AProject%3A%20%0AWhat%20is%20wrong%3A%20%0ASource%3A%20%0A%0A" data-goatcounter-click="mail-rigi">writing in with the source</a> is enough to get it fixed. Every correction is logged with its date in the data file, so there is a record of what changed and why.</p>
+  </aside>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="registro">
+  <div class="section-head">
+    <p class="eyebrow">The register</p>
+    <h2>Who committed how much, and by when</h2>
+    <p class="intro">Twenty-one Ministry of Economy resolutions approved a RIGI admission between January 2025 and July 2026. They add up to USD 29,485 M in computable assets across twenty rows: the twenty-first resolution declares the project's total investment but never separates out how much of it counts toward the regime.</p>
+  </div>
+
+  <!-- rigi-tablas:aprobados -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Amount = investment committed in computable assets, the figure the regime actually counts. Deadline = the article 176 cutoff. A dash means the resolution does not separate it from total investment.</caption>
+      <thead>
+        <tr><th scope="col">Resolution</th><th scope="col">Project</th><th scope="col">Vehicle</th><th scope="col">Sector</th><th scope="col">Province</th><th scope="col">Committed</th><th scope="col">Deadline</th></tr>
+      </thead>
+      <tbody>
+        <tr id="luz-del-campo-el-quemado"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/319374/20250108" rel="noopener">1/2025</a></td><td><a href="#ficha-luz-del-campo-el-quemado">Parque Solar El Quemado y Anexos</a></td><td>Luz del Campo SA</td><td>Power</td><td>Mendoza</td><td class="reg-n">USD 212 M</td><td class="reg-d">2027-01-30</td></tr>
+        <tr id="vmos-oleoducto-sur"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/322830/20250321" rel="noopener">302/2025</a></td><td><a href="#ficha-vmos-oleoducto-sur">Vaca Muerta Oleoducto Sur</a></td><td>VMOS S.A.</td><td>Oil &amp; gas</td><td>Río Negro</td><td class="reg-n">USD 2,486 M</td><td class="reg-d">2028-12-31</td></tr>
+        <tr id="southern-energy-gnl"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/324772/20250505" rel="noopener">559/2025</a></td><td><a href="#ficha-southern-energy-gnl">Proyecto de Licuefacción de Gas Natural</a></td><td>Southern Energy S.A.</td><td>Oil &amp; gas</td><td>Río Negro</td><td class="reg-n">USD 2,825 M</td><td class="reg-d">2035-12-31</td></tr>
+        <tr id="rincon-mining"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/326364/20250603" rel="noopener">735/2025</a></td><td><a href="#ficha-rincon-mining">Proyecto Rincón</a></td><td>Rincón Mining PTY LTD. Sucursal Argentina</td><td>Mining</td><td>Salta</td><td class="reg-n">USD 2,299 M</td><td class="reg-d">2029-06-30</td></tr>
+        <tr id="sidersa-aceria"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/328690/20250722" rel="noopener">1028/2025</a></td><td><a href="#ficha-sidersa-aceria">Proyecto Siderúrgico Argentino Sidersa</a></td><td>Sidersa Acería S.D.E.</td><td>Steel</td><td>Buenos Aires</td><td class="reg-n">USD 286 M</td><td class="reg-d">2026-10-31</td></tr>
+        <tr id="gear-olavarria"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/330400/20250827" rel="noopener">1254/2025</a></td><td><a href="#ficha-gear-olavarria">P.E. Olavarría</a></td><td>Generación Eléctrica Argentina Renovable I S.A. Sucursal Dedicada PEO</td><td>Power</td><td>Buenos Aires</td><td class="reg-n">USD 255 M</td><td class="reg-d">2027-11-30</td></tr>
+        <tr id="galan-hombre-muerto-oeste"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/330470/20250828" rel="noopener">1271/2025</a></td><td><a href="#ficha-galan-hombre-muerto-oeste">Hombre Muerto Oeste (HMW)</a></td><td>Galán SDE</td><td>Mining</td><td>Catamarca</td><td class="reg-n">USD 217 M</td><td class="reg-d">2029-12-31</td></tr>
+        <tr id="acm-los-azules"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/332807/20251014" rel="noopener">1553/2025</a></td><td><a href="#ficha-acm-los-azules">Proyecto Los Azules</a></td><td>Andes Corporación Minera SA</td><td>Mining</td><td>San Juan</td><td class="reg-n">USD 2,354 M</td><td class="reg-d">2027-12-31</td></tr>
+        <tr id="terminal-timbues"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/334814/20251120" rel="noopener">1842/2025</a></td><td><a href="#ficha-terminal-timbues">Proyecto Terminal Multipropósito Timbúes</a></td><td>Terminal Timbúes S.A.</td><td>Infrastructure</td><td>Santa Fe</td><td class="reg-n">USD 277 M</td><td class="reg-d">2027-04-01</td></tr>
+        <tr id="masa-carbonatos-profundos"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/337468/20260115" rel="noopener">6/2026</a></td><td><a href="#ficha-masa-carbonatos-profundos">Carbonatos Profundos (DCP)</a></td><td>Minas Argentinas SA Sucursal Dedicada RIGI I - Nuevo Gualcamayo</td><td>Mining</td><td>San Juan</td><td class="reg-n">USD 520 M</td><td class="reg-d">2028-12-31</td></tr>
+        <tr id="mas-veladero-fases-8-9"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/340249/20260401" rel="noopener">413/2026</a></td><td><a href="#ficha-mas-veladero-fases-8-9">Ampliación Fases 8 y 9 del Sistema de Lixiviación en Valle de Mina Veladero</a></td><td>Minera Andina del Sol S.R.L. Sucursal Dedicada 1</td><td>Mining</td><td>San Juan</td><td class="reg-n">USD 380 M</td><td class="reg-d">2028-12-31</td></tr>
+        <tr id="mdasd-fenix-fase-1b"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/340329/20260406" rel="noopener">431/2026</a></td><td><a href="#ficha-mdasd-fenix-fase-1b">Expansión Fase 1B</a></td><td>Minera del Altiplano S.A. Sucursal Dedicada</td><td>Mining</td><td>Catamarca</td><td class="reg-n">USD 251 M</td><td class="reg-d">2026-12-01</td></tr>
+        <tr id="pacific-rim-diablillos"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/341756/20260511" rel="noopener">562/2026</a></td><td><a href="#ficha-pacific-rim-diablillos">Diablillos</a></td><td>Pacific Rim Mining Corporation Argentina S.A.</td><td>Mining</td><td>Salta y Catamarca</td><td class="reg-n">USD 482 M</td><td class="reg-d">2027-11-30</td></tr>
+        <tr id="tgs-gpm-tramo-1"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/341877/20260513" rel="noopener">676/2026</a></td><td><a href="#ficha-tgs-gpm-tramo-1">Ampliación del Tramo I del Gasoducto Perito Francisco Pascasio Moreno</a></td><td>Transportadora de Gas del Sur SA Sucursal Dedicada 1</td><td>Oil &amp; gas</td><td>Neuquén y Buenos Aires</td><td class="reg-n">USD 513 M</td><td class="reg-d">2026-12-31</td></tr>
+        <tr id="minera-san-jorge-cobre-mendocino"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/342483/20260528" rel="noopener">801/2026</a></td><td><a href="#ficha-minera-san-jorge-cobre-mendocino">PSJ Cobre Mendocino</a></td><td>Minera San Jorge SA</td><td>Mining</td><td>Mendoza</td><td class="reg-n">USD 613 M</td><td class="reg-d">2028-09-01</td></tr>
+        <tr id="exar-cauchari-olaroz"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/342818/20260605" rel="noopener">825/2026</a></td><td><a href="#ficha-exar-cauchari-olaroz">Ampliación Cauchari Olaroz</a></td><td>Minera Exar Sucursal Dedicada</td><td>Mining</td><td>Jujuy</td><td class="reg-n">USD 1,167 M</td><td class="reg-d">2030-07-01</td></tr>
+        <tr id="smp-gasoducto-exportacion"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/343613/20260626" rel="noopener">873/2026</a></td><td><a href="#ficha-smp-gasoducto-exportacion">Gasoducto dedicado para la Exportación de Gas Natural</a></td><td>San Matías Pipeline SA</td><td>Oil &amp; gas</td><td>Neuquén y Río Negro</td><td class="reg-n"><span class="reg-na">not separated</span></td><td class="reg-d">2027-05-31</td></tr>
+        <tr id="pampa-rincon-de-aranda"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/344628/20260721" rel="noopener">1025/2026</a></td><td><a href="#ficha-pampa-rincon-de-aranda">Proyecto Rincón de Aranda</a></td><td>Pampa Energía SA - Sucursal Dedicada Proyecto RDA</td><td>Oil &amp; gas</td><td>Neuquén</td><td class="reg-n">USD 4,521 M</td><td class="reg-d">2031-07-01</td></tr>
+        <tr id="liex-tres-quebradas"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345075/20260729" rel="noopener">1153/2026</a></td><td><a href="#ficha-liex-tres-quebradas">Proyecto de la Sucursal Dedicada de Liex S.A.</a></td><td>Liex S.A. Sucursal Dedicada</td><td>Mining</td><td>Catamarca</td><td class="reg-n">USD 594 M</td><td class="reg-d">2027-11-30</td></tr>
+        <tr id="vicuna-argentina"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345167/20260730" rel="noopener">1154/2026</a></td><td><a href="#ficha-vicuna-argentina">Vicuña</a></td><td>Vicuña Argentina SA</td><td>Mining</td><td>San Juan</td><td class="reg-n">USD 9,025 M</td><td class="reg-d">2028-12</td></tr>
+        <tr id="posco-sal-de-oro-ii"><td class="reg-d"><a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345279/20260731" rel="noopener">1157/2026</a></td><td><a href="#ficha-posco-sal-de-oro-ii">Sal de Oro II</a></td><td>Posco Argentina SAU SDE</td><td>Mining</td><td>Salta y Catamarca</td><td class="reg-n">USD 208 M</td><td class="reg-d">2029-07-31</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="7">21 approved projects · USD 29,485 M in computable assets</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- /rigi-tablas:aprobados -->
+
+  <p class="reg-hint">The amount column is investment in computable assets, not the project's total investment. Five resolutions declare both separately, and the gap runs as high as USD 712 M.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="conteo">
+  <div class="section-head">
+    <p class="eyebrow">Reconciliation</p>
+    <h2>The official count froze on June 5</h2>
+  </div>
+
+  <p>As of August 5, 2026, <a href="https://www.argentina.gob.ar/economia/rigi">argentina.gob.ar/economia/rigi</a> reports sixteen approved projects worth USD 29,892 M. The Official Gazette holds twenty-one worth USD 29,485 M.</p>
+
+  <p>The count gap has an exact date. Approvals published through June 5, 2026 number sixteen, precisely the figure on the official page; the remaining five were published later, between June 26 and July 31. That same pair of numbers, sixteen projects and USD 29,892 M, was already circulating in the press in early June.</p>
+
+  <p>The amount gap runs the other way: this register adds up less money across more projects. Two reasons, both deliberate. It leaves out the row that never declares computable assets, and it takes the regime's figure rather than the headline investment. Adding the declared totals where they exist would give USD 32,493 M.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="computables">
+  <div class="section-head">
+    <p class="eyebrow">What the figure measures</p>
+    <h2>The regime's number is not the number in the announcement</h2>
+  </div>
+
+  <p>RIGI does not count a project's total investment. It counts <strong>computable assets</strong>, a narrower definition with rules of its own. That subset is what the article 172 minimum, the 40% required in the first two years under article 173, and the article 176 deadline all run against. It is the figure that binds.</p>
+
+  <p>For VMOS the two are USD 514 M apart: resolution 302/2025 declares USD 3,000 M in total investment and USD 2,486 M in computable assets. The figure that reached the press was the second one, presented as though it were the first. For Vicuña the gap is USD 712 M, the widest in the register.</p>
+
+  <p>One resolution never separates them. Resolution 873/2026, approving San Matías Pipeline's dedicated gas pipeline, declares USD 1,300 M in total investment and opens the two-year window at USD 454 M and USD 501 M, without saying how much of the total counts. That row is left with a blank committed amount and does not feed the register's total, rather than being counted at its total investment, which would be counting something else.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="plazos">
+  <div class="section-head">
+    <p class="eyebrow">Commitment and deadline</p>
+    <h2>Three deadlines fall before the end of 2026</h2>
+    <p class="intro">Every resolution fixes the date by which the project vehicle committed to having reached the minimum investment. It is the hardest commitment in the regime and the easiest to check against a calendar.</p>
+  </div>
+
+  <ul class="rsrc">
+    <li><strong>October 31, 2026</strong>, Sidersa Acería, USD 286 M. The shortest deadline in the register.</li>
+    <li><strong>December 1, 2026</strong>, Minera del Altiplano, Phase 1B expansion, USD 251 M.</li>
+    <li><strong>December 31, 2026</strong>, TGS, expansion of section I of the Perito Moreno pipeline, USD 513 M. The resolution loads 77% of the capex into year one, the most front-loaded profile of the twenty-one.</li>
+  </ul>
+
+  <p>At the other end, Southern Energy has until December 31, 2035 for its liquefaction plant, ten years beyond the register's median, and commits USD 459 M in the first two years against USD 2,825 M overall.</p>
+
+  <p>Taken together, the twenty-one schedules commit USD 18,549 M in each project's first two years, 63% of everything approved. That is well above the 40% article 173 requires, and the margin is the applicant's own: nobody forced them to front-load it.</p>
+
+  <p class="reg-hint">No project in the register is shown as in breach. The missing piece is not the deadline, which is published, but the execution: there is no public progress reporting of invested capital by project vehicle. Until there is, the compliance column reads "no data".</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="demanda">
+  <div class="section-head">
+    <p class="eyebrow">The demand this opens</p>
+    <h2>Twelve resolutions declare how much capex goes to local suppliers</h2>
+  </div>
+
+  <p>Article 47(l) of the decree 749/2024 annex requires a supplier development plan and a commitment of at least 20% of the investment to local suppliers. Twelve of the twenty-one resolutions publish that percentage, and the range is wide: Galán declares 95.34% at Hombre Muerto Oeste, Terminal Timbúes 87%, and three projects sit exactly on the 20% floor.</p>
+
+  <p>Two resolutions give dollars instead of a percentage: Vicuña commits USD 2,009 M to local suppliers and the El Quemado solar farm USD 118 M. Seven publish neither.</p>
+
+  <p>Crossed with the schedule, that percentage says which year and which province the demand opens in. Catamarca holds five projects, San Juan four, and Río Negro, Salta, Buenos Aires and Neuquén three each.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="incentivos">
+  <div class="section-head">
+    <p class="eyebrow">Incentives invoked</p>
+    <h2>What each project asked for, with no price attached</h2>
+  </div>
+
+  <p>All twenty-one projects draw on the tax incentives of chapter IV and the foreign exchange incentives of chapter V. Beyond that baseline, eleven resolutions enable the article 190 import waiver, ten invoke the article 198 incentives, five enter as Long-Term Strategic Export Projects, and three are expansions of pre-existing projects that were never admitted to the regime.</p>
+
+  <p>This register publishes the inventory, not the forgone revenue. Estimating that would require the list of goods imported under article 190, which the resolutions mention but do not publish, and each vehicle's counterfactual tax position, which is not public. Putting a number on it anyway would be presenting an assumption as a measurement.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="desistidos">
+  <div class="section-head">
+    <p class="eyebrow">What did not go through</p>
+    <h2>The only documented withdrawal surfaced by accident</h2>
+  </div>
+
+  <p>The Official Gazette has not published a single rejection since the regime came into being. It does not publish withdrawals either: the Project Evaluation Committee recommends approval or rejection, and only approval ends in a published rule.</p>
+
+  <p>The one failed application this register can document appears inside the recitals of another. Resolution 1157/2026, which approves Posco's "Sal de Oro II", recounts that the same parent filed "Sal de Oro" on October 30, 2024 and withdrew it on November 17, 2025. It is known because the company came back; had it not, there would be no trace.</p>
+
+  <p>Against the twenty-five projects under evaluation the Ministry reports, the register cannot say how many applications were filed in total or how many fell away.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fichas">
+  <div class="section-head">
+    <p class="eyebrow">Row by row</p>
+    <h2>The twenty-one resolutions, with file number and schedule</h2>
+    <p class="intro">Each record opens with the vehicle, its tax ID and the resolution that approved it. The amounts come from the text of the resolution; the schedule is the one it sets.</p>
+  </div>
+
+  <!-- rigi-tablas:fichas -->
+  <div class="fichas">
+    <details class="ficha" id="ficha-luz-del-campo-el-quemado">
+      <summary><span class="ficha-nombre">Parque Solar El Quemado y Anexos</span><span class="ficha-meta"><span class="tag tag--quieto">Power</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1/2025 del Ministerio de Economía, published January 8, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Luz del Campo SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71765521-0</dd></div>
+          <div><dt>Sector</dt><dd>Power</dd></div>
+          <div><dt>Province</dt><dd>Mendoza</dd></div>
+          <div><dt>Capacity</dt><dd>305 MW de capacidad instalada</dd></div>
+          <div><dt>Committed</dt><dd>USD 212 M</dd></div>
+          <div><dt>Schedule</dt><dd>años 1 y 2: USD 205 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>January 30, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>USD 118 M</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2024-117037596</dd></div>
+          <div><dt>Committee minutes</dt><dd>3</dd></div>
+        </dl>
+        <p>Primera adhesión aprobada del régimen. La resolución no abre el cronograma por año: declara el total de los dos primeros y lo contrasta contra el 40% del mínimo del sector.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/319374/20250108" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-vmos-oleoducto-sur">
+      <summary><span class="ficha-nombre">Vaca Muerta Oleoducto Sur</span><span class="ficha-meta"><span class="tag">strategic export</span><span class="tag tag--quieto">Oil &amp; gas</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 302/2025 del Ministerio de Economía, published March 21, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>VMOS S.A.</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71871335-4</dd></div>
+          <div><dt>Sector</dt><dd>Oil &amp; gas</dd></div>
+          <div><dt>Province</dt><dd>Río Negro</dd></div>
+          <div><dt>Capacity</dt><dd>377,400 barriles/día de capacidad base; 437 km de traza entre Allen y Punta Colorada</dd></div>
+          <div><dt>Committed</dt><dd>USD 2,486 M</dd></div>
+          <div><dt>Total investment declared</dt><dd>USD 3,000 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 1,318 M · año 2: USD 1,123 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2028</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2024-126061655</dd></div>
+        </dl>
+        <p>El caso que separa las dos cifras: la inversión total declarada son USD 3,000 M y los activos computables USD 2,486 M. La cifra que circula en prensa es la segunda, presentada como si fuera la primera.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/322830/20250321" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-southern-energy-gnl">
+      <summary><span class="ficha-nombre">Proyecto de Licuefacción de Gas Natural</span><span class="ficha-meta"><span class="tag">strategic export</span><span class="tag tag--quieto">Oil &amp; gas</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 559/2025 del Ministerio de Economía, published May 5, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Southern Energy S.A.</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71858062-1</dd></div>
+          <div><dt>Sector</dt><dd>Oil &amp; gas</dd></div>
+          <div><dt>Province</dt><dd>Río Negro</dd></div>
+          <div><dt>Capacity</dt><dd>GNL, con producción declarada a partir de 1.5 millones de toneladas anuales</dd></div>
+          <div><dt>Committed</dt><dd>USD 2,825 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 105 M · año 2: USD 354 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2035</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>Committee minutes</dt><dd>5</dd></div>
+        </dl>
+        <p>El plazo más largo del registro: diez años más que la mediana. Los dos primeros años comprometen USD 459 M sobre USD 2,825 M, el perfil más diferido de los veintiuno.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/324772/20250505" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-rincon-mining">
+      <summary><span class="ficha-nombre">Proyecto Rincón</span><span class="ficha-meta"><span class="tag">strategic export</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 735/2025 del Ministerio de Economía, published June 3, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Rincón Mining PTY LTD. Sucursal Argentina</dd></div>
+          <div><dt>Tax ID</dt><dd>30-70708643-9</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Salta</dd></div>
+          <div><dt>Committed</dt><dd>USD 2,299 M</dd></div>
+          <div><dt>Total investment declared</dt><dd>USD 2,744 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 517 M · año 2: USD 777 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>June 30, 2029</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2025-20445333</dd></div>
+          <div><dt>Committee minutes</dt><dd>6</dd></div>
+        </dl>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/326364/20250603" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-sidersa-aceria">
+      <summary><span class="ficha-nombre">Proyecto Siderúrgico Argentino Sidersa</span><span class="ficha-meta"><span class="tag tag--quieto">Steel</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1028/2025 del Ministerio de Economía, published July 22, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Sidersa Acería S.D.E.</dd></div>
+          <div><dt>Filed by</dt><dd>Sidersa S.A.</dd></div>
+          <div><dt>Tax ID</dt><dd>33-71879284-9</dd></div>
+          <div><dt>Sector</dt><dd>Steel</dd></div>
+          <div><dt>Province</dt><dd>Buenos Aires</dd></div>
+          <div><dt>Capacity</dt><dd>360,000 toneladas por año de aceros largos; planta en San Nicolás de los Arroyos</dd></div>
+          <div><dt>Committed</dt><dd>USD 286 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 143 M · año 2: USD 127 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>October 31, 2026</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190</dd></div>
+          <div><dt>File</dt><dd>EX-2024-136346034</dd></div>
+          <div><dt>Committee minutes</dt><dd>7</dd></div>
+        </dl>
+        <p>El plazo más próximo del registro: vence el 31 de octubre de 2026. Único proyecto del sector siderurgia.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/328690/20250722" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-gear-olavarria">
+      <summary><span class="ficha-nombre">P.E. Olavarría</span><span class="ficha-meta"><span class="tag tag--quieto">Power</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1254/2025 del Ministerio de Economía, published August 27, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Generación Eléctrica Argentina Renovable I S.A. Sucursal Dedicada PEO</dd></div>
+          <div><dt>Filed by</dt><dd>GEAR I SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71903605-4</dd></div>
+          <div><dt>Sector</dt><dd>Power</dd></div>
+          <div><dt>Province</dt><dd>Buenos Aires</dd></div>
+          <div><dt>Capacity</dt><dd>180 MW eólicos en la localidad de Olavarría</dd></div>
+          <div><dt>Committed</dt><dd>USD 255 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 80 M · año 2: USD 136 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>November 30, 2027</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2024-142734968</dd></div>
+          <div><dt>Committee minutes</dt><dd>10</dd></div>
+        </dl>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/330400/20250827" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-galan-hombre-muerto-oeste">
+      <summary><span class="ficha-nombre">Hombre Muerto Oeste (HMW)</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1271/2025 del Ministerio de Economía, published August 28, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Galán SDE</dd></div>
+          <div><dt>Filed by</dt><dd>Galán Litio SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71899846-4</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Catamarca</dd></div>
+          <div><dt>Capacity</dt><dd>12,000 toneladas anuales</dd></div>
+          <div><dt>Committed</dt><dd>USD 217 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 31 M · año 2: USD 52 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2029</dd></div>
+          <div><dt>Local suppliers</dt><dd>95.34%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>Committee minutes</dt><dd>8</dd></div>
+        </dl>
+        <p>El compromiso de proveedores locales más alto del registro: 95.34% contra un piso normativo de 20%.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/330470/20250828" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-acm-los-azules">
+      <summary><span class="ficha-nombre">Proyecto Los Azules</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1553/2025 del Ministerio de Economía, published October 14, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Andes Corporación Minera SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-70952278-3</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>San Juan</dd></div>
+          <div><dt>Committed</dt><dd>USD 2,354 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 34 M · año 2: USD 382 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>61.10%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+        </dl>
+        <p>Primer proyecto de cobre del régimen. El plazo del artículo 176 vence el 31 de diciembre de 2027, con USD 2,353 M comprometidos y USD 416 M en los dos primeros años.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/332807/20251014" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-terminal-timbues">
+      <summary><span class="ficha-nombre">Proyecto Terminal Multipropósito Timbúes</span><span class="ficha-meta"><span class="tag tag--quieto">Infrastructure</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1842/2025 del Ministerio de Economía, published November 20, 2025.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Terminal Timbúes S.A.</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71891156-3</dd></div>
+          <div><dt>Sector</dt><dd>Infrastructure</dd></div>
+          <div><dt>Province</dt><dd>Santa Fe</dd></div>
+          <div><dt>Committed</dt><dd>USD 277 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 92 M · año 2: USD 74 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>April 1, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>87%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+        </dl>
+        <p>Único proyecto del sector infraestructura y único fuera de las provincias mineras y del arco hidrocarburífero.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/334814/20251120" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-masa-carbonatos-profundos">
+      <summary><span class="ficha-nombre">Carbonatos Profundos (DCP)</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 6/2026 del Ministerio de Economía, published January 15, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Minas Argentinas SA Sucursal Dedicada RIGI I - Nuevo Gualcamayo</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71915462-6</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>San Juan</dd></div>
+          <div><dt>Committed</dt><dd>USD 520 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 47 M · año 2: USD 44 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2028</dd></div>
+          <div><dt>Local suppliers</dt><dd>69%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+        </dl>
+        <p>Reactivación de Gualcamayo por la vía de los carbonatos profundos.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/337468/20260115" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-mas-veladero-fases-8-9">
+      <summary><span class="ficha-nombre">Ampliación Fases 8 y 9 del Sistema de Lixiviación en Valle de Mina Veladero</span><span class="ficha-meta"><span class="tag">expansion</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 413/2026 del Ministerio de Economía, published April 1, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Minera Andina del Sol S.R.L. Sucursal Dedicada 1</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71906943-2</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>San Juan</dd></div>
+          <div><dt>Committed</dt><dd>USD 380 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 79 M · año 2: USD 83 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2028</dd></div>
+          <div><dt>Local suppliers</dt><dd>20%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190</dd></div>
+          <div><dt>File</dt><dd>EX-2025-84957022</dd></div>
+          <div><dt>Committee minutes</dt><dd>14</dd></div>
+        </dl>
+        <p>Primera adhesión aprobada bajo la figura de ampliación de un proyecto preexistente no adherido: la mina Veladero ya operaba fuera del régimen y sólo entra la ampliación.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/340249/20260401" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-mdasd-fenix-fase-1b">
+      <summary><span class="ficha-nombre">Expansión Fase 1B</span><span class="ficha-meta"><span class="tag">expansion</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 431/2026 del Ministerio de Economía, published April 6, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Minera del Altiplano S.A. Sucursal Dedicada</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71906845-2</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Catamarca</dd></div>
+          <div><dt>Committed</dt><dd>USD 251 M</dd></div>
+          <div><dt>Schedule</dt><dd>años 1 y 2: USD 93 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 1, 2026</dd></div>
+          <div><dt>Local suppliers</dt><dd>60%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>Committee minutes</dt><dd>16</dd></div>
+        </dl>
+        <p>Ampliación del proyecto preexistente Fénix, en el Salar del Hombre Muerto.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/340329/20260406" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-pacific-rim-diablillos">
+      <summary><span class="ficha-nombre">Diablillos</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 562/2026 del Ministerio de Economía, published May 11, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Pacific Rim Mining Corporation Argentina S.A.</dd></div>
+          <div><dt>Tax ID</dt><dd>30-67305977-1</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>Salta y Catamarca</dd></div>
+          <div><dt>Capacity</dt><dd>yacimiento de oro y plata, quince concesiones mineras contiguas</dd></div>
+          <div><dt>Committed</dt><dd>USD 482 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 99 M · año 2: USD 254 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>November 30, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>55%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-129214596</dd></div>
+          <div><dt>Committee minutes</dt><dd>15</dd></div>
+        </dl>
+        <p>Las quince concesiones están en la zona limítrofe entre Salta y Catamarca, uno de los dos casos del registro que no cae en una sola provincia.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/341756/20260511" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-tgs-gpm-tramo-1">
+      <summary><span class="ficha-nombre">Ampliación del Tramo I del Gasoducto Perito Francisco Pascasio Moreno</span><span class="ficha-meta"><span class="tag tag--quieto">Oil &amp; gas</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 676/2026 del Ministerio de Economía, published May 13, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Transportadora de Gas del Sur SA Sucursal Dedicada 1</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71881250-6</dd></div>
+          <div><dt>Sector</dt><dd>Oil &amp; gas · Transporte y almacenamiento</dd></div>
+          <div><dt>Province</dt><dd>Neuquén y Buenos Aires</dd></div>
+          <div><dt>Capacity</dt><dd>95,400 HP ISO de compresión entre Tratayén y Salliqueló; 14 MMm³/d</dd></div>
+          <div><dt>Committed</dt><dd>USD 513 M</dd></div>
+          <div><dt>Total investment declared</dt><dd>USD 550 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 394 M · año 2: USD 31 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 31, 2026</dd></div>
+          <div><dt>Local suppliers</dt><dd>20%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-119427774</dd></div>
+          <div><dt>Committee minutes</dt><dd>17</dd></div>
+        </dl>
+        <p>El perfil más adelantado del registro: 77% del capex comprometido cae en el primer año. El plazo del artículo 176 vence el 31 de diciembre de 2026.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/341877/20260513" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-minera-san-jorge-cobre-mendocino">
+      <summary><span class="ficha-nombre">PSJ Cobre Mendocino</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 801/2026 del Ministerio de Economía, published May 28, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Minera San Jorge SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-69228382-8</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>Mendoza</dd></div>
+          <div><dt>Committed</dt><dd>USD 613 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 41 M · año 2: USD 148 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>September 1, 2028</dd></div>
+          <div><dt>Local suppliers</dt><dd>27%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-123845536</dd></div>
+          <div><dt>Committee minutes</dt><dd>19</dd></div>
+        </dl>
+        <p>Primer proyecto minero metalífero de Mendoza en el régimen.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/342483/20260528" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-exar-cauchari-olaroz">
+      <summary><span class="ficha-nombre">Ampliación Cauchari Olaroz</span><span class="ficha-meta"><span class="tag">expansion</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 825/2026 del Ministerio de Economía, published June 5, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Minera Exar Sucursal Dedicada</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71924298-3</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Jujuy</dd></div>
+          <div><dt>Committed</dt><dd>USD 1,167 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 38 M · año 2: USD 59 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>July 1, 2030</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-140126020</dd></div>
+          <div><dt>Committee minutes</dt><dd>18</dd></div>
+        </dl>
+        <p>Único proyecto de Jujuy en el régimen. Los dos primeros años comprometen USD 97 M sobre USD 1,167 M: el 8% del capex.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/342818/20260605" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-smp-gasoducto-exportacion">
+      <summary><span class="ficha-nombre">Gasoducto dedicado para la Exportación de Gas Natural</span><span class="ficha-meta"><span class="tag tag--quieto">Oil &amp; gas</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 873/2026 del Ministerio de Economía, published June 26, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>San Matías Pipeline SA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71703621-9</dd></div>
+          <div><dt>Sector</dt><dd>Oil &amp; gas · Transporte y almacenamiento</dd></div>
+          <div><dt>Province</dt><dd>Neuquén y Río Negro</dd></div>
+          <div><dt>Capacity</dt><dd>60,000 HP de compresión; traza desde Tratayén hasta la Estación Compresora San Antonio Oeste, en el Golfo San Matías</dd></div>
+          <div><dt>Total investment declared</dt><dd>USD 1,300 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 454 M · año 2: USD 501 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>May 31, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>20%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-115741321</dd></div>
+          <div><dt>Committee minutes</dt><dd>27</dd></div>
+        </dl>
+        <p>La única de las veintiuna resoluciones que no separa los activos computables de la inversión total: declara USD 1,300 M totales y abre el bienio en USD 454 M y USD 501 M, sin decir cuánto del total computa para el régimen. Por eso esta fila no suma al total comprometido del registro.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/343613/20260626" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-pampa-rincon-de-aranda">
+      <summary><span class="ficha-nombre">Proyecto Rincón de Aranda</span><span class="ficha-meta"><span class="tag">strategic export</span><span class="tag tag--quieto">Oil &amp; gas</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1025/2026 del Ministerio de Economía, published July 21, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Pampa Energía SA - Sucursal Dedicada Proyecto RDA</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71901911-7</dd></div>
+          <div><dt>Sector</dt><dd>Oil &amp; gas · Explotación y producción de hidrocarburos costa adentro</dd></div>
+          <div><dt>Province</dt><dd>Neuquén</dd></div>
+          <div><dt>Capacity</dt><dd>desarrollo del campo hasta 2041; los últimos 139 pozos por USD 2,255 M</dd></div>
+          <div><dt>Committed</dt><dd>USD 4,521 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 521 M · año 2: USD 578 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>July 1, 2031</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2026-24259120</dd></div>
+          <div><dt>Committee minutes</dt><dd>23</dd></div>
+        </dl>
+        <p>Segundo compromiso más grande del registro y el único de explotación no convencional en el bloque: el resto del petróleo y gas adherido es transporte, licuefacción o midstream.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/344628/20260721" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-liex-tres-quebradas">
+      <summary><span class="ficha-nombre">Proyecto de la Sucursal Dedicada de Liex S.A.</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1153/2026 del Ministerio de Economía, published July 29, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Liex S.A. Sucursal Dedicada</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71929244-1</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Catamarca</dd></div>
+          <div><dt>Capacity</dt><dd>Salar Tres Quebradas (3Q), departamento de Fiambalá</dd></div>
+          <div><dt>Committed</dt><dd>USD 594 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 108 M · año 2: USD 308 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>November 30, 2027</dd></div>
+          <div><dt>Local suppliers</dt><dd>60.26%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190</dd></div>
+          <div><dt>File</dt><dd>EX-2026-14906968</dd></div>
+          <div><dt>Committee minutes</dt><dd>24</dd></div>
+        </dl>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345075/20260729" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-vicuna-argentina">
+      <summary><span class="ficha-nombre">Vicuña</span><span class="ficha-meta"><span class="tag">strategic export</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1154/2026 del Ministerio de Economía, published July 30, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Vicuña Argentina SA</dd></div>
+          <div><dt>Tax ID</dt><dd>33-61913055-9</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Minerales de primera y segunda categoría (excluidos potasio y litio)</dd></div>
+          <div><dt>Province</dt><dd>San Juan</dd></div>
+          <div><dt>Capacity</dt><dd>cobre, oro y doré</dd></div>
+          <div><dt>Committed</dt><dd>USD 9,025 M</dd></div>
+          <div><dt>Total investment declared</dt><dd>USD 9,737 M</dd></div>
+          <div><dt>Schedule</dt><dd>Etapa 1 (2024-07-08 → 2026-12-31): USD 1,129 M · Etapa 2 (2027-01-01 → 2031-12-31): USD 7,896 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>December 2028</dd></div>
+          <div><dt>Local suppliers</dt><dd>USD 2,009 M</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v</dd></div>
+          <div><dt>File</dt><dd>EX-2025-137237328</dd></div>
+          <div><dt>Committee minutes</dt><dd>22</dd></div>
+        </dl>
+        <p>El compromiso más grande del régimen: USD 9,025 M en activos computables, casi un tercio de todo lo aprobado. Es también el único que no organiza el cronograma por año sino por dos etapas fechadas, y el único cuyo plazo del artículo 176 se declara con precisión de mes.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345167/20260730" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-posco-sal-de-oro-ii">
+      <summary><span class="ficha-nombre">Sal de Oro II</span><span class="ficha-meta"><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <p>Resolución 1157/2026 del Ministerio de Economía, published July 31, 2026.</p>
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Posco Argentina SAU SDE</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71922048-3</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Salta y Catamarca</dd></div>
+          <div><dt>Capacity</dt><dd>23,000 toneladas anuales de carbonato de litio (Li₂CO₃), íntegramente para exportación</dd></div>
+          <div><dt>Committed</dt><dd>USD 208 M</dd></div>
+          <div><dt>Schedule</dt><dd>año 1: USD 91 M · año 2: USD 7.1 M</dd></div>
+          <div><dt>Article 176 deadline</dt><dd>July 31, 2029</dd></div>
+          <div><dt>Local suppliers</dt><dd>21.02%</dd></div>
+          <div><dt>Incentives invoked</dt><dd>cap-iv · cap-v · art-190 · art-198</dd></div>
+          <div><dt>File</dt><dd>EX-2025-127271572</dd></div>
+          <div><dt>Committee minutes</dt><dd>20</dd></div>
+        </dl>
+        <p>El área está en la zona limítrofe disputada entre Salta y Catamarca, sobre el Salar del Hombre Muerto, bajo el Acuerdo Marco de Facilitación y Fomento Minero firmado por ambas provincias en 2021. Reemplaza a una solicitud anterior de la misma casa matriz que fue desistida.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345279/20260731" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-posco-sal-de-oro">
+      <summary><span class="ficha-nombre">Sal de Oro</span><span class="ficha-meta"><span class="tag tag--caveat">withdrawn</span><span class="tag tag--quieto">Mining</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Vehicle</dt><dd>Posco Argentina SAU</dd></div>
+          <div><dt>Tax ID</dt><dd>30-71922048-3</dd></div>
+          <div><dt>Sector</dt><dd>Mining · Potasio y litio</dd></div>
+          <div><dt>Province</dt><dd>Salta y Catamarca</dd></div>
+        </dl>
+        <p>Presentada el 30 de octubre de 2024 y desistida por la propia solicitante el 17 de noviembre de 2025. No tiene resolución propia: el desistimiento consta en los considerandos de la resolución que aprueba &quot;Sal de Oro II&quot;. El CUIT es el de la sucursal dedicada posterior, porque la resolución no publica el de la presentación original. Es el único caso documentado de una solicitud que no prosperó, y se conoce sólo porque la empresa volvió a presentarse.</p>
+        <p class="ficha-fuentes">Source: <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/345279/20260731" rel="noopener">Boletín Oficial</a></p>
+      </div>
+    </details>
+  </div>
+  <!-- /rigi-tablas:fichas -->
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limites">
+  <div class="section-head">
+    <p class="eyebrow">Limits</p>
+    <h2>What these data cannot establish</h2>
+  </div>
+
+  <ul class="rsrc">
+    <li><strong>They do not say whether anyone is complying.</strong> The register holds commitments and dates, not execution. There is no public reporting of capital actually invested per vehicle, so no row can be read as met or missed.</li>
+    <li><strong>They do not say what the regime costs.</strong> The incentives invoked are inventoried, not priced. Any forgone-revenue figure per project would be an assumption of my own.</li>
+    <li><strong>They do not cover what was turned down.</strong> Rejections go unpublished and withdrawals surface only when another resolution mentions them. The absence of rows in that state does not mean no application ever failed.</li>
+    <li><strong>They exclude the twenty-five projects under evaluation.</strong> The Ministry publishes the count and the aggregate amount, not the list. Circulating figures for projects under evaluation are company announcements, and they do not share a definition with the computable assets of a resolution.</li>
+    <li><strong>The total is not comparable to the official one without saying so.</strong> It sums computable assets across twenty of twenty-one approved rows, and excludes the projects' total investment.</li>
+    <li><strong>Placing a project in a province is not placing it on a mining title.</strong> Resolutions name salt flats, departments and pipeline routes, and only sometimes the concessions. Matching each vehicle to its registered title is still to be done, and the vehicle's name almost never matches the title holder's.</li>
+  </ul>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="glosario">
+  <div class="section-head">
+    <p class="eyebrow">Terms</p>
+    <h2>The terms in this register, in the order they appear</h2>
+  </div>
+
+  <div class="gloss">
+    <details class="gloss-item">
+      <summary><dfn>VPU</dfn>, single-project vehicle</summary>
+      <p>The company that joins the regime, with a corporate purpose limited to the project. It is almost never the familiar name: usually a dedicated branch created for the filing. Posco Argentina SAU SDE is the vehicle; Posco Argentina SAU is who decides.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Computable assets</dfn></summary>
+      <p>The slice of investment the regime counts. It defines the article 172 minimum, the 40% two-year threshold and the article 176 deadline. It is the figure in this register.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Minimum-investment deadline</dfn>, article 176</summary>
+      <p>The date the applicant commits to for reaching the minimum investment in computable assets. The vehicle declares it and the resolution fixes it.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Article 190</dfn></summary>
+      <p>Import waiver for the goods on the list the vehicle files, classified as capital goods or IT and telecom goods. Eleven resolutions enable it.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Long-Term Strategic Export Project</dfn></summary>
+      <p>A category with its own investment threshold and foreign exchange benefits, meant for export projects on a long horizon. Five of the twenty-one came in this way.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>RIGI Project Evaluation Committee</dfn></summary>
+      <p>The body that recommends approving or rejecting each application. Its minutes are cited by number in the resolutions but never published.</p>
+    </details>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fuentes">
+  <div class="section-head">
+    <p class="eyebrow">Sources</p>
+    <h2>Where each row comes from, and how it gets corrected</h2>
+  </div>
+
+  <p>Every project cites the resolution that approved it, linked to its Official Gazette notice. The official aggregates come from the Ministry of Economy's page and are stored with the date they were read, because they change without notice. Law 27,742 created the regime and decree 749/2024 implemented it; both sit in the same Gazette.</p>
+
+  <p>The full dataset is at <a href="/data/rigi-proyectos.json">rigi-proyectos.json</a>, under CC BY 4.0, with its <a href="/data/rigi-proyectos.schema.json">schema</a>. Anything this register estimates carries an <span class="path">est_</span> prefix and never shares a field with what the resolution says.</p>
+
+  <p>Corrections are applied to the row and logged in the <span class="path">correcciones</span> array, with the date, what changed and who flagged it. Nothing is edited silently.</p>
+</section>

@@ -7,8 +7,9 @@
   "scripts": {
     "build": "node build.mjs && node tools/postbuild.mjs",
     "serve": "npm run build && python3 -m http.server -d dist 8080",
-    "check": "node tools/ciber-check.mjs && node tools/site-check.mjs",
+    "check": "node tools/ciber-check.mjs && node tools/rigi-check.mjs && node tools/site-check.mjs",
     "deploy": "node tools/predeploy.mjs && npm run check && npm run build && git push org main:main && npx --yes gh-pages@6 -d dist -t -r https://github.com/podeley/podeley.github.io.git",
+    "cv": "node tools/cv-pdf.mjs",
     "shots": "node tools/shots.mjs",
     "sync": "node tools/sync-identity.mjs",
     "sync:check": "node tools/sync-identity.mjs --check"

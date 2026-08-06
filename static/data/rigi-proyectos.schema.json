@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://podeley.ar/data/rigi-proyectos.schema.json",
+  "title": "Registro de proyectos adheridos al RIGI",
+  "description": "Contrato público del dataset. Regla que gobierna el esquema: lo que dice la resolución y lo que estima el registro nunca comparten campo. Todo lo estimado lleva prefijo est_.",
+  "type": "object",
+  "required": ["titulo", "actualizado", "licencia", "nota_metodo", "campos", "proyectos"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "titulo": { "type": "string" },
+    "actualizado": { "$ref": "#/$defs/fecha" },
+    "licencia": { "type": "string" },
+    "nota_metodo": { "type": "string" },
+    "nota_correcciones": { "type": "string" },
+    "correcciones": { "type": "array", "items": { "$ref": "#/$defs/correccion" } },
+    "campos": { "type": "object" },
+    "oficial": { "$ref": "#/$defs/oficial" },
+    "proyectos": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/proyecto" } }
+  },
+
+  "$defs": {
+    "fecha": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "fechaOMes": { "type": "string", "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$" },
+    "montoUsd": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+
+    "correccion": {
+      "type": "object",
+      "required": ["fecha", "fila", "cambio"],
+      "additionalProperties": false,
+      "properties": {
+        "fecha": { "$ref": "#/$defs/fecha" },
+        "fila": { "type": "string" },
+        "cambio": { "type": "string" },
+        "senalado_por": { "type": "string" }
+      }
+    },
+
+    "oficial": {
+      "description": "Lo que publica argentina.gob.ar/economia/rigi el día de la consulta. Vive separado de los proyectos porque es la cifra a reconciliar, no una fuente del registro.",
+      "type": "object",
+      "required": ["consultado", "url", "aprobados", "monto_aprobado_usd"],
+      "additionalProperties": false,
+      "properties": {
+        "consultado": { "$ref": "#/$defs/fecha" },
+        "url": { "type": "string" },
+        "aprobados": { "type": "number" },
+        "monto_aprobado_usd": { "type": "number" },
+        "en_evaluacion": { "type": "number" },
+        "monto_en_evaluacion_usd": { "type": "number" },
+        "empleos_aprobados": { "type": "number" },
+        "empleos_en_evaluacion": { "type": "number" }
+      }
+    },
+
+    "tramo": {
+      "type": "object",
+      "required": ["periodo", "monto_usd"],
+      "additionalProperties": false,
+      "properties": {
+        "periodo": { "type": "string" },
+        "monto_usd": { "type": "number" },
+        "desde": { "$ref": "#/$defs/fechaOMes" },
+        "hasta": { "$ref": "#/$defs/fechaOMes" }
+      }
+    },
+
+    "proyecto": {
+      "type": "object",
+      "required": [
+        "id", "vpu", "cuit", "proyecto", "sector", "provincias",
+        "estado", "confianza", "monto_comprometido_usd", "cronograma_tipo", "cronograma", "fuentes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+
+        "vpu": { "type": "string", "description": "Razón social del Vehículo de Proyecto Único, tal como la nombra el artículo 1 de la resolución." },
+        "cuit": { "type": "string", "pattern": "^\\d{2}-\\d{8}-\\d$" },
+        "grupo": {
+          "description": "Quien presenta y controla, cuando no es el propio VPU. Una sucursal dedicada no decide: decide su casa matriz.",
+          "anyOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "grupo_cuit": { "anyOf": [{ "type": "string", "pattern": "^\\d{2}-\\d{8}-\\d$" }, { "type": "null" }] },
+
+        "proyecto": { "type": "string" },
+        "sector": {
+          "type": "string",
+          "enum": ["Minería", "Petróleo y Gas", "Energía", "Siderurgia", "Infraestructura", "Forestoindustria", "Turismo", "Tecnología"]
+        },
+        "subsector": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "provincias": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "capacidad": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+
+        "estado": { "type": "string", "enum": ["aprobado", "en-evaluacion", "rechazado", "desistido", "retirado"] },
+        "confianza": {
+          "description": "Califica la procedencia de las cifras, no el mérito del proyecto. alta = resolución publicada; media = anuncio o mención en una resolución ajena; baja = sólo prensa.",
+          "type": "string",
+          "enum": ["alta", "media", "baja"]
+        },
+
+        "resolucion": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "resolucion_fecha": { "anyOf": [{ "$ref": "#/$defs/fecha" }, { "type": "null" }] },
+        "publicacion_fecha": { "anyOf": [{ "$ref": "#/$defs/fecha" }, { "type": "null" }] },
+        "boletin_url": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "expediente": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "acta_comite": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+
+        "monto_comprometido_usd": {
+          "description": "Inversión en ACTIVOS COMPUTABLES, que es lo que cuenta el régimen y sobre lo que corren el mínimo del artículo 172 y el plazo del 176. null cuando la resolución no lo separa de la inversión total.",
+          "$ref": "#/$defs/montoUsd"
+        },
+        "monto_total_declarado_usd": {
+          "description": "Inversión total del proyecto cuando la resolución la declara aparte. Siempre mayor o igual al comprometido. No se suma con los comprometidos de otras filas.",
+          "$ref": "#/$defs/montoUsd"
+        },
+
+        "cronograma_tipo": {
+          "description": "anual = la resolución abre año 1 y año 2; bienio = sólo da el total de los dos primeros años; etapas = lo organiza por etapas fechadas.",
+          "type": "string",
+          "enum": ["anual", "bienio", "etapas"]
+        },
+        "cronograma": { "type": "array", "items": { "$ref": "#/$defs/tramo" } },
+        "plazo_minimo": { "anyOf": [{ "$ref": "#/$defs/fechaOMes" }, { "type": "null" }] },
+        "plazo_nota": { "type": "string" },
+
+        "proveedores_locales_pct": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "proveedores_locales_usd": { "$ref": "#/$defs/montoUsd" },
+
+        "beneficios": {
+          "description": "Incentivos que la resolución declara aplicables. Inventario, no monetización.",
+          "type": "array",
+          "items": { "type": "string", "enum": ["art-190", "art-198", "cap-iv", "cap-v"] }
+        },
+        "exportacion_estrategica": { "type": "boolean" },
+        "ampliacion": { "type": "boolean" },
+
+        "est_cumplimiento": {
+          "description": "Estimación propia. sin-dato es el valor por defecto y significa que no hay evidencia pública de ejecución — nunca que el proyecto esté atrasado.",
+          "type": "string",
+          "enum": ["sin-dato", "en-plazo", "vencido"]
+        },
+        "est_cruce": { "type": "object" },
+
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "fuentes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    }
+  }
+}

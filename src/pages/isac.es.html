@@ -1,15 +1,15 @@
 <!--meta
 {
   "title": "Un CERT sectorial de energía para Argentina — Matías Podeley",
-  "description": "Cómo funciona SektorCERT, el centro de ciberseguridad de la infraestructura crítica danesa, y qué costaría montar uno equivalente en Argentina: gobernanza, presupuesto, esquema de cuotas y dos borradores normativos.",
+  "description": "Cómo funciona SektorCERT, qué costó de verdad arrancar el ISAC de petróleo y gas de Estados Unidos, y qué haría falta para montar un centro sectorial de ciberseguridad en la energía argentina: gobernanza, presupuesto, cuotas y dos borradores normativos.",
   "ogImage": "/assets/og/isac.es.png",
-  "ogImageAlt": "El arranque de un CERT sectorial de energía cuesta USD 270,000 al año y lo pagan cuatro empresas ancla",
+  "ogImageAlt": "Cuatro firmas pagan el primer año de un CERT sectorial de energía",
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Un CERT sectorial de energía para Argentina: el modelo danés y lo que costaría",
     "url": "https://podeley.ar/isac/",
-    "description": "Análisis del modelo SektorCERT y de su replicabilidad en el sector energético argentino, con presupuesto, esquema de cuotas y borradores normativos.",
+    "description": "Análisis comparado de centros sectoriales de ciberseguridad y de su replicabilidad en el sector energético argentino, con costos de fuente fiscal, esquema de cuotas y borradores normativos.",
     "inLanguage": "es",
     "author": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
     "datePublished": "2026-08-08",
@@ -23,8 +23,8 @@
 <section class="hero wrap">
   <p class="kicker">Memo · Ciberdefensa sectorial · Energía argentina</p>
   <h1>Dinamarca detectó el ataque a 22 operadoras porque miraba 300 empresas a la vez</h1>
-  <p class="hero-sub">SektorCERT es una asociación civil danesa de 25 empleados, propiedad de sus miembros y financiada solo con cuotas. Este memo desarma ese modelo pieza por pieza y calcula qué costaría uno equivalente para la energía argentina: USD 270,000 al año para arrancar, que cubren cuatro empresas ancla. Cierra con dos borradores para discutir, una resolución y un esqueleto de ley.</p>
-  <p class="hero-meta"><span class="hero-when">Publicado el 8 de agosto de 2026</span> <a class="link-plain" href="#modelo">El modelo <span class="arw">↓</span></a> <a class="link-plain" href="#costo">Cuánto cuesta <span class="arw">↓</span></a> <a class="link-plain" href="#borradores">Los borradores <span class="arw">↓</span></a></p>
+  <p class="hero-sub">SektorCERT es una asociación civil danesa de 25 empleados, propiedad de sus miembros y financiada solo con cuotas. Este memo desarma ese modelo pieza por pieza, lo compara con el ISAC de petróleo y gas de Estados Unidos, cuyas declaraciones fiscales muestran que el primer año costó USD 149,881, y calcula qué haría falta para la energía argentina: USD 270,000 al año, que cubren cuatro empresas ancla. Cierra con dos borradores para discutir, una resolución y un esqueleto de ley.</p>
+  <p class="hero-meta"><span class="hero-when">Publicado el 8 de agosto de 2026</span> <a class="link-plain" href="#modelo">El modelo <span class="arw">↓</span></a> <a class="link-plain" href="#costo">Cuánto cuesta <span class="arw">↓</span></a> <a class="link-plain" href="#plata">El hueco <span class="arw">↓</span></a> <a class="link-plain" href="#borradores">Los borradores <span class="arw">↓</span></a></p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -135,6 +135,11 @@
 
   <p>El Estado danés puso el mandato y la estrategia, y se abstuvo de operar la detección. Ese reparto fue una decisión, no un descuido, y es la parte del diseño que más conviene copiar.</p>
   <p>La medida argentina del hueco está en un documento del propio Estado. El programa que financia el Banco Interamericano de Desarrollo para infraestructuras críticas de información arranca de una línea de base del 9%, medida en 2021. Ese es el porcentaje de sectores con infraestructura crítica identificada, y la meta declarada es llegar al 50% en 2028.</p>
+
+  <h3>Chile armó las tres piezas en dos años, y con otro diseño</h3>
+  <p>El contraargumento de que esto lleva décadas se cae cruzando la cordillera. La <a href="https://www.bcn.cl/leychile/navegar?i=1202434" rel="noopener">Ley 21.663</a> creó en 2024 la Agencia Nacional de Ciberseguridad, y el 24 de julio de 2026 la agencia <a href="https://www.trendtic.cl/2026/07/anci-oficializa-segunda-nomina-de-operadores-de-importancia-vital-y-cierra-hito-clave-de-la-ley-marco-de-ciberseguridad/" rel="noopener">cerró la primera nómina de Operadores de Importancia Vital</a>, con energía eléctrica incluida. El perímetro regulado chileno ya tiene nombre y apellido.</p>
+  <p>La tercera pieza va por un camino distinto del danés, y es el que Argentina copiaría por inercia si el sector no se organiza antes. El CSIRT del sector eléctrico chileno lo va a operar el Coordinador Eléctrico Nacional, que es el equivalente de CAMMESA. Su costo de implementación y de operación <a href="https://electromineria.cl/coordinador-cne-gastos-2026-ciberseguridad-hvdc/" rel="noopener">se va a pedir dentro del presupuesto regulado del organismo</a>, una vez publicada la norma técnica de ciberseguridad. Lo que aceleró todo fue el apagón nacional del 25 de febrero de 2025.</p>
+  <p>Ese diseño es más rápido y no le cuesta nada al que lo propone, pero tiene un precio que conviene mirar de frente. Alojar el intercambio dentro de una entidad con participación estatal reabre las dos cosas que SektorCERT resolvió siendo privada: la exposición al régimen de acceso a la información pública, y la dependencia de que el Estado siga interesado el año que viene.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -143,8 +148,30 @@
   <div class="section-head">
     <p class="eyebrow">Presupuesto</p>
     <h2>Tres escenarios, y el más chico lo pagan cuatro firmas</h2>
-    <p class="intro">La única referencia dura disponible es noruega. KraftCERT, el CERT del sector energético de Noruega, gastó NOK 19,522,718 en 2025 con 12 empleados, según las cuentas que presentó al registro de empresas. Son USD 2,051,838 al tipo de cambio del 7 de agosto de 2026, o USD 171,000 anuales por persona a costo noruego.</p>
+    <p class="intro">Hay dos referencias duras y conviene mirar la segunda primero, porque contradice la intuición. KraftCERT, el CERT del sector energético noruego, gastó NOK 19,522,718 en 2025 con 12 empleados, según las cuentas que presentó al registro de empresas: USD 2,051,838 al tipo de cambio del 7 de agosto de 2026, o USD 171,000 anuales por persona a costo noruego. Ese es el número que asusta, y es el del régimen de crucero.</p>
   </div>
+
+  <h3>Un ISAC de petróleo y gas arrancó con USD 150,000 y sin empleados</h3>
+  <p>La segunda referencia es más útil porque cubre el arranque, que es la parte que decide si algo existe. ONE-ISAC, el centro de intercambio del sector de petróleo y gas de Estados Unidos, presenta cada año su declaración al fisco y son públicas. Fundado en 2014 sobre una cámara sectorial, sin ninguna ley que obligara a nadie a afiliarse.</p>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Declaraciones del formulario 990 de ONE-ISAC, vía el <a href="https://projects.propublica.org/nonprofits/organizations/465534726" rel="noopener">Nonprofit Explorer de ProPublica</a>. La columna de cuotas es el renglón de ingresos por servicios a miembros.</caption>
+      <thead>
+        <tr><th scope="col">Año</th><th scope="col">Ingresos USD</th><th scope="col">De los cuales, cuotas</th><th scope="col">Gastos USD</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2014, fundación</td><td class="reg-n">567,100</td><td class="reg-n">567,100</td><td class="reg-n">0</td></tr>
+        <tr><td>2015, primer año operativo</td><td class="reg-n">324,194</td><td class="reg-n">324,194</td><td class="reg-n">149,881</td></tr>
+        <tr><td>2017</td><td class="reg-n">1,004,402</td><td class="reg-n">1,004,402</td><td class="reg-n">716,203</td></tr>
+        <tr><td>2020</td><td class="reg-n">1,360,153</td><td class="reg-n">1,299,400</td><td class="reg-n">1,252,296</td></tr>
+        <tr><td>2023</td><td class="reg-n">1,755,531</td><td class="reg-n">1,639,745</td><td class="reg-n">1,352,446</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Tres cosas se leen ahí. La primera es que el año uno costó USD 149,881 en el país más caro del mundo para contratar seguridad. La segunda es que en 2014 recaudaron y no gastaron: el arranque se financió con la caja del año anterior a operar, que es exactamente lo que hicieron los tres fundadores de KraftCERT al garantizar el fondeo. La tercera está en lo que no aparece: en las diez declaraciones, el renglón de contribuciones y subsidios es cero. Diez años sin un peso de plata pública.</p>
+  <p>Y hay un dato que cambia el diseño, no solo el presupuesto: ONE-ISAC declara cero sueldos en los diez ejercicios, mientras gasta hasta USD 1,352,446 por año. No tiene empleados. La operación la presta un tercero bajo contrato. La dotación propia no es un requisito del modelo sino una decisión, y es la más cara de revertir.</p>
 
   <div class="reg-scroll">
     <table class="reg">
@@ -160,7 +187,7 @@
     </table>
   </div>
 
-  <p>El escenario completo queda en el mismo orden de magnitud que KraftCERT, con más gente y más sensores, que es lo que corresponde al cambiar de país de costos. El escenario mínimo es el que importa, porque es el que decide si esto arranca.</p>
+  <p>El escenario completo queda en el mismo orden de magnitud que KraftCERT, con más gente y más sensores, que es lo que corresponde al cambiar de país de costos. El escenario mínimo es el que importa, porque es el que decide si esto arranca. Contra el precedente de ONE-ISAC, esos USD 270,000 dejan de ser una apuesta: quedan por encima del arranque estadounidense, en un país donde una persona senior de seguridad cuesta un tercio. Y si la operación se compra en vez de construirse, el piso baja hacia el rango de 150,000 a 200,000.</p>
 
   <div class="reg-scroll">
     <table class="reg">
@@ -179,6 +206,11 @@
   </div>
 
   <p>Cuatro anclas aportan USD 320,000 contra un costo de 270,000. Con eso el primer año está pago, y ese es el número que hay que llevar a la primera reunión. Cuarenta miembros repartidos en los cinco tramos rinden USD 710,000, que cubre casi todo el escenario medio. Para dimensionar la comparación: SektorCERT tiene más de 300 miembros.</p>
+
+  <h3>Dónde falla el financiamiento por cuotas</h3>
+  <p>El modelo tiene un punto de quiebre documentado y conviene ponerlo sobre la mesa antes que un escéptico. MS-ISAC, el centro de intercambio de los gobiernos estaduales y locales de Estados Unidos, tenía 18,574 miembros el 30 de septiembre de 2025, el día que perdió los USD 27,000,000 anuales que le aportaba el gobierno federal. Al pasar a cuotas escalonadas, desde USD 1,495 al año para las jurisdicciones chicas, <a href="https://statetechmagazine.com/article/2026/02/states-step-ms-isac-moves-paid-model-after-federal-funding-ends" rel="noopener">perdió alrededor del 70% de su membresía</a>.</p>
+  <p>La lectura fácil es que las cuotas no alcanzan. La lectura correcta es otra: nacer cobrando no es lo mismo que empezar a cobrar. ONE-ISAC y WaterISAC cobran desde el primer día y llevan diez y veinticuatro años creciendo. A los miembros de MS-ISAC les pidieron que pagaran por algo que ya venían recibiendo gratis, y el 70% lo leyó como lo que era para ellos: un recorte.</p>
+  <p>De ahí sale una condición de diseño concreta. El valor de un centro sectorial crece con la cantidad de empresas que reportan, así que el escalón de entrada tiene que ser lo bastante bajo como para no dejar afuera a la cola larga. Los USD 3,000 de la cooperativa eléctrica están en el orden correcto, y el piso estadounidense sugiere que conviene bajarlo todavía más: una distribuidora chica que reporta un incidente vale más de lo que paga.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -186,12 +218,17 @@
 <section class="pd-section wrap" id="plata">
   <div class="section-head">
     <p class="eyebrow">Financiamiento</p>
-    <h2>El préstamo tiene USD 27.5 millones sin desembolsar y el renglón del sector privado en cero</h2>
-    <p class="intro">El <a href="https://www.iadb.org/en/project/AR-L1343" rel="noopener">Programa de Ciberseguridad para Infraestructuras Críticas de Información</a>, préstamo BID 5735/OC-AR, se aprobó el 11 de enero de 2023 y se firmó el 7 de junio de ese año, por USD 30,000,000 sin contraparte local. Lo ejecuta la Jefatura de Gabinete de Ministros y cierra en 2028.</p>
+    <h2>El Estado va a saber qué está expuesto, y no tiene a quién avisarle</h2>
+    <p class="intro">El <a href="https://www.iadb.org/en/project/AR-L1343" rel="noopener">Programa de Ciberseguridad para Infraestructuras Críticas de Información</a>, préstamo BID 5735/OC-AR, se aprobó el 11 de enero de 2023 y se firmó el 7 de junio de ese año, por USD 30,000,000 sin contraparte local. Lo ejecuta la Jefatura de Gabinete de Ministros y cierra en 2028. Sus documentos son públicos, y leídos juntos describen un problema de diseño que todavía se puede corregir.</p>
   </div>
-  <p>El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000578-522669563-48737" rel="noopener">informe de monitoreo público del período enero a diciembre de 2025</a>, validado en mayo de 2026, registra USD 2,500,000 desembolsados. Es el 8.33% en tres años.</p>
-  <p>Dentro de la matriz de resultados, en el primer componente, hay un producto con este nombre: "plataformas para el análisis de amenazas e intercambio de información con el sector privado implementado". Meta, una plataforma a 2028. Presupuesto, entre USD 950,000 y 2,600,000 según la versión programada o la ajustada. Avance físico y financiero al cierre de 2025, cero.</p>
-  <p>El resto del componente ayuda a entender por qué. Los productos que sí tienen presupuesto grande son el centro de operaciones de seguridad del gobierno, con SIEM y sensores para monitorear ministerios, y las capacidades operativas del CERT nacional. Es la arquitectura de SektorCERT apuntada al Estado. El sector privado aparece en un solo renglón de menos de un millón de dólares, y es el que no se movió.</p>
+  <p>El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000578-522669563-48737" rel="noopener">informe de monitoreo del período enero a diciembre de 2025</a>, validado en mayo de 2026, registra USD 2,500,000 desembolsados sobre 30 millones. Contra productos concretos, la matriz de resultados computa USD 713,215 ejecutados en tres años: el 2.4%.</p>
+  <p>Eso no significa que el programa esté quieto. El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000029-368603317-139" rel="noopener">plan de adquisiciones vigente</a>, de julio de 2026, tiene 42 procesos por USD 24,385,949, con contratos firmados y licitaciones abiertas. Significa otra cosa, y se ve buscando palabras en ese plan: "privado", "intercambio", "sectorial" y "energía" no aparecen ni una vez. El instrumento entero apunta al Estado.</p>
+
+  <h3>La plataforma que se está comprando escanea todo el país</h3>
+  <p>La licitación más avanzada del programa, abierta en mayo de 2026 por USD 1,200,000, compra una <a href="https://www.argentina.gob.ar/sites/default/files/pliego_-_plieg-2026-44473254-apn-dpypsyeicytjgm.pdf" rel="noopener">plataforma de observación del ciberespacio</a> para el Centro Nacional de Ciberseguridad. Según su pliego, escanea de forma activa la totalidad de las direcciones IP asignadas a la Argentina y el dominio .ar, con cadencia no mayor a 12 horas. El universo declarado supera los 20 millones de nodos, y las vulnerabilidades se verifican sin explotarlas.</p>
+  <p>Buena parte de lo que ese escaneo va a encontrar pertenece a operadores privados de infraestructura crítica: transportistas y distribuidoras de gas y de electricidad, productores, refinadores, generadores. Empresas fuera del sector público, sobre las que no rige ninguna obligación de ciberseguridad sectorial y con las que no existe ningún canal establecido.</p>
+  <p>El canal está previsto en el propio programa. En el primer componente hay un producto llamado "plataformas para el análisis de amenazas e intercambio de información con el sector privado implementado", con meta de una plataforma a 2028 y presupuesto ajustado de USD 2,600,000. El informe de monitoreo confirma que los objetivos de la operación no se reformularon, o sea que el compromiso sigue vigente. Su avance físico y financiero al cierre de 2025 es cero, y programó USD 650,000 para ese año que no llegó a usar.</p>
+  <p>De ahí sale el punto entero de este memo. Dentro de unos meses el Estado argentino va a tener el detalle de lo que está expuesto en la infraestructura energética privada del país. Le van a faltar cuatro cosas: una entidad sectorial con la que coordinar, un protocolo de manejo de esa información, un acuerdo de confidencialidad y la garantía de que un hallazgo compartido no derive en una sanción o en una revisión tarifaria. Avisar caso por caso en esas condiciones es peor que no avisar, porque consolida la desconfianza que después impide cualquier intercambio.</p>
   <p>La pregunta que queda no es de dónde sale la plata. Es quién firma del otro lado.</p>
 </section>
 
@@ -203,6 +240,9 @@
     <h2>Cuatro fases, y cada una sirve aunque la siguiente no ocurra</h2>
     <p class="intro">El orden importa más que la velocidad. Si el Estado convoca antes de que haya operadores comprometidos, la mesa se llena de funcionarios y de proveedores, que es exactamente lo que le pasó al programa de infraestructuras críticas de 2011.</p>
   </div>
+
+  <p>Antes del orden hay una decisión de forma, y las dos referencias de este memo apuntan en direcciones distintas. SektorCERT llegó a los sensores después de tener mandato legal y trescientos miembros reclutados por cámaras. ONE-ISAC nunca puso un sensor y lleva doce años funcionando. Poner sensores en el primer año obliga a abrir la conversación por la objeción más difícil, que es quién mira el tráfico, y a hacerlo antes de haber construido la confianza que la vuelve respondible.</p>
+  <p>De ahí la forma que se propone acá: SektorCERT como destino a cinco años y ONE-ISAC como forma de arranque. Intercambio, alertas y coordinación primero, alojados en una cámara que ya tiene el padrón; cuotas escalonadas desde el primer día; y la capacidad operativa contratada en vez de construida. Los sensores llegan cuando el intercambio ya funciona y alguien los pide.</p>
   <div class="principles">
     <div class="principle">
       <h3>Mapa, no reuniones</h3>
@@ -210,7 +250,7 @@
     </div>
     <div class="principle">
       <h3>La mesa, con un contrato liviano</h3>
-      <p>Convocatoria formal y acuerdo de confidencialidad firmado antes de compartir nada. El vehículo es un contrato de consorcio de cooperación, artículos 1470 a 1478 del Código Civil y Comercial, que no crea persona jurídica ni permite dirigir la actividad de los miembros. Más un piloto de sensor en uno o dos sitios.</p>
+      <p>Convocatoria formal y acuerdo de confidencialidad firmado antes de compartir nada. El vehículo es un contrato de consorcio de cooperación, artículos 1470 a 1478 del Código Civil y Comercial, que no crea persona jurídica ni permite dirigir la actividad de los miembros. Sin sensores, salvo que una operadora los pida.</p>
     </div>
     <div class="principle">
       <h3>La entidad, con cuotas cobrando</h3>
@@ -274,8 +314,9 @@
     <h2>Lo que este memo no puede afirmar</h2>
   </div>
   <p class="bio-text">No se puede afirmar que un consorcio hubiera evitado ninguno de los catorce incidentes del registro argentino, ni que vaya a evitar el próximo. SektorCERT tampoco previno el de 2023: once de las 22 empresas atacadas no habían parcheado pese al aviso. Un centro sectorial hace que el ataque se vea y se corte antes, y no arregla la higiene de sus miembros.</p>
-  <p class="bio-text">Los tres escenarios de costo son estimaciones propias y no un presupuesto validado. El supuesto de USD 60,000 anuales por persona no sale de una encuesta salarial: sale de acotar entre lo que paga el trabajo remoto dolarizado y el costo noruego verificado. Cambiar ese supuesto mueve todo lo demás.</p>
-  <p class="bio-text">Del préstamo BID solo se puede afirmar lo que dice su informe de monitoreo: que el producto de intercambio con el sector privado está presupuestado y sin ejecutar al cierre de 2025. No que esos fondos estén disponibles, ni que una entidad privada pueda recibirlos, ni que un programa con 8.33% de ejecución en tres años vaya a acelerar porque aparezca una contraparte.</p>
+  <p class="bio-text">Los tres escenarios de costo son estimaciones propias y no un presupuesto validado. El supuesto de USD 60,000 anuales por persona no sale de una encuesta salarial: sale de acotar entre lo que paga el trabajo remoto dolarizado y el costo noruego verificado. Cambiar ese supuesto mueve todo lo demás. Las cifras de ONE-ISAC sí son declaraciones fiscales, pero describen otro país y otro mercado de proveedores: sirven como orden de magnitud, no como presupuesto trasladable.</p>
+  <p class="bio-text">Del préstamo BID se puede afirmar lo que dicen sus documentos públicos: que el producto de intercambio con el sector privado sigue vigente y sin ejecutar, y que el plan de adquisiciones no registra procesos dirigidos al sector privado. No se puede afirmar que esos fondos estén disponibles, ni que una entidad privada pueda recibirlos, porque el prestatario es el Estado y ninguna otra parte tiene derecho a esos fondos. Tampoco que un programa con 2.4% de ejecución en tres años vaya a acelerar porque aparezca una contraparte.</p>
+  <p class="bio-text">Que la plataforma de observación del ciberespacio vaya a encontrar vulnerabilidades en operadoras energéticas privadas es una inferencia razonable a partir de su alcance declarado, no un hecho verificado. Tampoco está verificado que no exista ya algún mecanismo previsto de devolución de hallazgos a esos operadores: lo verificado es que no aparece en los documentos públicos del programa.</p>
   <p class="bio-text">Tampoco se puede afirmar que no existan hoy canales informales entre responsables de seguridad de las energéticas argentinas. Lo verificado es que no hay rastro público ni institucional de ninguno, y la ausencia de rastro no es prueba de ausencia.</p>
 </section>
 

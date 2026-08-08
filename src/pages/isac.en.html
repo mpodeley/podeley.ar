@@ -1,0 +1,306 @@
+<!--meta
+{
+  "title": "A sector CERT for Argentine energy — Matías Podeley",
+  "description": "How SektorCERT, the cybersecurity center for Danish critical infrastructure, actually works, and what an equivalent would cost in Argentina: governance, budget, dues structure and two draft legal instruments.",
+  "ogImage": "/assets/og/isac.en.png",
+  "ogImageAlt": "Starting a sector energy CERT costs USD 270,000 a year, and four anchor companies cover it",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A sector CERT for Argentine energy: the Danish model and what it would cost",
+    "url": "https://podeley.ar/en/isac/",
+    "description": "An analysis of the SektorCERT model and its replicability in the Argentine energy sector, with budget, dues structure and draft legal instruments.",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/en/perfil/" },
+    "datePublished": "2026-08-08",
+    "dateModified": "2026-08-08",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isBasedOn": "https://podeley.ar/en/ciber/"
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Memo · Sector cyber defense · Argentine energy</p>
+  <h1>Denmark caught the attack on 22 utilities because it was watching 300 companies at once</h1>
+  <p class="hero-sub">SektorCERT is a Danish non-profit association with 25 staff, owned by its members and funded entirely by dues. This memo takes that model apart piece by piece and prices an equivalent for Argentine energy: USD 270,000 a year to start, which four anchor companies cover. It closes with two drafts for discussion, a regulation and the skeleton of a bill.</p>
+  <p class="hero-meta"><span class="hero-when">Published August 8, 2026</span> <a class="link-plain" href="#model">The model <span class="arw">↓</span></a> <a class="link-plain" href="#cost">What it costs <span class="arw">↓</span></a> <a class="link-plain" href="#drafts">The drafts <span class="arw">↓</span></a></p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="model">
+  <div class="section-head">
+    <p class="eyebrow">The model</p>
+    <h2>Twenty-five people watching the edge traffic of three hundred companies</h2>
+    <p class="intro">SektorCERT started in April 2020 as EnergiCERT and changed its name when it widened its scope past energy. It is a non-profit association owned by three trade bodies, Green Power Denmark, Dansk Fjernvarme and DANVA, plus Energinet, the Danish transmission system operator. It now covers electricity, district heating, water and transport.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Figures from the <a href="https://sektorcert.dk/wp-content/uploads/2025/11/Om-SektorCERT-2025-V7.pdf" rel="noopener">August 2025 membership brochure</a>, the <a href="https://www.proff.dk/firma/sektorcert/kolding/medlemsorganisationer/0OMP69I10PU" rel="noopener">Danish company register</a> and Green Power Denmark's <a href="https://greenpowerdenmark.dk/nyheder/staerkt-sensor-netvaerk-holder-oeje-med-cyberangreb" rel="noopener">January 2025 release</a>.</caption>
+      <tbody>
+        <tr><td class="reg-d">Legal form</td><td>Non-profit association</td></tr>
+        <tr><td class="reg-d">Incorporated</td><td class="reg-n">April 29, 2020</td></tr>
+        <tr><td class="reg-d">Staff</td><td class="reg-n">25</td></tr>
+        <tr><td class="reg-d">Members</td><td class="reg-n">more than 300 companies</td></tr>
+        <tr><td class="reg-d">Sensors</td><td class="reg-n">270 as of May 2023</td></tr>
+        <tr><td class="reg-d">Funding</td><td>100% member dues, no public money</td></tr>
+        <tr><td class="reg-d">Watch</td><td>24 × 7 since late 2025; best effort before that</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The sensor is engineered against the objection, not against the attack</h3>
+  <p>The first question any security officer asks is who gets to see their traffic. Every technical choice in the SektorCERT sensor answers that question before it is asked. It is a passive tap, so it copies traffic and cannot touch the network. It watches the edge only, meaning traffic the company already sends to the open internet. And the data goes back over a separate out-of-band 4G link, encrypted in transit and at rest, so it never touches the member's own line.</p>
+  <p>Two things sit on top of that, neither of which a commercial provider offers. The first is analysis of industrial protocols such as Modbus and Profinet, which is what makes PLC and RTU traffic visible. The second is an optional honeypot inside the production environment, a physical device dressed up as a PLC that raises an alarm if anyone tries to reach it.</p>
+
+  <h3>It buys scale outside and keeps the sector knowledge</h3>
+  <p>A small sector CERT cannot staff 450 analysts, nor size an incident response bench for the peak. SektorCERT does not try. It contracts analysis to Red Canary, runs CrowdStrike as its endpoint agent, and holds a retainer with mnemonic, the largest incident response firm in the Nordics, covering every member: the contract is part of the dues, and the hours are paid by whoever uses them.</p>
+  <p>What it keeps is what nobody can sell it: the sensor network, the closed forum where members talk to each other, the knowledge of the sector and the relationship with the authorities. That split is what makes the model workable at Argentine scale.</p>
+
+  <h3>Dues only, for two reasons that are written down</h3>
+  <p>The membership brochure is blunt about it: SektorCERT is 100% funded by member dues and no public money is involved. It gives two reasons. The first is being able to act without depending on which agenda is in focus in Danish politics. The second is sharper, and it is the one that travels: as a private entity, it cannot be subject to freedom-of-information requests, so a shared incident stays confidential.</p>
+  <p>That argument translates to Argentina without loss. The <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/265000-269999/265949/norma.htm" rel="noopener">public information access law</a> binds government bodies and state-owned companies. An incident reported to a state agency can be requested by a third party. Reported to an industry association, it cannot.</p>
+  <p>Membership comes in four shapes, and one of them explains how the count reaches 300 without selling one company at a time: the trade body signs on behalf of its members. The other three are a subset enrolled by the trade body at a discount, individual membership, and critical-supplier membership, which requires two members to vouch for the applicant.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="case">
+  <div class="section-head">
+    <p class="eyebrow">May 2023</p>
+    <h2>The case everyone cites, and the part almost nobody cites</h2>
+    <p class="intro">Twenty-two companies operating parts of Danish energy infrastructure were compromised within a few days. The attackers reached industrial control systems, and several companies had to fall back to island mode. <a href="https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf" rel="noopener">SektorCERT's report</a> documents it minute by minute.</p>
+  </div>
+  <p>The first wave exploited a Zyxel firewall flaw, CVE-2023-28771, disclosed with its patch on April 25. Eleven of the 22 companies had not installed the update, despite an earlier warning from SektorCERT itself, and that earned them <a href="https://www.dr.dk/nyheder/viden/teknologi/forsyningsselskaber-faar-kritik-efter-historisk-cyberangreb-vi-er-heldige" rel="noopener">public criticism</a>. One member did not believe it owned a Zyxel device at all: a contractor had installed one while putting in cameras. Another lost the firewall that doubled as the router for its operational network, sent staff out to run remote sites by hand, and spent six days in island mode.</p>
+  <p>Here is the part that gets cited less. In January 2024 <a href="https://www.forescout.com/blog/analysis-of-energy-sector-cyberattacks-in-denmark-and-ukraine/" rel="noopener">Forescout published an analysis</a> arguing that the two waves were unrelated, and that the second was mass opportunistic exploitation of unpatched firewalls worldwide. The attribution to Sandworm, which the Danish report left open, does not hold for that second wave.</p>
+  <p>Worth saying, and worth saying first, because it does not weaken the argument: it strengthens it. If an entire country's critical infrastructure was compromised by an actor with no state resources, working off unpatched equipment, then the problem is within reach of the ordinary attacker. And the detection is not in dispute. The sensor network saw the pattern because it was looking across companies rather than inside one.</p>
+  <p>That is where SektorCERT's own two conclusions come from, and they are the whole argument in two lines. First: a systemic vulnerability is the same flaw sitting in many companies, and none of them sees it as its own problem. Second: looking at data from hundreds of companies surfaces what is invisible when each one is monitored alone.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="argentina">
+  <div class="section-head">
+    <p class="eyebrow">Argentina</p>
+    <h2>The coalition this would need has existed since 1992 and already co-runs dispatch</h2>
+    <p class="intro">SektorCERT is owned by three trade bodies plus the system operator. That ownership structure exists in Argentina, with the same kinds of actors, and it is 33 years old.</p>
+  </div>
+  <p>CAMMESA is a corporation in which 80% is split evenly among the four associations of the power sector, covering generators, transmission, distribution and large users, with the remaining 20% held by the State, which appoints the chair (<a href="https://mepriv.mecon.gob.ar/Normas/1192-92.htm" rel="noopener">Decree 1192/92</a>). The companies a sector CERT would have to convene are already shareholders together in the body that runs the national power dispatch.</p>
+  <p>There is a second precedent, and it comes from the gas side. <a href="https://www.megsa.ar/App/assets/pdf/MEG_decreto_180_2004.pdf" rel="noopener">Decree 180/2004</a> created the Electronic Gas Market and defined its function, but did not operate it: the Buenos Aires Stock Exchange incorporated MEGSA in October of that year, and the gas regulator approved its operating rules afterwards. Twice, twelve years apart, Argentina ran the same pattern: the State convenes by decree, and private parties incorporate and operate.</p>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">SektorCERT's ownership structure and its Argentine counterpart, actor by actor.</caption>
+      <thead>
+        <tr><th scope="col">SektorCERT</th><th scope="col">What it is</th><th scope="col">Argentine counterpart</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Green Power Denmark</td><td class="reg-d">Power trade body</td><td>AGEERA, ATEERA, ADEERA</td></tr>
+        <tr><td>Energinet</td><td class="reg-d">System operator</td><td>CAMMESA</td></tr>
+        <tr><td>DANVA</td><td class="reg-d">Water trade body</td><td>Water utilities, at a later stage</td></tr>
+        <tr><td>Dansk Fjernvarme</td><td class="reg-d">District heating</td><td>Not applicable</td></tr>
+        <tr><td>No counterpart</td><td class="reg-d">Oil and gas</td><td>IAPG, MEGSA</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="aside-link">The contrast sits inside the same country. Argentine banks have shared critical infrastructure since 1980, and the central bank requires them to report a cyber incident within the first hour. Energy has no reporting rule, no channel and no register: <a href="/en/ciber/">fourteen incidents in six years</a>, seven of them known only because the attacker published them.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="gap">
+  <div class="section-head">
+    <p class="eyebrow">The gap</p>
+    <h2>Denmark has three pieces and Argentina has none of them</h2>
+    <p class="intro">What gets cited as "the SektorCERT model" is really three separate institutions that need each other. Only one of the three is private, and it is the one that showed up last.</p>
+  </div>
+
+  <div class="principles">
+    <div class="principle">
+      <h3>The law that compels</h3>
+      <p><a href="https://www.retsinformation.dk/eli/lta/2025/258" rel="noopener">Act 258</a>, in force since March 7, 2025, implements the EU NIS2 and CER directives for the energy sector and sorts companies into five tiers of obligation. Argentina has nothing equivalent: neither the regulator nor the energy secretariat imposes cybersecurity requirements or reporting duties on operators.</p>
+    </div>
+    <div class="principle">
+      <h3>The state strategy unit</h3>
+      <p>The decentralized cyber security unit for energy has sat inside the <a href="https://ens.dk/forsyning-og-forbrug/energisektorernes-beredskab" rel="noopener">Danish Energy Agency</a> since 2018, producing sector strategy, guidance and exercises. Argentina has none for energy: the national cybersecurity center is the competent authority, but its first technical rule reaches only the public sector.</p>
+    </div>
+    <div class="principle">
+      <h3>The private CERT that operates</h3>
+      <p>SektorCERT, since 2020. It writes no rules and audits nobody: it detects, warns and coordinates response. Argentina has none, and neither does any other country in Latin America, where the only consolidated private sector CSIRT is the Colombian banking one.</p>
+    </div>
+  </div>
+
+  <p>The Danish state supplied the mandate and the strategy, and stayed out of running detection. That split was a decision rather than an oversight, and it is the part of the design most worth copying.</p>
+  <p>Argentina's own measure of the gap sits in a government document. The Inter-American Development Bank program for critical information infrastructure starts from a baseline of 9% coverage of sectors with critical information infrastructure identified, measured in 2021, and aims for 50% by 2028.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="cost">
+  <div class="section-head">
+    <p class="eyebrow">Budget</p>
+    <h2>Three scenarios, and four signatures pay for the smallest one</h2>
+    <p class="intro">The only hard reference available is Norwegian. KraftCERT, the sector CERT for Norwegian energy, spent NOK 19,522,718 in 2025 with 12 employees, per the accounts it filed with the company register. That is USD 2,051,838 at the August 7, 2026 rate, or USD 171,000 per person per year at Norwegian cost.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Own estimate, built on an assumption of USD 60,000 in fully loaded annual cost per person in Argentina, within a range of 45,000 to 80,000. This is not a validated budget.</caption>
+      <thead>
+        <tr><th scope="col">Scenario</th><th scope="col">What it does</th><th scope="col">People</th><th scope="col">USD per year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Minimum</td><td>Sharing, alerts and coordination. No sensors of its own</td><td class="reg-n">3</td><td class="reg-n">270,000</td></tr>
+        <tr><td>Middle</td><td>Adds detection, with sensors at 25 sites</td><td class="reg-n">7</td><td class="reg-n">775,000</td></tr>
+        <tr><td>Full</td><td>Operations center with a round-the-clock watch, 80 sites</td><td class="reg-n">16</td><td class="reg-n">2,000,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The full scenario lands in the same order of magnitude as KraftCERT, with more people and more sensors, which is what changing cost country should do. The minimum is the one that matters, because it is the one that decides whether this starts at all.</p>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Dues tiered by size, on the WaterISAC model, with anchors guaranteeing the funding the way KraftCERT's three founders did in 2014.</caption>
+      <thead>
+        <tr><th scope="col">Tier</th><th scope="col">Who</th><th scope="col">Annual dues</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Founding anchor</td><td>Gas transporter, large producer</td><td class="reg-n">USD 80,000</td></tr>
+        <tr><td>Large</td><td>Generator, power transmission, large distributor</td><td class="reg-n">USD 35,000</td></tr>
+        <tr><td>Mid</td><td>Provincial distributor, gas marketer</td><td class="reg-n">USD 12,000</td></tr>
+        <tr><td>Small</td><td>Electric cooperative, small distributor</td><td class="reg-n">USD 3,000</td></tr>
+        <tr><td>Supplier</td><td>Critical vendor, vouched for by two members</td><td class="reg-n">USD 6,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Four anchors bring in USD 320,000 against a cost of 270,000. That pays for year one, and it is the number to carry into the first meeting. Forty members spread across the five tiers yield USD 710,000, which covers most of the middle scenario. For scale: SektorCERT has more than 300 members.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="money">
+  <div class="section-head">
+    <p class="eyebrow">Funding</p>
+    <h2>The loan has USD 27.5 million undisbursed and the private-sector line at zero</h2>
+    <p class="intro">The <a href="https://www.iadb.org/en/project/AR-L1343" rel="noopener">Cybersecurity for Critical Information Infrastructure Program</a>, IDB loan 5735/OC-AR, was approved on January 11, 2023 and signed on June 7 of that year, for USD 30,000,000 with no local counterpart funding. The Chief of Cabinet's office executes it, and it closes in 2028.</p>
+  </div>
+  <p>The <a href="https://www.iadb.org/document.cfm?id=EZIDB0000578-522669563-48737" rel="noopener">public monitoring report for January to December 2025</a>, validated in May 2026, records USD 2,500,000 disbursed. That is 8.33% in three years.</p>
+  <p>Inside the results matrix, under the first component, there is an output with this name: "platforms for threat analysis and information sharing with the private sector implemented". Target, one platform by 2028. Budget, between USD 950,000 and 2,600,000 depending on whether you read the planned or the adjusted figure. Physical and financial progress as of the end of 2025, zero.</p>
+  <p>The rest of the component explains why. The outputs carrying real budget are the government security operations center, with SIEM and sensors to monitor ministries, and the operational capabilities of the national CERT. It is the SektorCERT architecture pointed at the State. The private sector shows up in a single line under a million dollars, and that is the line that never moved.</p>
+  <p>The open question is not where the money comes from. It is who signs on the other side.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="sequence">
+  <div class="section-head">
+    <p class="eyebrow">Sequence</p>
+    <h2>Four phases, and each one is worth having even if the next never happens</h2>
+    <p class="intro">Order matters more than speed here. If the State convenes before any operator is committed, the table fills with officials and vendors, which is exactly what happened to the 2011 critical infrastructure program.</p>
+  </div>
+  <div class="principles">
+    <div class="principle">
+      <h3>A map, not meetings</h3>
+      <p>An attack surface map of the sector built from open sources alone, touching no system. This is what opens doors: nobody takes a meeting about founding a consortium, and almost everyone takes one to see an inventory of what their company looks like from the outside.</p>
+    </div>
+    <div class="principle">
+      <h3>The table, on a light contract</h3>
+      <p>A formal convening, a confidentiality agreement signed before anything is shared, and a cooperation consortium contract under articles 1470 to 1478 of the civil and commercial code, which creates no legal entity and cannot direct members' activity. Plus a sensor pilot at one or two sites.</p>
+    </div>
+    <div class="principle">
+      <h3>The entity, with dues coming in</h3>
+      <p>A civil association, three or four anchors as members, the minimum scenario running, and response capacity contracted rather than built. International accreditation and an agreement with a peer sector CERT, which is quick to get because all three European ones already sign with foreign partners.</p>
+    </div>
+    <div class="principle">
+      <h3>Scale and legal framework</h3>
+      <p>Extension to water and transport, an annual sector exercise, and the push for the bill. With two years of operation and its own data, the consortium stops petitioning for a law and becomes the technical source behind it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="drafts">
+  <div class="section-head">
+    <p class="eyebrow">Drafts</p>
+    <h2>A regulation that costs nothing, and a bill for what the regulation cannot do</h2>
+    <p class="intro">Both texts below are working drafts, written by someone who is not a lawyer, so that a conversation can start from a text instead of an idea. They need professional review before being tabled anywhere.</p>
+  </div>
+
+  <h3>Draft regulation from the energy secretariat</h3>
+  <p>It creates the Energy Sector Cybersecurity Table as a voluntary forum, with no power to direct or audit its participants. Members are the secretariat as chair, the regulator, the national cybersecurity center as standing guest, CAMMESA, the four power associations, the oil and gas institute, MEGSA, and any operator that opts in.</p>
+  <p>Its remit has two halves. The first is design: propose the legal vehicle and the funding for a permanent sharing mechanism run by the operators themselves. The second is rules: the information handling protocol, the criteria for identifying critical infrastructure in the sector, a voluntary notification scheme, and the legal changes needed. It also creates a voluntary, free register of cybersecurity points of contact, readable only by its registrants.</p>
+  <p>Three clauses do the heavy lifting. Information shared at the table is not used as grounds for enforcement, audit or tariff review. The table has 180 days to deliver its proposal with a budget. And running it carries no budget appropriation: a non-profit sector body serves as technical secretariat at no charge. A closing article invites the Chief of Cabinet's office to consider assigning the loan's private-sector sharing output to whatever the table proposes.</p>
+  <p>That design is deliberate. It costs nothing, imposes no duty on private parties, creates no structure or posts, and hands the signer an agenda in a field where Argentina trails Chile and Brazil. The precedent is the Norwegian regulator, which in 2014 urged the industry to build its own security team, and KraftCERT is what came out of it.</p>
+
+  <h3>What only a law can do</h3>
+  <p>A regulation binds the conduct of the body that issues it. It cannot carve out an exception to the public information access regime, and it cannot waive liability toward third parties. Those protections are the reason the second draft exists, and there are five of them.</p>
+  <div class="gloss">
+    <details class="gloss-item">
+      <summary><dfn>No enforcement use</dfn></summary>
+      <p>What is shared in good faith with a recognized sector center cannot ground enforcement, audit or tariff review proceedings against the party that shared it. This is the problem the 2015 US sharing act was written to fix, and without it sharing goes cold.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Civil liability exemption</dfn></summary>
+      <p>Sharing threat or vulnerability information under the applicable protocol creates no liability toward third parties. Without this clause, every operator's legal department has reason to recommend silence.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Freedom-of-information carve-out</dfn></summary>
+      <p>Incident and vulnerability information about critical infrastructure held by government bodies falls under the exceptions of the access law. It is the public-side mirror of why SektorCERT chose to be private.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Antitrust safe harbor</dfn></summary>
+      <p>Threat information sharing among competitors, confined to that purpose, does not by itself constitute a restrictive practice under competition law.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Use limitation</dfn></summary>
+      <p>Shared information may be used for cybersecurity purposes only, and is not passed to intelligence agencies without a court order. This clause answers the 2024 precedent, when cybersecurity was moved under the intelligence agency.</p>
+    </details>
+  </div>
+  <p>The rest of the bill wraps around those five: tiered obligations, staged notification at 3 hours, 72 hours and 15 days as in the Chilean law in force since 2025, and the figure of the recognized sector center, with one clause that changes the entire incentive: notifying through the center discharges the duty to notify the authority.</p>
+  <p class="aside-link">The drafting references are <a href="https://www.bcn.cl/leychile/navegar?i=1202434" rel="noopener">Chile's Law 21.663</a>, the <a href="https://www.cisa.gov/sites/default/files/publications/Cybersecurity%20Information%20Sharing%20Act%20of%202015.pdf" rel="noopener">Cybersecurity Information Sharing Act of 2015</a>, and two Argentine bills, <a href="https://www4.hcdn.gob.ar/dependencias/dsecretaria/Periodo2021/PDF2021/TP2021/4878-D-2021.pdf" rel="noopener">4878-D-2021</a> and 0146-D-2023, which proposed a national plan for energy critical infrastructure and were never taken up.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limits">
+  <div class="section-head">
+    <p class="eyebrow">Limits</p>
+    <h2>What this memo cannot claim</h2>
+  </div>
+  <p class="bio-text">It cannot claim that a consortium would have prevented any of the fourteen incidents in the Argentine register, or that it would prevent the next one. SektorCERT did not prevent the 2023 attack either: eleven of the 22 companies had not patched despite the warning. A sector center makes an attack visible and cuts it short. It does not fix its members' hygiene.</p>
+  <p class="bio-text">The three cost scenarios are own estimates, not a validated budget. The USD 60,000 per person assumption does not come from a salary survey: it comes from bracketing between what dollarized remote work pays and the verified Norwegian cost. Change that assumption and everything else moves with it.</p>
+  <p class="bio-text">About the IDB loan, only what its monitoring report says can be claimed: that the private-sector sharing output is budgeted and unexecuted as of the end of 2025. Not that those funds are available, nor that a private entity could receive them, nor that a program running at 8.33% after three years would speed up because a counterpart appeared.</p>
+  <p class="bio-text">Nor can it be claimed that no informal channels exist today among security officers at Argentine energy companies. What is verified is that no public or institutional trace of one exists, and absence of trace is not proof of absence.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="who">
+  <div class="section-head">
+    <p class="eyebrow">Who is behind this</p>
+  </div>
+  <p class="bio-text">Matías Podeley. An ITBA engineer, eighteen years in energy: four in operations in Neuquén, simulation of giant fields like Camisea, appraisal of petrochemical projects, technical backing of asset purchases above US$ 300 million, and five years teaching project appraisal. The craft behind this site: understanding the business need, and building the project or the tool that answers it, with AI and auditable sources. Buenos Aires.</p>
+  <p class="aside-link">The empirical work underneath this memo: <a href="/en/ciber/">the register of cyber incidents in Argentine energy and critical infrastructure</a>, sourced row by row.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contact">
+  <div class="section-head">
+    <p class="eyebrow">If this is your problem</p>
+    <h2>Operators, trade bodies and agencies</h2>
+    <p class="intro">This memo was written to circulate. If something here is wrong, a note with the source is enough to get it corrected. If there is interest in discussing the design, the budget or the drafts, the conversation is open.</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn btn--primary" href="mailto:matias@podeley.ar?subject=Energy%20ISAC%20%E2%80%94%20podeley.ar%2Fisac&amp;body=Hi%20Matias%2C%0A%0A" data-goatcounter-click="mail-isac-en">Write</a>
+    <a class="btn btn--outline" href="https://calendar.app.google/bErn9ZNtQpSUbjxh6" target="_blank" rel="noopener" data-goatcounter-click="agenda-isac-en">Book a call</a>
+    <a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener" data-goatcounter-click="linkedin-isac-en">LinkedIn</a>
+  </div>
+  <p class="contact-note">matias@podeley.ar · Buenos Aires</p>
+</section>

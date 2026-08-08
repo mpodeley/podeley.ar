@@ -136,6 +136,22 @@ entran en `queued` y no arrancan nunca, y cancelarlos no lo destraba. Por eso Pa
 `build_type=workflow` y publica desde este workflow, que corre en `ubuntu-latest`. También
 por eso el deploy usa `actions/deploy-pages@v4` y no v5, que fue donde falló el OIDC.
 
+### Failover a Cloudflare
+
+Si GitHub Pages se cae, en Porkbun:
+
+```
+ALIAS  podeley.ar   podeley.github.io  ->  podeley.pages.dev
+CNAME  www          podeley.github.io  ->  podeley.pages.dev
+```
+
+Con TTL 600 el cambio tarda unos diez minutos. Cloudflare revalida el dominio solo (por eso
+`podeley.ar` queda configurado en el proyecto `podeley` aunque no lo esté sirviendo: sacarlo
+solo agrega pasos el día que haya apuro). El TXT `_github-pages-challenge-podeley` no se
+toca nunca — es lo que mantiene el dominio verificado del lado de GitHub para la vuelta.
+
+Para volver, las mismas dos líneas al revés.
+
 **Escape hatch manual**, si Actions no está disponible: `npm run deploy:cf` sube a
 Cloudflare con el token en el entorno. Encadena `tools/predeploy.mjs`, que aborta si el
 árbol está sucio o HEAD no coincide con `origin/main` — la subida directa publica el árbol

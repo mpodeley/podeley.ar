@@ -1,0 +1,65 @@
+name: deploy
+
+# Un solo archivo, dos jobs. La fuente vive en los dos remotos, así que `if: github.repository`
+# decide cuál corre en cada uno: GitHub Pages es el canónico, Cloudflare el backup.
+#
+# No se usa el builder legacy de Pages (`pages-build-deployment`, pool `dynamic`): quedó
+# wedgeado en estos repos tras el incidente de OIDC del 2026-08-06 y los runs no arrancan más.
+# Este workflow corre en `ubuntu-latest` con su propio concurrency group, que es otro pipeline.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  pages:                                       # canónico — podeley.ar
+    if: github.repository == 'podeley/podeley.github.io'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                       # postbuild lee git log para los <lastmod>
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/configure-pages@v5       # habilita Pages en modo workflow, idempotente
+      - run: npm run check
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4          # v4 a propósito: el fallo de OIDC fue en v5
+
+  cloudflare:                                  # backup — podeley.pages.dev
+    if: github.repository == 'mpodeley/podeley.ar'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run check
+      - run: npm run build
+      - name: Subir a Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::Sin CLOUDFLARE_API_TOKEN: el backup no se actualiza. Cargalo con gh secret set CLOUDFLARE_API_TOKEN -R mpodeley/podeley.ar"
+            exit 0
+          fi
+          npm run upload:cf

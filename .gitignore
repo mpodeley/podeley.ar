@@ -1,5 +1,6 @@
 dist/
 node_modules/
+.wrangler/
 
 # v3 leftovers, in case they reappear
 site/

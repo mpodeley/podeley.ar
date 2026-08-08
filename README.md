@@ -107,18 +107,38 @@ Necesita `playwright-core` + chromium y `sharp`; ver el encabezado de `tools/sho
 
 ## Deploy
 
-El sitio se sirve desde la rama `gh-pages` de **`podeley/podeley.github.io`**, que es a
-donde `npm run deploy` hace build y push (por eso el `-r` explícito en el script: sin él,
-`gh-pages` empujaría a `origin`, que es otro repo). El dominio `podeley.ar` está conectado
-(CNAME en `static/`, DNS en Porkbun).
+`git push` publica. No hay más deploy a mano.
 
-La cadena completa: `tools/predeploy.mjs` (aborta si el árbol está sucio o HEAD no
-coincide con `origin/main` — `gh-pages` publica el árbol, no lo commiteado, y con más de
-una sesión trabajando eso ya mandó a producción trabajo a medias una vez) → `npm run
-check` → build → `git push org main:main` (espeja la fuente en la org, así lo visible en
-GitHub y lo publicado no driftean nunca) → push de `dist/` a `gh-pages`. Salteo
-consciente: `PREDEPLOY_SKIP=1 npm run deploy`.
+**Canónico:** GitHub Pages en **`podeley/podeley.github.io`**, con el dominio `podeley.ar`
+(CNAME en `static/`, DNS en Porkbun). **Backup:** Cloudflare Pages en `podeley.pages.dev`,
+proyecto `podeley`. Si GitHub se cae, el failover es mover el A record en Porkbun a
+Cloudflare; el backup ya está desplegado y al día.
 
-No hay GitHub Action activa: el token de `gh` no tiene scope `workflow`. El workflow listo
-para activar está en `tools/deploy.workflow.yml`, con los pasos de activación en su
-encabezado (PAT de la org como secret + mover el archivo a `.github/workflows/`).
+Los dos deploys los hace `.github/workflows/deploy.yml`, un archivo con dos jobs guardados
+por `if: github.repository`. La fuente vive en los dos remotos, así que cada uno corre el
+suyo. Para que un push llegue a los dos, `origin` tiene dos push URL:
+
+```bash
+git remote set-url --add --push origin https://github.com/mpodeley/podeley.ar.git
+git remote set-url --add --push origin https://github.com/podeley/podeley.github.io.git
+```
+
+(La primera línea hace falta: apenas se agrega una push URL explícita, git deja de usar la
+del fetch.) Es config local, no viaja con el repo.
+
+El job de Cloudflare necesita el secret `CLOUDFLARE_API_TOKEN` en `mpodeley/podeley.ar`
+(permiso *Cloudflare Pages: Edit*). Si falta, el job avisa y sigue en verde en vez de
+romper el push — el backup simplemente no se actualiza.
+
+**El builder legacy de Pages no se usa.** `pages-build-deployment` (pool `dynamic`) quedó
+wedgeado en estos dos repos tras el incidente de OIDC de GitHub del 2026-08-06: los runs
+entran en `queued` y no arrancan nunca, y cancelarlos no lo destraba. Por eso Pages está en
+`build_type=workflow` y publica desde este workflow, que corre en `ubuntu-latest`. También
+por eso el deploy usa `actions/deploy-pages@v4` y no v5, que fue donde falló el OIDC.
+
+**Escape hatch manual**, si Actions no está disponible: `npm run deploy:cf` sube a
+Cloudflare con el token en el entorno. Encadena `tools/predeploy.mjs`, que aborta si el
+árbol está sucio o HEAD no coincide con `origin/main` — la subida directa publica el árbol
+de trabajo, no el commit, y eso ya mandó trabajo a medias a producción una vez. Salteo
+consciente: `PREDEPLOY_SKIP=1 npm run deploy:cf`. Por Actions ese riesgo no existe: siempre
+se publica el commit.

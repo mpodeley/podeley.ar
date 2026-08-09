@@ -153,7 +153,7 @@
 }
 .step p:not(.step-n) { margin: 0; color: var(--pd-text-muted); }
 
-/* La figura del hero, sólo en el home. */
+/* La figura grande bajo un hero, con su lectura al pie. */
 .hero-figure { margin: var(--pd-sp-6) 0 0; }
 .hero-figure img {
   display: block; width: 100%; height: auto;

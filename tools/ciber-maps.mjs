@@ -21,7 +21,7 @@ const T = {
   es: {
     incidente: (n) => (n === 1 ? '1 incidente' : `${n} incidentes`),
     arAria: 'Mapa de Argentina con el ancla territorial de cada incidente del registro',
-    arCap: (caba, n) => `Dónde ancla cada incidente. Un ciberincidente no tiene provincia: el punto es la sede de los sistemas afectados, casi siempre administrativos, no la huella de la organización. Que ${caba} de ${n} anclen en CABA es el hallazgo de la capa administrativa, no geografía del riesgo. El criterio de cada fila está en el campo <span class="path">provincias</span> del archivo de datos.`,
+    arCap: (caba, n) => `Dónde ancla cada incidente. Un ciberincidente no tiene provincia: el punto marca la sede de los sistemas afectados, casi siempre administrativos. Que ${caba} de ${n} anclen en CABA dice dónde están esas oficinas, y no dónde está el riesgo. El criterio de cada fila está en el campo <span class="path">provincias</span> del archivo de datos.`,
     wAria: 'Mapamundi con los casos del contexto internacional',
     wCap: (n) => `Los ${n} casos del contexto, sobre el mapa. Cada punto lleva a su fila; la forma dice quién ataca.`,
     keyCriminal: 'crimen económico', keyEstatal: 'operación estatal', keyNn: 'sin atribuir',
@@ -29,7 +29,7 @@ const T = {
   en: {
     incidente: (n) => (n === 1 ? '1 incident' : `${n} incidents`),
     arAria: 'Map of Argentina with the territorial anchor of each incident in the register',
-    arCap: (caba, n) => `Where each incident anchors. A cyber incident has no province: the dot is the seat of the affected systems, almost always administrative, not the organization's footprint. That ${caba} of ${n} anchor in Buenos Aires City is the administrative-layer finding, not risk geography. Each row's criterion sits in the <span class="path">provincias</span> field of the data file.`,
+    arCap: (caba, n) => `Where each incident anchors. A cyber incident has no province: the dot marks the seat of the affected systems, almost always administrative. That ${caba} of ${n} anchor in Buenos Aires City says where those offices are, and not where the risk is. Each row's criterion sits in the <span class="path">provincias</span> field of the data file.`,
     wAria: 'World map with the international context cases',
     wCap: (n) => `The ${n} context cases, on the map. Each dot leads to its row; the shape says who attacks.`,
     keyCriminal: 'economic crime', keyEstatal: 'state operation', keyNn: 'unattributed',

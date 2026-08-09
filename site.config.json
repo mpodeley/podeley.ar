@@ -39,6 +39,12 @@
       "en": "Cyber"
     },
     {
+      "key": "cto",
+      "slug": "cto",
+      "es": "CTO",
+      "en": "CTO"
+    },
+    {
       "key": "consultoria",
       "slug": "consultoria",
       "es": "Consultoría",

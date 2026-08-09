@@ -65,6 +65,11 @@ const CARDS = [
   { slug: 'consultoria', lang: 'en', eyebrow: 'Consulting · Oil, gas & mining', fig: 'At no cost',
     title: 'the first call and the proposal, mockup included' },
 
+  { slug: 'cto', lang: 'es', eyebrow: 'CTO · Petróleo, gas y minería',
+    title: 'El CTO dejó de ser un rol de soporte' },
+  { slug: 'cto', lang: 'en', eyebrow: 'CTO · Oil, gas & mining',
+    title: 'The CTO is no longer a support role' },
+
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',
     title: 'Interpretabilidad mecanicista, publicada con sus nulos' },
   { slug: 'research', lang: 'en', eyebrow: 'AI safety · Interpretability',

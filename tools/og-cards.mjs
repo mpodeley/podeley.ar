@@ -30,10 +30,15 @@ const { chromium } = require('playwright-core')
 /* La cifra es el gancho; la línea de abajo dice de qué es. El home y las dos
    páginas que no tienen un número al frente abren por la frase. */
 const CARDS = [
-  { slug: 'home', lang: 'es', eyebrow: 'Consultoría para energía y minería',
+  { slug: 'home', lang: 'es', eyebrow: 'Análisis y herramientas para energía y minería',
     title: 'Primero la pregunta de negocio. Después la herramienta' },
-  { slug: 'home', lang: 'en', eyebrow: 'Consulting for energy and mining',
+  { slug: 'home', lang: 'en', eyebrow: 'Analysis and tools for energy and mining',
     title: 'The business question first. Then the tool' },
+
+  { slug: 'casos', lang: 'es', eyebrow: 'Casos · Energía y minería',
+    title: 'Todo lo publicado, en una página' },
+  { slug: 'casos', lang: 'en', eyebrow: 'Cases · Energy & mining',
+    title: 'Everything published, on one page' },
 
   { slug: 'ep', lang: 'es', eyebrow: 'E&P · Cuenca Neuquina', fig: '13.5 meses',
     title: 'de anticipo sobre el registro oficial de actividad' },
@@ -60,10 +65,15 @@ const CARDS = [
   { slug: 'isac', lang: 'en', eyebrow: 'Memo · Sector cyber defense · Argentine energy', fig: 'Four signatures',
     title: 'pay for year one of a sector energy CERT' },
 
-  { slug: 'consultoria', lang: 'es', eyebrow: 'Consultoría · Petróleo, gas y minería', fig: 'Sin cargo',
-    title: 'la primera charla y la propuesta, con maqueta incluida' },
-  { slug: 'consultoria', lang: 'en', eyebrow: 'Consulting · Oil, gas & mining', fig: 'At no cost',
-    title: 'the first call and the proposal, mockup included' },
+  { slug: 'rigi', lang: 'es', eyebrow: 'Registro RIGI · Grandes inversiones', fig: 'Veintiuno',
+    title: 'proyectos aprobados, y la web oficial informa dieciséis' },
+  { slug: 'rigi', lang: 'en', eyebrow: 'RIGI registry · Large investments', fig: 'Twenty-one',
+    title: 'projects approved, while the official site lists sixteen' },
+
+  { slug: 'trabajo', lang: 'es', eyebrow: 'Cómo trabajo · Petróleo, gas y minería',
+    title: 'Construir se volvió barato. Elegir, no' },
+  { slug: 'trabajo', lang: 'en', eyebrow: 'How I work · Oil, gas & mining',
+    title: 'Building got cheap. Choosing did not' },
 
   { slug: 'cto', lang: 'es', eyebrow: 'CTO · Petróleo, gas y minería',
     title: 'El CTO dejó de ser un rol de soporte' },

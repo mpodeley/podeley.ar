@@ -15,22 +15,10 @@
   ],
   "nav": [
     {
-      "key": "ep",
-      "slug": "ep",
-      "es": "E&P",
-      "en": "E&P"
-    },
-    {
-      "key": "mineria",
-      "slug": "mineria",
-      "es": "Minería",
-      "en": "Mining"
-    },
-    {
-      "key": "energia",
-      "slug": "energia",
-      "es": "Gas y energía",
-      "en": "Gas & power"
+      "key": "casos",
+      "slug": "casos",
+      "es": "Casos",
+      "en": "Cases"
     },
     {
       "key": "ciber",
@@ -39,16 +27,10 @@
       "en": "Cyber"
     },
     {
-      "key": "cto",
-      "slug": "cto",
-      "es": "CTO",
-      "en": "CTO"
-    },
-    {
-      "key": "consultoria",
-      "slug": "consultoria",
-      "es": "Consultoría",
-      "en": "Consulting"
+      "key": "trabajo",
+      "slug": "trabajo",
+      "es": "Cómo trabajo",
+      "en": "How I work"
     },
     {
       "key": "perfil",

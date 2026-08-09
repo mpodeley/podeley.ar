@@ -153,6 +153,40 @@
 }
 .step p:not(.step-n) { margin: 0; color: var(--pd-text-muted); }
 
+/* La escalera de involucramiento de /trabajo/. No usa el three-up de
+   .principles a propósito: ahí las tres columnas pesan igual, y acá el orden es
+   el argumento. La regla de la izquierda engorda de un nivel al siguiente para
+   que la progresión se lea antes que el texto. */
+.niveles { display: grid; gap: var(--pd-sp-5); margin-top: var(--pd-sp-6); }
+.nivel {
+  border-left: 2px solid var(--pd-orange-ink);
+  padding: .2rem 0 .2rem var(--pd-sp-4);
+}
+/* El padding compensa el grosor para que los tres textos arranquen en la misma
+   vertical: si no, la regla que engorda empuja el bloque y parece un error. */
+.nivel:nth-child(2) {
+  border-left-width: 5px; border-left-color: var(--pd-blue-ink);
+  padding-left: calc(var(--pd-sp-4) - 3px);
+}
+.nivel:nth-child(3) {
+  border-left-width: 8px; border-left-color: var(--pd-green-ink);
+  padding-left: calc(var(--pd-sp-4) - 6px);
+}
+.nivel-cuando {
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--pd-text-faint); margin: 0;
+}
+.nivel h3 {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25;
+  margin: .3rem 0 .45rem; color: var(--pd-text);
+}
+.nivel p:not(.nivel-cuando) {
+  max-width: 68ch; margin: 0;
+  color: var(--pd-text-muted); line-height: 1.55;
+}
+
 /* La figura grande bajo un hero, con su lectura al pie. */
 .hero-figure { margin: var(--pd-sp-6) 0 0; }
 .hero-figure img {
@@ -224,6 +258,20 @@
 .seg-card:hover h3 a { color: var(--pd-link); }
 .seg-card p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
 .seg-card--quiet { border-style: dashed; border-color: var(--pd-border-soft); }
+
+/* ---------- índice de casos (/casos/) ------------------------------------- */
+/* El router entre la home y las páginas de sector: una línea por pieza, sin
+   captura. Las tarjetas con imagen, su cifra y su caveat viven en la página de
+   sector, y repetirlas acá sería un segundo catálogo. */
+.idx { list-style: none; margin: var(--pd-sp-5) 0 0; padding: 0; }
+.idx li + li {
+  margin-top: var(--pd-sp-4); padding-top: var(--pd-sp-4);
+  border-top: 1px solid var(--pd-border-soft);
+}
+.idx-t { font-weight: 600; text-decoration: none; color: var(--pd-text); }
+.idx-t:hover { color: var(--pd-link); text-decoration: underline; }
+.idx p { margin: .3rem 0 0; max-width: 68ch; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.idx .proj { display: block; margin-top: .35rem; font-size: var(--pd-fs-cap); letter-spacing: .04em; }
 
 .other-line { margin: 2.5rem 0 0; font-size: var(--pd-fs-lead); }
 .other-line a { text-decoration: none; font-weight: 600; color: var(--pd-link); }

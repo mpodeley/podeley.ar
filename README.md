@@ -45,9 +45,9 @@ en JSON:
 ```html
 <!--meta
 {
-  "title": "Consultoría de datos e IA para E&P — Matías Podeley",
+  "title": "E&P: qué hacen los vecinos y cómo declinan los pozos — Matías Podeley",
   "description": "Actividad de la competencia, declinación por pozo, …",
-  "nav": "ep"
+  "nav": "casos"
 }
 -->
 <section class="hero wrap">
@@ -56,9 +56,11 @@ en JSON:
 
 `title` y `description` alimentan `<title>`, la meta description y los tags OG/Twitter
 de esa página; un `"jsonld"` opcional se emite como `ld+json` (lo llevan el home,
-`/ciber/`, `/consultoria/` y `/perfil/`). `nav` marca el item activo del menú con las
-claves de `site.config.json` (`ep`, `mineria`, `energia`, `ciber`, `consultoria`,
-`perfil`); `research` quedó fuera del menú y `index`/`404` no lo declaran.
+`/ciber/`, `/casos/`, `/trabajo/` y `/perfil/`). `nav` marca el item activo del menú con
+las claves de `site.config.json`, que son cuatro: `casos`, `ciber`, `trabajo`, `perfil`.
+Las páginas de sector (`/ep/`, `/mineria/`, `/energia/`) declaran `casos`, y `/cto/`
+declara `trabajo`, porque son drill-down de esos items y no items propios. `research`
+quedó fuera del menú y `index`/`404` no lo declaran.
 
 El texto va sin escapar en el JSON (`E&P`, comillas con `\"`); en el HTML del cuerpo
 se escribe como HTML (`E&amp;P`).

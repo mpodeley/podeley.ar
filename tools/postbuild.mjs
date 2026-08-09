@@ -53,7 +53,7 @@ const sitemap = (await readFile(sitemapPath, 'utf8')).replace(
   (line, head, loc, tail) => {
     const { file, slug } = srcFor(loc)
     let date = gitDate(file)
-    if (slug === 'ciber' && registryDate && (!date || registryDate > date)) date = registryDate
+    if (slug === 'incidentes' && registryDate && (!date || registryDate > date)) date = registryDate
     if (!date) return line
     stamped++
     return `${head}<lastmod>${date}</lastmod>${tail}`
@@ -69,7 +69,7 @@ const esc = (s) =>
 
 const data = JSON.parse(await readFile(join(ROOT, REGISTRY), 'utf8'))
 const FEED_URL = `${origin}/ciber/feed.xml`
-const PAGE_URL = `${origin}/ciber/`
+const PAGE_URL = `${origin}/incidentes/`
 const day = (d) => `${d}T00:00:00Z`
 
 /* Una corrección sobre una fila bumpea su entry — el suscriptor la ve volver
@@ -117,7 +117,11 @@ console.log(`  ciber/feed.xml            ← ${entries.length} incidentes, actua
 const LINKS = {
   'ciber/index.html':
     `<link rel="alternate" type="application/atom+xml" title="Registro ciber — novedades" href="${FEED_URL}">`,
+  'incidentes/index.html':
+    `<link rel="alternate" type="application/atom+xml" title="Registro ciber — novedades" href="${FEED_URL}">`,
   'en/ciber/index.html':
+    `<link rel="alternate" type="application/atom+xml" title="Cyber registry — updates" href="${FEED_URL}">`,
+  'en/incidentes/index.html':
     `<link rel="alternate" type="application/atom+xml" title="Cyber registry — updates" href="${FEED_URL}">`,
 }
 for (const [rel, link] of Object.entries(LINKS)) {

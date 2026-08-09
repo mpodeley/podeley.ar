@@ -16,7 +16,7 @@ import { readFile } from 'node:fs/promises'
 const METRICS = 'tools/metrics.json'
 const OG_CARDS = 'tools/og-cards.mjs'
 const CIBER_JSON = 'static/data/ciber-incidentes.json'
-const CIBER_PAGES = ['src/pages/ciber.es.html', 'src/pages/ciber.en.html']
+const CIBER_PAGES = ['src/pages/incidentes.es.html', 'src/pages/incidentes.en.html']
 
 let failures = 0
 let warnings = 0

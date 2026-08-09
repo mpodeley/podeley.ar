@@ -15,13 +15,13 @@ import { readFile } from 'node:fs/promises'
 
 const REGISTRY = 'static/data/ciber-incidentes.json'
 const SCHEMA = 'static/data/ciber-incidentes.schema.json'
-const PAGES = { es: 'src/pages/ciber.es.html', en: 'src/pages/ciber.en.html' }
+const PAGES = { es: 'src/pages/incidentes.es.html', en: 'src/pages/incidentes.en.html' }
 
 /* Archivos que llevan el conteo total escrito en palabras, además de las páginas
    ciber. research.{es,en}.html linkea sin conteo y por eso no está. */
 const SATellites = {
-  es: ['src/pages/index.es.html', 'src/pages/energia.es.html', 'src/pages/perfil.es.html'],
-  en: ['src/pages/index.en.html', 'src/pages/energia.en.html', 'src/pages/perfil.en.html'],
+  es: ['src/pages/index.es.html', 'src/pages/energia.es.html', 'src/pages/perfil.es.html', 'src/pages/ciber.es.html'],
+  en: ['src/pages/index.en.html', 'src/pages/energia.en.html', 'src/pages/perfil.en.html', 'src/pages/ciber.en.html'],
 }
 const OG_CARDS = 'tools/og-cards.mjs'
 

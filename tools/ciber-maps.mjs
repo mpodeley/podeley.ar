@@ -15,7 +15,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 const data = JSON.parse(await readFile('static/data/ciber-incidentes.json', 'utf8'))
 const geoAr = JSON.parse(await readFile('static/data/geo/ar-provincias.paths.json', 'utf8'))
 const geoW = JSON.parse(await readFile('static/data/geo/world-land.paths.json', 'utf8'))
-const PAGES = { es: 'src/pages/ciber.es.html', en: 'src/pages/ciber.en.html' }
+const PAGES = { es: 'src/pages/incidentes.es.html', en: 'src/pages/incidentes.en.html' }
 
 const T = {
   es: {

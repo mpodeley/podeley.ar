@@ -1,0 +1,598 @@
+<!--meta
+{
+  "title": "Ciberincidentes en energía argentina, 2020–2026 — Matías Podeley",
+  "description": "Registro sectorial de catorce ciberincidentes en energía e infraestructura crítica argentina, con fuente por fila, contexto internacional y el estado del marco normativo. Siete de ellos se conocen solo porque el atacante los publicó.",
+  "ogImage": "/assets/og/ciber.es.png",
+  "ogImageAlt": "Siete de catorce ciberincidentes del sector energético argentino se conocen solo porque el atacante los publicó",
+  "nav": "ciber",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Registro de ciberincidentes en energía e infraestructura crítica argentina",
+    "url": "https://podeley.ar/incidentes/",
+    "description": "Registro sectorial de catorce ciberincidentes en energía e infraestructura crítica argentina, con fuente por fila, contexto internacional y el estado del marco normativo.",
+    "inLanguage": "es",
+    "creator": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
+    "dateModified": "2026-08-04",
+    "temporalCoverage": "2020/..",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      { "@type": "DataDownload",
+        "contentUrl": "https://podeley.ar/data/ciber-incidentes.json",
+        "encodingFormat": "application/json" }
+    ]
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Registro sectorial · Energía e infraestructura crítica · Argentina</p>
+  <h1>Catorce incidentes en seis años, y siete de ellos nunca tuvieron una línea publicada</h1>
+  <p class="hero-sub">Este es el registro de los ciberincidentes conocidos en el sector energético argentino entre 2020 y 2026, con la fuente de cada fila. Se arma cruzando prensa, comunicaciones a la Comisión Nacional de Valores (CNV) y los sitios donde los atacantes publican a sus víctimas. Registra lo que pasó y lo que se dijo que pasó, en columnas separadas, porque en varios casos no coinciden.</p>
+  <p class="hero-meta"><a class="link-plain" href="/ciber/"><span class="arw">←</span> Ciberseguridad en energía</a> <span class="hero-when">Actualizado el 4 de agosto de 2026</span> <a class="link-plain" href="#registro">Ir al registro <span class="arw">↓</span></a> <a class="link-plain" href="#actores">Quién ataca <span class="arw">↓</span></a> <a class="link-plain" href="#contexto">Contexto internacional <span class="arw">↓</span></a> <a class="link-plain" href="#normativo">Marco normativo <span class="arw">↓</span></a></p>
+
+
+  <aside class="aviso" id="aviso">
+    <p class="aviso-t">Aviso, y pedido</p>
+    <p>Este registro se arma con fuentes públicas y se publica sin haber consultado antes a las organizaciones nombradas. Registra lo que se publicó sobre cada incidente; no evalúa la seguridad de nadie ni afirma que ninguna estuviera mal preparada. Siete de las catorce filas salen únicamente del sitio del grupo que atacó, que es parte interesada y tiene incentivo a exagerar.</p>
+    <p>Si una fila está mal, <a href="mailto:matias@podeley.ar?subject=Correcci%C3%B3n%20al%20registro%20%E2%80%94%20podeley.ar%2Fciber&amp;body=Hola%20Matias%2C%0A%0AFila%3A%20%0AQu%C3%A9%20est%C3%A1%20mal%3A%20%0AFuente%3A%20%0A%0A" data-goatcounter-click="mail-ciber">escribir con la fuente</a> alcanza para que se corrija. Lo mismo si falta un incidente, o si una organización necesita que se saque una fila que no puede sostener públicamente. Cada corrección se anota con fecha en el archivo de datos, así queda registro de qué cambió y por qué.</p>
+  </aside>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="registro">
+  <div class="section-head">
+    <p class="eyebrow">El registro</p>
+    <h2>Qué le pasó al sector, fila por fila</h2>
+    <p class="intro">Catorce incidentes en energía e infraestructura crítica, de junio de 2020 a agosto de 2026. La columna de confianza dice de dónde sale cada fila: alta cuando lo confirmó la organización, un regulador o prensa con fuente directa; media cuando lo único que existe es el aviso del atacante.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Fecha = primera vez que el hecho fue públicamente conocible, por cualquier canal.</caption>
+      <thead>
+        <tr><th scope="col">Fecha</th><th scope="col">Organización</th><th scope="col">Subsector</th><th scope="col">Actor</th><th scope="col">Cómo se supo</th><th scope="col">Confianza</th></tr>
+      </thead>
+      <tbody>
+        <tr id="edesur-2020-06"><td class="reg-d">2020-06-07</td><td>Edesur (Enel Argentina)</td><td>Distribución eléctrica</td><td><a class="actor-link" href="#actor-snake-ekans">Snake / EKANS</a></td><td>Prensa</td><td><span class="conf conf--alta">alta</span></td></tr>
+        <tr id="absa-2021-01"><td class="reg-d">2021-01-26</td><td>Aguas Bonaerenses (ABSA)</td><td>Agua y saneamiento</td><td>Sin atribuir</td><td>Prensa</td><td><span class="conf conf--alta">alta</span></td></tr>
+        <tr id="tgs-2022-04"><td class="reg-d">2022-04-05</td><td>Transportadora de Gas del Sur (TGS)</td><td>Transporte de gas</td><td>Sin atribuir</td><td>Prensa</td><td><span class="conf conf--alta">alta</span></td></tr>
+        <tr id="albanesi-2023-02"><td class="reg-d">2023-02-14</td><td>Grupo Albanesi</td><td>Generación y comercialización</td><td><a class="actor-link" href="#actor-lockbit3">LockBit 3.0</a></td><td>Sitio de filtración, luego CNV</td><td><span class="conf conf--alta">alta</span></td></tr>
+        <tr id="btu-2023-07"><td class="reg-d">2023-07-13</td><td>BTU S.A.</td><td>Servicios energéticos</td><td><a class="actor-link" href="#actor-8base">8Base</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="amarillagas-2024-05"><td class="reg-d">2024-06-13</td><td>Amarilla Gas</td><td>Distribución de GLP</td><td><a class="actor-link" href="#actor-play">Play</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="cnea-2024-11"><td class="reg-d">2024-12-18</td><td>Comisión Nacional de Energía Atómica (CNEA)</td><td>Nuclear</td><td><a class="actor-link" href="#actor-moneymessage">Money Message</a></td><td>Prensa</td><td><span class="conf conf--alta">alta</span></td></tr>
+        <tr id="hasa-2025-01"><td class="reg-d">2025-01-04</td><td>Hidrocarburos Argentinos (HASA)</td><td>Upstream</td><td><a class="actor-link" href="#actor-eldorado">ElDorado</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="360energy-2025-02"><td class="reg-d">2025-02-04</td><td>360 Energy</td><td>Generación solar</td><td><a class="actor-link" href="#actor-akira">Akira</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="hasa-2025-05"><td class="reg-d">2025-05-16</td><td>Hidrocarburos Argentinos (HASA)</td><td>Upstream</td><td><a class="actor-link" href="#actor-blacklock">BlackLock</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="ycrt-2025-05"><td class="reg-d">2025-05-27</td><td>Yacimientos Carboníferos Río Turbio (YCRT)</td><td>Carbón</td><td>Sin atribuir</td><td>Prensa</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="elecpanamericana-2025-11"><td class="reg-d">2025-11-26</td><td>Electricidad Panamericana</td><td>Servicios eléctricos</td><td><a class="actor-link" href="#actor-direwolf">Dire Wolf</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="aysa-2025-12"><td class="reg-d">2025-12-14</td><td>AySA</td><td>Agua y saneamiento</td><td><a class="actor-link" href="#actor-safepay">SafePay</a></td><td>Sitio de filtración</td><td><span class="conf conf--media">media</span></td></tr>
+        <tr id="oldelval-2026-07"><td class="reg-d">2026-07-23</td><td>Oleoductos del Valle (Oldelval)</td><td>Transporte de crudo</td><td><a class="actor-link" href="#actor-thegentlemen">The Gentlemen</a></td><td>Sitio de filtración, luego CNV</td><td><span class="conf conf--alta">alta</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reg-hint">→ la tabla se arrastra en horizontal</p>
+
+  <!-- ciber-maps:ar -->
+<figure class="mapa mapa--ar">
+  <svg viewBox="0 0 520 1040" role="img" aria-label="Mapa de Argentina con el ancla territorial de cada incidente del registro">
+    <g class="map-land"><path class="map-prov" data-prov-path="santa-cruz" d="M135,755L135,760L137,769L140,773L146,777L154,786L166,788L171,787L176,791L176,801L174,808L174,812L172,817L173,818L168,820L165,824L164,827L158,830L154,835L149,837L147,842L143,845L140,848L139,853L136,860L137,860L139,856L138,872L136,878L132,882L127,883L122,878L119,873L123,882L126,884L125,886L116,890L113,898L112,904L112,909L108,913L112,911L115,921L117,927L117,929L114,930L111,929L105,931L111,930L118,931L123,942L130,951L121,949L114,947L108,947L99,944L62,947L61,943L58,941L54,939L52,935L50,934L52,932L53,924L50,920L51,918L51,912L50,910L50,906L46,905L44,908L40,906L35,912L33,911L31,906L29,899L28,896L24,894L24,890L22,887L24,882L20,875L22,868L28,867L27,865L30,857L35,854L38,850L37,839L42,835L40,827L35,823L39,812L38,807L42,806L44,801L47,798L44,794L45,787L49,783L49,778L46,769L43,767L46,765L48,761Z"/><path class="map-prov" data-prov-path="tierra-del-fuego" d="M130,1031L130,1031L130,1031ZM206,1023L211,1024L216,1023L213,1026L213,1024L208,1027L207,1025L200,1029L199,1026ZM133,972L129,976L128,980L130,982L137,983L139,990L143,994L148,997L147,1000L153,1004L162,1009L168,1016L179,1021L182,1022L189,1020L192,1021L189,1029L182,1031L182,1029L177,1029L177,1031L171,1032L167,1034L163,1031L159,1030L140,1029L136,1028L135,1029L132,1030L130,1028L126,961Z"/><path class="map-prov" data-prov-path="san-juan" d="M141,318L134,319L125,318L123,319L124,330L122,329L112,330L107,325L97,328L90,334L84,334L83,326L81,326L77,323L73,326L70,326L65,329L65,332L56,335L49,335L47,334L45,327L49,324L44,322L39,312L39,305L41,298L43,299L46,295L44,293L44,289L48,275L52,276L55,273L56,267L53,266L54,261L53,255L49,244L50,241L53,237L56,235L55,230L57,226L57,221L58,218L59,213L67,216L72,220L74,224L79,231L77,235L79,240L77,250L82,251L86,249L96,252L102,257L107,262L115,268L117,272L128,283L131,288L130,291L131,294L130,302L132,307L137,310Z"/><path class="map-prov" data-prov-path="chubut" d="M188,630L193,636L201,638L199,643L202,644L209,643L211,641L211,638L206,638L217,632L219,634L222,640L222,648L221,653L218,655L210,657L207,654L208,650L202,646L198,646L191,650L190,654L198,659L203,660L205,659L202,663L195,665L189,671L189,673L183,682L183,687L185,696L183,699L185,703L183,706L182,710L178,711L175,714L175,719L179,721L177,724L169,724L164,723L156,728L157,730L150,731L146,735L140,743L140,748L138,750L135,755L48,761L47,758L44,754L44,748L49,746L50,743L53,739L47,730L36,728L36,724L40,725L48,722L52,724L54,722L53,719L55,715L54,712L48,712L40,712L40,707L38,703L40,702L42,697L38,691L40,690L40,687L36,686L34,683L35,679L38,678L38,675L32,673L28,670L29,665L27,657L29,654L27,647L28,643L30,644L35,641L34,638L186,630Z"/><path class="map-prov" data-prov-path="mendoza" d="M124,330L128,342L129,346L129,351L131,367L135,372L137,379L142,386L140,391L141,396L143,403L147,410L149,419L149,430L147,444L147,445L106,447L105,451L106,455L108,495L104,495L101,492L96,490L89,489L87,485L83,484L74,484L69,480L69,476L66,473L62,468L59,467L57,461L54,461L54,456L52,454L53,451L52,446L53,444L51,439L51,435L47,426L51,424L51,417L53,412L54,406L58,400L58,396L63,395L62,387L61,386L61,377L63,368L60,364L57,366L54,362L54,358L57,352L53,349L51,340L49,335L56,335L65,332L65,329L70,326L73,326L77,323L81,326L83,326L84,334L90,334L97,328L107,325L112,330L122,329Z"/><path class="map-prov" data-prov-path="neuquen" d="M108,495L110,529L115,536L115,538L110,540L109,539L103,543L97,550L94,556L87,559L85,563L81,567L78,567L71,572L69,586L66,590L61,591L58,590L55,593L49,594L45,599L48,603L46,607L41,609L36,608L29,608L29,605L26,599L28,596L29,589L31,587L28,583L28,579L31,579L32,573L29,568L29,563L33,564L33,561L34,558L35,552L34,543L38,538L47,534L47,529L43,526L42,521L42,515L37,504L38,496L35,491L38,485L34,478L35,472L37,473L37,466L41,463L45,463L45,458L48,454L52,454L54,456L54,461L57,461L59,467L62,468L66,473L69,476L69,480L74,484L83,484L87,485L89,489L96,490L101,492L104,495Z"/><path class="map-prov" data-prov-path="buenos-aires" d="M258,584L257,586L254,584L255,580ZM259,579L256,574L259,574ZM262,543L262,545L258,540ZM260,538L260,538L260,538ZM355,387L356,393L351,395L354,398L353,403L351,404L351,408L353,411L357,407L361,410L368,413L376,419L383,427L385,433L385,435L379,442L378,450L381,456L384,459L388,462L393,462L394,464L394,478L393,480L388,487L380,498L372,506L370,509L370,514L368,516L354,524L331,531L311,534L288,538L281,538L274,538L272,538L260,536L257,532L251,532L253,536L252,541L254,546L260,549L259,550L255,547L253,547L259,552L257,563L253,563L251,575L248,578L250,583L252,584L254,589L251,595L242,601L240,601L239,598L233,591L227,590L227,547L228,444L228,414L228,396L229,395L242,395L271,395L290,374L292,370L298,371L301,373L303,372L308,361L313,366L319,370L325,375L328,375L331,377L334,377L337,380L340,381L349,387Z"/><path class="map-prov" data-prov-path="la-pampa" d="M228,414L228,444L227,547L225,547L219,543L212,538L201,533L193,531L186,531L179,532L174,531L172,532L165,530L159,529L155,530L151,529L148,524L138,520L135,515L126,516L122,511L119,510L119,505L122,501L118,496L108,495L106,455L105,451L106,447L147,445L185,445L185,414Z"/><path class="map-prov" data-prov-path="rio-negro" d="M227,547L227,590L233,591L239,598L240,601L233,604L218,604L211,599L208,599L203,596L195,594L194,591L192,590L186,594L185,600L188,613L189,616L188,620L189,624L188,630L186,630L34,638L33,634L29,627L31,625L29,619L29,608L36,608L41,609L46,607L48,603L45,599L49,594L55,593L58,590L61,591L66,590L69,586L71,572L78,567L81,567L85,563L87,559L94,556L97,550L103,543L109,539L110,540L115,538L115,536L110,529L108,495L118,496L122,501L119,505L119,510L122,511L126,516L135,515L138,520L148,524L151,529L155,530L159,529L165,530L172,532L174,531L179,532L186,531L193,531L201,533L212,538L219,543L225,547Z"/><path class="map-prov" data-prov-path="san-luis" d="M141,318L144,319L154,319L158,317L166,318L171,319L180,325L181,331L188,330L190,338L185,356L183,358L185,382L185,414L185,445L147,445L147,444L149,430L149,419L147,410L143,403L141,396L140,391L142,386L137,379L135,372L131,367L129,351L129,346L128,342L124,330L123,319L125,318L134,319Z"/><path class="map-prov" data-prov-path="cordoba" d="M263,264L262,274L269,282L262,309L259,312L260,320L259,326L263,329L264,333L267,336L271,347L270,352L266,356L242,395L229,395L228,396L228,414L185,414L185,382L183,358L185,356L190,338L188,330L181,331L180,325L171,319L166,318L166,293L172,272L175,264L182,261L187,255L187,247L189,246L204,241L211,243L211,244L218,248L227,249L229,252L258,253L259,253Z"/><path class="map-prov" data-prov-path="catamarca" d="M155,144L153,151L161,158L161,163L152,177L158,179L160,187L163,192L166,192L167,196L170,199L171,197L176,193L180,195L183,206L183,212L180,217L182,219L184,237L189,246L187,247L187,255L182,261L175,264L170,255L166,244L164,236L155,228L149,225L149,221L145,217L142,211L131,207L128,209L124,210L112,209L108,211L106,207L105,203L101,204L96,202L91,199L91,192L80,194L72,193L75,183L77,181L80,172L86,174L88,171L93,170L93,164L86,155L86,147L90,143L87,130L85,127L84,120L87,112L106,115L140,114L141,114L143,120L143,124L136,126L134,128L135,133L140,139L142,144L147,147L151,141Z"/><path class="map-prov" data-prov-path="jujuy" d="M178,15L177,22L174,30L176,32L176,38L178,42L183,43L183,51L185,52L187,58L194,57L200,62L202,59L207,60L208,79L205,85L198,89L195,93L189,88L187,92L183,91L179,88L176,89L168,86L163,79L163,76L157,74L155,69L156,60L151,56L146,55L144,61L146,66L146,76L142,82L137,81L132,76L125,69L120,67L127,44L121,38L126,33L126,29L133,26L134,20L144,16L147,14L148,6L152,7L162,16L167,15Z"/><path class="map-prov" data-prov-path="la-rioja" d="M175,264L172,272L166,293L166,318L158,317L154,319L144,319L141,318L137,310L132,307L130,302L131,294L130,291L131,288L128,283L117,272L115,268L107,262L102,257L96,252L86,249L82,251L77,250L79,240L77,235L79,231L74,224L72,220L67,216L59,213L65,207L68,200L71,198L72,193L80,194L91,192L91,199L96,202L101,204L105,203L106,207L108,211L112,209L124,210L128,209L131,207L142,211L145,217L149,221L149,225L155,228L164,236L166,244L170,255Z"/><path class="map-prov" data-prov-path="salta" d="M260,27L259,78L259,86L229,125L214,125L206,123L201,136L199,142L191,142L186,144L177,141L176,138L172,139L166,138L165,145L155,144L151,141L147,147L142,144L140,139L135,133L134,128L136,126L143,124L143,120L141,114L140,114L106,115L87,112L90,111L87,104L84,100L86,95L93,87L117,76L120,67L125,69L132,76L137,81L142,82L146,76L146,66L144,61L146,55L151,56L156,60L155,69L157,74L163,76L163,79L168,86L176,89L179,88L183,91L187,92L189,88L195,93L198,89L205,85L208,79L207,60L202,59L200,62L194,57L187,58L185,52L183,51L183,43L178,42L176,38L176,32L174,30L177,22L178,15L183,15L196,19L196,23L200,29L199,32L202,35L203,39L205,29L208,26L214,12L220,14L223,12L247,12L247,16L252,20L251,21Z"/><path class="map-prov" data-prov-path="santiago-del-estero" d="M229,125L275,126L276,128L276,144L275,198L270,226L263,264L259,253L258,253L229,252L227,249L218,248L211,244L211,243L204,241L189,246L184,237L182,219L180,217L183,212L183,206L180,195L185,191L183,186L186,182L183,181L188,176L192,166L194,160L196,157L198,157L198,149L199,142L201,136L206,123L214,125Z"/><path class="map-prov" data-prov-path="tucuman" d="M199,142L198,149L198,157L196,157L194,160L192,166L188,176L183,181L186,182L183,186L185,191L180,195L176,193L171,197L170,199L167,196L166,192L163,192L160,187L158,179L152,177L161,163L161,158L153,151L155,144L165,145L166,138L172,139L176,138L177,141L186,144L191,142Z"/><path class="map-prov" data-prov-path="chaco" d="M368,166L365,168L364,172L359,174L361,179L353,184L354,193L353,200L275,198L276,144L276,128L275,126L229,125L259,86L259,78L267,81L271,84L275,85L278,89L281,89L284,94L289,95L293,97L294,102L302,108L310,112L314,117L319,127L323,128L328,132L333,138L333,141L340,144L340,147L343,149L347,147L352,151L355,154L362,160L365,165Z"/><path class="map-prov" data-prov-path="formosa" d="M368,166L365,165L362,160L355,154L352,151L347,147L343,149L340,147L340,144L333,141L333,138L328,132L323,128L319,127L314,117L310,112L302,108L294,102L293,97L289,95L284,94L281,89L278,89L275,85L271,84L267,81L259,78L260,27L263,29L265,34L270,44L274,46L276,51L280,52L283,56L289,58L294,62L297,69L302,71L309,72L316,76L324,76L340,87L343,91L353,96L358,101L368,104L372,108L374,106L381,111L384,111L387,114L392,123L392,126L387,130L385,134L382,139L383,140L377,143L374,148L371,163Z"/><path class="map-prov" data-prov-path="corrientes" d="M433,184L432,187L435,196L436,202L438,207L441,210L437,212L440,215L438,218L435,216L433,219L430,220L429,223L424,227L422,228L421,231L418,236L412,239L410,244L398,257L392,259L391,264L386,269L382,270L382,274L376,279L375,282L377,287L372,282L371,276L366,270L356,267L349,269L346,268L339,272L335,271L328,272L330,262L329,258L331,249L331,243L333,237L342,232L342,228L345,221L347,213L346,205L351,203L353,200L354,193L353,184L361,179L363,178L377,178L386,181L390,184L395,184L400,187L407,185L411,188L417,187L422,191L425,185L429,183Z"/><path class="map-prov" data-prov-path="entre-rios" d="M377,287L377,292L374,293L375,296L374,302L369,309L371,312L368,319L366,320L366,327L365,330L367,335L363,340L364,358L358,358L357,365L354,368L353,377L354,382L355,387L349,387L340,381L337,380L334,377L331,377L328,375L325,375L319,370L313,366L308,361L303,357L299,348L297,339L300,324L298,321L300,314L307,312L315,303L328,284L329,275L328,272L335,271L339,272L346,268L349,269L356,267L366,270L371,276L372,282Z"/><path class="map-prov" data-prov-path="santa-fe" d="M328,272L329,275L328,284L315,303L307,312L300,314L298,321L300,324L297,339L299,348L303,357L308,361L303,372L301,373L298,371L292,370L290,374L271,395L242,395L266,356L270,352L271,347L267,336L264,333L263,329L259,326L260,320L259,312L262,309L269,282L262,274L263,264L270,226L275,198L353,200L351,203L346,205L347,213L345,221L342,228L342,232L333,237L331,243L331,249L329,258L330,262Z"/><path class="map-prov" data-prov-path="misiones" d="M441,210L438,207L436,202L435,196L432,187L433,184L439,188L443,185L444,179L448,178L449,174L453,173L457,174L458,171L462,168L464,165L467,165L468,161L470,159L473,151L472,144L475,139L474,135L475,132L479,134L481,133L489,130L488,132L494,135L496,141L496,146L500,154L498,159L496,168L497,174L492,183L489,182L485,186L483,185L479,190L478,189L462,195L461,198L457,199L458,201L450,203L446,208Z"/><path class="map-prov" data-prov-path="caba" d="M357,407L353,411L351,408L351,404L353,403Z"/></g>
+    <line class="map-leader" x1="354" y1="405" x2="422" y2="395"/>
+      <a class="map-dot" href="#registro" data-prov="caba" data-n="9" aria-label="Ciudad de Buenos Aires: 9 incidentes"><circle class="dot" cx="422" cy="395" r="24"/><text class="dot-n" x="422" y="395">9</text></a>
+      <a class="map-dot" href="#registro" data-prov="buenos-aires" data-n="3" aria-label="Buenos Aires: 3 incidentes"><circle class="dot" cx="298" cy="466" r="14"/><text class="dot-n" x="298" y="466">3</text></a>
+      <a class="map-dot" href="#ycrt-2025-05" data-prov="santa-cruz" data-n="1" aria-label="Santa Cruz: 1 incidente"><circle class="dot" cx="92" cy="844" r="10"/><text class="dot-n" x="92" y="844">1</text></a>
+      <a class="map-dot" href="#oldelval-2026-07" data-prov="rio-negro" data-n="1" aria-label="Río Negro: 1 incidente"><circle class="dot" cx="136" cy="583" r="10"/><text class="dot-n" x="136" y="583">1</text></a>
+  </svg>
+  <figcaption>Dónde ancla cada incidente. Un ciberincidente no tiene provincia: el punto marca la sede de los sistemas afectados, casi siempre administrativos. Que 9 de 14 anclen en CABA dice dónde están esas oficinas, y no dónde está el riesgo. El criterio de cada fila está en el campo <span class="path">provincias</span> del archivo de datos.</figcaption>
+</figure>
+<ul class="map-list">
+    <li><span class="map-list-prov">Ciudad de Buenos Aires · 9</span> <a href="#edesur-2020-06">Edesur</a>, <a href="#tgs-2022-04">Transportadora de Gas del Sur</a>, <a href="#albanesi-2023-02">Grupo Albanesi</a>, <a href="#btu-2023-07">BTU S.A.</a>, <a href="#amarillagas-2024-05">Amarilla Gas</a>, <a href="#cnea-2024-11">Comisión Nacional de Energía Atómica</a>, <a href="#hasa-2025-01">Hidrocarburos Argentinos S.A.</a>, <a href="#hasa-2025-05">Hidrocarburos Argentinos S.A.</a>, <a href="#aysa-2025-12">AySA</a></li>
+    <li><span class="map-list-prov">Buenos Aires · 3</span> <a href="#absa-2021-01">Aguas Bonaerenses S.A.</a>, <a href="#360energy-2025-02">360 Energy</a>, <a href="#elecpanamericana-2025-11">Electricidad Panamericana</a></li>
+    <li><span class="map-list-prov">Santa Cruz · 1</span> <a href="#ycrt-2025-05">Yacimientos Carboníferos Río Turbio</a></li>
+    <li><span class="map-list-prov">Río Negro · 1</span> <a href="#oldelval-2026-07">Oleoductos del Valle</a></li>
+</ul>
+<!-- /ciber-maps:ar -->
+
+  <p class="note-limit">Hidrocarburos Argentinos aparece dos veces, con cinco meses y dos grupos distintos de por medio. Ninguna de las dos apariciones tuvo cobertura. AySA y ABSA no son energía: se incluyen porque son servicios esenciales con tecnología operativa y millones de usuarios, que es la categoría que importa acá. Quedan afuera, por ahora, el transporte y la defensa, con el criterio explicado en los <a href="#limites">límites</a>.</p>
+
+  <p class="aside-link">Los datos completos, con lo que declaró cada organización, lo que reclamó cada atacante y las fuentes de cada fila: <a href="/data/ciber-incidentes.json" data-goatcounter-click="data-ciber">ciber-incidentes.json</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="divulgacion">
+  <div class="section-head">
+    <p class="eyebrow">Hallazgo</p>
+    <h2>El sector se entera por el atacante, o no se entera</h2>
+    <p class="intro">De los catorce incidentes, siete se conocen únicamente porque el grupo que atacó decidió publicar a su víctima. No hubo comunicado, no hubo nota, no hubo obligación de decir nada.</p>
+  </div>
+  <p class="bio-text">El caso de Oldelval mide la brecha con precisión. El grupo The Gentlemen publicó a la empresa en su sitio el 23 de julio de 2026; el <a class="gl" href="#g-hecho-relevante">hecho relevante</a> ante la CNV está cargado el 31 de julio, y las primeras notas de prensa son del 2 de agosto. Durante ocho días la información existía y circulaba, del lado de quien atacó. Del otro lado no la tenía nadie, ni el mercado, ni las operadoras que contratan ese mismo ducto.</p>
+  <p class="bio-text">Lo que explica esos ocho días es cuál fue el canal. Oldelval informó a la CNV, el regulador del mercado de capitales, porque emite deuda ahí y le corresponde comunicar un hecho relevante. No existe un deber equivalente frente a un regulador energético. Una empresa del sector que no cotiza y a la que nadie llama por teléfono no tiene por qué contarle a nadie que la comprometieron; siete filas de este registro muestran que, efectivamente, no lo cuenta.</p>
+  <p class="bio-text">Ese canal tiene un historial que nadie había mirado. La pasada por las fichas públicas de la CNV que sostiene esta actualización (30 emisoras energéticas, unas 44,000 presentaciones desde 2000) encontró exactamente dos incidentes comunicados: el de Oldelval y uno anterior que ninguna cronología registra, el hecho relevante "Ciber ataque" que las tres emisoras del grupo Albanesi presentaron el 16 de febrero de 2023, dos días después de que LockBit las publicara. Enfrente, TGS y Edesur también eran emisoras cuando fueron atacadas, y no hay un hecho relevante ciber en el historial de ninguna de las dos. La norma deja el juicio de materialidad en manos de cada emisora; el resultado agregado es un canal que existe y casi no se usa.</p>
+  <p class="bio-text">La consecuencia es que ninguna operadora aprende del incidente de la de al lado. No hay un mecanismo de intercambio entre pares del sector, del tipo que existe en otros países para electricidad y para petróleo y gas. Cada empresa enfrenta a los mismos grupos, de a una, sin saber qué le funcionó a la anterior.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="linea">
+  <div class="section-head">
+    <p class="eyebrow">Hallazgo</p>
+    <h2>"Sólo sistemas administrativos" no quiere decir lo que parece</h2>
+    <p class="intro">Es la frase que aparece en casi todas las comunicaciones del registro. El punto está en qué sistema fue, en los dos casos donde se sabe.</p>
+  </div>
+  <p class="bio-text">A TGS le atacaron el SPAC, la plataforma donde se procesan las solicitudes, la asignación y la programación de los volúmenes de gas de la red de gasoductos. Desde ahí nadie mueve una válvula. Desde ahí se decide cuánto gas entra, de quién es, y a dónde va. Un oleoducto tiene una capa equivalente para nominación y balance de crudo, y cumple la misma función: es lo que convierte contratos en flujo físico programado.</p>
+  <p class="bio-text">Esa capa es administrativa en el organigrama y operativa en la práctica. Cuando se cae, el caño sigue lleno y el gas sigue moviéndose, pero la programación pasa a hacerse por teléfono y planilla, los balances se reconstruyen después, y las penalidades por desvío quedan en disputa. La distinción entre <a class="gl" href="#g-it-ot">tecnología de información y tecnología operativa</a>, que estructura toda la práctica de seguridad industrial, deja fuera de foco justo al sistema que decide el despacho.</p>
+  <p class="bio-text">El incidente de Edesur en 2020 apunta al otro lado del problema. El <a class="gl" href="#g-ransomware">ransomware</a> fue Snake, también conocido como EKANS, que trae una lista de procesos industriales y los termina antes de cifrar, incluidos programas de <a class="gl" href="#g-hmi">interfaz de operador e historiadores de proceso</a>. No hay evidencia pública de que esa capacidad se haya ejercido en Edesur, y este registro no afirma que se haya ejercido. Lo que sí se puede decir es que la familia la trae por diseño, y que llegó a una distribuidora eléctrica argentina en junio de 2020.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="procedencia">
+  <div class="section-head">
+    <p class="eyebrow">Hallazgo</p>
+    <h2>El incidente más citado del sector es el peor documentado</h2>
+    <p class="intro">TGS es el caso que aparece en toda cronología argentina de ciberincidentes. También es el que menos resiste una verificación.</p>
+  </div>
+  <p class="bio-text">Las dos compilaciones profesionales que lo registran lo clasifican como denegación de servicio. En paralelo circula una atribución al grupo ALPHV/BlackCat que no hay manera de sostener: TGS no figura entre las 731 víctimas listadas de ese grupo, y la nota que suele citarse como respaldo trata de Creos Luxembourg, una empresa de gas y electricidad luxemburguesa, sin mención de Argentina. Parecen ser dos hechos distintos que en algún momento se fundieron en uno.</p>
+  <p class="bio-text">Se entiende cómo se soldaron: dos operadoras de gas, un incidente cada una, contados con meses de diferencia por fuentes que citan de segunda mano. Sin una fila que fije qué se confirmó y qué se supone, a la décima cita la conjetura ya es "lo que se sabe".</p>
+  <p class="bio-text">Por eso la fila de TGS queda <a class="gl" href="#g-atribucion">sin atribuir</a>, y por eso este registro separa la confianza en que el incidente ocurrió de la confianza en quién lo hizo. Un sector que discute su exposición sobre la base de un caso cuya autoría nadie verificó no está discutiendo sobre datos.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="actores">
+  <div class="section-head">
+    <p class="eyebrow">Los grupos</p>
+    <h2>Once marcas firmaron once filas, y ninguna repitió</h2>
+    <p class="intro">Cada ficha junta lo que sostiene un aviso oficial o un reporte primario, con el estado fechado al 4 de agosto de 2026.</p>
+  </div>
+
+  <p class="bio-text">Un nombre de grupo no es una organización estable. Debajo de la marca hay operadores que rotan, plataformas que alquilan su cifrador a afiliados (el modelo <a class="gl" href="#g-raas">RaaS</a>), infraestructura que la policía incauta y marcas que renacen con otro nombre. Las fichas anotan eso caso por caso: dos de las once, las que publicaron a la misma empresa con cinco meses de diferencia, posiblemente sean el mismo operador con otro cartel.</p>
+
+  <div class="fichas">
+    <details class="ficha" id="ficha-snake-ekans">
+      <summary><span class="ficha-nombre">Snake / EKANS</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--quieto">inactivo 2020</span></span></summary>
+      <div class="ficha-body" id="actor-snake-ekans">
+        <dl class="ficha-datos">
+          <div><dt>Alias</dt><dd>EKANS, SNAKEHOSE</dd></div>
+          <div><dt>Observado desde</dt><dd>diciembre de 2019</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#edesur-2020-06">Edesur, junio de 2020</a></dd></div>
+        </dl>
+        <p>La única familia del registro con diseño industrial explícito: antes de cifrar ejecuta una lista fija de procesos a terminar, con interfaces de operador e historiadores de proceso incluidos. Dragos la describe como terminación para liberar archivos, no sabotaje. Sin reportes desde mediados de 2020; la inactividad es inferencia por ausencia, no un cierre declarado.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.dragos.com/blog/ekans-ransomware-misconceptions-and-misunderstandings" rel="noopener">Dragos</a> · <a href="https://attack.mitre.org/software/S0605/" rel="noopener">MITRE ATT&amp;CK</a> · <a href="https://unit42.paloaltonetworks.com/threat-assessment-ekans-ransomware/" rel="noopener">Unit 42</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-lockbit3">
+      <summary><span class="ficha-nombre">LockBit 3.0</span><span class="ficha-meta"><span class="tag">RaaS</span><span class="tag tag--quieto">interrumpido 2024</span></span></summary>
+      <div class="ficha-body" id="actor-lockbit3">
+        <dl class="ficha-datos">
+          <div><dt>Alias</dt><dd>LockBit Black</dd></div>
+          <div><dt>Observado desde</dt><dd>junio de 2022 (la marca, desde 2019)</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#albanesi-2023-02">Grupo Albanesi, febrero de 2023</a></dd></div>
+        </dl>
+        <p>Plataforma de afiliados: terceros pagaban por usar el cifrador y la marca. La Operación Cronos le incautó el panel, el código fuente y más de mil claves de descifrado en febrero de 2024; en mayo, Reino Unido y EE.UU. identificaron y sancionaron a su operador, que sigue prófugo. La agencia británica constató además que pagar no garantizaba el borrado de los datos. La marca reapareció como LockBit 5.0 en 2025; la variante que publicó a Albanesi quedó neutralizada.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.nationalcrimeagency.gov.uk/news/nca-leads-international-investigation-targeting-worlds-most-harmful-ransomware-group" rel="noopener">NCA, Operación Cronos</a> · <a href="https://www.nationalcrimeagency.gov.uk/news/lockbit-leader-unmasked-and-sanctioned" rel="noopener">NCA, sanciones</a> · <a href="https://www.ransomware.live/group/lockbit3" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-8base">
+      <summary><span class="ficha-nombre">8Base</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--quieto">interrumpido 2025</span></span></summary>
+      <div class="ficha-body" id="actor-8base">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>marzo de 2022</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#btu-2023-07">BTU, julio de 2023</a></dd></div>
+        </dl>
+        <p>Grupo cerrado sobre una variante propia del ransomware Phobos, con <a class="gl" href="#g-doble-extorsion">doble extorsión</a> y objetivos oportunistas, sin especialización sectorial. En febrero de 2025 la Operación Phobos Aetor arrestó en Tailandia a cuatro señalados como cabecillas y bajó el sitio de filtración; sin resurgimiento reportado desde entonces.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://blogs.vmware.com/security/2023/06/8base-ransomware-a-heavy-hitting-player.html" rel="noopener">VMware</a> · <a href="https://www.europol.europa.eu/media-press/newsroom/news/key-figures-behind-phobos-and-8base-ransomware-arrested-in-international-cybercrime-crackdown" rel="noopener">Europol</a> · <a href="https://www.ransomware.live/group/8base" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-play">
+      <summary><span class="ficha-nombre">Play</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-play">
+        <dl class="ficha-datos">
+          <div><dt>Alias</dt><dd>Playcrypt</dd></div>
+          <div><dt>Observado desde</dt><dd>junio de 2022</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#amarillagas-2024-05">Amarilla Gas, mayo de 2024</a></dd></div>
+        </dl>
+        <p>El aviso conjunto del FBI y CISA lo presume grupo cerrado, pensado para garantizar el secreto de los tratos. Entra por cuentas válidas y servicios expuestos, recompila el cifrador para cada ataque, y su nota de rescate no trae monto: la víctima tiene que escribir a un correo. Al aviso actualizado de junio de 2025, el FBI le constaban unas 900 organizaciones afectadas.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-352a" rel="noopener">FBI/CISA AA23-352A</a> · <a href="https://www.ransomware.live/group/play" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-moneymessage">
+      <summary><span class="ficha-nombre">Money Message</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-moneymessage">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>marzo de 2023</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#cnea-2024-11">CNEA, noviembre de 2024</a></dd></div>
+        </dl>
+        <p>Doble extorsión sobre Windows y servidores de virtualización, con exfiltración previa al cifrado. No hay aviso oficial de ninguna agencia ni clasificación pública de su modelo. Ninguna agencia publicó un aviso sobre un grupo que difundió datos de un organismo nuclear.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://cyble.com/blog/demystifying-money-message-ransomware/" rel="noopener">Cyble</a> · <a href="https://therecord.media/msi-micro-star-international-ransomware-money-message" rel="noopener">The Record</a> · <a href="https://www.ransomware.live/group/moneymessage" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-eldorado">
+      <summary><span class="ficha-nombre">ElDorado</span><span class="ficha-meta"><span class="tag">RaaS</span><span class="tag tag--caveat">renombrado 2024</span></span></summary>
+      <div class="ficha-body" id="actor-eldorado">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>marzo de 2024</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#hasa-2025-01">HASA, enero de 2025</a></dd></div>
+        </dl>
+        <p>Programa de afiliados anunciado en un foro criminal, con cifrador propio para Windows, Linux y servidores de virtualización. Dos firmas reportan que siguió operando como BlackLock, el grupo que volvió a publicar a HASA cinco meses después. La continuidad es hipótesis fuerte por solapamiento técnico y de operador; prueba forense pública no hay.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.group-ib.com/blog/eldorado-ransomware/" rel="noopener">Group-IB</a> · <a href="https://darkatlas.io/blog/blacklock-ransomware-a-growing-threat-across-industries" rel="noopener">DarkAtlas</a> · <a href="https://www.resecurity.com/blog/article/blacklock-ransomware-a-late-holiday-gift-with-intrusion-into-the-threat-actors-infrastructure" rel="noopener">Resecurity</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-akira">
+      <summary><span class="ficha-nombre">Akira</span><span class="ficha-meta"><span class="tag">RaaS</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-akira">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>marzo de 2023</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#360energy-2025-02">360 Energy, febrero de 2025</a></dd></div>
+        </dl>
+        <p>Entra sobre todo por accesos VPN sin doble factor y llega a exfiltrar en horas. El aviso conjunto de noviembre de 2025 lo declara amenaza inminente para la infraestructura crítica y estima unos US$ 244 millones recaudados a fines de septiembre de 2025. El vínculo con el desaparecido Conti es análisis de blockchain de una firma, no un hecho establecido.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-109a" rel="noopener">CISA AA24-109A</a> · <a href="https://www.ic3.gov/CSA/2025/251113.pdf" rel="noopener">actualización nov 2025 (PDF)</a> · <a href="https://www.ransomware.live/group/akira" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-blacklock">
+      <summary><span class="ficha-nombre">BlackLock</span><span class="ficha-meta"><span class="tag">RaaS</span><span class="tag tag--quieto">inactivo 2025</span></span></summary>
+      <div class="ficha-body" id="actor-blacklock">
+        <dl class="ficha-datos">
+          <div><dt>Alias</dt><dd>ElDorado (marca anterior, según dos firmas)</dd></div>
+          <div><dt>Observado desde</dt><dd>2024</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#hasa-2025-05">HASA, mayo de 2025</a></dd></div>
+        </dl>
+        <p>La segunda marca que publicó a HASA. Investigadores de Resecurity entraron a su sitio por una vulnerabilidad, recolectaron credenciales y avisaron a víctimas y autoridades antes de que el grupo publicara; la infraestructura quedó liquidada en marzo de 2025 y la última víctima publicada es de julio de ese año.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.resecurity.com/blog/article/blacklock-ransomware-a-late-holiday-gift-with-intrusion-into-the-threat-actors-infrastructure" rel="noopener">Resecurity</a> · <a href="https://www.ransomware.live/group/blacklock" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-direwolf">
+      <summary><span class="ficha-nombre">Dire Wolf</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-direwolf">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>mayo de 2025</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#elecpanamericana-2025-11">Electricidad Panamericana, noviembre de 2025</a></dd></div>
+        </dl>
+        <p>Operación dirigida con doble extorsión y un mes de plazo antes de publicar; el cifrador apaga los registros de eventos y borra las copias de respaldo. Sin acción policial conocida; la última víctima publicada es de junio de 2026.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.levelblue.com/blogs/spiderlabs-blog/dire-wolf-strikes-new-ransomware-group-targeting-global-sectors" rel="noopener">Trustwave SpiderLabs</a> · <a href="https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2025-082/" rel="noopener">CSA Singapur</a> · <a href="https://www.ransomware.live/group/direwolf" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-safepay">
+      <summary><span class="ficha-nombre">SafePay</span><span class="ficha-meta"><span class="tag">ransomware</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-safepay">
+        <dl class="ficha-datos">
+          <div><dt>Observado desde</dt><dd>fines de 2024</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#aysa-2025-12">AySA, diciembre de 2025</a></dd></div>
+        </dl>
+        <p>Grupo cerrado, sin afiliados: el mismo equipo entra por VPN y escritorio remoto con credenciales válidas, exfiltra y cifra en menos de un día, sobre código emparentado con el builder filtrado de LockBit Black. Fue de los más activos de 2025; su sitio estuvo semanas caído a principios de 2026 por razones desconocidas, y volvió.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.huntress.com/blog/its-not-safe-to-pay-safepay" rel="noopener">Huntress</a> · <a href="https://www.picussecurity.com/resource/blog/inside-safepay-analyzing-the-new-centralized-ransomware-group" rel="noopener">Picus</a> · <a href="https://www.ransomware.live/group/safepay" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+
+    <details class="ficha" id="ficha-thegentlemen">
+      <summary><span class="ficha-nombre">The Gentlemen</span><span class="ficha-meta"><span class="tag">RaaS</span><span class="tag tag--activo">activo</span></span></summary>
+      <div class="ficha-body" id="actor-thegentlemen">
+        <dl class="ficha-datos">
+          <div><dt>Alias</dt><dd>Storm-2697</dd></div>
+          <div><dt>Observado desde</dt><dd>julio de 2025</dd></div>
+          <div><dt>En este registro</dt><dd><a href="#oldelval-2026-07">Oldelval, julio de 2026</a></dd></div>
+          <div><dt>En el contexto</dt><dd><a href="#ecopetrol-2026-07">Ecopetrol, julio de 2026</a></dd></div>
+        </dl>
+        <p>El grupo más nuevo del registro. Herramientas propias para anular productos de seguridad mediante drivers vulnerables, despliegue por políticas de dominio y un cifrador que se propaga solo; abrió su programa de afiliados a fines de 2025. Publicó a Ecopetrol seis días antes que a Oldelval, el mismo golpe a los dos lados de la frontera.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.trendmicro.com/en_us/research/25/i/unmasking-the-gentlemen-ransomware.html" rel="noopener">Trend Micro</a> · <a href="https://unit42.paloaltonetworks.com/the-gentlemen-ransomware/" rel="noopener">Unit 42</a> · <a href="https://www.microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor/" rel="noopener">Microsoft</a> · <a href="https://www.ransomware.live/group/thegentlemen" rel="noopener">ransomware.live</a></p>
+      </div>
+    </details>
+  </div>
+
+  <aside class="ficha ficha--abierta" id="actor-sin-atribuir">
+    <p class="ficha-nombre">Sin atribuir</p>
+    <p>Tres filas no tienen ficha: <a href="#absa-2021-01">ABSA</a>, <a href="#tgs-2022-04">TGS</a> e <a href="#ycrt-2025-05">YCRT</a>. Nadie reclamó públicamente esos ataques, y el hueco no se completa con versiones que circulan sin fuente: la más citada está desarmada en el hallazgo de procedencia. En esas tres filas la existencia del incidente está confirmada; la autoría, no.</p>
+  </aside>
+
+  <p class="aside-link">Las fichas completas, con alias, estados fechados y fuentes: clave <span class="path">actores</span> de <a href="/data/ciber-incidentes.json" data-goatcounter-click="data-ciber">ciber-incidentes.json</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contexto">
+  <div class="section-head">
+    <p class="eyebrow">Contexto</p>
+    <h2>Afuera esta historia ya tiene más capítulos</h2>
+    <p class="intro">Doce precedentes extranjeros, con el criterio de selección dicho en voz alta: un caso entra si ilumina algo que ya pasó acá, y si su fuente es oficial o de la propia empresa. Son los casos que a Argentina todavía no le tocaron.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Fecha = la del incidente; cuando solo el mes es defendible, se muestra el mes. La capa afectada es lo que conecta cada caso con el registro argentino.</caption>
+      <thead>
+        <tr><th scope="col">Fecha</th><th scope="col">Organización</th><th scope="col">Subsector</th><th scope="col">Actor</th><th scope="col">Capa afectada</th><th scope="col">Qué pasó</th></tr>
+      </thead>
+      <tbody>
+        <tr id="ucrania-2015-12"><td class="reg-d">2015-12-23</td><td>Tres distribuidoras (Ucrania)</td><td>Distribución eléctrica</td><td>Sandworm (GRU)</td><td>OT / control industrial</td><td>225,000 usuarios sin luz; SCADA operados a distancia</td></tr>
+        <tr id="ucrania-2016-12"><td class="reg-d">2016-12-17</td><td>Ukrenergo (Ucrania)</td><td>Transmisión eléctrica</td><td>Sandworm (GRU)</td><td>OT / control industrial</td><td>Industroyer: una hora sin luz en parte de Kyiv</td></tr>
+        <tr id="triton-2017-08"><td class="reg-d">2017-08</td><td>Petroquímica (Arabia Saudita)</td><td>Petroquímica</td><td>TsNIIKhM (estatal ruso)</td><td>Seguridad instrumentada</td><td>Reprogramaron el sistema instrumentado de seguridad; la planta paró sola</td></tr>
+        <tr id="norskhydro-2019-03"><td class="reg-d">2019-03-19</td><td>Norsk Hydro (Noruega)</td><td>Aluminio</td><td>LockerGoga</td><td>IT corporativa</td><td>Plantas en manual; no pagó, publicó todo: NOK 800 millones</td></tr>
+        <tr id="pemex-2019-11"><td class="reg-d">2019-11-10</td><td>Pemex (México)</td><td>Petróleo y gas</td><td>DoppelPaymer</td><td>IT corporativa</td><td>Pagos administrativos congelados; la producción siguió</td></tr>
+        <tr id="copel-2021-02"><td class="reg-d">2021-02-01</td><td>Copel (Brasil)</td><td>Electricidad</td><td>DarkSide</td><td>IT corporativa</td><td>Suspendió sus sistemas por decisión propia; 6-K a la SEC ese día</td></tr>
+        <tr id="eletrobras-2021-02"><td class="reg-d">2021-02-03</td><td>Eletrobras (Brasil)</td><td>Nuclear</td><td>Sin identificar</td><td>IT corporativa</td><td>Red administrativa de Eletronuclear; 6-K a la SEC</td></tr>
+        <tr id="colonial-2021-05"><td class="reg-d">2021-05-07</td><td>Colonial Pipeline (EE.UU.)</td><td>Transporte de combustibles</td><td>DarkSide</td><td>IT corporativa</td><td>Cinco días de ducto parado, por decisión del operador</td></tr>
+        <tr id="ucrania-2022-04"><td class="reg-d">2022-04-08</td><td>Operadora eléctrica (Ucrania)</td><td>Electricidad</td><td>Sandworm</td><td>OT / control industrial</td><td>Industroyer2, frustrado en plena invasión</td></tr>
+        <tr id="epm-2022-12"><td class="reg-d">2022-12-12</td><td>EPM (Colombia)</td><td>Multiservicios</td><td>BlackCat/ALPHV</td><td>Comercial / despacho</td><td>304,000 clientes prepago sin canal de recarga</td></tr>
+        <tr id="dinamarca-2023-05"><td class="reg-d">2023-05-11</td><td>22 operadoras (Dinamarca)</td><td>Electricidad</td><td>Sin atribuir</td><td>OT / control industrial</td><td>Los sensores del CERT sectorial detectaron el barrido</td></tr>
+        <tr id="ecopetrol-2026-07"><td class="reg-d">2026-07-17</td><td>Ecopetrol (Colombia)</td><td>Petróleo y gas</td><td><a class="actor-link" href="#actor-thegentlemen">The Gentlemen</a></td><td>IT corporativa</td><td>Mismo actor que Oldelval, seis días antes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reg-hint">→ la tabla se arrastra en horizontal</p>
+
+  <!-- ciber-maps:world -->
+<figure class="mapa mapa--world">
+  <svg viewBox="0 0 960 470" role="img" aria-label="Mapamundi con los casos del contexto internacional">
+    <path class="map-land-path" d="M950,325L951,327L947,327ZM956,322L954,323L952,322L956,321L956,321L956,322ZM4,321L4,321L4,321L4,322L4,322L4,321ZM602,152L603,154L607,156L611,157L615,155L614,150L612,149L612,146L610,146L610,144L613,144L615,143L611,140L609,141L608,138L605,137L602,132L604,133L604,130L608,130L607,125L602,125L598,127L597,129L595,129L593,132L596,135L596,137L599,141L602,145ZM114,62L114,62L116,64L119,67L116,69L117,69L119,67L124,68L125,70L122,71L118,72L115,74L112,75L109,73L110,72L106,72L107,70L104,70L103,72L101,73L101,73L114,62ZM859,73L859,73L858,74L855,74L864,78L866,80L861,80L856,82L853,86L854,87L849,85L845,87L843,86L842,87L839,87L840,89L840,92L841,93L844,94L848,98L846,98L847,100L849,102L846,103L848,106L845,107L847,110L845,113L843,111L832,100L830,96L829,93L832,92L834,86L836,84L833,80L831,80L832,82L830,85L824,82L820,83L819,87L822,89L815,90L813,88L809,88L808,89L800,89L794,89L788,102L791,102L794,104L797,105L797,103L800,103L805,107L807,109L807,112L811,121L811,125L811,127L808,136L805,138L802,136L800,140L798,141L799,144L795,147L796,149L799,151L804,156L805,160L805,162L799,164L798,160L796,157L797,156L795,153L790,152L790,148L787,147L784,148L780,150L780,147L781,145L779,143L776,147L775,149L772,149L772,150L774,152L776,153L779,155L781,153L785,154L786,156L783,157L781,160L780,162L784,164L786,167L791,172L791,175L790,175L793,178L793,183L792,183L789,195L783,200L777,201L776,202L770,204L770,208L768,208L768,204L763,204L760,207L758,212L764,219L768,223L770,229L770,235L766,239L761,244L759,242L760,240L758,238L756,238L753,233L748,232L748,229L746,229L746,233L744,240L745,242L746,242L748,248L753,251L756,256L757,262L759,267L757,267L751,262L748,254L747,251L743,245L742,245L743,240L743,235L742,230L740,228L738,221L737,218L732,222L729,221L730,217L729,214L722,207L719,200L716,200L716,203L713,202L713,203L708,204L708,206L707,208L704,210L701,214L697,218L697,219L692,221L692,224L693,230L692,233L693,239L689,243L687,246L684,243L682,236L679,231L677,225L674,221L672,211L670,204L667,206L665,206L661,202L662,201L658,197L656,196L652,192L640,193L629,191L627,187L626,186L622,188L618,187L615,185L613,184L608,177L605,177L604,178L603,178L605,182L606,185L610,188L610,190L612,194L612,192L614,191L614,194L614,195L621,196L625,190L626,191L627,193L630,197L633,198L636,201L633,207L632,207L632,212L629,213L628,215L626,217L620,219L618,220L618,222L611,225L609,227L601,230L600,231L596,232L593,222L593,220L590,215L588,210L584,208L583,205L582,201L580,197L578,195L577,193L571,184L569,184L570,180L570,179L568,185L564,182L568,190L573,196L573,199L576,202L579,213L581,215L584,221L589,226L594,231L595,235L597,238L604,237L610,235L616,233L616,238L612,250L610,254L605,262L595,270L591,276L588,279L586,284L585,285L585,285L584,291L585,292L585,297L587,303L588,315L588,316L586,321L584,323L579,325L571,332L571,334L573,339L573,344L571,347L564,351L565,354L564,359L560,362L557,367L552,373L545,376L537,376L529,379L526,376L526,372L526,369L522,359L519,355L518,345L517,339L515,335L513,330L511,327L511,324L511,322L512,316L514,311L516,308L516,304L514,299L515,297L513,290L513,289L512,286L510,283L505,277L504,274L505,268L506,264L506,261L503,256L498,258L496,258L492,251L487,251L485,252L483,252L475,256L472,255L469,255L464,255L459,257L456,256L449,250L445,247L445,243L440,237L437,235L436,232L435,230L436,229L433,225L436,221L437,215L437,208L435,206L435,204L438,200L438,197L441,195L443,189L444,188L447,184L450,183L455,178L455,174L456,170L458,167L463,165L465,160L468,161L475,161L477,160L480,159L484,157L492,156L496,155L501,156L504,155L507,158L507,162L506,164L509,168L515,169L519,170L520,173L526,175L529,177L531,174L531,172L533,169L538,169L539,171L543,172L544,173L548,173L554,175L557,173L561,173L566,175L567,174L569,168L571,163L571,159L569,157L567,156L565,158L562,158L559,157L557,157L555,158L552,157L549,157L545,152L546,150L545,148L547,145L551,145L552,143L557,143L562,140L566,140L574,143L579,143L582,142L581,138L577,136L574,133L568,130L570,130L572,127L570,126L573,125L571,125L566,126L564,127L564,129L568,131L562,133L561,131L558,130L560,128L554,126L551,130L550,131L549,135L548,138L548,140L551,143L548,143L545,146L544,144L541,143L538,144L540,146L538,147L536,145L537,150L540,152L540,154L538,153L537,155L538,158L534,156L533,152L530,148L528,146L527,141L525,139L519,136L517,133L516,131L513,130L514,129L510,130L510,134L513,135L514,138L519,142L525,145L525,147L522,145L521,147L523,148L520,153L520,150L518,146L513,143L512,143L506,137L505,134L502,133L498,135L496,137L491,136L488,137L487,139L487,141L485,143L482,143L479,149L480,150L478,154L476,154L475,157L469,157L467,159L464,156L461,155L458,156L458,152L456,150L458,144L458,141L457,137L461,135L469,136L475,136L477,134L477,128L473,123L469,122L469,120L472,119L476,120L475,117L478,118L483,116L484,113L486,112L488,112L489,111L491,107L496,106L500,104L499,101L498,97L499,95L504,93L503,96L505,97L502,100L503,101L505,104L509,103L512,105L520,102L525,103L525,101L528,101L528,98L528,94L530,93L532,95L534,95L534,93L532,91L531,89L537,88L542,88L544,87L541,85L537,86L530,87L526,85L527,82L525,79L528,76L533,73L533,71L530,70L526,71L525,73L525,74L518,79L517,83L521,87L519,90L517,90L517,95L516,98L513,98L512,100L509,100L508,97L504,90L503,88L499,92L496,92L493,91L492,88L491,81L493,79L498,77L502,74L510,65L519,60L523,59L526,59L529,57L533,57L536,56L543,58L540,59L543,61L545,60L548,61L554,62L563,65L565,66L565,68L563,69L560,70L550,68L549,68L553,70L554,74L559,76L557,74L558,72L564,74L565,74L563,72L568,69L572,70L572,68L570,67L571,65L569,63L575,64L576,66L574,66L574,67L576,68L579,68L579,66L589,63L591,63L590,64L592,65L593,64L597,64L600,62L603,64L604,62L601,61L602,60L608,61L612,62L620,65L621,63L618,61L616,61L616,60L613,57L616,55L616,52L617,52L622,52L624,54L623,56L626,59L628,62L631,64L631,65L628,69L631,70L633,68L634,65L632,64L632,62L630,62L629,61L629,58L625,56L628,54L626,52L629,54L630,56L632,57L630,55L633,54L637,54L642,55L638,53L637,50L640,50L648,50L646,48L647,47L649,47L652,45L657,45L657,44L662,44L664,45L667,43L670,43L671,41L674,40L678,41L676,42L681,42L682,43L684,43L689,43L695,44L697,45L698,46L692,48L692,49L698,50L699,49L702,51L705,50L711,50L713,52L721,52L720,50L727,50L732,52L734,53L734,54L738,56L743,58L742,55L746,56L749,55L754,56L754,55L758,56L754,53L755,52L775,54L778,55L786,57L793,57L798,57L801,58L803,60L806,61L812,60L816,61L819,61L826,63L827,62L824,60L823,59L830,60L834,60L842,61L846,62L859,73ZM195,60L198,61L202,62L208,61L211,61L219,59L219,60L223,58L224,59L225,61L230,59L228,61L232,60L243,63L245,62L247,64L243,65L246,66L254,65L255,66L259,65L257,64L259,63L264,63L266,65L268,65L271,66L278,65L278,64L281,63L283,64L282,67L284,65L286,65L288,62L286,59L288,56L292,55L295,56L296,59L293,60L297,61L295,64L299,61L300,63L299,65L299,67L306,63L307,60L313,60L315,62L312,64L312,67L307,69L303,69L302,69L296,73L292,75L289,76L287,77L286,78L283,79L279,81L275,84L271,90L274,90L273,95L277,94L280,96L283,98L287,100L293,101L292,103L292,109L294,112L296,111L299,108L299,104L298,102L302,101L308,97L308,92L306,90L310,87L312,80L314,80L319,81L321,80L325,82L325,84L329,84L327,90L329,90L330,92L334,90L339,86L342,95L341,97L345,101L349,102L350,105L352,106L351,109L347,112L343,113L339,115L335,116L330,115L324,115L322,117L318,119L310,125L312,125L317,121L323,118L327,118L328,120L326,122L326,127L328,129L332,128L336,125L335,127L337,128L333,130L327,132L321,135L319,135L320,133L325,130L318,131L318,132L310,135L307,138L307,141L309,141L301,143L303,144L298,144L297,147L293,151L291,153L290,150L289,156L290,160L287,163L281,165L276,170L273,173L272,175L273,187L271,192L269,192L266,184L267,182L265,178L262,179L259,176L254,176L251,177L250,180L247,180L245,179L241,178L237,179L231,183L229,186L228,190L226,195L224,201L225,207L228,212L231,214L239,212L241,211L243,206L248,204L252,204L252,206L251,208L249,214L247,213L247,219L245,221L247,222L253,221L257,222L260,224L257,235L257,237L260,241L263,244L268,241L272,242L274,244L275,244L278,241L279,238L283,236L285,236L289,232L290,234L289,235L289,238L288,240L289,243L291,240L290,237L293,235L294,233L295,235L297,235L298,238L304,238L307,240L309,238L315,238L313,238L314,240L318,242L318,244L321,245L322,246L327,252L330,253L333,252L336,253L339,254L342,258L343,258L345,265L346,267L344,270L345,271L350,271L350,275L352,273L360,276L361,279L364,278L369,280L373,280L377,282L380,286L386,288L387,293L386,299L381,305L377,313L377,319L375,332L373,336L373,339L370,342L368,342L364,343L359,345L356,348L354,351L355,355L354,360L353,362L351,367L347,371L345,376L344,378L342,379L334,378L332,376L332,378L336,380L336,383L338,385L336,389L333,391L328,392L325,391L327,397L323,399L320,398L321,401L325,403L322,406L322,411L320,411L318,412L318,414L321,417L324,417L324,420L321,422L321,425L319,428L321,432L319,432L317,434L317,437L314,436L307,432L305,429L303,427L301,422L301,419L303,416L299,415L301,413L300,408L303,409L302,402L301,402L301,405L299,405L298,395L299,393L296,386L297,386L298,376L298,371L297,367L297,364L296,360L297,357L297,351L296,337L295,328L291,325L286,321L279,316L278,313L275,309L269,297L267,293L263,290L264,288L262,285L265,281L267,279L263,278L266,268L269,266L270,263L271,262L274,259L273,253L273,250L272,248L271,245L269,243L265,246L266,247L264,248L264,247L259,245L257,243L251,239L252,236L247,231L248,230L247,229L245,230L241,228L238,228L236,226L233,222L230,220L224,222L214,217L211,215L207,214L204,211L203,207L204,204L203,200L199,193L196,191L197,189L195,186L192,181L191,174L188,172L186,177L189,182L189,184L191,188L192,194L195,198L193,200L192,198L188,194L189,190L184,186L186,182L184,179L182,170L182,168L180,165L176,164L175,158L174,154L173,150L173,145L176,140L176,138L179,135L182,129L185,121L188,122L189,124L190,119L186,115L183,113L183,111L184,109L182,108L183,105L182,103L183,102L181,100L182,97L181,95L182,92L177,92L175,91L172,88L168,86L164,87L160,84L157,85L156,87L145,89L150,85L141,89L141,90L137,92L131,94L129,95L124,97L122,98L117,99L109,102L104,102L115,98L118,98L128,94L133,90L127,91L126,89L121,91L124,88L124,87L120,87L119,85L121,84L120,83L128,78L131,78L134,77L138,76L138,75L141,73L131,74L129,74L128,71L138,69L138,70L143,70L143,68L141,67L141,65L139,64L142,62L145,62L149,61L155,59L162,57L164,57L168,56L175,58L180,58L188,60L191,59ZM299,80L302,79L305,79L301,81ZM324,52L322,51L324,50L328,50L331,52L330,52ZM307,81L309,81L308,82ZM300,47L299,48L294,47L296,46L299,45ZM305,41L301,41L301,40L304,40ZM302,38L304,39L302,40L299,40L298,40L299,38ZM310,48L302,47L303,45L302,44L299,43L297,43L299,42L302,42L304,43L308,43L307,44L310,45L315,46L319,45L326,45L327,47L322,48L320,48ZM274,39L276,40L275,40L271,41L269,40ZM276,38L278,38L272,39ZM351,112L347,116L348,115L349,117L354,118L353,120L355,120L355,123L353,126L351,126L351,123L348,125L348,124L346,123L339,123L340,120L342,119L346,114L350,111ZM304,73L307,74L307,76L310,76L307,77L304,77L304,75L297,78L297,77L294,77L297,76L300,71L301,72ZM325,53L327,52L333,55L333,56L337,56L338,57L342,58L343,59L344,62L340,63L344,65L347,65L349,68L352,68L350,70L345,73L343,72L341,69L338,69L337,71L342,75L342,77L340,79L334,76L337,80L337,81L332,80L326,77L327,76L322,74L322,75L315,75L314,74L316,72L325,72L326,69L330,67L330,65L327,63L324,62L325,62L324,60L321,59L320,60L316,60L309,60L302,58L301,58L304,56L301,56L302,54L305,52L308,51L313,50L311,51L311,53L314,51L320,50L322,53L320,54ZM297,49L301,49L304,50L300,52L297,52L294,54L291,54L292,52L295,50ZM247,44L252,42L258,41L263,41L261,42L253,44L249,45ZM177,104L179,104L176,107L176,109L174,106ZM287,37L295,38L295,40L290,39L286,39L288,38L287,38ZM188,120L186,121L183,119L182,116L180,116L180,114L186,115ZM246,48L248,49L253,49L255,51L245,53L241,55L240,56L234,57L234,56L231,55L239,50L239,49ZM275,45L279,45L276,47L269,47L263,48L260,48L261,48L266,46L257,47L255,46L260,44L262,43L267,44L269,46L272,46L271,43L274,43L276,43ZM272,52L273,53L271,57L277,59L276,61L272,61L271,63L265,62L258,63L249,63L248,62L244,62L243,60L249,59L254,59L251,58L244,58L243,57L249,56L246,56L243,56L249,53L255,51L257,52L255,53L260,52L261,53L265,52L266,53L265,55L267,54L268,52ZM283,53L282,51L285,50L287,50L291,50L288,52L290,53L288,55L284,56L278,53L279,52ZM273,50L276,51L273,52L272,51ZM295,43L295,44L292,47L287,47L288,45L285,46L286,44L288,44ZM308,34L312,33L311,33L316,33L317,34L322,35L322,36L323,37L320,37L315,39L308,39L307,38L310,37L307,37L305,35ZM318,31L328,30L331,30L334,30L337,29L343,29L349,29L354,29L366,29L372,30L372,30L360,32L364,32L355,34L351,36L345,36L340,37L341,39L335,40L331,42L333,43L327,44L323,43L317,44L311,43L312,42L316,42L316,40L317,40L321,41L320,39L318,39L320,38L323,37L325,37L323,36L323,35L329,35L333,34L329,34L323,34L320,33L318,32ZM325,66L321,67L323,64L326,65ZM285,61L286,62L284,63L280,62L278,61L282,59ZM329,116L332,117L333,119ZM327,125L328,126L332,127L329,128L326,127ZM72,208L73,210L70,212L71,208ZM71,206L71,206L71,206ZM69,205L69,205L69,205ZM66,203L66,203L66,203ZM63,202L63,202L63,202ZM116,86L118,86L115,87L114,86ZM139,93L141,94L134,96L135,94ZM115,76L120,78L117,78L113,77ZM857,279L867,283L870,286L870,288L875,290L875,291L873,292L873,294L875,296L877,299L882,303L879,303L874,302L871,298L870,296L866,294L862,296L862,299L860,300L856,299L854,296L847,297L850,293L849,287L844,285L841,285L838,282L836,283L835,281L833,279L838,278L834,278L833,276L829,274L834,272L839,273L840,279L842,281L845,278L848,276L850,276L854,278ZM888,282L888,282L883,279L884,278ZM884,289L880,290L876,289L877,288L883,288L885,285L885,284L887,284L886,288ZM894,287L897,291L896,292L893,289ZM813,300L811,302L809,303L811,299L813,298L819,296L819,298ZM838,292L840,288L840,290ZM789,254L792,249L794,252L799,254L795,258L794,261L796,264L795,265L798,268L795,268L795,273L792,275L791,283L790,282L787,283L786,282L783,280L780,281L779,280L775,280L775,276L772,272L772,267L773,265L778,265L778,262L782,261L785,257ZM826,279L829,280L830,283L828,281L822,281L823,280ZM819,282L817,281L820,280ZM822,264L824,266L824,270L823,270L823,274L821,268ZM809,268L812,268L815,266L813,269L802,270L801,272L804,275L805,274L810,273L808,275L805,277L808,281L807,282L809,285L809,287L807,287L808,285L805,286L803,282L804,279L802,280L802,288L799,287L800,282L798,279L801,269L804,267ZM800,302L797,300L800,300L802,302ZM804,297L808,296L807,298L803,298L800,298L802,296ZM796,297L798,298L791,299L795,296ZM770,291L770,292L775,292L776,291L781,292L782,294L786,295L789,297L786,298L783,297L778,296L772,295L769,295L764,294L761,292L763,289L767,289ZM759,274L761,278L764,280L763,289L760,289L754,284L751,279L748,273L746,270L744,265L741,263L740,260L735,255L735,254L741,254L749,264L752,264L756,269L758,270L757,273ZM322,433L325,437L328,439L332,439L331,441L328,440L326,442L319,440L312,437L308,434L317,438L318,434ZM291,215L286,214L284,213L289,214L290,213L288,209L292,210L294,209L298,211L300,213L299,214L296,214ZM647,33L651,33L655,34L662,36L663,38L660,38L654,37L650,36L647,35L644,34ZM668,37L674,38L674,39L665,40L665,37ZM743,44L748,44L757,46L757,47L750,47L748,48L742,46L741,45ZM763,46L769,47L768,48L765,47L760,46L759,46ZM753,51L756,50L761,51ZM561,34L567,34L567,34L569,33L572,34L566,35L564,35L565,34ZM584,50L588,48L587,47L596,44L602,43L605,43L608,42L610,43L609,44L598,46L593,49L589,53L590,56L595,58L587,58L586,56L583,56L582,54L584,54L583,52L586,50ZM808,105L812,111L821,119L817,118L818,122L823,125L824,128L821,126L821,128L815,119L812,113L808,110L806,106ZM840,57L838,58L836,57L838,56L840,57ZM122,56L122,56L122,56L126,56L123,57L120,57L120,57L122,56ZM276,188L279,187L276,189ZM279,187L281,188L280,190ZM277,192L278,195L277,197L276,194ZM338,431L340,429L343,430L344,429L346,430L343,432L341,431L340,432ZM508,36L508,35L511,35L520,38L515,38L514,40L513,41L512,43L510,43L506,41L507,40L504,40L501,38L499,36L504,35L505,36ZM530,35L527,36L522,37L517,36L511,35L517,34L519,34L521,34ZM526,40L522,41L519,40L519,39L522,39L523,40ZM398,30L405,29L411,29L414,28L420,28L433,28L444,30L440,30L424,31L425,31L431,31L436,31L440,31L441,32L439,33L443,32L452,31L457,32L458,32L451,34L450,34L444,35L448,35L444,38L443,41L445,42L442,42L439,43L442,44L442,46L440,47L443,49L438,49L440,50L440,51L434,51L436,53L436,54L432,53L431,54L434,54L436,56L436,58L433,58L429,56L430,58L427,59L435,59L423,64L415,64L413,66L409,68L404,70L396,72L394,73L392,77L388,79L388,81L385,86L382,87L379,84L375,84L373,83L373,80L370,77L370,72L368,70L370,68L368,67L372,64L375,63L377,60L372,61L369,61L371,57L377,58L373,56L369,55L372,53L370,48L368,47L368,46L364,44L360,44L350,44L346,42L351,41L355,41L348,41L344,40L345,39L360,37L361,36L357,35L359,34L367,33L369,32L369,31L374,31L380,31L385,31L386,31L392,30L401,32L398,31ZM643,421L646,423L645,425L641,425ZM501,138L503,137L503,142L502,142ZM305,213L306,215L303,215L303,213ZM276,213L279,215L276,216L274,214ZM265,199L270,199L273,201L275,201L279,205L285,208L281,209L276,209L278,207L275,206L274,204L266,202L266,200L264,200L260,203L258,203L260,201ZM612,309L614,318L610,326L602,348L598,350L594,348L593,339L594,337L597,333L597,331L596,325L598,321L603,320L606,316L610,311L611,308ZM922,320L922,320L922,320ZM921,319L922,316L923,320ZM546,161L542,162L539,161ZM466,104L466,107L464,109L460,111L457,110L459,107L458,104L463,101L465,101L467,102ZM914,336L917,339L916,340L913,338L911,334L912,333ZM912,303L912,303L912,303ZM911,300L909,298L909,296ZM909,301L906,301L906,299ZM906,296L907,297L902,294ZM900,292L900,292L900,292ZM917,395L912,399L909,400L909,399L912,396L912,395L910,394L913,391L916,387L917,384L916,378L919,380L918,386L919,384L919,387L922,389L925,388L921,392L919,392ZM892,406L898,403L903,398L906,397L905,399L908,398L907,400L900,405L900,407L895,408L889,413L885,415L879,414L883,411L888,408ZM843,398L845,398L843,401L840,405L839,404L837,406L835,406L835,399L836,397L840,399ZM801,371L795,373L793,376L787,376L783,376L777,380L774,380L771,377L773,375L775,371L775,366L775,362L774,358L774,350L776,351L775,346L779,338L780,338L786,335L788,335L798,332L802,327L803,324L805,322L806,324L807,321L813,315L817,314L820,317L823,317L823,315L827,310L829,308L832,308L832,305L835,307L840,309L843,307L844,309L839,316L848,325L850,326L852,325L855,317L855,313L857,309L859,304L861,310L861,316L863,315L865,317L865,323L865,330L871,334L871,340L874,340L873,344L877,349L875,355L876,358L870,369L867,372L865,373L856,384L854,387L850,388L843,392L840,390L841,389L836,391L830,389L829,387L830,383L827,381L829,378L827,380L824,380L829,375L830,373L825,377L823,379L821,378L822,376L820,373L821,372L815,369L810,369L803,371ZM698,247L698,251L695,252L693,250L693,245L694,240L696,242ZM768,214L766,213L766,211L767,209L771,208L772,210L771,213ZM797,195L796,203L793,198L795,192ZM517,152L519,152L518,157L511,154L511,152ZM501,144L503,143L504,145L504,149L501,149L500,143ZM508,98L509,99L508,102L505,99ZM473,106L473,104L472,102L469,102L469,99L467,100L467,97L466,96L467,93L469,91L473,91L471,94L476,93L475,96L473,98L475,98L477,102L479,103L481,107L484,108L482,111L483,112L481,114L478,114L472,115L466,115L470,112L472,112L468,111L468,110L470,109L469,107L469,106ZM450,69L449,71L451,73L448,75L440,77L432,76L434,75L430,73L433,73L433,72L429,71L431,69L434,69L437,71L440,69L443,70L446,69ZM801,231L799,229L803,230L802,233ZM807,240L807,237L810,236L810,239L808,243ZM817,245L818,248L817,251L816,248L815,250L815,253L812,252L812,248L810,246L806,249L806,246L809,244L810,245L813,243L815,243L814,240L817,242ZM796,242L793,245L797,239L798,235L799,238ZM802,214L803,218L802,221L803,226L805,226L809,228L810,232L806,229L800,228L798,224L797,220L798,221L798,213ZM805,235L804,234L807,235L808,236L805,238ZM814,233L815,236L813,236L814,239L812,239L811,235L812,235L810,232ZM832,149L831,152L834,159L833,162L831,163L826,163L824,167L822,166L821,163L817,164L814,165L811,165L815,168L815,173L814,174L812,173L812,170L808,167L810,166L811,164L814,161L818,160L821,160L821,155L824,156L827,152L827,148L825,145L825,143L827,142L830,146ZM831,134L831,133L834,136L831,137L830,140L825,138L826,142L823,142L821,139L821,136L824,136L821,129L826,133ZM815,167L818,164L821,166L820,168L819,167L818,169ZM562,162L567,160L566,162L563,163ZM316,237L318,237L318,239L315,240Z"/>
+      <a class="map-dot" href="#pemex-2019-11" data-pais="MX" aria-label="Petróleos Mexicanos, 2019"><circle class="dot dot--criminal" cx="219" cy="210" r="8"/><g class="tip" aria-hidden="true"><text x="219" y="194">Petróleos Mexicanos, 2019</text></g></a>
+      <a class="map-dot" href="#copel-2021-02" data-pais="BR" aria-label="Copel, 2021"><circle class="dot dot--criminal" cx="352" cy="350" r="8"/><g class="tip" aria-hidden="true"><text x="352" y="334">Copel, 2021</text></g></a>
+      <a class="map-dot" href="#eletrobras-2021-02" data-pais="BR" aria-label="Eletrobras, 2021"><circle class="dot dot--criminal" cx="367" cy="342" r="8"/><g class="tip" aria-hidden="true"><text x="367" y="326">Eletrobras, 2021</text></g></a>
+      <a class="map-dot" href="#epm-2022-12" data-pais="CO" aria-label="EPM, 2022"><circle class="dot dot--criminal" cx="278" cy="251" r="8"/><g class="tip" aria-hidden="true"><text x="278" y="235">EPM, 2022</text></g></a>
+      <a class="map-dot" href="#ecopetrol-2026-07" data-pais="CO" aria-label="Ecopetrol, 2026"><circle class="dot dot--criminal" cx="282" cy="256" r="8"/><g class="tip" aria-hidden="true"><text x="282" y="240">Ecopetrol, 2026</text></g></a>
+      <a class="map-dot" href="#ucrania-2015-12" data-pais="UA" aria-label="Prykarpattyaoblenergo, Kyivoblenergo y Chernivtsioblenergo, 2016"><rect class="dot dot--estatal" x="531" y="112" width="14" height="14"/><g class="tip" aria-hidden="true"><text x="538" y="103">Prykarpattyaoblenergo, Kyivoblenergo y Chernivtsioblenergo, 2016</text></g></a>
+      <a class="map-dot" href="#ucrania-2016-12" data-pais="UA" aria-label="Ukrenergo, 2017"><rect class="dot dot--estatal" x="544" y="108" width="14" height="14"/><g class="tip" aria-hidden="true"><text x="551" y="99">Ukrenergo, 2017</text></g></a>
+      <a class="map-dot" href="#ucrania-2022-04" data-pais="UA" aria-label="operadora eléctrica ucraniana, 2022"><rect class="dot dot--estatal" x="554" y="113" width="14" height="14"/><g class="tip" aria-hidden="true"><text x="561" y="104">operadora eléctrica ucraniana, 2022</text></g></a>
+      <a class="map-dot" href="#triton-2017-08" data-pais="SA" aria-label="planta petroquímica en Medio Oriente, 2017"><rect class="dot dot--estatal" x="575" y="193" width="14" height="14"/><g class="tip" aria-hidden="true"><text x="582" y="184">planta petroquímica en Medio Oriente, 2017</text></g></a>
+      <a class="map-dot" href="#norskhydro-2019-03" data-pais="NO" aria-label="Norsk Hydro, 2019"><circle class="dot dot--criminal" cx="504" cy="87" r="8"/><g class="tip" aria-hidden="true"><text x="504" y="71">Norsk Hydro, 2019</text></g></a>
+      <a class="map-dot" href="#colonial-2021-05" data-pais="US" aria-label="Colonial Pipeline, 2021"><circle class="dot dot--criminal" cx="267" cy="165" r="8"/><g class="tip" aria-hidden="true"><text x="267" y="149">Colonial Pipeline, 2021</text></g></a>
+      <a class="map-dot" href="#dinamarca-2023-05" data-pais="DK" aria-label="22 operadoras de energía danesas, 2023"><circle class="dot dot--nn" cx="501" cy="98" r="8"/><g class="tip" aria-hidden="true"><text x="501" y="82">22 operadoras de energía danesas, 2023</text></g></a>
+  </svg>
+  <figcaption>Los 12 casos del contexto, sobre el mapa. Cada punto lleva a su fila; la forma dice quién ataca.</figcaption>
+</figure>
+<p class="map-key"><span class="key key--criminal" aria-hidden="true"></span> crimen económico · <span class="key key--estatal" aria-hidden="true"></span> operación estatal · <span class="key key--nn" aria-hidden="true"></span> sin atribuir</p>
+<!-- /ciber-maps:world -->
+
+  <p class="bio-text">La mitad regional de la tabla es la misma economía que produjo el registro argentino: ransomware criminal contra la capa administrativa de empresas de energía, con la operación física intacta y los datos como rehén. Dos detalles conectan directo con Argentina. Copel, Eletrobras y Ecopetrol le contaron el incidente al mercado con formularios 6-K ante la SEC, que es el mismo canal por el que se supo lo de Oldelval: la divulgación por regulador bursátil en vez de energético es un patrón regional, no una rareza local. Y el grupo que publicó a Oldelval había publicado a Ecopetrol seis días antes: para un operador de ransomware, la región es un solo mercado.</p>
+  <p class="bio-text">La mitad global es la escalera que la capa administrativa tiene arriba. Colonial Pipeline es el peldaño que este registro más necesita mirar: el ransomware entró por la red informática y el operador paró el ducto entero durante cinco días, por decisión propia ante la duda sobre el alcance; el regulador de ductos después le imputó no tener plan para operar en manual. Los tres casos ucranianos y el saudí son los peldaños de arriba, y ya no son crimen económico sino operaciones estatales con acusación formal de por medio: subestaciones operadas a distancia en 2015 y 2016, el intento repetido en plena invasión en 2022, y la reprogramación de los <a class="gl" href="#g-sis">controladores de seguridad</a> de una planta petroquímica.</p>
+  <p class="bio-text">Dos casos de la tabla funcionan como contraejemplos más que como amenazas. El sector eléctrico danés detectó en días un barrido coordinado contra 22 operadoras porque su <a class="gl" href="#g-cert">CERT</a> sectorial tenía sensores en las redes de los miembros: es la versión en funcionamiento del mecanismo de intercambio entre pares cuya ausencia registra la sección de divulgación. Y Norsk Hydro respondió a su ransomware publicando el proceso entero, con el costo puesto en números por la propia empresa: el patrón de divulgación inverso al que documenta este registro.</p>
+
+  <p class="aside-link">Los doce casos, con sus fuentes primarias (6-K ante la SEC, acusaciones formales, informes de los CERT): en el archivo de datos, clave <span class="path">contexto_internacional</span> de <a href="/data/ciber-incidentes.json" data-goatcounter-click="data-ciber">ciber-incidentes.json</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="normativo">
+  <div class="section-head">
+    <p class="eyebrow">El marco</p>
+    <h2>A quién hay que contarle: a nadie</h2>
+    <p class="intro">El estado normativo argentino explica la forma de este registro. Cada afirmación de esta sección sale del texto oficial linkeado; la lectura es descriptiva, con fecha 3 de agosto de 2026.</p>
+  </div>
+  <p class="bio-text">Lo que hay es una definición sin obligaciones. La <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/325000-329999/328599/norma.htm">Resolución 1523/2019</a> define infraestructuras críticas y lista once sectores, energía incluida, pero no le impone nada a ningún operador. La <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/350000-354999/351345/norma.htm">Decisión Administrativa 641/2021</a> fija requisitos mínimos y un deber de reporte a 48 horas, solo para la administración pública nacional. El CERT.ar responde incidentes desde el Centro Nacional de Ciberseguridad, creado por <a href="https://www.boletinoficial.gob.ar/detalleAviso/primera/337032/20260102">decreto de necesidad y urgencia</a> a fines de 2025, pero no puede exigirle un reporte a una empresa privada. Y el marco eléctrico y gasífero no menciona el reporte de ciberincidentes en ninguna parte: ni las leyes 24.065 y 24.076, ni el flamante ENRGE que <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/410000-414999/414812/norma.htm">fusionó al ENRE y al ENARGAS</a> en 2025.</p>
+  <p class="bio-text">Los relojes que sí corren en Argentina están en otros lados. El de la CNV: una emisora informa "en forma inmediata" todo hecho que pueda afectar sus valores (la <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/215000-219999/219405/texact-TituloXII-CapI.htm">norma</a> no menciona ciberincidentes), y por esa cláusula general se supieron los dos únicos casos comunicados del sector, Albanesi en 2023 y Oldelval en 2026. El del BCRA: desde 2025, una entidad financiera notifica un ciberincidente <a href="https://www.bcra.gob.ar/Pdfs/comytexord/A8280.pdf">dentro de la primera hora</a>. Un banco tiene una hora; una transportista de gas, ninguna obligación.</p>
+  <p class="bio-text">No es que no se haya intentado: hubo proyectos, y caducaron. El que creaba un instituto nacional con reporte obligatorio para operadores de servicios esenciales <a href="https://www.senado.gob.ar/parlamentario/comisiones/verExp/1616.19/S/PL">caducó en 2021</a> sin dictamen, y volvió a caducar reproducido. Un plan nacional de infraestructuras críticas específico de la energía <a href="https://www.hcdn.gob.ar/proyectos/proyectoTP.jsp?exp=0146-D-2023">caducó dos veces</a> en Diputados. La única decisión efectiva del período, el Centro Nacional de Ciberseguridad, llegó por decreto, sin pasar por el Congreso y sin deber de reporte para privados.</p>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Quién debe contarle a quién, y en cuánto tiempo. Textos vigentes al 3 de agosto de 2026.</caption>
+      <thead>
+        <tr><th scope="col">Jurisdicción</th><th scope="col">Norma</th><th scope="col">A quién obliga</th><th scope="col">Plazo</th><th scope="col">Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Argentina · energía</td><td>no existe</td><td>a nadie</td><td class="reg-d">no hay</td><td>los proyectos caducaron sin dictamen</td></tr>
+        <tr><td>Argentina · mercado</td><td><a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/205000-209999/206592/texact.htm">Ley 26.831, art. 99</a></td><td>emisoras listadas, por la cláusula general</td><td class="reg-d">inmediato</td><td>sin mención ciber; el sector lo usó dos veces</td></tr>
+        <tr><td>Argentina · bancos</td><td><a href="https://www.bcra.gob.ar/Pdfs/comytexord/A8280.pdf">Comunicación BCRA "A" 8280</a></td><td>entidades financieras y proveedores de pago</td><td class="reg-d">1 hora</td><td>vigente desde 2025</td></tr>
+        <tr><td>Chile</td><td><a href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/04/08/43820/01/2475674.pdf">Ley 21.663 (ANCI)</a></td><td>~1,150 operadores de importancia vital, energía incluida</td><td class="reg-d">3 horas</td><td>vigente; los combustibles entraron en julio de 2026</td></tr>
+        <tr><td>EE.UU. · ductos</td><td><a href="https://www.tsa.gov/sites/default/files/signed_security-directive-pipeline-2021-01g-and-transmittal-memo_508c.pdf">Directivas de seguridad TSA</a></td><td>operadores de ductos designados</td><td class="reg-d">72 horas</td><td>renovadas cada año desde Colonial</td></tr>
+        <tr><td>EE.UU. · mercado</td><td><a href="https://www.federalregister.gov/documents/2023/08/04/2023-16194/cybersecurity-risk-management-strategy-governance-and-incident-disclosure">SEC, Item 1.05 del Form 8-K</a></td><td>emisoras listadas</td><td class="reg-d">4 días hábiles</td><td>vigente desde diciembre de 2023</td></tr>
+        <tr><td>Unión Europea</td><td><a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32022L2555">NIS2, artículo 23</a></td><td>operadores esenciales; la energía abre el Anexo I</td><td class="reg-d">24 h / 72 h</td><td>4 países llevados al tribunal por no transponerla</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="reg-hint">→ la tabla se arrastra en horizontal</p>
+
+  <p class="bio-text">El espejo más cercano es Chile. La electricidad entró en la primera nómina de operadores de importancia vital en diciembre de 2025; los combustibles y los ductos, en la segunda, en julio de 2026. El deber de reporte que de este lado no existe, cruzando la cordillera corre a tres horas. El canal argentino tiene su paralelo en la SEC: el mismo regulador bursátil que acá recibió el hecho relevante de Oldelval, allá nombró a los ciberincidentes en su formulario y les puso plazo propio.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="ia">
+  <div class="section-head">
+    <p class="eyebrow">Lo que sigue</p>
+    <h2>La capa que se está agregando ahora</h2>
+    <p class="intro">Sobre un sector con esta visibilidad de su propia exposición se está montando, además, otra cosa.</p>
+  </div>
+  <p class="bio-text">Lo que la inteligencia artificial cambia, según lo documentado hasta hoy, es el costo y la escala de ataques que ya existían: redactar el engaño, negociar el rescate, escribir el código. Ninguna de las catorce filas de arriba tiene un componente de IA documentado: lo que sigue es sobre lo que viene.</p>
+  <p class="bio-text">En 2025 lo ofensivo dejó de ser hipótesis. <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025">Anthropic documentó</a> a un operador que usó su agente de código para automatizar una campaña de extorsión sobre al menos 17 organizaciones, notas de rescate incluidas. <a href="https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/">ESET describió PromptLock</a>, un ransomware que genera sus scripts en el momento con un modelo local, revelado después como prototipo académico. Y una plataforma RaaS nueva salió a reclutar afiliados con un <a href="https://blog.eclecticiq.com/global-group-emerging-ransomware-as-a-service">chatbot de negociación integrado al panel</a>. Son tres eslabones distintos de la misma cadena de extorsión, cada uno con reporte primario.</p>
+  <p class="bio-text">Del lado defensivo hay menos novedad de la que parece. La detección de anomalías en redes industriales es anterior a la ola de modelos de lenguaje por más de una década, y donde los modelos ayudan hoy es en digerir avisos y priorizar alertas. La adopción en tecnología operativa es lenta, y con motivo: un falso positivo puede costar producción física.</p>
+  <p class="bio-text">La medición ya empezó. Un agente de inteligencia artificial entró en el top 10 del capture the flag de tecnología operativa de Dragos en 2025, un torneo pensado para especialistas humanos. Y empezaron a aparecer bancos de prueba para medir modelos en entornos industriales reales, como CritBench sobre subestaciones digitales bajo la norma IEC 61850.</p>
+  <p class="bio-text">Ninguno de esos trabajos toca la <a class="gl" href="#g-nominacion">capa de nominación y despacho</a>. La literatura mide subestaciones y controladores, mientras los dos incidentes argentinos de los que se conoce el sistema afectado pegaron en la capa comercial que programa el flujo. Al mismo tiempo, esa capa comercial es adonde están llegando primero los copilotos y los agentes, porque es la que tiene datos tabulares, procedimientos escritos y decisiones repetitivas.</p>
+  <p class="bio-text">Este registro no responde qué pasa cuando un agente con acceso de escritura opera ahí. Lo deja planteado sobre lo único firme que hay: los incidentes que ya ocurrieron.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="cine">
+  <div class="section-head">
+    <p class="eyebrow">Ficción</p>
+    <h2>El cine imaginó apagones; el registro muestra servidores cifrados</h2>
+    <p class="intro">Seis obras formaron lo que el público espera de un ataque a la infraestructura. Compararlas con las filas de arriba es la forma más corta de medir la distancia entre lo imaginado y lo documentado.</p>
+  </div>
+  <ul class="rsrc">
+    <li><span class="obra">Juegos de guerra</span> (1983): el mito fundacional del adolescente que entra a todo. Produjo política real: Reagan la vio, preguntó si algo así podía pasar, y la respuesta terminó en la primera directiva de seguridad informática de EE.UU., la NSDD-145 de 1984. Allá la ficción produjo regulación; acá la realidad todavía no.</li>
+    <li><span class="obra">Duro de matar 4.0</span> (2007): el "fire sale", toda la infraestructura cayendo en días, con explosiones. En las catorce filas argentinas el caño siguió lleno y la luz no se cortó.</li>
+    <li><span class="obra">Hacker: amenaza en la red</span> (Blackhat, 2015): el objetivo es una capa de mercado, algo que el género casi no toca. Es lo más cerca que la ficción estuvo de la capa comercial que documenta este registro, y aun así necesitó reventar una planta para sostener la trama.</li>
+    <li><span class="obra">Mr. Robot</span> (2015–2019): su ataque central no apaga la luz, cifra los registros de deuda de un conglomerado. Es la economía de este registro puesta como apocalipsis.</li>
+    <li><span class="obra">Zero Days</span> (2016): el documental sobre Stuxnet, única entrada de no ficción de la lista y puente directo a las filas estatales de la tabla internacional.</li>
+    <li><span class="obra">Dejar el mundo atrás</span> (2023): el colapso total como imaginario de masas, del creador de Mr. Robot. El contraste exacto: acá hubo catorce incidentes y ningún apagón.</li>
+  </ul>
+  <p class="bio-text">Los casos que sí se parecen a las películas existen y están en la tabla internacional: Ucrania en 2015, 2016 y 2022, la planta saudí en 2017. Todos son operaciones estatales, con acusación formal de por medio; ninguno pertenece a la economía criminal que produjo las filas argentinas. El riesgo que este registro documenta es más barato y más frecuente que el del cine: un servidor cifrado y un contador que corre en un sitio de la red Tor.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limites">
+  <div class="section-head">
+    <p class="eyebrow">Límites</p>
+    <h2>Qué no se puede afirmar con estos datos</h2>
+  </div>
+  <p class="bio-text">No se puede afirmar que estos catorce sean todos. Son los que dejaron rastro público, y el propio registro muestra que el rastro depende de si el atacante decidió publicar y de si la empresa cotiza. Un incidente resuelto en silencio, sin <a class="gl" href="#g-exfiltracion">exfiltración</a> y sin cotización, no aparece acá ni en ningún lado.</p>
+  <p class="bio-text">No se puede afirmar que las ocho filas de confianza media hayan ocurrido como las cuenta el atacante. Un grupo de ransomware publica víctimas para presionar, y tiene incentivo a exagerar el alcance, el volumen y la sensibilidad de lo que se llevó. Lo verificable es que la publicación existe, no lo que dice.</p>
+  <p class="bio-text">No se puede afirmar nada sobre el estado de la seguridad de ninguna de estas organizaciones. Aparecer en el registro significa que fueron atacadas, no que estuvieran mal preparadas; varias de las que aparecen contuvieron el incidente sin interrupción de servicio. La ausencia del registro tampoco significa lo contrario.</p>
+  <p class="bio-text">No se puede afirmar que los grupos de las fichas sean organizaciones estables, por lo que dice la sección de actores sobre la rotación de marcas. Cada estado vale a su fecha de corte.</p>
+  <p class="bio-text">No se puede afirmar que la capa de nominación y despacho sea el punto de entrada preferido. Son dos casos con sistema conocido sobre catorce incidentes. Es una hipótesis que la evidencia disponible hace razonable, y que hace falta contrastar con gente que opere esos sistemas.</p>
+  <p class="bio-text">No se puede leer la tabla internacional como un censo. Es una curaduría de doce casos con el criterio declarado en su sección: el mundo tuvo muchos más incidentes que esos, y la selección los eligió porque iluminan hallazgos argentinos, no porque sean representativos de nada.</p>
+  <p class="bio-text">Y no se puede tomar la sección normativa como opinión legal. Describe textos vigentes al 3 de agosto de 2026, varios en movimiento (la regla permanente de ductos en EE.UU. sigue en proyecto, el ENRGE está en plena constitución), y no evalúa si las normas de otros países funcionan: registra solamente qué obligación existe y cuál no.</p>
+  <p class="bio-text">Y el recorte no es solo de rastro: el registro cubre energía e infraestructura crítica con tecnología operativa, y deja afuera transporte y defensa aunque tengan casos públicos. EANA, el control de tránsito aéreo, y la ferroviaria estatal ADIF aparecieron en <a class="gl" href="#g-leaksite">sitios de filtración</a> en 2026 y no están acá. Es dónde se trazó la línea, no un juicio sobre esos sectores; correrla es parte de la hoja de ruta.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="roadmap">
+  <div class="section-head">
+    <p class="eyebrow">Hoja de ruta</p>
+    <h2>Qué falta, y qué lo destrabaría</h2>
+    <p class="intro">Cuatro líneas de trabajo abiertas, cada una para cerrar un límite concreto de la sección anterior.</p>
+  </div>
+  <ul class="ruta">
+    <li>
+      <h3>Extender la pasada por la CNV</h3>
+      <p>La pasada por la CNV que sostiene esta actualización leyó los títulos, no los adjuntos, y no cubrió a las distribuidoras provinciales chicas ni corre sola. Lo que sigue: leer el contenido de los hechos relevantes con carátula opaca, sumar las emisoras que faltan y automatizar el barrido de la ficha pública de cada una, con la misma mecánica del monitor de ransomware.live. Achica el límite de "estos catorce no son necesariamente todos".</p>
+    </li>
+    <li>
+      <h3>Contrastar la hipótesis con quien opera esos sistemas</h3>
+      <p>Ocho a diez conversaciones con gente de operadoras (la que usa los sistemas de nominación, balance y despacho), agregadas y anonimizadas en un anexo de dos páginas. La hipótesis de la capa comercial hoy se sostiene en dos casos con sistema conocido, y esto la pone a prueba.</p>
+    </li>
+    <li>
+      <h3>Medir agentes de IA sobre la capa de nominación y despacho</h3>
+      <p>Un banco de pruebas con escenarios sacados de los incidentes de este registro, sobre una capa sintética de nominación y despacho. La sección de inteligencia artificial deja una pregunta planteada; la literatura mide subestaciones y controladores, y esta capa no la mide nadie.</p>
+    </li>
+    <li>
+      <h3>Dimensionar un mecanismo de intercambio entre pares</h3>
+      <p>Una nota técnica sobre la versión mínima del modelo danés que le cabe a un sector con catorce incidentes conocidos y cero obligación de reporte: quién pone los sensores, quién ve qué, y qué se comparte sin exponer a nadie. Cierra el hallazgo de que cada operadora enfrenta sola a los mismos grupos.</p>
+    </li>
+  </ul>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="glosario">
+  <div class="section-head">
+    <p class="eyebrow">Referencia</p>
+    <h2>Los términos de este registro, en el orden en que aparecen</h2>
+    <p class="intro">Trece términos definidos por lo que hacen acá, no por el diccionario. Cada entrada dice en qué sección aparece por primera vez.</p>
+  </div>
+  <div class="gloss">
+    <details class="gloss-item" id="g-ransomware">
+      <summary><dfn>ransomware</dfn></summary>
+      <p>Programa que cifra los archivos de la víctima y los deja inaccesibles hasta pagar un rescate. Desde 2019 el término nombra también a los grupos que lo operan, que suelen robar los datos antes de cifrarlos. <a href="#registro">Aparece en el registro →</a></p>
+    </details>
+    <details class="gloss-item" id="g-leaksite">
+      <summary><dfn>sitio de filtración</dfn></summary>
+      <p>La vidriera del atacante: un sitio, casi siempre en la red Tor, donde el grupo publica a sus víctimas y una muestra de lo robado para presionar el pago. Siete filas de este registro existen solo porque aparecieron ahí. <a href="#registro">Aparece en el registro →</a></p>
+    </details>
+    <details class="gloss-item" id="g-hecho-relevante">
+      <summary><dfn>hecho relevante (CNV y AIF)</dfn></summary>
+      <p>La comunicación que una emisora de acciones o deuda presenta ante la Comisión Nacional de Valores cuando pasa algo que puede afectar sus valores; queda pública en la Autopista de la Información Financiera (AIF). Es el canal por el que se supieron los dos únicos incidentes comunicados del sector. <a href="#divulgacion">Aparece en divulgación →</a></p>
+    </details>
+    <details class="gloss-item" id="g-it-ot">
+      <summary><dfn>IT / OT</dfn></summary>
+      <p>La tecnología de información (IT) administra datos: correo, facturación, planillas. La tecnología operativa (OT) controla procesos físicos: válvulas, bombas, subestaciones. La práctica de seguridad industrial se organiza alrededor de esa frontera, y este registro documenta que hay sistemas que la frontera deja pasar. <a href="#linea">Aparece en la línea →</a></p>
+    </details>
+    <details class="gloss-item" id="g-nominacion">
+      <summary><dfn>capa de nominación y despacho</dfn></summary>
+      <p>Los sistemas donde se pide, se asigna y se programa cuánto gas o crudo mueve una red de transporte: convierten contratos en flujo físico programado. En el organigrama figuran como administrativos, y su caída frena la programación física. El término es de este registro. <a href="#linea">Aparece en la línea →</a></p>
+    </details>
+    <details class="gloss-item" id="g-hmi">
+      <summary><dfn>interfaz de operador (HMI) e historiador de proceso</dfn></summary>
+      <p>La HMI es la pantalla desde la que un operador ve y comanda una planta; el historiador es la base de datos que guarda la serie temporal de cada sensor. Software industrial que corre en computadoras comunes, y por eso aparece en la lista de procesos de algún ransomware. <a href="#linea">Aparece en la línea →</a></p>
+    </details>
+    <details class="gloss-item" id="g-atribucion">
+      <summary><dfn>atribución</dfn></summary>
+      <p>Determinar quién hizo un ataque. Casi nunca hay prueba forense pública: la mayoría de las atribuciones criminales nacen de que un grupo publique a la víctima en su sitio, y eso prueba que reclama el ataque, no que lo haya hecho. <a href="#procedencia">Aparece en procedencia →</a></p>
+    </details>
+    <details class="gloss-item" id="g-raas">
+      <summary><dfn>RaaS y afiliados</dfn></summary>
+      <p>Ransomware as a service: una plataforma alquila el cifrador, el sitio de filtración y la marca; los afiliados hacen la intrusión y comparten la recaudación. Explica que un mismo cartel firme ataques de habilidad muy distinta. <a href="#actores">Aparece en los grupos →</a></p>
+    </details>
+    <details class="gloss-item" id="g-doble-extorsion">
+      <summary><dfn>doble extorsión</dfn></summary>
+      <p>Robar los datos antes de cifrarlos, para cobrar dos veces: por descifrar y por no publicar. Volvió al respaldo insuficiente como defensa completa, porque restaurar los sistemas no evita la filtración. <a href="#actores">Aparece en los grupos →</a></p>
+    </details>
+    <details class="gloss-item" id="g-exfiltracion">
+      <summary><dfn>exfiltración</dfn></summary>
+      <p>La copia de datos hacia afuera de la red de la víctima, previa al cifrado en la doble extorsión. En varios casos documentados tarda horas, no semanas. <a href="#actores">Aparece en los grupos →</a></p>
+    </details>
+    <details class="gloss-item" id="g-scada">
+      <summary><dfn>SCADA</dfn></summary>
+      <p>Supervisión, control y adquisición de datos: el sistema que concentra la operación remota de una red eléctrica, de gas o de agua. Operarlo a distancia fue exactamente lo que pasó en Ucrania en 2015. <a href="#contexto">Aparece en contexto →</a></p>
+    </details>
+    <details class="gloss-item" id="g-sis">
+      <summary><dfn>SIS, seguridad instrumentada</dfn></summary>
+      <p>Los controladores autónomos que llevan una planta a parada segura cuando el proceso sale de rango: la última barrera antes del accidente físico. El caso Triton de 2017 es el único ataque público documentado contra esa capa. <a href="#contexto">Aparece en contexto →</a></p>
+    </details>
+    <details class="gloss-item" id="g-cert">
+      <summary><dfn>CERT</dfn></summary>
+      <p>Equipo de respuesta a emergencias informáticas, nacional o sectorial. El argentino, CERT.ar, responde incidentes pero no puede exigirle un reporte a una empresa privada. <a href="#contexto">Aparece en contexto →</a></p>
+    </details>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="recursos">
+  <div class="section-head">
+    <p class="eyebrow">Recursos</p>
+    <h2>Dónde mirar, además de acá</h2>
+    <p class="intro">Trece entradas, cada una con su para qué. Lo que no le sirve al lector de este registro quedó afuera: se cortaron cuatro organizaciones cuyo trabajo ciber es de membresía o no existe.</p>
+  </div>
+
+  <p class="rsrc-g">Seguimiento y respuesta</p>
+  <ul class="rsrc">
+    <li><a href="https://www.argentina.gob.ar/jefatura/innovacion-ciencia-y-tecnologia/centro-nacional-de-ciberseguridad/certar">CERT.ar</a>: el equipo nacional de respuesta a incidentes, hoy bajo el Centro Nacional de Ciberseguridad; adonde reporta el sector público, y la fuente de las estadísticas oficiales.</li>
+    <li><a href="https://www.ransomware.live/">ransomware.live</a>: el rastreador abierto de víctimas de ransomware del que se alimenta el monitor de este registro; datos y API gratis.</li>
+    <li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories?f%5B0%5D=advisory_type%3A95">CISA ICS Advisories</a>: los avisos oficiales de EE.UU. sobre vulnerabilidades en equipos de control industrial, por fabricante y por producto.</li>
+    <li><a href="https://www.cci-es.org/">Centro de Ciberseguridad Industrial (CCI)</a>: la red hispanohablante de ciberseguridad industrial, con capítulo argentino activo y membresía básica gratuita.</li>
+    <li><a href="https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf">SektorCERT, el informe del ataque de 2023</a>: la autopsia del ataque coordinado a 22 operadoras, escrita por el CERT que lo detectó (PDF, en inglés).</li>
+    <li><a href="https://oneisac.org/">ONE-ISAC</a>: el centro de intercambio entre pares del oil &amp; gas norteamericano: el modelo de colaboración sectorial que acá falta.</li>
+  </ul>
+
+  <p class="rsrc-g">Referencia técnica</p>
+  <ul class="rsrc">
+    <li><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">NIST SP 800-82 rev. 3</a>: la guía gratuita de referencia para asegurar tecnología operativa; el punto de partida si hay que armar un programa desde cero.</li>
+    <li><a href="https://www.sans.org/white-papers/five-ics-cybersecurity-critical-controls/">SANS, Five ICS Cybersecurity Critical Controls</a>: los cinco controles que una empresa de energía debería tener antes que cualquier otra cosa, en 20 páginas legibles por un gerente; pide cuenta gratuita.</li>
+    <li><a href="https://isagca.org/isa-iec-62443-standards">ISA/IEC 62443</a>: el estándar de ciberseguridad industrial, explicado gratis por sus autores en las guías de ISAGCA; el texto completo del estándar es pago.</li>
+    <li><a href="https://attack.mitre.org/matrices/ics/">MITRE ATT&amp;CK for ICS</a>: el catálogo estándar de tácticas de ataque a sistemas industriales: el vocabulario de los informes técnicos que cita este registro.</li>
+    <li><a href="https://www.dragos.com/ot-cybersecurity-year-in-review">Dragos, OT Cybersecurity Report</a>: el informe anual de amenazas a sistemas industriales más citado del sector; la edición 2026 pide un mail para descargarse.</li>
+  </ul>
+
+  <p class="rsrc-g">Formación y comunidad</p>
+  <ul class="rsrc">
+    <li><a href="https://blog.bluedot.org/p/how-ai-could-enable-critical-infrastructure-collapse">BlueDot, "How AI could enable critical infrastructure collapse"</a>: el ensayo de Li-Lian Ang sobre cómo la inteligencia artificial baja la barrera de habilidad y de tiempo para atacar infraestructura crítica; Colonial Pipeline, NotPetya y Ucrania como referencia, y cada afirmación enlazada a su fuente (en inglés).</li>
+    <li><a href="https://baish.com.ar/">BAISH (Buenos Aires AI Safety Hub)</a>: la comunidad de seguridad de IA de Buenos Aires; la puerta de entrada local a la disciplina que la sección de IA de este registro cruza con la energía.</li>
+  </ul>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="metodo">
+  <div class="section-head">
+    <p class="eyebrow">Cómo está hecho</p>
+    <h2>Fuentes, actualización y correcciones</h2>
+  </div>
+  <p class="bio-text">Las filas salen de tres canales. La prensa especializada, las comunicaciones de las propias organizaciones y los hechos relevantes ante la CNV dan siete filas, de las cuales seis llegan a confianza alta: la de YCRT queda en media porque su única fuente es una compilación secundaria. Los sitios donde los grupos de ransomware publican a sus víctimas dan las otras siete. Se consultan a través de la interfaz pública de ransomware.live, que al 3 de agosto de 2026 lista 178 publicaciones sobre víctimas argentinas de todos los sectores. Las direcciones de los sitios de filtración están registradas y no se publican.</p>
+  <p class="bio-text">Un monitor corre contra esa misma interfaz, cruza cada víctima argentina nueva contra un léxico del sector y avisa cuando hay que escribir una fila. La fila se escribe a mano: ningún endpoint devuelve lo que declaró la empresa.</p>
+  <p class="bio-text">La pasada por la CNV se hizo sobre las fichas públicas de la Autopista de la Información Financiera. Se escanearon por título, en dos pasadas de léxico, y se revisaron a mano fila por fila en las ventanas de los incidentes ya conocidos. El límite del método está en el título: un hecho relevante ciber con carátula opaca no se detecta, y hay emisoras que titulan "HR" a secas. Los adjuntos no se leyeron; ese es el primer ítem de la hoja de ruta.</p>
+  <p class="note-limit">Las correcciones que lleguen se aplican a la fila y quedan anotadas con fecha en el arreglo <span class="path">correcciones</span> del archivo de datos, con qué cambió y quién lo señaló. El pedido está arriba, con la dirección: <a href="#aviso">volver al aviso</a>.</p>
+  <p class="aside-link">El archivo de datos se publica bajo licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a>: se puede reutilizar citando la fuente. Cada fila nueva y cada corrección salen también por el <a href="/ciber/feed.xml" data-goatcounter-click="feed-ciber">feed Atom</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="quien">
+  <div class="section-head">
+    <p class="eyebrow">Quién está detrás</p>
+  </div>
+  <p class="bio-text">Matías Podeley. Ingeniero del ITBA, dieciocho años en energía: cuatro de operación en Neuquén, simulación de yacimientos gigantes como Camisea y respaldo técnico a compras de activos por más de US$ 300 millones. Buenos Aires.</p>
+  <p class="aside-link">La investigación en seguridad de inteligencia artificial que hay atrás de la última sección: <a href="/research/">research</a>.</p>
+</section>

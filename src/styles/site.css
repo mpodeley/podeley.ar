@@ -53,20 +53,8 @@
 .cta-strip a:hover { text-decoration: underline; }
 
 /* ---------- las piezas del área ciber -------------------------------------- */
-/* Va arriba de todo en /ciber/: el trabajo son varias piezas (el registro
-   escrito, el mapa interactivo, el memo del CERT) y el lector tiene que verlas
-   antes de meterse en la tabla. Escala a 4-5 sin tocar nada. */
-.piezas {
-  margin: var(--pd-sp-6) 0 0;
-  padding-top: var(--pd-sp-5);
-  border-top: 1px solid var(--pd-border-soft);
-}
-.piezas-t {
-  margin: 0 0 var(--pd-sp-4);
-  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
-  letter-spacing: var(--pd-track-mono); text-transform: uppercase;
-  color: var(--pd-text-faint);
-}
+/* La grilla de /ciber/, que es el índice del área: el registro escrito, el mapa
+   interactivo y el memo del CERT. Escala a 4-5 piezas sin tocar el CSS. */
 .piezas-g {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   margin: 0; padding: 0; list-style: none;
@@ -92,9 +80,6 @@
   font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
   letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
 }
-/* la pieza que el lector ya está leyendo: no se linkea, se marca */
-.pieza--actual { background: transparent; border-style: dashed; }
-.pieza--actual .pieza-donde { color: var(--pd-primary); }
 
 @media (max-width: 860px) {
   .piezas-g { grid-template-columns: 1fr; }

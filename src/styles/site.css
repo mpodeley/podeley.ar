@@ -52,26 +52,53 @@
 .cta-strip a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
 .cta-strip a:hover { text-decoration: underline; }
 
-/* ---------- banda: el mapa interactivo (superficie.podeley.ar) ------------- */
-/* El registro es el artículo escrito; la misma evidencia, y cinco capas más de
-   contexto, viven en el mapa interactivo. La banda deja los dos accesos a la
-   vista arriba de la página. */
-.exp-band {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 1rem 1.6rem; padding: 1.15rem 1.35rem;
+/* ---------- las piezas del área ciber -------------------------------------- */
+/* Va arriba de todo en /ciber/: el trabajo son varias piezas (el registro
+   escrito, el mapa interactivo, el memo del CERT) y el lector tiene que verlas
+   antes de meterse en la tabla. Escala a 4-5 sin tocar nada. */
+.piezas {
+  margin: var(--pd-sp-6) 0 0;
+  padding-top: var(--pd-sp-5);
+  border-top: 1px solid var(--pd-border-soft);
+}
+.piezas-t {
+  margin: 0 0 var(--pd-sp-4);
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); text-transform: uppercase;
+  color: var(--pd-text-faint);
+}
+.piezas-g {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  margin: 0; padding: 0; list-style: none;
+}
+.pieza {
+  position: relative; display: flex; flex-direction: column; gap: .3rem;
+  padding: .95rem 1.05rem;
   border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
   background: var(--pd-surface-2);
 }
-.exp-txt { flex: 1 1 24rem; }
-.exp-txt p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
-.exp-t { font-weight: 600; color: var(--pd-text); margin-bottom: .25rem; }
-.exp-cta {
-  flex: 0 0 auto; align-self: center; white-space: nowrap;
-  font-weight: 600; text-decoration: none; color: var(--pd-link);
-  border: 1px solid var(--pd-border); border-radius: var(--pd-r-1);
-  padding: .5rem .95rem;
+.pieza p { margin: 0; }
+.pieza-h {
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.2;
 }
-.exp-cta:hover { border-color: var(--pd-link); }
+.pieza-h a { text-decoration: none; color: var(--pd-text); }
+.pieza-h a::after { content: ""; position: absolute; inset: 0; }
+.pieza:hover { border-color: var(--pd-border); }
+.pieza:hover .pieza-h a { color: var(--pd-link); }
+.pieza-que { color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.5; }
+.pieza-donde {
+  margin-top: .15rem;
+  font-family: var(--pd-font-mono); font-size: var(--pd-fs-cap);
+  letter-spacing: var(--pd-track-mono); color: var(--pd-text-faint);
+}
+/* la pieza que el lector ya está leyendo: no se linkea, se marca */
+.pieza--actual { background: transparent; border-style: dashed; }
+.pieza--actual .pieza-donde { color: var(--pd-primary); }
+
+@media (max-width: 860px) {
+  .piezas-g { grid-template-columns: 1fr; }
+}
 
 /* ---------- «Tres reglas» ------------------------------------------------- */
 /* El three-up con regla de color del brochure. Mismo patrón que .findings en

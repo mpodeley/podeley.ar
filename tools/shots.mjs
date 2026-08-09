@@ -31,6 +31,7 @@ mkdirSync(OUT, { recursive: true });
 // izquierda es el nombre del archivo que citan las páginas, no el del repo.
 const SITES = [
   ['gas',                           'https://podeley.ar/gas/#/mapa',                             6000, false],
+  ['superficie',                    'https://superficie.podeley.ar/',                 6000, false],
   ['simulador-subastas-peru',       'https://mpodeley.github.io/simulador-subastas-peru/',       3000, false],
   ['sat-subsidencia',               'https://subsidencia.podeley.ar/',                6000, true],
   ['vaca-muerta-nightlights',       'https://actividad.podeley.ar/',                  3000, true],

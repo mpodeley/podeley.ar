@@ -29,7 +29,7 @@
   <p class="kicker">Registro sectorial · Energía e infraestructura crítica · Argentina</p>
   <h1>Catorce incidentes en seis años, y siete de ellos nunca tuvieron una línea publicada</h1>
   <p class="hero-sub">Este es el registro de los ciberincidentes conocidos en el sector energético argentino entre 2020 y 2026, con la fuente de cada fila. Se arma cruzando prensa, comunicaciones a la Comisión Nacional de Valores (CNV) y los sitios donde los atacantes publican a sus víctimas. Registra lo que pasó y lo que se dijo que pasó, en columnas separadas, porque en varios casos no coinciden.</p>
-  <p class="hero-meta"><span class="hero-when">Actualizado el 4 de agosto de 2026</span> <a class="link-plain" href="#registro">Ir al registro <span class="arw">↓</span></a> <a class="link-plain" href="#actores">Quién ataca <span class="arw">↓</span></a> <a class="link-plain" href="#contexto">Contexto internacional <span class="arw">↓</span></a> <a class="link-plain" href="#normativo">Marco normativo <span class="arw">↓</span></a></p>
+  <p class="hero-meta"><span class="hero-when">Actualizado el 4 de agosto de 2026</span> <a class="link-plain" href="#registro">Ir al registro <span class="arw">↓</span></a> <a class="link-plain" href="#actores">Quién ataca <span class="arw">↓</span></a> <a class="link-plain" href="#contexto">Contexto internacional <span class="arw">↓</span></a> <a class="link-plain" href="#normativo">Marco normativo <span class="arw">↓</span></a> <a class="link-plain" href="#explorar">Explorar el mapa <span class="arw">↓</span></a></p>
 
   <aside class="aviso" id="aviso">
     <p class="aviso-t">Aviso, y pedido</p>
@@ -93,9 +93,21 @@
 </ul>
 <!-- /ciber-maps:ar -->
 
-  <p class="note-limit">Hidrocarburos Argentinos aparece dos veces, con cinco meses y dos grupos distintos de por medio. Ninguna de las dos apariciones tuvo cobertura. AySA y ABSA no son energía: se incluyen porque son servicios esenciales con tecnología operativa y millones de usuarios, que es la categoría que importa acá. Quedan afuera, por ahora, el transporte y la defensa: EANA (el control de tránsito aéreo) y la ferroviaria estatal ADIF aparecieron en <a class="gl" href="#g-leaksite">sitios de filtración</a> en 2026 sin una línea publicada, y ese límite del criterio está dicho abajo.</p>
+  <p class="note-limit">Hidrocarburos Argentinos aparece dos veces, con cinco meses y dos grupos distintos de por medio. Ninguna de las dos apariciones tuvo cobertura. AySA y ABSA no son energía: se incluyen porque son servicios esenciales con tecnología operativa y millones de usuarios, que es la categoría que importa acá. Quedan afuera, por ahora, el transporte y la defensa: EANA (el control de tránsito aéreo) y la ferroviaria estatal ADIF aparecieron en <a class="gl" href="#g-leaksite">sitios de filtración</a> en 2026 sin una línea publicada, y el criterio que los deja afuera está en los <a href="#limites">límites</a>.</p>
 
   <p class="aside-link">Los datos completos, con lo que declaró cada organización, lo que reclamó cada atacante y las fuentes de cada fila: <a href="/data/ciber-incidentes.json" data-goatcounter-click="data-ciber">ciber-incidentes.json</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="explorar">
+  <div class="exp-band">
+    <div class="exp-txt">
+      <p class="exp-t">Dos maneras de leer lo mismo</p>
+      <p>Esta página es el registro escrito, con la fuente de cada fila. La misma evidencia, y cinco capas más de contexto (estructura, impacto en cascada, exposición de red, actividad satelital y quién responde), vive en un mapa interactivo del sistema energético.</p>
+    </div>
+    <a class="exp-cta" href="https://superficie.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie-hero">Explorar la superficie de ataque <span class="arw">→</span></a>
+  </div>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -118,10 +130,10 @@
   <div class="section-head">
     <p class="eyebrow">Hallazgo</p>
     <h2>"Sólo sistemas administrativos" no quiere decir lo que parece</h2>
-    <p class="intro">Es la frase que aparece en casi todas las comunicaciones del registro. Vale la pena mirar qué sistema fue, en los dos casos donde se sabe.</p>
+    <p class="intro">Es la frase que aparece en casi todas las comunicaciones del registro. El punto está en qué sistema fue, en los dos casos donde se sabe.</p>
   </div>
   <p class="bio-text">A TGS le atacaron el SPAC, la plataforma donde se procesan las solicitudes, la asignación y la programación de los volúmenes de gas de la red de gasoductos. Desde ahí nadie mueve una válvula. Desde ahí se decide cuánto gas entra, de quién es, y a dónde va. Un oleoducto tiene una capa equivalente para nominación y balance de crudo, y cumple la misma función: es lo que convierte contratos en flujo físico programado.</p>
-  <p class="bio-text">Esa capa es administrativa en el organigrama y operativa en la práctica. Cuando se cae, el caño sigue lleno y el gas sigue moviéndose, pero la programación pasa a hacerse por teléfono y planilla, los balances se reconstruyen después, y las penalidades por desvío quedan en disputa. La distinción entre <a class="gl" href="#g-it-ot">tecnología de información y tecnología operativa</a>, que estructura toda la práctica de seguridad industrial, deja pasar justo por el medio al sistema que decide el despacho.</p>
+  <p class="bio-text">Esa capa es administrativa en el organigrama y operativa en la práctica. Cuando se cae, el caño sigue lleno y el gas sigue moviéndose, pero la programación pasa a hacerse por teléfono y planilla, los balances se reconstruyen después, y las penalidades por desvío quedan en disputa. La distinción entre <a class="gl" href="#g-it-ot">tecnología de información y tecnología operativa</a>, que estructura toda la práctica de seguridad industrial, deja fuera de foco justo al sistema que decide el despacho.</p>
   <p class="bio-text">El incidente de Edesur en 2020 apunta al otro lado del problema. El <a class="gl" href="#g-ransomware">ransomware</a> fue Snake, también conocido como EKANS, que trae una lista de procesos industriales y los termina antes de cifrar, incluidos programas de <a class="gl" href="#g-hmi">interfaz de operador e historiadores de proceso</a>. No hay evidencia pública de que esa capacidad se haya ejercido en Edesur, y este registro no afirma que se haya ejercido. Lo que sí se puede decir es que la familia la trae por diseño, y que llegó a una distribuidora eléctrica argentina en junio de 2020.</p>
 </section>
 
@@ -134,6 +146,7 @@
     <p class="intro">TGS es el caso que aparece en toda cronología argentina de ciberincidentes. También es el que menos resiste una verificación.</p>
   </div>
   <p class="bio-text">Las dos compilaciones profesionales que lo registran lo clasifican como denegación de servicio. En paralelo circula una atribución al grupo ALPHV/BlackCat que no hay manera de sostener: TGS no figura entre las 731 víctimas listadas de ese grupo, y la nota que suele citarse como respaldo trata de Creos Luxembourg, una empresa de gas y electricidad luxemburguesa, sin mención de Argentina. Parecen ser dos hechos distintos que en algún momento se fundieron en uno.</p>
+  <p class="bio-text">El error es entendible, y esa es la parte instructiva: dos operadoras de gas, un incidente cada una, contados con meses de diferencia por fuentes que citan de segunda mano. Sin una fila que fije qué se confirmó y qué se supone, la conjetura viaja más rápido que el dato y, a la décima cita, ya es "lo que se sabe". El registro corta esa cadena en el punto exacto donde se soldó: separa el hecho (hubo un incidente en TGS) de la atribución (quién lo hizo), y deja la segunda vacía si nadie la sostiene.</p>
   <p class="bio-text">Por eso la fila de TGS queda <a class="gl" href="#g-atribucion">sin atribuir</a>, y por eso este registro separa la confianza en que el incidente ocurrió de la confianza en quién lo hizo. Un sector que discute su exposición sobre la base de un caso cuya autoría nadie verificó no está discutiendo sobre datos.</p>
 </section>
 
@@ -282,7 +295,7 @@
           <div><dt>En este registro</dt><dd><a href="#oldelval-2026-07">Oldelval, julio de 2026</a></dd></div>
           <div><dt>En el contexto</dt><dd><a href="#ecopetrol-2026-07">Ecopetrol, julio de 2026</a></dd></div>
         </dl>
-        <p>El grupo más nuevo del registro. Herramientas propias para anular productos de seguridad mediante drivers vulnerables, despliegue por políticas de dominio y un cifrador que se propaga solo; abrió su programa de afiliados a fines de 2025. Publicó a Ecopetrol seis días antes que a Oldelval: para el operador, la región es un solo mercado.</p>
+        <p>El grupo más nuevo del registro. Herramientas propias para anular productos de seguridad mediante drivers vulnerables, despliegue por políticas de dominio y un cifrador que se propaga solo; abrió su programa de afiliados a fines de 2025. Publicó a Ecopetrol seis días antes que a Oldelval, el mismo golpe a los dos lados de la frontera.</p>
         <p class="ficha-fuentes">Fuentes: <a href="https://www.trendmicro.com/en_us/research/25/i/unmasking-the-gentlemen-ransomware.html" rel="noopener">Trend Micro</a> · <a href="https://unit42.paloaltonetworks.com/the-gentlemen-ransomware/" rel="noopener">Unit 42</a> · <a href="https://www.microsoft.com/en-us/security/blog/2026/05/28/the-gentlemen-ransomware-dissecting-a-self-propagating-go-encryptor/" rel="noopener">Microsoft</a> · <a href="https://www.ransomware.live/group/thegentlemen" rel="noopener">ransomware.live</a></p>
       </div>
     </details>
@@ -314,7 +327,7 @@
       <tbody>
         <tr id="ucrania-2015-12"><td class="reg-d">2015-12-23</td><td>Tres distribuidoras (Ucrania)</td><td>Distribución eléctrica</td><td>Sandworm (GRU)</td><td>OT / control industrial</td><td>225,000 usuarios sin luz; SCADA operados a distancia</td></tr>
         <tr id="ucrania-2016-12"><td class="reg-d">2016-12-17</td><td>Ukrenergo (Ucrania)</td><td>Transmisión eléctrica</td><td>Sandworm (GRU)</td><td>OT / control industrial</td><td>Industroyer: una hora sin luz en parte de Kyiv</td></tr>
-        <tr id="triton-2017-08"><td class="reg-d">2017-08</td><td>Petroquímica (Arabia Saudita)</td><td>Petroquímica</td><td>TsNIIKhM (estatal ruso)</td><td>Seguridad instrumentada</td><td>Reprogramaron la última barrera antes del accidente; la planta paró sola</td></tr>
+        <tr id="triton-2017-08"><td class="reg-d">2017-08</td><td>Petroquímica (Arabia Saudita)</td><td>Petroquímica</td><td>TsNIIKhM (estatal ruso)</td><td>Seguridad instrumentada</td><td>Reprogramaron el sistema instrumentado de seguridad; la planta paró sola</td></tr>
         <tr id="norskhydro-2019-03"><td class="reg-d">2019-03-19</td><td>Norsk Hydro (Noruega)</td><td>Aluminio</td><td>LockerGoga</td><td>IT corporativa</td><td>Plantas en manual; no pagó, publicó todo: NOK 800 millones</td></tr>
         <tr id="pemex-2019-11"><td class="reg-d">2019-11-10</td><td>Pemex (México)</td><td>Petróleo y gas</td><td>DoppelPaymer</td><td>IT corporativa</td><td>Pagos administrativos congelados; la producción siguió</td></tr>
         <tr id="copel-2021-02"><td class="reg-d">2021-02-01</td><td>Copel (Brasil)</td><td>Electricidad</td><td>DarkSide</td><td>IT corporativa</td><td>Suspendió sus sistemas por decisión propia; 6-K a la SEC ese día</td></tr>
@@ -398,7 +411,7 @@
   <div class="section-head">
     <p class="eyebrow">Del registro a la acción</p>
     <h2>Dos piezas: qué hacer y qué defender</h2>
-    <p class="intro">El registro dice qué le pasó al sector. Estas dos piezas dicen qué hacer al respecto y qué hay que proteger, y se leen por separado.</p>
+    <p class="intro">El registro dice qué le pasó al sector. De ahí salen dos trabajos distintos: uno propone qué construir para responder, el otro mapea qué hay que proteger. Son piezas separadas porque responden preguntas separadas.</p>
   </div>
   <div class="cards">
     <article class="card">
@@ -424,10 +437,10 @@
   </div>
   <p class="bio-text">Lo que la inteligencia artificial cambia, según lo documentado hasta hoy, es el costo y la escala de ataques que ya existían: redactar el engaño, negociar el rescate, escribir el código. Y una precisión que ordena la sección: ninguna de las catorce filas de arriba tiene un componente de IA documentado. Esta sección está por lo que viene, no por lo que pasó.</p>
   <p class="bio-text">En 2025 lo ofensivo dejó de ser hipótesis. <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025">Anthropic documentó</a> a un operador que usó su agente de código para automatizar una campaña de extorsión sobre al menos 17 organizaciones, notas de rescate incluidas. <a href="https://www.welivesecurity.com/en/ransomware/first-known-ai-powered-ransomware-uncovered-eset-research/">ESET describió PromptLock</a>, un ransomware que genera sus scripts en el momento con un modelo local, revelado después como prototipo académico. Y una plataforma RaaS nueva salió a reclutar afiliados con un <a href="https://blog.eclecticiq.com/global-group-emerging-ransomware-as-a-service">chatbot de negociación integrado al panel</a>. Tres reportes primarios, tres eslabones distintos de la misma cadena de extorsión.</p>
-  <p class="bio-text">Del lado defensivo hay menos novedad de la que parece. La detección de anomalías en redes industriales es anterior a la ola de modelos de lenguaje por más de una década, y donde los modelos ayudan hoy es en digerir avisos y priorizar alertas. La adopción en tecnología operativa es lenta por una razón sana: un falso positivo puede costar producción física.</p>
+  <p class="bio-text">Del lado defensivo hay menos novedad de la que parece. La detección de anomalías en redes industriales es anterior a la ola de modelos de lenguaje por más de una década, y donde los modelos ayudan hoy es en digerir avisos y priorizar alertas. La adopción en tecnología operativa es lenta, y con motivo: un falso positivo puede costar producción física.</p>
   <p class="bio-text">La medición va más rápido que la doctrina. Un agente de inteligencia artificial entró en el top 10 del capture the flag de tecnología operativa de Dragos en 2025, un torneo pensado para especialistas humanos. Y empezaron a aparecer bancos de prueba para medir modelos en entornos industriales reales, como CritBench sobre subestaciones digitales bajo la norma IEC 61850.</p>
-  <p class="bio-text">Ninguno de esos trabajos toca la <a class="gl" href="#g-nominacion">capa de nominación y despacho</a>. Es decir: la literatura mide subestaciones y controladores, mientras los dos incidentes argentinos de los que se conoce el sistema afectado pegaron en la capa comercial que programa el flujo. Al mismo tiempo, esa capa comercial es adonde están llegando primero los copilotos y los agentes, porque es la que tiene datos tabulares, procedimientos escritos y decisiones repetitivas.</p>
-  <p class="bio-text">Este registro no responde qué pasa cuando un agente con acceso de escritura opera ahí. Lo deja planteado con la única base que corresponde, que son los incidentes que ya ocurrieron.</p>
+  <p class="bio-text">Ninguno de esos trabajos toca la <a class="gl" href="#g-nominacion">capa de nominación y despacho</a>. La literatura mide subestaciones y controladores, mientras los dos incidentes argentinos de los que se conoce el sistema afectado pegaron en la capa comercial que programa el flujo. Al mismo tiempo, esa capa comercial es adonde están llegando primero los copilotos y los agentes, porque es la que tiene datos tabulares, procedimientos escritos y decisiones repetitivas.</p>
+  <p class="bio-text">Este registro no responde qué pasa cuando un agente con acceso de escritura opera ahí. Lo deja planteado sobre lo único firme que hay: los incidentes que ya ocurrieron.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -438,7 +451,7 @@
     <h2>El cine imaginó apagones; el registro muestra servidores cifrados</h2>
     <p class="intro">Seis obras formaron lo que el público espera de un ataque a la infraestructura. Compararlas con las filas de arriba es la forma más corta de medir la distancia entre lo imaginado y lo documentado.</p>
   </div>
-  <ul class="rsrc obra-lista">
+  <ul class="rsrc">
     <li><span class="obra">Juegos de guerra</span> (1983): el mito fundacional del adolescente que entra a todo. Produjo política real: Reagan la vio, preguntó si algo así podía pasar, y la respuesta terminó en la primera directiva de seguridad informática de EE.UU., la NSDD-145 de 1984. Allá la ficción produjo regulación; acá la realidad todavía no.</li>
     <li><span class="obra">Duro de matar 4.0</span> (2007): el "fire sale", toda la infraestructura cayendo en días, con explosiones. En las catorce filas argentinas el caño siguió lleno y la luz no se cortó.</li>
     <li><span class="obra">Hacker: amenaza en la red</span> (Blackhat, 2015): la rareza del género, porque el objetivo es una capa de mercado. Es lo más cerca que la ficción estuvo de la capa comercial que documenta este registro, y aun así necesitó reventar una planta para sostener la trama.</li>
@@ -463,6 +476,7 @@
   <p class="bio-text">No se puede afirmar que la capa de nominación y despacho sea el punto de entrada preferido. Son dos casos con sistema conocido sobre catorce incidentes. Es una hipótesis que la evidencia disponible hace razonable, y que hace falta contrastar con gente que opere esos sistemas.</p>
   <p class="bio-text">No se puede leer la tabla internacional como un censo. Es una curaduría de doce casos con el criterio declarado en su sección: el mundo tuvo muchos más incidentes que esos, y la selección los eligió porque iluminan hallazgos argentinos, no porque sean representativos de nada.</p>
   <p class="bio-text">Y no se puede tomar la sección normativa como opinión legal. Describe textos vigentes al 3 de agosto de 2026, varios en movimiento (la regla permanente de ductos en EE.UU. sigue en proyecto, el ENRGE está en plena constitución), y no evalúa si las normas de otros países funcionan: registra solamente qué obligación existe y cuál no.</p>
+  <p class="bio-text">Y el registro tiene un recorte de alcance, no solo de rastro: cubre energía e infraestructura crítica con tecnología operativa, y por ahora deja afuera transporte y defensa aunque tengan casos públicos. EANA, el control de tránsito aéreo, y la ferroviaria estatal ADIF aparecieron en sitios de filtración en 2026 y no están acá. Es un límite de dónde se traza la línea, no un juicio sobre esos sectores; correrla es parte de la hoja de ruta.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -476,7 +490,7 @@
   <ul class="ruta">
     <li>
       <h3>Extender la pasada por la CNV</h3>
-      <p>La pasada que sostiene esta actualización leyó los títulos de unas 44,000 presentaciones de 30 emisoras; no leyó los adjuntos, ni cubrió a las distribuidoras provinciales chicas, ni corre sola. Lo que sigue: leer el contenido de los hechos relevantes con carátula opaca, sumar las emisoras que faltan y automatizar el barrido de la ficha pública de cada una, con la misma mecánica del monitor de ransomware.live. Achica el límite de "estos catorce no son necesariamente todos".</p>
+      <p>La pasada por la CNV que sostiene esta actualización leyó los títulos, no los adjuntos, y no cubrió a las distribuidoras provinciales chicas ni corre sola. Lo que sigue: leer el contenido de los hechos relevantes con carátula opaca, sumar las emisoras que faltan y automatizar el barrido de la ficha pública de cada una, con la misma mecánica del monitor de ransomware.live. Achica el límite de "estos catorce no son necesariamente todos".</p>
     </li>
     <li>
       <h3>Contrastar la hipótesis con quien opera esos sistemas</h3>
@@ -600,7 +614,7 @@
     <h2>Fuentes, actualización y correcciones</h2>
   </div>
   <p class="bio-text">Las filas salen de tres canales. La prensa especializada, las comunicaciones de las propias organizaciones y los hechos relevantes ante la CNV dan siete filas, de las cuales seis llegan a confianza alta: la de YCRT queda en media porque su única fuente es una compilación secundaria. Los sitios donde los grupos de ransomware publican a sus víctimas dan las otras siete. Se consultan a través de la interfaz pública de ransomware.live, que al 3 de agosto de 2026 lista 178 publicaciones sobre víctimas argentinas de todos los sectores. Las direcciones de los sitios de filtración están registradas y no se publican.</p>
-  <p class="bio-text">Un monitor corre contra esa misma interfaz, cruza cada víctima argentina nueva contra un léxico del sector y avisa cuando hay que escribir una fila. La fila se escribe a mano: ningún endpoint devuelve lo que declaró la empresa, y esa columna es la mitad del valor del registro.</p>
+  <p class="bio-text">Un monitor corre contra esa misma interfaz, cruza cada víctima argentina nueva contra un léxico del sector y avisa cuando hay que escribir una fila. La fila se escribe a mano: ningún endpoint devuelve lo que declaró la empresa, y esa columna es donde vive el valor del registro.</p>
   <p class="bio-text">La pasada por la CNV se hizo sobre las fichas públicas de la Autopista de la Información Financiera: 30 emisoras energéticas, unas 44,000 presentaciones desde 2000, escaneadas por título en dos pasadas de léxico, más revisión manual fila por fila en las ventanas de los incidentes ya conocidos. El límite del método está en el título: un hecho relevante ciber con carátula opaca no se detecta, y hay emisoras que titulan "HR" a secas. Los adjuntos no se leyeron; ese es el primer ítem de la hoja de ruta.</p>
   <p class="note-limit">Las correcciones que lleguen se aplican a la fila y quedan anotadas con fecha en el arreglo <span class="path">correcciones</span> del archivo de datos, con qué cambió y quién lo señaló. Nada se edita en silencio. El pedido está arriba, con la dirección: <a href="#aviso">volver al aviso</a>.</p>
   <p class="aside-link">El archivo de datos se publica bajo licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">CC BY 4.0</a>: se puede reutilizar citando la fuente. Cada fila nueva y cada corrección salen también por el <a href="/ciber/feed.xml" data-goatcounter-click="feed-ciber">feed Atom</a>.</p>

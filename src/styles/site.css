@@ -52,6 +52,27 @@
 .cta-strip a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
 .cta-strip a:hover { text-decoration: underline; }
 
+/* ---------- banda: el mapa interactivo (superficie.podeley.ar) ------------- */
+/* El registro es el artículo escrito; la misma evidencia, y cinco capas más de
+   contexto, viven en el mapa interactivo. La banda deja los dos accesos a la
+   vista arriba de la página. */
+.exp-band {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem 1.6rem; padding: 1.15rem 1.35rem;
+  border: 1px solid var(--pd-border-soft); border-radius: var(--pd-r-2);
+  background: var(--pd-surface-2);
+}
+.exp-txt { flex: 1 1 24rem; }
+.exp-txt p { margin: 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
+.exp-t { font-weight: 600; color: var(--pd-text); margin-bottom: .25rem; }
+.exp-cta {
+  flex: 0 0 auto; align-self: center; white-space: nowrap;
+  font-weight: 600; text-decoration: none; color: var(--pd-link);
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-1);
+  padding: .5rem .95rem;
+}
+.exp-cta:hover { border-color: var(--pd-link); }
+
 /* ---------- «Tres reglas» ------------------------------------------------- */
 /* El three-up con regla de color del brochure. Mismo patrón que .findings en
    las demos, pero acá las reglas no llevan título. */
@@ -291,7 +312,7 @@
 }
 
 /* Recursos: el nombre lleva el link y la línea de al lado dice para qué sirve.
-   Once entradas anotadas, no un directorio. */
+   Entradas anotadas, no un directorio. */
 .rsrc-g {
   margin: var(--pd-sp-6) 0 0; font-family: var(--pd-font-mono);
   font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono);

@@ -265,6 +265,7 @@
    sector, y repetirlas acá sería un segundo catálogo. */
 .idx { list-style: none; margin: var(--pd-sp-5) 0 0; padding: 0; }
 .idx li {
+  position: relative;
   display: grid; grid-template-columns: 13rem 1fr;
   gap: var(--pd-sp-4); align-items: start;
 }
@@ -279,7 +280,11 @@
 }
 .idx li:hover .thumb img { border-color: #b9bec6; }
 .idx-t { font-weight: 600; text-decoration: none; color: var(--pd-text); }
-.idx-t:hover { color: var(--pd-link); text-decoration: underline; }
+/* La fila entera es el link, igual que .card y .pieza: el ::after estirado
+   cubre la miniatura y la descripción, así el click no depende de pegarle al
+   título. Cada li tiene un solo link, así que no tapa ningún otro. */
+.idx-t::after { content: ""; position: absolute; inset: 0; }
+.idx li:hover .idx-t { color: var(--pd-link); }
 .idx p { margin: .3rem 0 0; max-width: 68ch; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
 .idx .proj { display: block; margin-top: .35rem; font-size: var(--pd-fs-cap); letter-spacing: .04em; }
 

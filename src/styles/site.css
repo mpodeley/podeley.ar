@@ -264,14 +264,59 @@
    captura. Las tarjetas con imagen, su cifra y su caveat viven en la página de
    sector, y repetirlas acá sería un segundo catálogo. */
 .idx { list-style: none; margin: var(--pd-sp-5) 0 0; padding: 0; }
+.idx li {
+  display: grid; grid-template-columns: 13rem 1fr;
+  gap: var(--pd-sp-4); align-items: start;
+}
 .idx li + li {
   margin-top: var(--pd-sp-4); padding-top: var(--pd-sp-4);
   border-top: 1px solid var(--pd-border-soft);
 }
+.idx .thumb { margin: 0; }
+.idx .thumb img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-1);
+}
+.idx li:hover .thumb img { border-color: #b9bec6; }
 .idx-t { font-weight: 600; text-decoration: none; color: var(--pd-text); }
 .idx-t:hover { color: var(--pd-link); text-decoration: underline; }
 .idx p { margin: .3rem 0 0; max-width: 68ch; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55; }
 .idx .proj { display: block; margin-top: .35rem; font-size: var(--pd-fs-cap); letter-spacing: .04em; }
+
+/* Cada industria es un <details> nativo, sin JS. Van abiertos: la miniatura es
+   lo que hace legible una pieza antes de leerla, y arrancar cerrado la
+   escondería. Plegar sirve para el que trabaja en una sola y quiere sacarse el
+   resto de encima; los chips del hero saltan a cada una. */
+.ind { border-top: 1px solid var(--pd-border); padding-top: var(--pd-sp-4); }
+.ind + .ind { margin-top: var(--pd-sp-6); }
+.ind > summary {
+  display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap;
+  cursor: pointer; list-style: none;
+  font-family: var(--pd-font-display); font-weight: 500;
+  font-size: var(--pd-fs-h3); line-height: 1.25; color: var(--pd-text);
+}
+.ind > summary::-webkit-details-marker { display: none; }
+.ind > summary::before { content: "▸"; color: var(--pd-text-faint); font-size: .75em; }
+.ind[open] > summary::before { content: "▾"; }
+.ind > summary:hover { color: var(--pd-link); }
+.ind-n {
+  font-family: var(--pd-font-mono); font-weight: 400;
+  font-size: var(--pd-fs-cap); letter-spacing: .06em; color: var(--pd-text-faint);
+}
+.ind-lead {
+  margin: .7rem 0 0; max-width: 68ch;
+  color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: 1.55;
+}
+
+/* El selector de industria del hero de /casos/: anclas, no filtro. */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem .6rem; margin: var(--pd-sp-5) 0 0; padding: 0; list-style: none; }
+.chips a {
+  display: inline-block; padding: .3rem .75rem;
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-pill);
+  font-size: var(--pd-fs-sm); text-decoration: none; color: var(--pd-text-muted);
+  transition: border-color var(--pd-dur-2), color var(--pd-dur-2);
+}
+.chips a:hover { border-color: var(--pd-primary); color: var(--pd-link); }
 
 .other-line { margin: 2.5rem 0 0; font-size: var(--pd-fs-lead); }
 .other-line a { text-decoration: none; font-weight: 600; color: var(--pd-link); }
@@ -504,9 +549,13 @@ details.ficha[open] summary::after { content: "–"; }
   .cards,
   .seg-cards { grid-template-columns: 1fr; }
   .cards { row-gap: 2.75rem; }
+  /* La miniatura pasa arriba del texto, y se le pone techo para que en un
+     teléfono no se coma la pantalla de una sola pieza. */
+  .idx li { grid-template-columns: 1fr; gap: var(--pd-sp-3); }
+  .idx .thumb { max-width: 22rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .card .shot img, .seg-card { transition: none; }
+  .card .shot img, .seg-card, .chips a { transition: none; }
 }
 
 /* La foto de /perfil/, entre el sub y el CTA. Cuadrada con el radio de la casa. */

@@ -1,9 +1,9 @@
 <!--meta
 {
   "title": "Casos — Matías Podeley",
-  "description": "Todo lo publicado en un índice: herramientas en línea sobre E&P, minería, gas y energía, el registro de ciberincidentes del sector, el registro RIGI y la investigación en interpretabilidad.",
+  "description": "Todo lo publicado en un índice, por industria: herramientas en línea sobre E&P, minería, gas y energía, el registro de ciberincidentes del sector, el registro RIGI y la investigación en interpretabilidad.",
   "ogImage": "/assets/og/casos.es.png",
-  "ogImageAlt": "Casos: el índice de todo lo publicado, por sector",
+  "ogImageAlt": "Casos: el índice de todo lo publicado, por industria",
   "nav": "casos",
   "jsonld": {
     "@context": "https://schema.org",
@@ -21,136 +21,167 @@
   <p class="kicker">Casos · Energía y minería · Buenos Aires</p>
   <h1>Todo lo publicado, en una página</h1>
   <p class="hero-sub">Cada pieza empezó por una pregunta que el dato público dejaba abierta. Están todas en línea, con su fuente y su alcance declarado. Los detalles y los límites de cada una, en la página del sector.</p>
-</section>
-
-<div class="rule" role="presentation"></div>
-
-<section class="pd-section wrap" id="ep">
-  <div class="section-head">
-    <p class="eyebrow">Exploración y producción</p>
-    <h2>Lo que pasa en la cuenca antes del registro oficial</h2>
-    <p class="intro">Las cuatro, con su alcance y sus límites: <a href="/ep/">E&amp;P</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://vm.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-vm">Declinación, EUR y pozos tipo</a>
-      <p>Ajustes de Arps y pozos tipo por bloque, para poner el pozo propio al lado del que perforó el vecino con el mismo largo de rama y el mismo espaciamiento.</p>
-      <span class="proj">Capítulo IV SecEnergía · cuenca Neuquina · al día</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://actividad.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-actividad">Actividad por luces nocturnas</a>
-      <p>Cubre los 13.5 meses que el Capítulo IV llega tarde: confirma el 71% de 20,178 eventos de pozo y estima el resto, con ROC-AUC 0.85 en perforación y 0.91 en fractura.</p>
-      <span class="proj">VIIRS + Capítulo IV · Vaca Muerta · 2019–2026</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://subsidencia.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-subsidencia">Deformación del suelo por InSAR</a>
-      <p>Siete años de serie sobre la cuenca. La concesión que inyecta y la vecina que produce se mueven en sentidos opuestos, 80 mm cada una, y el borde entre las dos es lo que corta un casing.</p>
-      <span class="proj">Sentinel-1 track 18 · 210 × 210 km · 2019–2026</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://emisiones.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-emisiones">Emisiones por operadora</a>
-      <p>113 antorchas y 2.4 Mt de CO₂ en 2024, atribuidas por concesión: entre 2.1 y 31.9 kg de CO₂ por barril equivalente según quién opere.</p>
-      <span class="proj">VIIRS Nightfire + Capítulo IV · cuenca Neuquina · 2024</span>
-    </li>
+  <ul class="chips">
+    <li><a href="#ep">Exploración y producción</a></li>
+    <li><a href="#mineria">Minería</a></li>
+    <li><a href="#energia">Gas y energía</a></li>
+    <li><a href="#ciber">Ciberseguridad</a></li>
+    <li><a href="#regulacion">Regulación e inversión</a></li>
   </ul>
 </section>
 
 <div class="rule" role="presentation"></div>
 
-<section class="pd-section wrap" id="mineria">
-  <div class="section-head">
-    <p class="eyebrow">Minería</p>
-    <h2>Qué hay sobre el área y qué se mide sin pisarla</h2>
-    <p class="intro">Las cuatro, con su alcance y sus límites: <a href="/mineria/">minería</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener" data-goatcounter-click="idx-catastro">Catastro minero unificado</a>
-      <p>21,386 derechos, 25.8 millones de hectáreas y 2,991 titulares de siete provincias en un mapa, con el mineral y el expediente detrás de cada polígono.</p>
-      <span class="proj">Catastros provinciales · datos a 2026-08 · dataset abierto</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://exploracion.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-exploracion">Blancos de exploración por espectrometría</a>
-      <p>1,877 km² útiles reducidos a 15 blancos con coordenadas. Probado a ciegas: re-encuentra Pirquitas y Chinchillas a 20 y 80 metros de la huella ya mapeada.</p>
-      <span class="proj">ASTER + EMIT · Puna de Jujuy · shapefile y GeoJSON</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://volumen.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-volumen">Volumen excavado por diferencia de modelos de elevación</a>
-      <p>Veladero da 424 Mm³ excavados y 497 depositados entre 2000 y 2024. En Haerwusu, donde no se publica producción, los 1,742 Mm³ son la única medición independiente.</p>
-      <span class="proj">SRTM 2000 + ASTER estéreo · 2000–2024</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://litio.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-litio">Obra de los salares de litio, año por año</a>
-      <p>Cinco salares medidos desde 1985. La superficie de piletas construida adelanta dos años a las exportaciones declaradas, con correlación 0.81, así que una ampliación anunciada sin obra se nota.</p>
-      <span class="proj">Landsat · Atacama y 4 salares de la Puna · 1985–2025</span>
-    </li>
-  </ul>
-  <p class="aside-link">Qué material alcanza a separar cada sensor, banda por banda: <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-satelites">el globo 3D de la flota</a>.</p>
-</section>
+<section class="pd-section wrap">
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="ep" open>
+    <summary>Exploración y producción <span class="ind-n">4 piezas</span></summary>
+    <p class="ind-lead">Lo que pasa en la cuenca antes del registro oficial. Las cuatro, con su alcance y sus límites: <a href="/ep/">E&amp;P</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/pozos-neuquina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Curvas de producción y declinación por pozo"></figure>
+        <div>
+          <a class="idx-t" href="https://vm.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-vm">Declinación, EUR y pozos tipo</a>
+          <p>Ajustes de Arps y pozos tipo por bloque, para poner el pozo propio al lado del que perforó el vecino con el mismo largo de rama y el mismo espaciamiento.</p>
+          <span class="proj">Capítulo IV SecEnergía · cuenca Neuquina · al día</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/vaca-muerta-nightlights.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Vaca Muerta de noche, con los eventos de pozo encendidos"></figure>
+        <div>
+          <a class="idx-t" href="https://actividad.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-actividad">Actividad por luces nocturnas</a>
+          <p>Cubre los 13.5 meses que el Capítulo IV llega tarde: confirma el 71% de 20,178 eventos de pozo y estima el resto, con ROC-AUC 0.85 en perforación y 0.91 en fractura.</p>
+          <span class="proj">VIIRS + Capítulo IV · Vaca Muerta · 2019–2026</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/sat-subsidencia.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Mapa de velocidad de deformación del suelo por radar"></figure>
+        <div>
+          <a class="idx-t" href="https://subsidencia.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-subsidencia">Deformación del suelo por InSAR</a>
+          <p>Siete años de serie sobre la cuenca. La concesión que inyecta y la vecina que produce se mueven en sentidos opuestos, 80 mm cada una, y el borde entre las dos es lo que corta un casing.</p>
+          <span class="proj">Sentinel-1 track 18 · 210 × 210 km · 2019–2026</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/vaca-muerta-emisiones.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Antorchas detectadas y emisiones atribuidas por operadora"></figure>
+        <div>
+          <a class="idx-t" href="https://emisiones.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-emisiones">Emisiones por operadora</a>
+          <p>113 antorchas y 2.4 Mt de CO₂ en 2024, atribuidas por concesión: entre 2.1 y 31.9 kg de CO₂ por barril equivalente según quién opere.</p>
+          <span class="proj">VIIRS Nightfire + Capítulo IV · cuenca Neuquina · 2024</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="energia">
-  <div class="section-head">
-    <p class="eyebrow">Gas y energía</p>
-    <h2>Cómo llega el gas y a qué precio entra una oferta</h2>
-    <p class="intro">Las dos, con sus supuestos: <a href="/energia/">gas y energía</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://podeley.ar/gas/" target="_blank" rel="noopener" data-goatcounter-click="idx-gas">Estado del sistema de gas y red de transporte</a>
-      <p>Demanda, linepack e inyección del día, más los 76 tramos de transporte mes a mes. La caída del gas boliviano entre 2022 y 2025 se lee tramo por tramo, con el no convencional cubriendo el hueco.</p>
-      <span class="proj">ENARGAS y CAMMESA · sistema al día · red mensual</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://mpodeley.github.io/simulador-subastas-peru/" target="_blank" rel="noopener" data-goatcounter-click="idx-subastas">Simulador de precio de oferta para subastas</a>
-      <p>Despacho por orden de mérito y Monte Carlo sobre hidrología, demanda, precio del gas y recurso renovable: qué precio ofertar, y qué cuesta pasarse o quedarse corto.</p>
-      <span class="proj">COES + NASA POWER · SEIN, Perú · corre a diario</span>
-    </li>
-  </ul>
-</section>
+  <details class="ind" id="mineria" open>
+    <summary>Minería <span class="ind-n">4 piezas</span></summary>
+    <p class="ind-lead">Qué hay sobre el área y qué se mide sin pisarla. Las cuatro, con su alcance y sus límites: <a href="/mineria/">minería</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/catastro-minero-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Mapa nacional de derechos mineros por provincia"></figure>
+        <div>
+          <a class="idx-t" href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener" data-goatcounter-click="idx-catastro">Catastro minero unificado</a>
+          <p>21,386 derechos, 25.8 millones de hectáreas y 2,991 titulares de siete provincias en un mapa, con el mineral y el expediente detrás de cada polígono.</p>
+          <span class="proj">Catastros provinciales · datos a 2026-08 · dataset abierto</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Blancos minerales priorizados por firma espectral"></figure>
+        <div>
+          <a class="idx-t" href="https://exploracion.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-exploracion">Blancos de exploración por espectrometría</a>
+          <p>1,877 km² útiles reducidos a 15 blancos con coordenadas. Probado a ciegas: re-encuentra Pirquitas y Chinchillas a 20 y 80 metros de la huella ya mapeada.</p>
+          <span class="proj">ASTER + EMIT · Puna de Jujuy · shapefile y GeoJSON</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Diferencia de modelos de elevación sobre un rajo abierto"></figure>
+        <div>
+          <a class="idx-t" href="https://volumen.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-volumen">Volumen excavado por diferencia de modelos de elevación</a>
+          <p>Veladero da 424 Mm³ excavados y 497 depositados entre 2000 y 2024. En Haerwusu, donde no se publica producción, los 1,742 Mm³ son la única medición independiente.</p>
+          <span class="proj">SRTM 2000 + ASTER estéreo · 2000–2024</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/sat-litio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Superficie de piletas de evaporación por salar, 1985–2025"></figure>
+        <div>
+          <a class="idx-t" href="https://litio.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-litio">Obra de los salares de litio, año por año</a>
+          <p>Cinco salares medidos desde 1985. La superficie de piletas construida adelanta dos años a las exportaciones declaradas, con correlación 0.81, así que una ampliación anunciada sin obra se nota.</p>
+          <span class="proj">Landsat · Atacama y 4 salares de la Puna · 1985–2025</span>
+        </div>
+      </li>
+    </ul>
+    <p class="aside-link">Qué material alcanza a separar cada sensor, banda por banda: <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-satelites">el globo 3D de la flota</a>.</p>
+  </details>
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="energia" open>
+    <summary>Gas y energía <span class="ind-n">2 piezas</span></summary>
+    <p class="ind-lead">Cómo llega el gas y a qué precio entra una oferta. Las dos, con sus supuestos: <a href="/energia/">gas y energía</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/gas.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Estado del sistema de gas y mapa de la red de transporte"></figure>
+        <div>
+          <a class="idx-t" href="https://podeley.ar/gas/" target="_blank" rel="noopener" data-goatcounter-click="idx-gas">Estado del sistema de gas y red de transporte</a>
+          <p>Demanda, linepack e inyección del día, más los 76 tramos de transporte mes a mes. La caída del gas boliviano entre 2022 y 2025 se lee tramo por tramo, con el no convencional cubriendo el hueco.</p>
+          <span class="proj">ENARGAS y CAMMESA · sistema al día · red mensual</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/simulador-subastas-peru.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Simulador de precio de oferta con la distribución de resultados"></figure>
+        <div>
+          <a class="idx-t" href="https://mpodeley.github.io/simulador-subastas-peru/" target="_blank" rel="noopener" data-goatcounter-click="idx-subastas">Simulador de precio de oferta para subastas</a>
+          <p>Despacho por orden de mérito y Monte Carlo sobre hidrología, demanda, precio del gas y recurso renovable: qué precio ofertar, y qué cuesta pasarse o quedarse corto.</p>
+          <span class="proj">COES + NASA POWER · SEIN, Perú · corre a diario</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="ciber">
-  <div class="section-head">
-    <p class="eyebrow">Ciberseguridad en energía</p>
-    <h2>Lo que el sector expone y no tiene a quién contarle</h2>
-    <p class="intro">Las tres piezas y el porqué: <a href="/ciber/">ciber</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="/incidentes/">Registro de ciberincidentes</a>
-      <p>Catorce casos de energía e infraestructura crítica argentina entre 2020 y 2026, con la fuente de cada fila y las fichas de los once grupos atacantes. De siete no se supo por la empresa ni por un regulador.</p>
-      <span class="proj">Registro abierto · dataset descargable · CC BY 4.0</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://superficie.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-superficie">Mapa de superficie de ataque</a>
-      <p>Seis capas sobre fuentes abiertas: estructura de la red, impacto en cascada, incidentes, exposición de red por operador, actividad satelital y gobernanza. Se publica el agregado, nunca el blanco.</p>
-      <span class="proj">Fuentes abiertas · sin escanear a nadie · ES y EN</span>
-    </li>
-    <li>
-      <a class="idx-t" href="/isac/">Memo para un CERT sectorial</a>
-      <p>Qué costó el primer año del ISAC de oil &amp; gas de EE.UU., cómo funciona el SektorCERT danés y tres escenarios de presupuesto para armar el equivalente argentino.</p>
-      <span class="proj">Costos de fuente fiscal · dos borradores normativos</span>
-    </li>
-  </ul>
-</section>
+  <details class="ind" id="ciber" open>
+    <summary>Ciberseguridad en energía <span class="ind-n">3 piezas</span></summary>
+    <p class="ind-lead">Lo que el sector expone y no tiene a quién contarle. Las tres piezas y el porqué: <a href="/ciber/">ciber</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/incidentes.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="El registro de ciberincidentes, fila por fila con su fuente"></figure>
+        <div>
+          <a class="idx-t" href="/incidentes/">Registro de ciberincidentes</a>
+          <p>Catorce casos de energía e infraestructura crítica argentina entre 2020 y 2026, con la fuente de cada fila y las fichas de los once grupos atacantes. De siete no se supo por la empresa ni por un regulador.</p>
+          <span class="proj">Registro abierto · dataset descargable · CC BY 4.0</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/superficie.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Mapa de criticidad de la red energética argentina"></figure>
+        <div>
+          <a class="idx-t" href="https://superficie.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-superficie">Mapa de superficie de ataque</a>
+          <p>Seis capas sobre fuentes abiertas: estructura de la red, impacto en cascada, incidentes, exposición de red por operador, actividad satelital y gobernanza. Se publica el agregado, nunca el blanco.</p>
+          <span class="proj">Fuentes abiertas · sin escanear a nadie · ES y EN</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/isac.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="El memo de CERT sectorial, con sus escenarios de presupuesto"></figure>
+        <div>
+          <a class="idx-t" href="/isac/">Memo para un CERT sectorial</a>
+          <p>Qué costó el primer año del ISAC de oil &amp; gas de EE.UU., cómo funciona el SektorCERT danés y tres escenarios de presupuesto para armar el equivalente argentino.</p>
+          <span class="proj">Costos de fuente fiscal · dos borradores normativos</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="regulacion" open>
+    <summary>Regulación e inversión <span class="ind-n">1 pieza</span></summary>
+    <p class="ind-lead">Lo que se comprometió, leído de la resolución.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/rigi.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="El registro RIGI, proyecto por proyecto con su cronograma"></figure>
+        <div>
+          <a class="idx-t" href="/rigi/">Registro RIGI</a>
+          <p>Veintiún proyectos adheridos al Régimen de Incentivo para Grandes Inversiones y USD 29,485 M en activos computables, con el cronograma y el plazo de cada uno, armado leyendo las resoluciones del Boletín Oficial.</p>
+          <span class="proj">Boletín Oficial · dataset descargable · CC BY 4.0</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="regulacion">
-  <div class="section-head">
-    <p class="eyebrow">Regulación e inversión</p>
-    <h2>Lo que se comprometió, leído de la resolución</h2>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="/rigi/">Registro RIGI</a>
-      <p>Veintiún proyectos adheridos al Régimen de Incentivo para Grandes Inversiones y USD 29,485 M en activos computables, con el cronograma y el plazo de cada uno, armado leyendo las resoluciones del Boletín Oficial.</p>
-      <span class="proj">Boletín Oficial · dataset descargable · CC BY 4.0</span>
-    </li>
-  </ul>
 </section>
 
 <div class="rule" role="presentation"></div>

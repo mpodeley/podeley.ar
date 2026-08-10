@@ -1,9 +1,9 @@
 <!--meta
 {
   "title": "Cases — Matías Podeley",
-  "description": "Everything published, in one index: live tools for E&P, mining, gas and power, the Argentine energy cyber incident registry, the RIGI registry, and the interpretability research.",
+  "description": "Everything published, indexed by industry: live tools for E&P, mining, gas and power, the Argentine energy cyber incident registry, the RIGI registry, and the interpretability research.",
   "ogImage": "/assets/og/casos.en.png",
-  "ogImageAlt": "Cases: the index of everything published, by sector",
+  "ogImageAlt": "Cases: the index of everything published, by industry",
   "nav": "casos",
   "jsonld": {
     "@context": "https://schema.org",
@@ -21,136 +21,167 @@
   <p class="kicker">Cases · Energy &amp; mining · Buenos Aires</p>
   <h1>Everything published, on one page</h1>
   <p class="hero-sub">Each piece started from a question the public data left open. They are all live, each with its source and its stated scope. The detail and the caveats live on the sector page.</p>
-</section>
-
-<div class="rule" role="presentation"></div>
-
-<section class="pd-section wrap" id="ep">
-  <div class="section-head">
-    <p class="eyebrow">Exploration and production</p>
-    <h2>What the basin is doing before the official record says so</h2>
-    <p class="intro">All four, with scope and caveats: <a href="/en/ep/">E&amp;P</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://vm.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-vm-en">Decline curves, EUR and type wells</a>
-      <p>Arps fits and type wells by block, to set your own well beside the one the offset operator drilled at the same lateral length and the same spacing.</p>
-      <span class="proj">Chapter IV, SecEnergía · Neuquén basin · current</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://actividad.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-actividad-en">Activity from night lights</a>
-      <p>Covers the 13.5 months Chapter IV runs late: confirms 71% of 20,178 well events and estimates the rest, at ROC-AUC 0.85 for drilling and 0.91 for fracturing.</p>
-      <span class="proj">VIIRS + Chapter IV · Vaca Muerta · 2019–2026</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://subsidencia.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-subsidencia-en">Ground deformation from InSAR</a>
-      <p>Seven years of series over the basin. The injecting concession and the producing one next door move in opposite directions, 80 mm each, and the edge between them is what shears a casing.</p>
-      <span class="proj">Sentinel-1 track 18 · 210 × 210 km · 2019–2026</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://emisiones.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-emisiones-en">Emissions by operator</a>
-      <p>113 flares and 2.4 Mt of CO₂ in 2024, attributed by concession: between 2.1 and 31.9 kg of CO₂ per barrel of oil equivalent depending on who operates.</p>
-      <span class="proj">VIIRS Nightfire + Chapter IV · Neuquén basin · 2024</span>
-    </li>
+  <ul class="chips">
+    <li><a href="#ep">Exploration and production</a></li>
+    <li><a href="#mineria">Mining</a></li>
+    <li><a href="#energia">Gas and power</a></li>
+    <li><a href="#ciber">Cybersecurity</a></li>
+    <li><a href="#regulacion">Regulation and investment</a></li>
   </ul>
 </section>
 
 <div class="rule" role="presentation"></div>
 
-<section class="pd-section wrap" id="mineria">
-  <div class="section-head">
-    <p class="eyebrow">Mining</p>
-    <h2>What sits over the ground, and what gets measured without walking it</h2>
-    <p class="intro">All four, with scope and caveats: <a href="/en/mineria/">mining</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener" data-goatcounter-click="idx-catastro-en">Unified mining claim registry</a>
-      <p>21,386 claims, 25.8 million hectares and 2,991 holders across seven provinces on one map, with the mineral and the case file behind every polygon.</p>
-      <span class="proj">Provincial registries · data to 2026-08 · open dataset</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://exploracion.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-exploracion-en">Exploration targets from spectrometry</a>
-      <p>1,877 km² of usable ground narrowed to 15 targets with coordinates. Tested blind: it re-finds Pirquitas and Chinchillas within 20 and 80 meters of the mapped footprint.</p>
-      <span class="proj">ASTER + EMIT · Puna de Jujuy · shapefile and GeoJSON</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://volumen.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-volumen-en">Excavated volume from elevation model differencing</a>
-      <p>Veladero comes out at 424 Mm³ excavated and 497 deposited between 2000 and 2024. At Haerwusu, where no production is published, the 1,742 Mm³ is the only independent measurement.</p>
-      <span class="proj">SRTM 2000 + ASTER stereo · 2000–2024</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://litio.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-litio-en">Lithium brine pond buildout, year by year</a>
-      <p>Five salars measured back to 1985. Built pond surface leads declared exports by two years at a correlation of 0.81, so an expansion announced without construction shows up.</p>
-      <span class="proj">Landsat · Atacama and 4 Puna salars · 1985–2025</span>
-    </li>
-  </ul>
-  <p class="aside-link">Which material each sensor can separate, band by band: <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-satelites-en">the 3D globe of the fleet</a>.</p>
-</section>
+<section class="pd-section wrap">
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="ep" open>
+    <summary>Exploration and production <span class="ind-n">4 pieces</span></summary>
+    <p class="ind-lead">What the basin is doing before the official record says so. All four, with scope and caveats: <a href="/en/ep/">E&amp;P</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/pozos-neuquina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Production and decline curves per well"></figure>
+        <div>
+          <a class="idx-t" href="https://vm.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-vm-en">Decline curves, EUR and type wells</a>
+          <p>Arps fits and type wells by block, to set your own well beside the one the offset operator drilled at the same lateral length and the same spacing.</p>
+          <span class="proj">Chapter IV, SecEnergía · Neuquén basin · current</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/vaca-muerta-nightlights.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Vaca Muerta at night, with well events lit up"></figure>
+        <div>
+          <a class="idx-t" href="https://actividad.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-actividad-en">Activity from night lights</a>
+          <p>Covers the 13.5 months Chapter IV runs late: confirms 71% of 20,178 well events and estimates the rest, at ROC-AUC 0.85 for drilling and 0.91 for fracturing.</p>
+          <span class="proj">VIIRS + Chapter IV · Vaca Muerta · 2019–2026</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/sat-subsidencia.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Radar map of ground deformation velocity"></figure>
+        <div>
+          <a class="idx-t" href="https://subsidencia.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-subsidencia-en">Ground deformation from InSAR</a>
+          <p>Seven years of series over the basin. The injecting concession and the producing one next door move in opposite directions, 80 mm each, and the edge between them is what shears a casing.</p>
+          <span class="proj">Sentinel-1 track 18 · 210 × 210 km · 2019–2026</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/vaca-muerta-emisiones.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Detected flares and emissions attributed by operator"></figure>
+        <div>
+          <a class="idx-t" href="https://emisiones.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-emisiones-en">Emissions by operator</a>
+          <p>113 flares and 2.4 Mt of CO₂ in 2024, attributed by concession: between 2.1 and 31.9 kg of CO₂ per barrel of oil equivalent depending on who operates.</p>
+          <span class="proj">VIIRS Nightfire + Chapter IV · Neuquén basin · 2024</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="energia">
-  <div class="section-head">
-    <p class="eyebrow">Gas and power</p>
-    <h2>How the gas arrives and what price a bid enters at</h2>
-    <p class="intro">Both, with their assumptions: <a href="/en/energia/">gas &amp; power</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="https://podeley.ar/gas/" target="_blank" rel="noopener" data-goatcounter-click="idx-gas-en">Gas system status and transport network</a>
-      <p>Demand, linepack and injection for the day, plus 76 transport segments month by month. The fall of Bolivian gas between 2022 and 2025 reads segment by segment, with unconventional filling the gap.</p>
-      <span class="proj">ENARGAS and CAMMESA · system daily · network monthly</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://mpodeley.github.io/simulador-subastas-peru/" target="_blank" rel="noopener" data-goatcounter-click="idx-subastas-en">Bid price simulator for power auctions</a>
-      <p>Merit-order dispatch and Monte Carlo over hydrology, demand, gas price and renewable resource: what to bid, and what overshooting or undershooting costs.</p>
-      <span class="proj">COES + NASA POWER · SEIN, Peru · runs daily</span>
-    </li>
-  </ul>
-</section>
+  <details class="ind" id="mineria" open>
+    <summary>Mining <span class="ind-n">4 pieces</span></summary>
+    <p class="ind-lead">What sits over the ground, and what gets measured without walking it. All four, with scope and caveats: <a href="/en/mineria/">mining</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/catastro-minero-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="National map of mining claims by province"></figure>
+        <div>
+          <a class="idx-t" href="https://mpodeley.github.io/catastro-minero-argentina/" target="_blank" rel="noopener" data-goatcounter-click="idx-catastro-en">Unified mining claim registry</a>
+          <p>21,386 claims, 25.8 million hectares and 2,991 holders across seven provinces on one map, with the mineral and the case file behind every polygon.</p>
+          <span class="proj">Provincial registries · data to 2026-08 · open dataset</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/rinconada-espectrometria.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Mineral targets ranked by spectral signature"></figure>
+        <div>
+          <a class="idx-t" href="https://exploracion.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-exploracion-en">Exploration targets from spectrometry</a>
+          <p>1,877 km² of usable ground narrowed to 15 targets with coordinates. Tested blind: it re-finds Pirquitas and Chinchillas within 20 and 80 meters of the mapped footprint.</p>
+          <span class="proj">ASTER + EMIT · Puna de Jujuy · shapefile and GeoJSON</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/mineria-dem.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Elevation model differencing over an open pit"></figure>
+        <div>
+          <a class="idx-t" href="https://volumen.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-volumen-en">Excavated volume from elevation model differencing</a>
+          <p>Veladero comes out at 424 Mm³ excavated and 497 deposited between 2000 and 2024. At Haerwusu, where no production is published, the 1,742 Mm³ is the only independent measurement.</p>
+          <span class="proj">SRTM 2000 + ASTER stereo · 2000–2024</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/sat-litio.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Evaporation pond surface per salar, 1985–2025"></figure>
+        <div>
+          <a class="idx-t" href="https://litio.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-litio-en">Lithium brine pond buildout, year by year</a>
+          <p>Five salars measured back to 1985. Built pond surface leads declared exports by two years at a correlation of 0.81, so an expansion announced without construction shows up.</p>
+          <span class="proj">Landsat · Atacama and 4 Puna salars · 1985–2025</span>
+        </div>
+      </li>
+    </ul>
+    <p class="aside-link">Which material each sensor can separate, band by band: <a href="https://satelites.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="idx-satelites-en">the 3D globe of the fleet</a>.</p>
+  </details>
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="energia" open>
+    <summary>Gas and power <span class="ind-n">2 pieces</span></summary>
+    <p class="ind-lead">How the gas arrives and what price a bid enters at. Both, with their assumptions: <a href="/en/energia/">gas &amp; power</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/gas.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Gas system status and transport network map"></figure>
+        <div>
+          <a class="idx-t" href="https://podeley.ar/gas/" target="_blank" rel="noopener" data-goatcounter-click="idx-gas-en">Gas system status and transport network</a>
+          <p>Demand, linepack and injection for the day, plus 76 transport segments month by month. The fall of Bolivian gas between 2022 and 2025 reads segment by segment, with unconventional filling the gap.</p>
+          <span class="proj">ENARGAS and CAMMESA · system daily · network monthly</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/simulador-subastas-peru.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Bid price simulator with its outcome distribution"></figure>
+        <div>
+          <a class="idx-t" href="https://mpodeley.github.io/simulador-subastas-peru/" target="_blank" rel="noopener" data-goatcounter-click="idx-subastas-en">Bid price simulator for power auctions</a>
+          <p>Merit-order dispatch and Monte Carlo over hydrology, demand, gas price and renewable resource: what to bid, and what overshooting or undershooting costs.</p>
+          <span class="proj">COES + NASA POWER · SEIN, Peru · runs daily</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="ciber">
-  <div class="section-head">
-    <p class="eyebrow">Cybersecurity in energy</p>
-    <h2>What the sector exposes, with no one to report it to</h2>
-    <p class="intro">The three pieces and the reasoning: <a href="/en/ciber/">cyber</a>.</p>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="/en/incidentes/">Cyber incident registry</a>
-      <p>Fourteen cases in Argentine energy and critical infrastructure between 2020 and 2026, with a source on every row and profiles of the eleven attacking groups. Seven surfaced through neither the company nor a regulator.</p>
-      <span class="proj">Open registry · downloadable dataset · CC BY 4.0</span>
-    </li>
-    <li>
-      <a class="idx-t" href="https://superficie.podeley.ar/en/" target="_blank" rel="noopener" data-goatcounter-click="idx-superficie-en">Attack surface map</a>
-      <p>Six layers built on open sources: network structure, cascading impact, incidents, per-operator network exposure, satellite activity and governance. It publishes the aggregate, never the target.</p>
-      <span class="proj">Open sources · nothing scanned · ES and EN</span>
-    </li>
-    <li>
-      <a class="idx-t" href="/en/isac/">Memo for a sector CERT</a>
-      <p>What the first year of the US oil &amp; gas ISAC cost, how the Danish SektorCERT works, and three budget scenarios for building the Argentine equivalent.</p>
-      <span class="proj">Costs from tax filings · two draft regulations</span>
-    </li>
-  </ul>
-</section>
+  <details class="ind" id="ciber" open>
+    <summary>Cybersecurity in energy <span class="ind-n">3 pieces</span></summary>
+    <p class="ind-lead">What the sector exposes, with no one to report it to. The three pieces and the reasoning: <a href="/en/ciber/">cyber</a>.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/incidentes.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="The incident registry, row by row with its source"></figure>
+        <div>
+          <a class="idx-t" href="/en/incidentes/">Cyber incident registry</a>
+          <p>Fourteen cases in Argentine energy and critical infrastructure between 2020 and 2026, with a source on every row and profiles of the eleven attacking groups. Seven surfaced through neither the company nor a regulator.</p>
+          <span class="proj">Open registry · downloadable dataset · CC BY 4.0</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/superficie.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Criticality map of the Argentine energy network"></figure>
+        <div>
+          <a class="idx-t" href="https://superficie.podeley.ar/en/" target="_blank" rel="noopener" data-goatcounter-click="idx-superficie-en">Attack surface map</a>
+          <p>Six layers built on open sources: network structure, cascading impact, incidents, per-operator network exposure, satellite activity and governance. It publishes the aggregate, never the target.</p>
+          <span class="proj">Open sources · nothing scanned · ES and EN</span>
+        </div>
+      </li>
+      <li>
+        <figure class="thumb"><img src="/assets/shots/isac.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="The sector CERT memo, with its budget scenarios"></figure>
+        <div>
+          <a class="idx-t" href="/en/isac/">Memo for a sector CERT</a>
+          <p>What the first year of the US oil &amp; gas ISAC cost, how the Danish SektorCERT works, and three budget scenarios for building the Argentine equivalent.</p>
+          <span class="proj">Costs from tax filings · two draft regulations</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<div class="rule" role="presentation"></div>
+  <details class="ind" id="regulacion" open>
+    <summary>Regulation and investment <span class="ind-n">1 piece</span></summary>
+    <p class="ind-lead">What was committed, read off the resolution.</p>
+    <ul class="idx">
+      <li>
+        <figure class="thumb"><img src="/assets/shots/rigi.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="The RIGI registry, project by project with its schedule"></figure>
+        <div>
+          <a class="idx-t" href="/en/rigi/">RIGI registry</a>
+          <p>Twenty-one projects admitted to Argentina's large-investment incentive regime and USD 29,485 M in qualifying assets, with each one's schedule and deadline, built by reading the Official Gazette resolutions.</p>
+          <span class="proj">Official Gazette · downloadable dataset · CC BY 4.0</span>
+        </div>
+      </li>
+    </ul>
+  </details>
 
-<section class="pd-section wrap" id="regulacion">
-  <div class="section-head">
-    <p class="eyebrow">Regulation and investment</p>
-    <h2>What was committed, read off the resolution</h2>
-  </div>
-  <ul class="idx">
-    <li>
-      <a class="idx-t" href="/en/rigi/">RIGI registry</a>
-      <p>Twenty-one projects admitted to Argentina's large-investment incentive regime and USD 29,485 M in qualifying assets, with each one's schedule and deadline, built by reading the Official Gazette resolutions.</p>
-      <span class="proj">Official Gazette · downloadable dataset · CC BY 4.0</span>
-    </li>
-  </ul>
 </section>
 
 <div class="rule" role="presentation"></div>

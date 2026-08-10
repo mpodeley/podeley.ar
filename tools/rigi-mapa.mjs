@@ -209,7 +209,7 @@ const CORTO = {
 const T = {
   es: {
     aria: 'Mapa de Argentina con el ancla estimada de cada proyecto aprobado en el RIGI',
-    cap: 'Cada punto es el ancla estimada del proyecto: la mina, la planta o el salar que nombra la resolución, con el área en proporción al monto comprometido. Las obras lineales llevan su traza simplificada entre cabeceras, y el gasoducto de San Matías va punteado porque su resolución no separa el monto. Las posiciones son estimación propia, con su precisión declarada en el campo <span class="path">est_ubicacion</span> del archivo de datos: un ancla no es el polígono del derecho minero.',
+    cap: 'Cada punto es el ancla estimada del proyecto: la mina, la planta o el salar que nombra la resolución, con el área en proporción al monto comprometido. En ductos y gasoductos el punto va al medio del recorrido, y el de San Matías es un anillo punteado porque su resolución no separa el monto. Las posiciones son estimación propia, con su precisión declarada en el campo <span class="path">est_ubicacion</span> del archivo de datos: un ancla no es el polígono del derecho minero.',
     sinMonto: 'sin monto separado',
     comprometidos: 'comprometidos',
     tam: (chico, grande) => `el área escala con el monto · ${chico} y ${grande}`,
@@ -219,7 +219,7 @@ const T = {
   },
   en: {
     aria: 'Map of Argentina with the estimated anchor of each approved RIGI project',
-    cap: 'Each dot is the project’s estimated anchor: the mine, plant or salar the resolution names, with its area proportional to the committed amount. Linear works carry a simplified route between endpoints, and the San Matías pipeline is dotted because its resolution does not separate the amount. Positions are the register’s own estimate, precision declared in the <span class="path">est_ubicacion</span> field of the data file: an anchor is not the polygon of a mining title.',
+    cap: 'Each dot is the project’s estimated anchor: the mine, plant or salar the resolution names, with its area proportional to the committed amount. For pipelines the dot sits at the middle of the route, and San Matías is a dotted ring because its resolution does not separate the amount. Positions are the register’s own estimate, precision declared in the <span class="path">est_ubicacion</span> field of the data file: an anchor is not the polygon of a mining title.',
     sinMonto: 'not separated',
     comprometidos: 'committed',
     tam: (chico, grande) => `area scales with the amount · ${chico} and ${grande}`,
@@ -249,7 +249,6 @@ function mapa(lang) {
     .map(([slug, p]) => `<path class="map-prov" data-prov-path="${slug}" d="${p.path}"/>`)
     .join('')
 
-  const trazas = []
   const dots = []
   const orden = [...aprobados].sort((a, b) => (b.monto_comprometido_usd ?? 0) - (a.monto_comprometido_usd ?? 0))
 
@@ -259,16 +258,15 @@ function mapa(lang) {
     const pts = u.puntos.map(([lon, lat]) => project(lon, lat).map(r1))
     const esTraza = u.precision === 'traza'
     const sinMonto = p.monto_comprometido_usd == null
+    /* Las obras lineales no se dibujan como línea: la traza simplificada
+       leía como un ducto real, que no es. El ancla queda al medio del
+       recorrido y el dato de cabeceras sigue en el dataset. */
     const mid = Math.floor(pts.length / 2)
     const ancla = !esTraza ? pts[0]
       : pts.length % 2 ? pts[mid]
         : [r1((pts[mid - 1][0] + pts[mid][0]) / 2), r1((pts[mid - 1][1] + pts[mid][1]) / 2)]
     const [dx, dy] = ancla
     const r = r1(radio(p.monto_comprometido_usd))
-
-    if (esTraza) {
-      trazas.push(`<path class="map-traza${sinMonto ? ' map-traza--punteada' : ''}" data-sector="${g.slug}" d="M${pts.map((q) => q.join(',')).join('L')}"/>`)
-    }
 
     const monto = sinMonto ? t.sinMonto : M(p.monto_comprometido_usd)
     const label = `${CORTO[p.id]}: ${monto}${sinMonto ? '' : ` ${t.comprometidos}`}, ${t.sector(p.sector)}`
@@ -332,7 +330,6 @@ function mapa(lang) {
   <figure class="mapa mapa--rigi">
     <svg viewBox="${geo.viewBox}" role="img" aria-label="${esc(t.aria)}">
       <g class="map-land">${land}</g>
-      ${trazas.join('\n      ')}
       ${dots.join('\n      ')}
     </svg>
     <figcaption>${t.cap}</figcaption>

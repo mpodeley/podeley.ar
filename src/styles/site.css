@@ -568,8 +568,6 @@ details.ficha[open] summary::after { content: "–"; }
 .mapa-rigi .map-dot .dot--na { fill-opacity: 0; stroke: var(--map-petroleo-y-gas); stroke-dasharray: 3 2; }
 .mapa-rigi .map-dot:hover .dot--na, .mapa-rigi .map-dot:focus-visible .dot--na { fill-opacity: .25; }
 .map-dot .hit { fill: none; pointer-events: all; }
-.map-traza { fill: none; stroke: var(--map-petroleo-y-gas); stroke-width: 2.5; stroke-linecap: round; opacity: .55; }
-.map-traza--punteada { stroke-dasharray: 4 4; }
 .mapa-rigi .tip--fija text { text-anchor: end; }
 .mapa-rigi .tip .tip-sub { font-size: 12px; fill: var(--pd-text-muted); }
 

@@ -542,6 +542,64 @@ details.ficha[open] summary::after { content: "–"; }
 .map-list a { color: var(--pd-link); text-decoration: none; }
 .map-list a:hover { text-decoration: underline; }
 
+/* Mapa de /rigi/ (tools/rigi-mapa.mjs): un punto por proyecto aprobado, área
+   por monto comprometido, color por sector y filtros sin JS: los checkboxes
+   son hermanos del svg y el estado :checked llega por combinador general.
+   Cuatro clases de color, validadas (CVD y contraste) contra el tema claro
+   que fija el layout; el verde es un paso intermedio del de la casa, porque
+   el base lava el contraste sobre claro y el ink lee gris. "Otros" además va
+   en cuadrado: su identidad no depende sólo del color. Si algún día se
+   cablea el tema oscuro, esta paleta se revalida contra esa superficie. */
+:root {
+  --map-mineria: var(--pd-gold-ink);
+  --map-petroleo-y-gas: var(--pd-blue-ink);
+  --map-energia: #1e9673;
+  --map-otros: var(--pd-orange-ink);
+}
+.mapa--rigi svg { max-width: 30rem; }
+.mapa-rigi { margin-top: var(--pd-sp-6); }
+.mapa-rigi .mapa { margin-top: var(--pd-sp-4); }
+.mapa-rigi .dot--mineria { fill: var(--map-mineria); }
+.mapa-rigi .dot--petroleo-y-gas { fill: var(--map-petroleo-y-gas); }
+.mapa-rigi .dot--energia { fill: var(--map-energia); }
+.mapa-rigi .dot--otros { fill: var(--map-otros); }
+.mapa-rigi .map-dot .dot { fill-opacity: .82; }
+.mapa-rigi .map-dot:hover .dot, .mapa-rigi .map-dot:focus-visible .dot { fill-opacity: 1; }
+.mapa-rigi .map-dot .dot--na { fill-opacity: 0; stroke: var(--map-petroleo-y-gas); stroke-dasharray: 3 2; }
+.mapa-rigi .map-dot:hover .dot--na, .mapa-rigi .map-dot:focus-visible .dot--na { fill-opacity: .25; }
+.map-dot .hit { fill: none; pointer-events: all; }
+.map-traza { fill: none; stroke: var(--map-petroleo-y-gas); stroke-width: 2.5; stroke-linecap: round; opacity: .55; }
+.map-traza--punteada { stroke-dasharray: 4 4; }
+.mapa-rigi .tip--fija text { text-anchor: end; }
+.mapa-rigi .tip .tip-sub { font-size: 12px; fill: var(--pd-text-muted); }
+
+/* Referencias que también filtran: la etiqueta es el chip y el checkbox queda
+   accesible pero fuera de la vista. El punto del chip repite forma y color. */
+.mr-f { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+.map-key--filtros { margin-top: 0; }
+.mr-chip { cursor: pointer; display: inline-block; margin-right: .9rem; }
+.mr-chip:hover { color: var(--pd-text); }
+.key--mineria { border-radius: 50%; background: var(--map-mineria); }
+.key--petroleo-y-gas { border-radius: 50%; background: var(--map-petroleo-y-gas); }
+.key--energia { border-radius: 50%; background: var(--map-energia); }
+.key--otros { background: var(--map-otros); }
+.mapa-rigi > input[data-sector="mineria"]:not(:checked) ~ figure svg [data-sector="mineria"],
+.mapa-rigi > input[data-sector="petroleo-y-gas"]:not(:checked) ~ figure svg [data-sector="petroleo-y-gas"],
+.mapa-rigi > input[data-sector="energia"]:not(:checked) ~ figure svg [data-sector="energia"],
+.mapa-rigi > input[data-sector="otros"]:not(:checked) ~ figure svg [data-sector="otros"] { opacity: .08; pointer-events: none; }
+.mapa-rigi > input[data-sector="mineria"]:not(:checked) ~ .map-key .mr-chip--mineria,
+.mapa-rigi > input[data-sector="petroleo-y-gas"]:not(:checked) ~ .map-key .mr-chip--petroleo-y-gas,
+.mapa-rigi > input[data-sector="energia"]:not(:checked) ~ .map-key .mr-chip--energia,
+.mapa-rigi > input[data-sector="otros"]:not(:checked) ~ .map-key .mr-chip--otros { opacity: .45; }
+.mapa-rigi > input[data-sector="mineria"]:focus-visible ~ .map-key .mr-chip--mineria,
+.mapa-rigi > input[data-sector="petroleo-y-gas"]:focus-visible ~ .map-key .mr-chip--petroleo-y-gas,
+.mapa-rigi > input[data-sector="energia"]:focus-visible ~ .map-key .mr-chip--energia,
+.mapa-rigi > input[data-sector="otros"]:focus-visible ~ .map-key .mr-chip--otros { outline: 2px solid var(--pd-focus); outline-offset: 2px; }
+
+/* La referencia de tamaño: dos círculos de ejemplo junto a su leyenda. */
+.map-tam { height: 2.4rem; width: auto; vertical-align: middle; margin-right: .35rem; }
+.map-tam .tam { fill: none; stroke: var(--pd-text-faint); stroke-width: 1; }
+
 /* Ficción: la lista reusa .rsrc; el título de la obra lleva el peso. */
 .obra { font-weight: 600; color: var(--pd-text); }
 

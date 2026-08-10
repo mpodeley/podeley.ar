@@ -1,7 +1,7 @@
 {
   "$schema": "https://podeley.ar/data/rigi-proyectos.schema.json",
   "titulo": "Registro de proyectos adheridos al RIGI",
-  "actualizado": "2026-08-06",
+  "actualizado": "2026-08-10",
   "licencia": "CC BY 4.0",
   "nota_metodo": "Cada fila se construye leyendo la resolución que la aprueba en el Boletín Oficial, no un comunicado. El campo monto_comprometido_usd es la inversión en activos computables, que es lo que cuenta el régimen y sobre lo que corren el mínimo del artículo 172 y el plazo del 176; la inversión total del proyecto, cuando la resolución la declara aparte, va en monto_total_declarado_usd y no se suma entre filas. Lo que estima el registro lleva prefijo est_ y nunca comparte campo con lo que dice la resolución. Los agregados oficiales viven en el objeto oficial, aparte de los proyectos, porque son la cifra a reconciliar y no una fuente.",
   "nota_correcciones": "Este registro se publicó sin consultar antes a las empresas nombradas. Las correcciones que lleguen se aplican a la fila y se anotan en el arreglo correcciones, con fecha, qué cambió y quién lo señaló. Nada se edita en silencio.",
@@ -26,7 +26,8 @@
     "plazo_minimo": "Fecha límite comprometida para alcanzar el monto mínimo de inversión, artículo 176. Cuando la resolución sólo declara el mes, la fecha va con precisión de mes.",
     "proveedores_locales_pct": "Porcentaje del monto de inversión comprometido con proveedores locales, artículo 47 inciso l del anexo del decreto 749/2024. El piso normativo es 20%.",
     "confianza": "Califica la procedencia de las cifras, no el mérito del proyecto.",
-    "est_cumplimiento": "Estimación propia. sin-dato significa que no hay evidencia pública de ejecución; no significa atraso."
+    "est_cumplimiento": "Estimación propia. sin-dato significa que no hay evidencia pública de ejecución; no significa atraso.",
+    "est_ubicacion": "Ancla territorial estimada para el mapa: lon/lat del sitio que nombra la resolución (la mina, la planta, el salar) o traza simplificada entre cabeceras. La resolución no publica coordenadas; el ancla es estimación propia y su precisión va declarada en el campo precision."
   },
 
   "proyectos": [
@@ -57,6 +58,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.75, -32.5]], "precision": "zona", "referencia": "El Quemado, Las Heras, 13 km de Jocolí" },
       "est_cumplimiento": "sin-dato",
       "nota": "Primera adhesión aprobada del régimen. La resolución no abre el cronograma por año: declara el total de los dos primeros y lo contrasta contra el 40% del mínimo del sector.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/319374/20250108"]
@@ -91,6 +93,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": true,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-67.83, -38.98], [-66.55, -39.07], [-65.02, -41.69]], "precision": "traza", "referencia": "Allen → Chelforó → Punta Colorada" },
       "est_cumplimiento": "sin-dato",
       "nota": "El caso que separa las dos cifras: la inversión total declarada son USD 3,000 M y los activos computables USD 2,486 M. La cifra que circula en prensa es la segunda, presentada como si fuera la primera.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/322830/20250321"]
@@ -125,6 +128,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": true,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-64.92, -41.6]], "precision": "offshore", "referencia": "amarre FLNG frente a Punta Colorada, Golfo San Matías" },
       "est_cumplimiento": "sin-dato",
       "nota": "El plazo más largo del registro: diez años más que la mediana. Los dos primeros años comprometen USD 459 M sobre USD 2,825 M, el perfil más diferido de los veintiuno.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/324772/20250505"]
@@ -159,6 +163,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": true,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-67.07, -24.06]], "precision": "sitio", "referencia": "Salar del Rincón, Los Andes" },
       "est_cumplimiento": "sin-dato",
       "nota": null,
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/326364/20250603"]
@@ -194,6 +199,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-60.24, -33.36]], "precision": "sitio", "referencia": "San Nicolás de los Arroyos" },
       "est_cumplimiento": "sin-dato",
       "nota": "El plazo más próximo del registro: vence el 31 de octubre de 2026. Único proyecto del sector siderurgia.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/328690/20250722"]
@@ -229,6 +235,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-60.33, -36.89]], "precision": "zona", "referencia": "partido de Olavarría" },
       "est_cumplimiento": "sin-dato",
       "nota": null,
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/330400/20250827"]
@@ -264,6 +271,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-67.12, -25.43]], "precision": "sitio", "referencia": "borde oeste del Salar del Hombre Muerto" },
       "est_cumplimiento": "sin-dato",
       "nota": "El compromiso de proveedores locales más alto del registro: 95.34% contra un piso normativo de 20%.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/330470/20250828"]
@@ -298,6 +306,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-70.22, -31.07]], "precision": "sitio", "referencia": "Los Azules, Calingasta" },
       "est_cumplimiento": "sin-dato",
       "nota": "Primer proyecto de cobre del régimen. El plazo del artículo 176 vence el 31 de diciembre de 2027, con USD 2,353 M comprometidos y USD 416 M en los dos primeros años.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/332807/20251014"]
@@ -332,6 +341,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-60.79, -32.66]], "precision": "sitio", "referencia": "Timbúes, sobre el Paraná" },
       "est_cumplimiento": "sin-dato",
       "nota": "Único proyecto del sector infraestructura y único fuera de las provincias mineras y del arco hidrocarburífero.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/334814/20251120"]
@@ -366,6 +376,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.58, -29.72]], "precision": "sitio", "referencia": "mina Gualcamayo, Jáchal" },
       "est_cumplimiento": "sin-dato",
       "nota": "Reactivación de Gualcamayo por la vía de los carbonatos profundos.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/337468/20260115"]
@@ -400,6 +411,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190"],
       "exportacion_estrategica": false,
       "ampliacion": true,
+      "est_ubicacion": { "puntos": [[-69.95, -29.34]], "precision": "sitio", "referencia": "mina Veladero, Iglesia" },
       "est_cumplimiento": "sin-dato",
       "nota": "Primera adhesión aprobada bajo la figura de ampliación de un proyecto preexistente no adherido: la mina Veladero ya operaba fuera del régimen y sólo entra la ampliación.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/340249/20260401"]
@@ -432,6 +444,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": true,
+      "est_ubicacion": { "puntos": [[-67.06, -25.61]], "precision": "sitio", "referencia": "proyecto Fénix, sur del Salar del Hombre Muerto" },
       "est_cumplimiento": "sin-dato",
       "nota": "Ampliación del proyecto preexistente Fénix, en el Salar del Hombre Muerto.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/340329/20260406"]
@@ -466,6 +479,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-66.73, -25.16]], "precision": "sitio", "referencia": "Diablillos, límite Salta–Catamarca" },
       "est_cumplimiento": "sin-dato",
       "nota": "Las quince concesiones están en la zona limítrofe entre Salta y Catamarca, uno de los dos casos del registro que no cae en una sola provincia.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/341756/20260511"]
@@ -500,6 +514,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.67, -38.33], [-62.96, -36.75]], "precision": "traza", "referencia": "Tratayén → Salliqueló" },
       "est_cumplimiento": "sin-dato",
       "nota": "El perfil más adelantado del registro: 77% del capex comprometido cae en el primer año. El plazo del artículo 176 vence el 31 de diciembre de 2026.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/341877/20260513"]
@@ -534,6 +549,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-69.42, -32.25]], "precision": "sitio", "referencia": "PSJ, noroeste de Uspallata" },
       "est_cumplimiento": "sin-dato",
       "nota": "Primer proyecto minero metalífero de Mendoza en el régimen.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/342483/20260528"]
@@ -568,6 +584,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": true,
+      "est_ubicacion": { "puntos": [[-66.75, -23.58]], "precision": "sitio", "referencia": "salares Cauchari y Olaroz, Susques" },
       "est_cumplimiento": "sin-dato",
       "nota": "Único proyecto de Jujuy en el régimen. Los dos primeros años comprometen USD 97 M sobre USD 1,167 M: el 8% del capex.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/342818/20260605"]
@@ -602,6 +619,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.67, -38.33], [-64.95, -40.73]], "precision": "traza", "referencia": "Tratayén → Estación Compresora San Antonio Oeste" },
       "est_cumplimiento": "sin-dato",
       "nota": "La única de las veintiuna resoluciones que no separa los activos computables de la inversión total: declara USD 1,300 M totales y abre el bienio en USD 454 M y USD 501 M, sin decir cuánto del total computa para el régimen. Por eso esta fila no suma al total comprometido del registro.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/343613/20260626"]
@@ -636,6 +654,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": true,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.7, -38.6]], "precision": "zona", "referencia": "bloque Rincón de Aranda, Añelo" },
       "est_cumplimiento": "sin-dato",
       "nota": "Segundo compromiso más grande del registro y el único de explotación no convencional en el bloque: el resto del petróleo y gas adherido es transporte, licuefacción o midstream.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/344628/20260721"]
@@ -670,6 +689,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-68.6, -27.1]], "precision": "zona", "referencia": "Salar Tres Quebradas, oeste de Fiambalá" },
       "est_cumplimiento": "sin-dato",
       "nota": null,
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/345075/20260729"]
@@ -705,6 +725,7 @@
       "beneficios": ["cap-iv", "cap-v"],
       "exportacion_estrategica": true,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-69.53, -28.43]], "precision": "sitio", "referencia": "distrito Vicuña (Josemaría y Filo del Sol), Iglesia" },
       "est_cumplimiento": "sin-dato",
       "nota": "El compromiso más grande del régimen: USD 9,025 M en activos computables, casi un tercio de todo lo aprobado. Es también el único que no organiza el cronograma por año sino por dos etapas fechadas, y el único cuyo plazo del artículo 176 se declara con precisión de mes.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/345167/20260730"]
@@ -740,6 +761,7 @@
       "beneficios": ["cap-iv", "cap-v", "art-190", "art-198"],
       "exportacion_estrategica": false,
       "ampliacion": false,
+      "est_ubicacion": { "puntos": [[-66.9, -25.33]], "precision": "zona", "referencia": "Salar del Hombre Muerto, límite Salta–Catamarca" },
       "est_cumplimiento": "sin-dato",
       "nota": "El área está en la zona limítrofe disputada entre Salta y Catamarca, sobre el Salar del Hombre Muerto, bajo el Acuerdo Marco de Facilitación y Fomento Minero firmado por ambas provincias en 2021. Reemplaza a una solicitud anterior de la misma casa matriz que fue desistida.",
       "fuentes": ["https://www.boletinoficial.gob.ar/detalleAviso/primera/345279/20260731"]

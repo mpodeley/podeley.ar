@@ -140,6 +140,17 @@
           "type": "string",
           "enum": ["sin-dato", "en-plazo", "vencido"]
         },
+        "est_ubicacion": {
+          "description": "Ancla territorial estimada por el registro; la resolución no publica coordenadas. Un par lon/lat para obras puntuales, dos o más para trazas simplificadas. precision declara qué es el ancla: sitio = la mina o planta nombrada; zona = departamento, partido o salar; traza = recorrido simplificado entre cabeceras; offshore = amarre en el mar.",
+          "type": "object",
+          "required": ["puntos", "precision", "referencia"],
+          "additionalProperties": false,
+          "properties": {
+            "puntos": { "type": "array", "minItems": 1, "items": { "type": "array", "minItems": 2, "items": { "type": "number" } } },
+            "precision": { "type": "string", "enum": ["sitio", "zona", "traza", "offshore"] },
+            "referencia": { "type": "string" }
+          }
+        },
         "est_cruce": { "type": "object" },
 
         "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },

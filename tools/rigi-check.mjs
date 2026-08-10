@@ -142,6 +142,12 @@ for (const p of data.proyectos) {
 }
 if (failures === fallasPrevias) ok('cronogramas dentro del comprometido, y todo aprobado con su resolución')
 
+/* El mapa dibuja lo que el dataset ancla: un aprobado sin est_ubicacion es un
+   proyecto que desaparece del mapa sin que nadie lo note. */
+const sinAncla = aprobados.filter((p) => !p.est_ubicacion)
+if (sinAncla.length) fail(`aprobados sin est_ubicacion: ${sinAncla.map((p) => p.id).join(', ')}`)
+else ok(`${aprobados.length} aprobados con ancla territorial estimada`)
+
 /* El plazo del artículo 176 sólo puede leerse como vencido contra la fecha del
    dataset, no contra el reloj de quien corre esto: si no, el registro dice una
    cosa distinta cada día sin que nadie haya tocado un dato. */
@@ -198,6 +204,13 @@ for (const [lang, ruta] of Object.entries(PAGES)) {
   paginas++
   for (const [que, valor] of esperado[lang]) {
     if (!html.includes(valor)) fail(`${ruta}: no dice "${valor}" (${que})`)
+  }
+  /* El bloque del mapa se regenera con rigi-mapa; acá sólo se verifica que
+     cuente lo mismo que el dataset. */
+  const bloque = html.match(/<!-- rigi-mapa -->[\s\S]*?<!-- \/rigi-mapa -->/)
+  const dots = bloque ? (bloque[0].match(/class="map-dot"/g) ?? []).length : 0
+  if (dots !== aprobados.length) {
+    fail(`${ruta}: el mapa dibuja ${dots} proyectos y el registro tiene ${aprobados.length} (correr tools/rigi-mapa.mjs)`)
   }
 }
 if (paginas) ok(`${paginas} página(s) recitan ${aprobados.length} aprobados y USD ${millones} M`)

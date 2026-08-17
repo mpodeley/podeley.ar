@@ -30,8 +30,8 @@ const { chromium } = require('playwright-core')
 /* La cifra es el gancho; la línea de abajo dice de qué es. El home y las dos
    páginas que no tienen un número al frente abren por la frase. */
 const CARDS = [
-  { slug: 'home', lang: 'es', eyebrow: 'Análisis y herramientas para energía y minería',
-    title: 'Primero la pregunta de negocio. Después la herramienta' },
+  { slug: 'home', lang: 'es', eyebrow: 'Matías Podeley · Buenos Aires',
+    title: 'Ingeniería, datos e IA para energía y minería' },
   { slug: 'home', lang: 'en', eyebrow: 'Analysis and tools for energy and mining',
     title: 'The business question first. Then the tool' },
 
@@ -71,12 +71,12 @@ const CARDS = [
     title: 'projects approved, while the official site lists sixteen' },
 
   { slug: 'trabajo', lang: 'es', eyebrow: 'Cómo trabajo · Petróleo, gas y minería',
-    title: 'Construir se volvió barato. Elegir, no' },
+    title: 'Consulta, proyecto o dirección técnica' },
   { slug: 'trabajo', lang: 'en', eyebrow: 'How I work · Oil, gas & mining',
     title: 'Building got cheap. Choosing did not' },
 
   { slug: 'cto', lang: 'es', eyebrow: 'CTO · Petróleo, gas y minería',
-    title: 'El CTO dejó de ser un rol de soporte' },
+    title: 'Dirección de tecnología con dedicación parcial' },
   { slug: 'cto', lang: 'en', eyebrow: 'CTO · Oil, gas & mining',
     title: 'The CTO is no longer a support role' },
 
@@ -86,7 +86,7 @@ const CARDS = [
     title: 'Mechanistic interpretability, published with its null results' },
 
   { slug: 'perfil', lang: 'es', eyebrow: 'Perfil · Reservorios, proyectos e IA aplicada',
-    title: 'Dieciocho años adentro de operadoras, y las herramientas que salieron de ahí' },
+    title: 'Ingeniería de reservorios, proyectos, datos e IA' },
   { slug: 'perfil', lang: 'en', eyebrow: 'Profile · Reservoirs, projects and applied AI',
     title: 'Eighteen years inside operators, and the tools that came out of it' },
 ]

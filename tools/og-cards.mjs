@@ -32,8 +32,8 @@ const { chromium } = require('playwright-core')
 const CARDS = [
   { slug: 'home', lang: 'es', eyebrow: 'Matías Podeley · Buenos Aires',
     title: 'Ingeniería, datos e IA para energía y minería' },
-  { slug: 'home', lang: 'en', eyebrow: 'Analysis and tools for energy and mining',
-    title: 'The business question first. Then the tool' },
+  { slug: 'home', lang: 'en', eyebrow: 'Matías Podeley · Buenos Aires',
+    title: 'Engineering, data, and AI for energy and mining' },
 
   { slug: 'casos', lang: 'es', eyebrow: 'Casos · Energía y minería',
     title: 'Todo lo publicado, en una página' },
@@ -73,12 +73,12 @@ const CARDS = [
   { slug: 'trabajo', lang: 'es', eyebrow: 'Cómo trabajo · Petróleo, gas y minería',
     title: 'Consulta, proyecto o dirección técnica' },
   { slug: 'trabajo', lang: 'en', eyebrow: 'How I work · Oil, gas & mining',
-    title: 'Building got cheap. Choosing did not' },
+    title: 'Consult, project, or technical direction' },
 
   { slug: 'cto', lang: 'es', eyebrow: 'CTO · Petróleo, gas y minería',
     title: 'Dirección de tecnología con dedicación parcial' },
   { slug: 'cto', lang: 'en', eyebrow: 'CTO · Oil, gas & mining',
-    title: 'The CTO is no longer a support role' },
+    title: 'Part-time technology leadership' },
 
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',
     title: 'Interpretabilidad mecanicista, publicada con sus nulos' },
@@ -88,7 +88,7 @@ const CARDS = [
   { slug: 'perfil', lang: 'es', eyebrow: 'Perfil · Reservorios, proyectos e IA aplicada',
     title: 'Ingeniería de reservorios, proyectos, datos e IA' },
   { slug: 'perfil', lang: 'en', eyebrow: 'Profile · Reservoirs, projects and applied AI',
-    title: 'Eighteen years inside operators, and the tools that came out of it' },
+    title: 'Reservoir engineering, projects, data, and AI' },
 ]
 
 const b64 = async (p) => (await readFile(join(ROOT, 'static/fonts', p))).toString('base64')

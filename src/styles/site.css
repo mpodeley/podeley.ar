@@ -658,3 +658,35 @@ details.ficha[open] summary::after { content: "–"; }
 @supports (width: clamp(1rem, 2vw, 3rem)) {
   .wrap { padding-left: var(--pd-gutter); padding-right: var(--pd-gutter); }
 }
+
+/* Diagrama de los tres canales y lista de preguntas abiertas (/grpo-cultura/).
+   Sin SVG a propósito: el texto de las cajas tiene que reflowear en 390 px. */
+.diag { max-width: 60ch; margin: var(--pd-sp-6) 0 0; }
+.diag-box {
+  border: 1px solid var(--pd-border); border-radius: var(--pd-r-2); background: var(--pd-surface);
+  padding: .6rem .9rem; text-align: center; font-size: var(--pd-fs-sm); line-height: 1.4;
+  color: var(--pd-text-muted);
+}
+.diag-box strong { display: block; font-family: var(--pd-font-display); font-weight: 500; color: var(--pd-text); }
+.diag-box--weights { border-color: var(--pd-orange-ink); }
+.diag-box--memory {
+  border-color: var(--pd-blue-ink);
+  background: rgba(31, 106, 155, .06);
+  background: color-mix(in srgb, var(--pd-blue-ink) 7%, var(--pd-surface));
+}
+.diag-box--update { border-style: dashed; }
+.diag-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--pd-sp-3); }
+.diag-arrow {
+  margin: 0; padding: .45rem 0; text-align: center; font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap); letter-spacing: var(--pd-track-mono); text-transform: uppercase;
+  color: var(--pd-text-faint);
+}
+.diag-arrow--social { color: var(--pd-blue-ink); }
+.diag figcaption { margin-top: var(--pd-sp-3); color: var(--pd-text-faint); font-size: var(--pd-fs-cap); line-height: 1.5; }
+@media (max-width: 480px) {
+  .diag-row { gap: var(--pd-sp-2); }
+  .diag-box { padding: .5rem .45rem; }
+}
+.preguntas { max-width: 60ch; margin: var(--pd-sp-4) 0 0; padding-left: 1.5rem; }
+.preguntas li { line-height: var(--pd-lh-body); }
+.preguntas li + li { margin-top: var(--pd-sp-3); }

@@ -80,6 +80,11 @@ const CARDS = [
   { slug: 'cto', lang: 'en', eyebrow: 'CTO · Oil, gas & mining',
     title: 'Part-time technology leadership' },
 
+  { slug: 'grpo-cultura', lang: 'es', eyebrow: 'Research · Nota de posición', fig: '1,200 agentes',
+    title: 'improvisaron un foro, y el foro les cambió la conducta' },
+  { slug: 'grpo-cultura', lang: 'en', eyebrow: 'Research · Position note', fig: '1,200 agents',
+    title: 'improvised a message board, and the board changed their behavior' },
+
   { slug: 'research', lang: 'es', eyebrow: 'Seguridad de IA · Interpretabilidad',
     title: 'Interpretabilidad mecanicista, publicada con sus nulos' },
   { slug: 'research', lang: 'en', eyebrow: 'AI safety · Interpretability',

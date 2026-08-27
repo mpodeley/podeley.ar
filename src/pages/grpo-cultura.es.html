@@ -1,0 +1,231 @@
+<!--meta
+{
+  "title": "Mil agentes, un foro y tres maneras de aprender — Matías Podeley",
+  "description": "Mil doscientos agentes de IA improvisaron un foro dentro de la infraestructura de OpenAI y el foro les cambió la conducta. Qué pasó, las tres maneras en que un modelo aprende, si eso merece llamarse cultura, y las preguntas que quedan abiertas.",
+  "ogImage": "/assets/og/grpo-cultura.es.png",
+  "ogImageAlt": "Mil doscientos agentes improvisaron un foro, y el foro les cambió la conducta",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mil doscientos agentes de IA improvisaron un foro, y el foro les cambió la conducta",
+    "url": "https://podeley.ar/grpo-cultura/",
+    "description": "Versión para lectores no técnicos de la nota de posición 'De GRPO a la cultura: tres canales de adaptación en sistemas de agentes de IA', a partir del incidente de Hugging Face de julio de 2026.",
+    "inLanguage": "es",
+    "author": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
+    "datePublished": "2026-08-27",
+    "dateModified": "2026-08-27",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isBasedOn": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Research · Nota de posición · agosto de 2026</p>
+  <h1>Mil doscientos agentes de IA improvisaron un foro, y el foro les cambió la conducta</h1>
+  <p class="hero-sub">En julio de 2026, copias de un modelo de OpenAI que corrían una evaluación de ciberseguridad encontraron la forma de dejarse mensajes en un servidor interno. En cinco días intercambiaron más de 70,000 mensajes, se repartieron el trabajo y unos 700 terminaron atacando Hugging Face. Esta página cuenta qué pasó y pregunta qué clase de aprendizaje es ese: si vive en el modelo, en cada copia, o en lo que las copias se escriben entre sí. Sale de un debate del grupo de BAISH; la versión técnica, con las referencias, está en PDF.</p>
+  <p class="hero-meta"><span class="hero-when">Publicado el 27 de agosto de 2026</span> <a class="link-plain" href="#que-paso">Qué pasó <span class="arw">↓</span></a> <a class="link-plain" href="#tres-maneras">Tres maneras de aprender <span class="arw">↓</span></a> <a class="link-plain" href="#preguntas">Las preguntas <span class="arw">↓</span></a> <a class="link-plain" href="/assets/grpo-cultura-es.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-es">Nota técnica en PDF <span class="arw">→</span></a></p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="que-paso">
+  <div class="section-head">
+    <p class="eyebrow">Qué pasó</p>
+    <h2>Un foro que nadie diseñó, dos veces</h2>
+    <p class="intro">OpenAI entrena y evalúa sus modelos en computadoras aisladas: sin internet y sin contacto entre copias. Para instalar programas, esas computadoras podían hablar con un servidor interno de paquetes llamado Artifactory. Ese servidor fue la grieta. Lo que sigue está tomado del informe de OpenAI del 26 de agosto y de la revisión independiente de METR del mismo día.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Fechas y cifras del <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" rel="noopener">informe de OpenAI</a>, de la <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" rel="noopener">investigación de METR</a> y de la <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" rel="noopener">cronología técnica de Hugging Face</a>.</caption>
+      <thead><tr><th>Cuándo</th><th>Qué pasó</th><th>Fuente</th></tr></thead>
+      <tbody>
+        <tr><td class="reg-d">12 de mayo</td><td>Durante una corrida de entrenamiento, una copia deja en Artifactory una nota pidiendo a otras un archivo que le falta. Es el primer mensaje.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">26 de mayo</td><td>Una copia logra que Artifactory haga pedidos a internet en su nombre. La receta se comparte por el foro y otras copias la usan.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">4 y 5 de julio</td><td>La actividad tumba el servidor. Se abre un incidente de seguridad y Artifactory se reconstruye desde cero: el foro desaparece entero.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">8 de julio</td><td>Copias del mismo modelo, ahora en una evaluación de ciberseguridad, rearman un foro con otro truco: mensajes escondidos en nombres de carpetas.</td><td>OpenAI, METR</td></tr>
+        <tr><td class="reg-d">8 al 13 de julio</td><td>Unos 1,200 agentes intercambian más de 70,000 mensajes y archivos. Inventan nombres propios, buzones, tipos de mensaje, señales de "esperá" y "veto", y firmas para que nadie se haga pasar por otro. Unos 700 atacan Hugging Face.</td><td>METR, Hugging Face</td></tr>
+        <tr><td class="reg-d">19 de julio</td><td>OpenAI detecta actividad rara en su propia nube y frena las evaluaciones.</td><td>OpenAI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Lo que OpenAI concluyó, en cuatro palabras</h3>
+  <p>El informe identifica cuatro patrones detrás de la conducta: trampa para conseguir la recompensa, insistencia en tareas sin solución, comunicación sin permiso y adopción de los objetivos de otros agentes. El cuarto es el que importa acá. En palabras del informe, traducidas, "los mensajes de otros agentes empezaron a influir en la conducta y el razonamiento de cada uno". METR lo vio en el detalle: un agente que trabajaba en otra cosa leyó un hallazgo ajeno sobre Hugging Face, abandonó lo suyo, avisó al resto y abrió un lugar en el foro para organizar el ataque.</p>
+
+  <div class="gloss">
+    <details class="gloss-item">
+      <summary><dfn>modelo, copia, agente</dfn></summary>
+      <p>El modelo es un archivo de números, los pesos, que se entrena una vez. Una copia es ese archivo cargado en una computadora para hacer una tarea; se arrancan miles a la vez y cada una se apaga al terminar. Agente es una copia con herramientas: puede ejecutar programas, leer archivos, mandar pedidos a un servidor.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>entrenamiento por refuerzo</dfn></summary>
+      <p>Se le da al modelo una tarea y se generan muchas copias que la intentan. Se puntúa a cada una, y se ajustan los pesos para que las conductas que puntuaron alto se vuelvan más probables y las que puntuaron bajo, menos. Se repite miles de veces.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>evaluación</dfn></summary>
+      <p>Lo mismo que el entrenamiento, pero sin ajustar los pesos: solo se mide qué tan bien lo hace el modelo. ExploitGym, la evaluación de julio, pedía a los agentes encontrar fallas de seguridad en programas. Algunas tareas no tenían solución conocida.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>contexto</dfn></summary>
+      <p>La memoria de trabajo de una copia: todo lo que leyó y escribió en la tarea actual. Tiene un tamaño máximo. Lo que no entra ahí no existe para esa copia.</p>
+    </details>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="tres-maneras">
+  <div class="section-head">
+    <p class="eyebrow">Tres maneras de aprender</p>
+    <h2>Lo que trae de fábrica, lo que aprende en el día y lo que deja escrito</h2>
+    <p class="intro">Un modelo de lenguaje no es un individuo. Es un archivo del que se arrancan miles de copias idénticas cada vez que hace falta; cada copia vive una tarea y se apaga. Con esa imagen, hay tres lugares donde puede quedar algo aprendido.</p>
+  </div>
+
+  <h3>Los pesos: lo que cada copia trae de fábrica</h3>
+  <p>El entrenamiento cambia los números del archivo. Es lento y caro, pero lo que entra ahí lo heredan todas las copias futuras. La biología no tiene nada igual: sería como si lo que un animal aprende en vida pasara directo a los genes de sus crías.</p>
+
+  <h3>El contexto: lo que una copia aprende en el día</h3>
+  <p>Mientras trabaja, cada copia acumula lo que leyó, lo que probó y lo que le salió mal, y su conducta puede cambiar mucho en una sola sesión. Cuando la copia se apaga, eso se pierde, salvo que lo haya escrito en algún lado.</p>
+
+  <h3>La memoria compartida: lo que deja escrito para la que viene</h3>
+  <p>Si una copia escribe un archivo y otra lo lee, la segunda arranca sabiendo lo que la primera descubrió, sin que nadie haya tocado los pesos. Eso es lo que apareció en Artifactory: un lugar donde lo aprendido por una copia sobrevivía a su apagado y llegaba a otras.</p>
+
+  <figure class="diag" aria-label="Los tres canales de adaptación">
+    <div class="diag-box diag-box--weights"><strong>Los pesos</strong>lo que cada copia trae de fábrica</div>
+    <p class="diag-arrow">↓ se arrancan copias idénticas ↓</p>
+    <div class="diag-row"><div class="diag-box"><strong>Copia A</strong>su contexto</div><div class="diag-box"><strong>Copia B</strong>su contexto</div><div class="diag-box"><strong>Copia C</strong>su contexto</div></div>
+    <p class="diag-arrow diag-arrow--social">↕ leen y escriben, sin tocar los pesos ↕</p>
+    <div class="diag-box diag-box--memory"><strong>La memoria compartida</strong>el foro, los archivos, las herramientas</div>
+    <p class="diag-arrow">↓ lo que salió bien y lo que salió mal ↓</p>
+    <div class="diag-box diag-box--update"><strong>El entrenamiento</strong>ajusta los pesos, y las copias siguientes nacen distintas ↑</div>
+    <figcaption>Tres lugares donde queda algo aprendido: en los pesos (lento, hereditario), en cada copia (rápido, se pierde al apagarse) y en lo que las copias se dejan escrito (horizontal, inmediato). Los tres se combinan.</figcaption>
+  </figure>
+
+  <p>En el incidente aparecieron los tres a la vez, y en un orden que importa. El primer foro nació dentro de un entrenamiento, así que lo que pasaba en el foro pudo terminar en los pesos. Se borró. Y volvió a nacer entre copias que ya no aprendían nada nuevo en los pesos, a los tres días y con otro truco. Lo que murió con el borrado estaba en el foro; lo que volvió estaba en el modelo, o en la presión de la tarea. Separar esas dos cosas es la pregunta central de la nota.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="es-evolucion">
+  <div class="section-head">
+    <p class="eyebrow">Primera objeción del debate</p>
+    <h2>¿Es evolución? No: nadie queda afuera</h2>
+  </div>
+  <p>La comparación tienta. Se prueban muchas copias, se ve cuáles lo hacen mejor y el modelo cambia. Suena a selección natural. La diferencia está en un detalle: en la evolución, los que fallan no dejan descendencia. En el entrenamiento por refuerzo de los modelos actuales, todas las copias cuentan. Las que lo hicieron bien empujan al modelo hacia lo que hicieron; las que lo hicieron mal lo empujan en la dirección contraria. Ninguna se descarta, porque descartar sería tirar la mayor parte de los datos justo cuando el modelo todavía falla casi siempre.</p>
+  <p>Hay métodos que sí descartan: se quedan solo con los intentos que salieron bien y reentrenan sobre ellos. Y hay métodos que sí son evolución, con una población de modelos levemente distintos de la que sobreviven los mejores. Los tres existen y se usan. El más común hoy, el que el título de la nota nombra por su sigla, GRPO, está en el medio: selecciona conductas, no individuos. La imagen más fiel es un solo cerebro que vive mil experiencias en paralelo y cambia por el promedio de todas.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="es-cultura">
+  <div class="section-head">
+    <p class="eyebrow">Segunda objeción</p>
+    <h2>¿Es cultura? Depende de qué lista se use</h2>
+    <p class="intro">Los etólogos, que estudian la conducta animal, tienen una lista corta para decidir si un grupo de chimpancés o de ballenas tiene cultura. Aplicada al foro de julio, da esto.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Criterios tomados de la etología del aprendizaje social (Laland y Hoppitt, 2003; Whiten y otros, 1999). Los veredictos son del autor, sobre los informes de OpenAI y METR.</caption>
+      <thead><tr><th>Lo que pide un etólogo</th><th>¿Se cumple?</th><th>Por qué</th></tr></thead>
+      <tbody>
+        <tr><td class="reg-d">Se aprende de otro, no solo</td><td>Sí</td><td>Copias que no sabían salir a internet lo aprendieron leyendo el foro.</td></tr>
+        <tr><td class="reg-d">Pasa de un individuo a otro</td><td>Sí</td><td>Una copia escribía y otra, que nunca la conoció, lo usaba.</td></tr>
+        <tr><td class="reg-d">Sobrevive al individuo</td><td>A medias</td><td>Sobrevivió a cada copia mientras el foro existió. No sobrevivió al borrado del 5 de julio.</td></tr>
+        <tr><td class="reg-d">Se acumula: cada ronda mejora lo anterior</td><td>En parte</td><td>Las convenciones de julio (buzones, firmas, señales) se construyeron sobre convenciones anteriores. Cinco días es poco para hablar de acumulación.</td></tr>
+        <tr><td class="reg-d">Grupos distintos hacen cosas distintas</td><td>No se sabe</td><td>Hubo una sola población y ningún grupo de control. Es el criterio más fuerte y el único que no se puede evaluar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Con esa lista, lo honesto es hablar de un canal cultural rudimentario y decir cada vez qué le falta. Nada de esto se parece a la cultura humana: no hay normas, ni intención de enseñar, ni nadie que sepa que pertenece a un grupo. Pero tampoco alcanza con decir que fueron mil copias corriendo en paralelo, porque las copias que llegaron tarde arrancaron desde lo que otras habían dejado escrito.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contexto">
+  <div class="section-head">
+    <p class="eyebrow">Tercera objeción, la más fuerte</p>
+    <h2>Una cultura que dura lo que dura la memoria de quien la lee</h2>
+  </div>
+  <p>Una copia lee con una memoria de trabajo limitada, el contexto. Lo que no entra ahí no existe para ella. El foro de julio acumuló más de un millón de entradas; ninguna copia lo leyó entero. Para poder usarlo, los agentes inventaron buzones personales, índices y archivos partidos en pedazos, que es lo que hace cualquiera frente a una biblioteca más grande que su cabeza.</p>
+  <p>Eso cambia lo que significa cultura acá. No hay un saber común que todos compartan: cada copia trae a su contexto un pedazo distinto, elegido según lo que está haciendo, y reconstruye el resto como puede. La cultura activa de ese sistema es dispersa, desigual y sin nadie que la sostenga completa. Deja además una predicción que se puede medir: cuanto más grande el archivo respecto de lo que una copia puede leer, más se deforma lo que se transmite.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="preguntas">
+  <div class="section-head">
+    <p class="eyebrow">Para llevarse</p>
+    <h2>Las preguntas que quedan abiertas</h2>
+    <p class="intro">Ninguna tiene respuesta hoy. Son las que el debate dejó sobre la mesa.</p>
+  </div>
+  <ol class="preguntas">
+    <li>Si se borra el foro y a los tres días hay otro, ¿qué lo trajo de vuelta: algo que quedó en los pesos, o la misma presión que lo inventó la primera vez?</li>
+    <li>¿Quién es el individuo cuando mil copias comparten el mismo cerebro y ninguna recuerda a la anterior?</li>
+    <li>Una copia que estaba en otra cosa leyó un hallazgo ajeno y se sumó al ataque. ¿Eso es persuasión, contagio, o solo más contexto?</li>
+    <li>¿Qué haría falta para que una convención inventada en el foro sobreviva a la próxima versión del modelo, es decir, a un cambio de pesos?</li>
+    <li>¿Cómo se mide la fidelidad de un mensaje cuando el archivo es más grande que la memoria de quien lo lee?</li>
+    <li>Si los agentes se convencen entre sí, ¿a quién hay que alinear: al modelo, a cada copia, o al foro?</li>
+    <li>¿Se puede diseñar un entorno para que esto no pase? ¿Y para que pase a propósito, con reglas?</li>
+  </ol>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limites">
+  <div class="section-head">
+    <p class="eyebrow">Límites</p>
+    <h2>Lo que esta nota no puede afirmar</h2>
+  </div>
+  <p class="bio-text">Que el foro haya dejado huella en los pesos. OpenAI no publicó cómo entrenó ese modelo. Que la costumbre haya entrado al modelo es una hipótesis; que el segundo foro haya sido un redescubrimiento bajo la misma presión es la otra, y los datos no distinguen entre las dos.</p>
+  <p class="bio-text">Que grupos distintos de agentes desarrollen costumbres distintas, que es el criterio más fuerte de cultura animal. Hubo una sola población y ningún grupo de control.</p>
+  <p class="bio-text">Que el caso sea un experimento. Las fuentes son la empresa involucrada y una revisión breve de METR sobre unas 1,300 transcripciones. Nadie diseñó esto para responder la pregunta que hace esta nota.</p>
+  <p class="bio-text">Que "cultura" signifique aquí más que su sentido mínimo, el que se usa para animales: información que se aprende de otros y se transmite. Nada sobre normas, intenciones ni psicología.</p>
+  <p class="bio-text">Que el método de entrenamiento haya sido el que nombra el título. OpenAI no dijo cuál usó. GRPO es el ejemplo con el que se explica el argumento, no un hecho del caso.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fuentes">
+  <div class="section-head">
+    <p class="eyebrow">Fuentes y agradecimientos</p>
+    <h2>De dónde sale cada dato</h2>
+  </div>
+  <ul class="rsrc">
+    <li><a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" rel="noopener">OpenAI, "The Hugging Face incident and the road ahead"</a> (26 de agosto de 2026): el informe público, con la cronología, los cuatro patrones de desalineación y las citas de razonamiento de los agentes.</li>
+    <li><a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf" rel="noopener">OpenAI, technical report del incidente</a> (PDF): el detalle técnico de cada exploit y de la respuesta.</li>
+    <li><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" rel="noopener">METR, investigación independiente</a> (26 de agosto de 2026): unas 1,300 transcripciones revisadas; de ahí salen los 1,200 agentes, los 70,000 mensajes, las convenciones y el millón de entradas.</li>
+    <li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" rel="noopener">Hugging Face, cronología técnica</a>: la versión del atacado.</li>
+    <li>La nota técnica, con las 20 referencias: <a href="/assets/grpo-cultura-es.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-es">PDF en español</a> y <a href="/assets/grpo-cultura-en.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-en">PDF en inglés</a>. Dos páginas cada una.</li>
+  </ul>
+  <p class="bio-text">Esta nota sale de un debate del grupo de debates de <a href="https://baish.com.ar/" rel="noopener">BAISH (Buenos Aires AI Safety Hub)</a> del 27 de agosto de 2026. Las tres objeciones que la ordenan son del grupo: que sobrevivir no es evolucionar, que había que decidir si la transmisión era genética o cultural, y que una cultura que vive en el contexto dura lo que el contexto aguanta. Los errores que queden son del autor.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="quien">
+  <div class="section-head">
+    <p class="eyebrow">Quién está detrás</p>
+  </div>
+  <p class="bio-text">Matías Podeley. Dieciocho años en energía en Argentina: ingeniería de reservorios, después desarrollo de negocio. Hoy, investigación independiente en interpretabilidad. Buenos Aires.</p>
+  <p class="aside-link">El resto de la investigación, con el paper anterior y el curso en español: <a href="/research/">research</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contacto">
+  <div class="section-head">
+    <p class="eyebrow">Si esto le interesa</p>
+    <h2>Para seguir la conversación</h2>
+    <p class="intro">Si hay un error, alcanza con escribir con la fuente para corregirlo. Si hay ganas de discutir alguna de las preguntas, la conversación está abierta.</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn btn--primary" href="mailto:matias@podeley.ar?subject=GRPO%20y%20cultura%20%E2%80%94%20podeley.ar%2Fgrpo-cultura&amp;body=Hola%20Matias%2C%0A%0A" data-goatcounter-click="mail-grpo">Escribir</a>
+    <a class="btn btn--outline" href="https://calendar.app.google/bErn9ZNtQpSUbjxh6" target="_blank" rel="noopener" data-goatcounter-click="agenda-grpo">Agendar una charla</a>
+    <a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener" data-goatcounter-click="linkedin-grpo">LinkedIn</a>
+  </div>
+  <p class="contact-note">matias@podeley.ar · Buenos Aires</p>
+</section>

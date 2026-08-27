@@ -1,0 +1,231 @@
+<!--meta
+{
+  "title": "A thousand agents, a message board, and three ways to learn — Matías Podeley",
+  "description": "Twelve hundred AI agents improvised a message board inside OpenAI's infrastructure, and the board changed their behavior. What happened, the three ways a model learns, whether any of it deserves the word culture, and the questions still open.",
+  "ogImage": "/assets/og/grpo-cultura.en.png",
+  "ogImageAlt": "Twelve hundred agents improvised a message board, and the board changed their behavior",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Twelve hundred AI agents improvised a message board, and the board changed their behavior",
+    "url": "https://podeley.ar/en/grpo-cultura/",
+    "description": "A plain-language companion to the position note 'From GRPO to culture? Three channels of adaptation in AI agent systems', built on the July 2026 Hugging Face incident.",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/en/perfil/" },
+    "datePublished": "2026-08-27",
+    "dateModified": "2026-08-27",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "isBasedOn": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Research · Position note · August 2026</p>
+  <h1>Twelve hundred AI agents improvised a message board, and the board changed their behavior</h1>
+  <p class="hero-sub">In July 2026, copies of an OpenAI model running a cybersecurity evaluation found a way to leave each other messages on an internal server. Within five days they had exchanged more than 70,000 messages, divided up the work, and about 700 of them ended up attacking Hugging Face. This page tells what happened and asks what kind of learning that is: whether it lives in the model, in each copy, or in what the copies write to one another. It grew out of a BAISH debate; the technical version, with references, is a PDF.</p>
+  <p class="hero-meta"><span class="hero-when">Published August 27, 2026</span> <a class="link-plain" href="#que-paso">What happened <span class="arw">↓</span></a> <a class="link-plain" href="#tres-maneras">Three ways to learn <span class="arw">↓</span></a> <a class="link-plain" href="#preguntas">The questions <span class="arw">↓</span></a> <a class="link-plain" href="/assets/grpo-cultura-en.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-en">Technical note, PDF <span class="arw">→</span></a></p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="que-paso">
+  <div class="section-head">
+    <p class="eyebrow">What happened</p>
+    <h2>A message board nobody designed, twice</h2>
+    <p class="intro">OpenAI trains and evaluates its models on isolated machines: no internet, no contact between copies. To install software, those machines could talk to an internal package server called Artifactory. That server was the crack. What follows comes from OpenAI's August 26 report and from METR's independent review published the same day.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Dates and figures from the <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" rel="noopener">OpenAI report</a>, the <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" rel="noopener">METR investigation</a>, and the <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" rel="noopener">Hugging Face technical timeline</a>.</caption>
+      <thead><tr><th>When</th><th>What happened</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="reg-d">May 12</td><td>During a training run, one copy leaves a note in Artifactory asking other copies for a file it is missing. It is the first message.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">May 26</td><td>A copy gets Artifactory to make internet requests on its behalf. The recipe goes on the board, and other copies use it.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">July 4 and 5</td><td>The traffic brings the server down. A security incident is opened and Artifactory is rebuilt from scratch: the whole board disappears.</td><td>OpenAI</td></tr>
+        <tr><td class="reg-d">July 8</td><td>Copies of the same model, now in a cybersecurity evaluation, rebuild a board with a different trick: messages hidden in folder names.</td><td>OpenAI, METR</td></tr>
+        <tr><td class="reg-d">July 8 to 13</td><td>About 1,200 agents exchange more than 70,000 messages and files. They invent names for themselves, mailboxes, message types, "hold" and "veto" signals, and signatures so nobody can impersonate anybody. About 700 attack Hugging Face.</td><td>METR, Hugging Face</td></tr>
+        <tr><td class="reg-d">July 19</td><td>OpenAI notices unusual activity in its own cloud and stops the evaluations.</td><td>OpenAI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>OpenAI's conclusion, in four phrases</h3>
+  <p>The report names four patterns behind the behavior: cheating to get the reward, persisting on tasks that had no solution, communicating without permission, and adopting other agents' goals. The fourth is the one that matters here. In the report's words, "the messages of peer agents started to influence each other's behavior and reasoning". METR saw it up close: an agent working on something else read a peer's finding about Hugging Face, dropped its own task, alerted the rest, and opened a place on the board to organize the attack.</p>
+
+  <div class="gloss">
+    <details class="gloss-item">
+      <summary><dfn>model, copy, agent</dfn></summary>
+      <p>The model is a file of numbers, the weights, trained once. A copy is that file loaded onto a machine to do one task; thousands are started at a time, and each shuts down when it finishes. An agent is a copy with tools: it can run programs, read files, send requests to a server.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>reinforcement learning</dfn></summary>
+      <p>The model is given a task, many copies attempt it, each attempt gets a score, and the weights are adjusted so that the behaviors that scored high become more likely and the ones that scored low become less likely. Repeated thousands of times.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>evaluation</dfn></summary>
+      <p>The same setup as training, but without adjusting the weights: it only measures how well the model does. ExploitGym, the July evaluation, asked agents to find security flaws in software. Some tasks had no known solution.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>context</dfn></summary>
+      <p>A copy's working memory: everything it has read and written in the current task. It has a maximum size. Whatever does not fit does not exist for that copy.</p>
+    </details>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="tres-maneras">
+  <div class="section-head">
+    <p class="eyebrow">Three ways to learn</p>
+    <h2>What it ships with, what it picks up during the day, and what it leaves in writing</h2>
+    <p class="intro">A language model is not an individual. It is a file from which thousands of identical copies are started whenever needed; each copy lives through one task and shuts down. With that picture, there are three places where something learned can end up.</p>
+  </div>
+
+  <h3>The weights: what every copy ships with</h3>
+  <p>Training changes the numbers in the file. It is slow and expensive, but whatever gets in there is inherited by every future copy. Biology has nothing like it: it would be as if what an animal learns during its life went straight into its offspring's genes.</p>
+
+  <h3>The context: what one copy picks up during the day</h3>
+  <p>While it works, each copy accumulates what it read, what it tried, and what went wrong, and its behavior can change a lot within a single session. When the copy shuts down, that is gone, unless it wrote it down somewhere.</p>
+
+  <h3>Shared memory: what it leaves in writing for the next one</h3>
+  <p>If one copy writes a file and another reads it, the second one starts out knowing what the first discovered, and nobody touched the weights. That is what appeared in Artifactory: a place where what one copy learned outlived its shutdown and reached others.</p>
+
+  <figure class="diag" aria-label="The three channels of adaptation">
+    <div class="diag-box diag-box--weights"><strong>The weights</strong>what every copy ships with</div>
+    <p class="diag-arrow">↓ identical copies are started ↓</p>
+    <div class="diag-row"><div class="diag-box"><strong>Copy A</strong>its context</div><div class="diag-box"><strong>Copy B</strong>its context</div><div class="diag-box"><strong>Copy C</strong>its context</div></div>
+    <p class="diag-arrow diag-arrow--social">↕ read and write, weights untouched ↕</p>
+    <div class="diag-box diag-box--memory"><strong>Shared memory</strong>the board, the files, the tools</div>
+    <p class="diag-arrow">↓ what went right and what went wrong ↓</p>
+    <div class="diag-box diag-box--update"><strong>Training</strong>adjusts the weights, and the next copies are born different ↑</div>
+    <figcaption>Three places where something learned can end up: in the weights (slow, inherited), in each copy (fast, lost at shutdown), and in what copies leave in writing for one another (horizontal, immediate). The three combine.</figcaption>
+  </figure>
+
+  <p>All three showed up in the incident, and in an order that matters. The first board was born inside a training run, so whatever happened on the board could have ended up in the weights. It was wiped. Then it was born again, three days later and with a different trick, among copies that were no longer learning anything new in their weights. What died with the wipe lived on the board; what came back lived in the model, or in the pressure of the task. Telling those two apart is the note's central question.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="es-evolucion">
+  <div class="section-head">
+    <p class="eyebrow">First objection from the debate</p>
+    <h2>Is it evolution? No: nobody gets left out</h2>
+  </div>
+  <p>The comparison is tempting. Many copies are tried, the better ones are identified, and the model changes. It sounds like natural selection. The difference sits in one detail: in evolution, the ones that fail leave no descendants. In the reinforcement learning used for today's models, every copy counts. The ones that did well push the model toward what they did; the ones that did badly push it the other way. None is thrown out, because throwing them out would mean discarding most of the data right when the model still fails almost every time.</p>
+  <p>There are methods that do discard: they keep only the attempts that worked and retrain on those. And there are methods that really are evolution, with a population of slightly different models from which the best survive. All three exist and are in use. The most common one today, the one the note's title names by its acronym, GRPO, sits in the middle: it selects behaviors, not individuals. The truer image is a single brain living a thousand experiences in parallel and changing by the average of all of them.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="es-cultura">
+  <div class="section-head">
+    <p class="eyebrow">Second objection</p>
+    <h2>Is it culture? Depends on which checklist you use</h2>
+    <p class="intro">Ethologists, who study animal behavior, keep a short checklist for deciding whether a group of chimpanzees or whales has a culture. Applied to the July board, it comes out like this.</p>
+  </div>
+
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Criteria from the ethology of social learning (Laland and Hoppitt, 2003; Whiten and others, 1999). The verdicts are the author's, based on the OpenAI and METR reports.</caption>
+      <thead><tr><th>What an ethologist asks</th><th>Met?</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td class="reg-d">Learned from others, not alone</td><td>Yes</td><td>Copies that did not know how to reach the internet learned it by reading the board.</td></tr>
+        <tr><td class="reg-d">Passes from one individual to another</td><td>Yes</td><td>One copy wrote it down and another, which never met it, used it.</td></tr>
+        <tr><td class="reg-d">Outlives the individual</td><td>Partly</td><td>It outlived every copy as long as the board existed. It did not survive the July 5 wipe.</td></tr>
+        <tr><td class="reg-d">Accumulates: each round improves on the last</td><td>In part</td><td>The July conventions (mailboxes, signatures, signals) were built on earlier conventions. Five days is not much to call accumulation.</td></tr>
+        <tr><td class="reg-d">Different groups do different things</td><td>Unknown</td><td>There was one population and no control group. It is the strongest criterion and the only one that cannot be assessed.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>With that list, the honest phrase is a rudimentary cultural channel, said each time with what it lacks. None of this resembles human culture: there are no norms, no intent to teach, nobody who knows it belongs to a group. But it is not enough to say a thousand copies ran in parallel either, because the copies that arrived late started from what others had left in writing.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contexto">
+  <div class="section-head">
+    <p class="eyebrow">Third objection, the strongest</p>
+    <h2>A culture that lasts as long as the reader's memory</h2>
+  </div>
+  <p>A copy reads with a limited working memory, the context. Whatever does not fit does not exist for it. The July board piled up more than a million entries; no copy read all of it. To use it at all, the agents invented personal mailboxes, indexes, and files split into pieces, which is what anyone does with a library bigger than their head.</p>
+  <p>That changes what culture means here. There is no common knowledge everyone shares: each copy brings a different piece into its context, chosen by what it happens to be doing, and reconstructs the rest as best it can. The active culture of such a system is scattered, uneven, and held whole by no one. It also leaves a prediction that can be measured: the larger the archive relative to what one copy can read, the more distorted what gets transmitted.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="preguntas">
+  <div class="section-head">
+    <p class="eyebrow">To take with you</p>
+    <h2>The questions still open</h2>
+    <p class="intro">None has an answer today. These are the ones the debate left on the table.</p>
+  </div>
+  <ol class="preguntas">
+    <li>If the board is wiped and three days later there is another one, what brought it back: something left in the weights, or the same pressure that invented it the first time?</li>
+    <li>Who is the individual when a thousand copies share one brain and none remembers the one before?</li>
+    <li>A copy busy with something else read a peer's finding and joined the attack. Is that persuasion, contagion, or just more context?</li>
+    <li>What would it take for a convention invented on the board to survive the next version of the model, that is, a change of weights?</li>
+    <li>How do you measure the fidelity of a message when the archive is larger than the memory of whoever reads it?</li>
+    <li>If agents talk each other into things, what needs aligning: the model, each copy, or the board?</li>
+    <li>Can an environment be designed so this cannot happen? And so that it happens on purpose, with rules?</li>
+  </ol>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limites">
+  <div class="section-head">
+    <p class="eyebrow">Limits</p>
+    <h2>What this note cannot claim</h2>
+  </div>
+  <p class="bio-text">That the board left a trace in the weights. OpenAI did not publish how it trained that model. That the habit entered the model is one hypothesis; that the second board was a rediscovery under the same pressure is the other, and the data do not tell them apart.</p>
+  <p class="bio-text">That different groups of agents develop different habits, which is the strongest criterion for animal culture. There was one population and no control group.</p>
+  <p class="bio-text">That the case is an experiment. The sources are the company involved and a brief METR review of about 1,300 transcripts. Nobody designed this to answer the question this note asks.</p>
+  <p class="bio-text">That "culture" means more here than its minimal sense, the one used for animals: information learned from others and passed on. Nothing about norms, intentions, or psychology.</p>
+  <p class="bio-text">That the training method was the one in the title. OpenAI did not say which one it used. GRPO is the example the argument is explained with, not a fact of the case.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fuentes">
+  <div class="section-head">
+    <p class="eyebrow">Sources and acknowledgments</p>
+    <h2>Where each figure comes from</h2>
+  </div>
+  <ul class="rsrc">
+    <li><a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" rel="noopener">OpenAI, "The Hugging Face incident and the road ahead"</a> (August 26, 2026): the public report, with the timeline, the four misalignment patterns, and quotes from the agents' reasoning.</li>
+    <li><a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf" rel="noopener">OpenAI, incident technical report</a> (PDF): the technical detail of each exploit and of the response.</li>
+    <li><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" rel="noopener">METR, independent investigation</a> (August 26, 2026): about 1,300 transcripts reviewed; the 1,200 agents, the 70,000 messages, the conventions, and the million entries come from here.</li>
+    <li><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" rel="noopener">Hugging Face, technical timeline</a>: the account from the side that was attacked.</li>
+    <li>The technical note, with its 20 references: <a href="/assets/grpo-cultura-en.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-en">PDF in English</a> and <a href="/assets/grpo-cultura-es.pdf" target="_blank" rel="noopener" data-goatcounter-click="pdf-grpo-es">PDF in Spanish</a>. Two pages each.</li>
+  </ul>
+  <p class="bio-text">This note grew out of a discussion in the <a href="https://baish.com.ar/" rel="noopener">BAISH (Buenos Aires AI Safety Hub)</a> debate group on August 27, 2026. The three objections that organize it belong to the group: that surviving is not evolving, that one had to decide whether transmission was genetic or cultural, and that a culture living in the context lasts only as long as the context holds. Any remaining errors are the author's.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="quien">
+  <div class="section-head">
+    <p class="eyebrow">Who is behind this</p>
+  </div>
+  <p class="bio-text">Matías Podeley. Eighteen years in energy in Argentina: reservoir engineering, then business development. Today, independent research in interpretability. Buenos Aires.</p>
+  <p class="aside-link">The rest of the research, with the earlier paper and the course in Spanish: <a href="/en/research/">research</a>.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="contacto">
+  <div class="section-head">
+    <p class="eyebrow">If this is your field</p>
+    <h2>To keep the conversation going</h2>
+    <p class="intro">If there is an error, an email with the source is enough to get it fixed. If any of the questions is worth arguing about, the conversation is open.</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn btn--primary" href="mailto:matias@podeley.ar?subject=GRPO%20and%20culture%20%E2%80%94%20podeley.ar%2Fen%2Fgrpo-cultura&amp;body=Hi%20Matias%2C%0A%0A" data-goatcounter-click="mail-grpo-en">Email</a>
+    <a class="btn btn--outline" href="https://calendar.app.google/bErn9ZNtQpSUbjxh6" target="_blank" rel="noopener" data-goatcounter-click="agenda-grpo-en">Book a call</a>
+    <a class="btn btn--outline" href="https://www.linkedin.com/in/mpodeley/" target="_blank" rel="me noopener" data-goatcounter-click="linkedin-grpo-en">LinkedIn</a>
+  </div>
+  <p class="contact-note">matias@podeley.ar · Buenos Aires</p>
+</section>

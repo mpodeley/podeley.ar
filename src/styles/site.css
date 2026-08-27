@@ -690,3 +690,8 @@ details.ficha[open] summary::after { content: "–"; }
 .preguntas { max-width: 60ch; margin: var(--pd-sp-4) 0 0; padding-left: 1.5rem; }
 .preguntas li { line-height: var(--pd-lh-body); }
 .preguntas li + li { margin-top: var(--pd-sp-3); }
+/* Tablas de tres columnas cortas (/grpo-cultura/): envuelven en vez de scrollear,
+   porque la columna del veredicto es lo que el lector vino a buscar. */
+.reg--narrow { min-width: 0; }
+.reg--narrow td, .reg--narrow th { vertical-align: top; }
+.reg--narrow .reg-d { white-space: normal; }

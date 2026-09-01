@@ -70,6 +70,11 @@ const CARDS = [
   { slug: 'rigi', lang: 'en', eyebrow: 'RIGI registry · Large investments', fig: 'Twenty-one',
     title: 'projects approved, while the official site lists sixteen' },
 
+  { slug: 'equipos', lang: 'es', eyebrow: 'Registro sectorial · Perforación y fractura · Argentina', fig: '54 y 15',
+    title: 'rigs y sets de fractura activos, y ningún padrón oficial' },
+  { slug: 'equipos', lang: 'en', eyebrow: 'Sector register · Drilling & fracturing · Argentina', fig: '54 and 15',
+    title: 'active rigs and frac spreads, and no official registry' },
+
   { slug: 'trabajo', lang: 'es', eyebrow: 'Cómo trabajo · Petróleo, gas y minería',
     title: 'Consulta, proyecto o dirección técnica' },
   { slug: 'trabajo', lang: 'en', eyebrow: 'How I work · Oil, gas & mining',

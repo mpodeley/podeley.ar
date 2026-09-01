@@ -7,7 +7,7 @@
   "scripts": {
     "build": "node build.mjs && node tools/postbuild.mjs",
     "serve": "npm run build && python3 -m http.server -d dist 8080",
-    "check": "node tools/ciber-check.mjs && node tools/rigi-check.mjs && node tools/site-check.mjs",
+    "check": "node tools/ciber-check.mjs && node tools/rigi-check.mjs && node tools/equipos-check.mjs && node tools/site-check.mjs",
     "upload:cf": "CLOUDFLARE_ACCOUNT_ID=9ece4c5a8442abe4eb501a2067fe163a npx --yes wrangler@latest pages deploy dist --project-name podeley --branch main --commit-dirty=true",
     "deploy:cf": "node tools/predeploy.mjs && npm run check && npm run build && npm run upload:cf",
     "cv": "node tools/cv-pdf.mjs",

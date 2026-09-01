@@ -45,6 +45,9 @@ const SITES = [
   ['pozos-neuquina',                'https://vm.podeley.ar/',                             3000, false],
   // Tier-0 choropleth paints on load; 6 s covers IGN tiles + agregados.json.
   ['catastro-minero-argentina',     'https://mpodeley.github.io/catastro-minero-argentina/',    6000, false],
+  // Registro estático: el hero con los totales es la captura. Antes del primer
+  // deploy se capturó desde el build local con esta misma receta.
+  ['equipos',                       'https://podeley.ar/equipos/',                               1000, false],
 ];
 
 // Walk the page (triggers lazy loads), then center the LARGEST visual

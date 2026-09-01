@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://podeley.ar/data/equipos-parque.schema.json",
+  "title": "Registro del parque de equipos: perforación, fractura y workover en Argentina",
+  "description": "Contrato público del dataset. Dos reglas gobiernan el esquema: los conteos que las fuentes publican con cifras distintas se registran como rango, nunca como promedio; y toda especificación técnica de un equipo individual lleva su propia fuente, porque las fichas se arman juntando anuncios sueltos. Lo que estima o deriva el registro lleva prefijo est_.",
+  "type": "object",
+  "required": ["titulo", "actualizado", "licencia", "nota_metodo", "campos", "oficial", "segmentos", "empresas", "equipos"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "titulo": { "type": "string" },
+    "actualizado": { "$ref": "#/$defs/fecha" },
+    "licencia": { "type": "string" },
+    "nota_metodo": { "type": "string" },
+    "nota_correcciones": { "type": "string" },
+    "correcciones": { "type": "array", "items": { "$ref": "#/$defs/correccion" } },
+    "oficial": { "$ref": "#/$defs/oficial" },
+    "campos": { "type": "object" },
+    "segmentos": { "type": "array", "minItems": 4, "items": { "$ref": "#/$defs/segmento" } },
+    "empresas": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/empresa" } },
+    "equipos": { "type": "array", "items": { "$ref": "#/$defs/equipo" } },
+    "est_hhp_operadoras": { "type": "array", "items": { "$ref": "#/$defs/estHhpOperadora" } }
+  },
+
+  "$defs": {
+    "fecha": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "fechaOMes": { "type": "string", "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$" },
+    "urlHttps": { "type": "string", "pattern": "^https://" },
+
+    "correccion": {
+      "type": "object",
+      "required": ["fecha", "fila", "cambio"],
+      "additionalProperties": false,
+      "properties": {
+        "fecha": { "$ref": "#/$defs/fecha" },
+        "fila": { "type": "string" },
+        "cambio": { "type": "string" },
+        "senalado_por": { "type": "string" }
+      }
+    },
+
+    "oficial": {
+      "description": "Lo que publica el Estado el día de la consulta. En este registro lo que se documenta es una ausencia: no existe padrón oficial a nivel equipo, y la afirmación lleva fecha para que caduque explícitamente.",
+      "type": "object",
+      "required": ["consultado", "nota", "adjunto_iv"],
+      "additionalProperties": false,
+      "properties": {
+        "consultado": { "$ref": "#/$defs/fecha" },
+        "padron": { "type": "null" },
+        "nota": { "type": "string" },
+        "adjunto_iv": {
+          "description": "Lo único oficial que roza el nivel equipo: el campo potencia_equipos_fractura_hp del Adjunto IV de la Resolución 319/93.",
+          "type": "object",
+          "required": ["url", "consultado", "advertencia"],
+          "additionalProperties": false,
+          "properties": {
+            "url": { "type": "string" },
+            "dataset": { "type": "string" },
+            "recurso": { "type": "string" },
+            "consultado": { "$ref": "#/$defs/fecha" },
+            "advertencia": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "nombreSegmento": { "type": "string", "enum": ["perforacion", "fractura", "workover", "pulling"] },
+
+    "segmento": {
+      "description": "Total vigente del segmento. El total ancla en una sola fuente por decisión de método; los desgloses por empresa viven en las filas de empresas y no siempre lo cubren.",
+      "type": "object",
+      "required": ["segmento", "total", "unidad", "fecha_dato", "fuentes"],
+      "additionalProperties": false,
+      "properties": {
+        "segmento": { "$ref": "#/$defs/nombreSegmento" },
+        "total": { "type": "number" },
+        "unidad": { "type": "string" },
+        "fecha_dato": { "$ref": "#/$defs/fechaOMes" },
+        "shale": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "convencional": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "dual_fuel": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "dual_fuel_fecha": { "anyOf": [{ "$ref": "#/$defs/fechaOMes" }, { "type": "null" }] },
+        "dual_fuel_fuentes": { "type": "array", "items": { "type": "string" } },
+        "electricos_anunciados": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "electricos_nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "fuentes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+
+    "conteo": {
+      "description": "Cantidad de equipos de una empresa en un segmento. Exactamente una de dos formas: cantidad, cuando las fuentes coinciden, o cantidad_min y cantidad_max, cuando publican cifras distintas. Nunca las dos; nunca un promedio.",
+      "type": "object",
+      "required": ["segmento", "unidad", "fecha_dato", "confianza", "fuentes"],
+      "additionalProperties": false,
+      "anyOf": [
+        { "type": "object", "required": ["cantidad"] },
+        { "type": "object", "required": ["cantidad_min", "cantidad_max"] }
+      ],
+      "properties": {
+        "segmento": { "$ref": "#/$defs/nombreSegmento" },
+        "cantidad": { "type": "number" },
+        "cantidad_min": { "type": "number" },
+        "cantidad_max": { "type": "number" },
+        "unidad": { "type": "string" },
+        "fecha_dato": { "$ref": "#/$defs/fechaOMes" },
+        "confianza": { "type": "string", "enum": ["alta", "media", "baja"] },
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "fuentes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+
+    "empresa": {
+      "type": "object",
+      "required": ["id", "nombre", "perfil", "conteos", "fuentes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "nombre": { "type": "string" },
+        "perfil": {
+          "description": "servicio = contratista que opera equipos para terceros; operadora = petrolera que perfora o interviene con equipos propios.",
+          "type": "string",
+          "enum": ["servicio", "operadora"]
+        },
+        "conteos": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/conteo" } },
+        "tecnologia": {
+          "description": "Tecnologías presentes en la flota de la empresa en Argentina, sin cuantificar. La cuantificación, cuando existe, va en los conteos o en la ficha del equipo.",
+          "type": "array",
+          "items": { "type": "string", "enum": ["diesel", "dual-fuel", "e-frac", "electrico", "gnc"] }
+        },
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "fuentes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+
+    "spec": {
+      "description": "Una especificación técnica con su fuente propia. El enum de spec es cerrado para que la página pueda rotularlo en los dos idiomas; crece por agregado, nunca por texto libre.",
+      "type": "object",
+      "required": ["spec", "valor", "fuente"],
+      "additionalProperties": false,
+      "properties": {
+        "spec": {
+          "type": "string",
+          "enum": [
+            "hhp", "bombas", "fabricante_bombas", "motores", "tier", "tipo_energia",
+            "potencia_hp", "capacidad_gancho_lb", "fabricante_modelo", "walking", "mpd",
+            "bombas_lodo", "presion_max_psi", "profundidad_max_m", "automatizacion",
+            "anio_ingreso", "inversion_usd"
+          ]
+        },
+        "valor": { "anyOf": [{ "type": "string" }, { "type": "number" }, { "type": "boolean" }] },
+        "fuente": { "$ref": "#/$defs/urlHttps" }
+      }
+    },
+
+    "equipo": {
+      "description": "Ficha de un equipo individual. Entra al registro sólo si tiene identificador público o al menos una especificación anunciada con fuente; lo demás queda en la fila de su empresa.",
+      "type": "object",
+      "required": ["id", "id_publico", "tipo", "empresa", "estado", "confianza", "specs", "fuentes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "id_publico": {
+          "description": "Identificador con el que la industria nombra al equipo (DLS-177, SAI-652, NBS-F37). Los sets de fractura no tienen identificador público: llevan null y un id descriptivo propio del registro.",
+          "anyOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "nombre": {
+          "description": "Nombre con el que la página titula la ficha cuando no hay identificador público, como Tenaris, tercer set. No reemplaza al id_publico cuando existe.",
+          "anyOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "tipo": { "$ref": "#/$defs/nombreSegmento" },
+        "empresa": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "operadora": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "cuenca": {
+          "anyOf": [
+            { "type": "string", "enum": ["Neuquina", "Golfo San Jorge", "Austral", "Cuyana", "Noroeste"] },
+            { "type": "null" }
+          ]
+        },
+        "estado": { "type": "string", "enum": ["activo", "anunciado", "en-armado", "inactivo", "sin-dato"] },
+        "estado_fecha": { "anyOf": [{ "$ref": "#/$defs/fechaOMes" }, { "type": "null" }] },
+        "confianza": { "type": "string", "enum": ["alta", "media", "baja"] },
+        "specs": { "type": "array", "items": { "$ref": "#/$defs/spec" } },
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+        "fuentes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+
+    "estHhpOperadora": {
+      "description": "Derivado propio del Adjunto IV: la potencia de equipos de fractura que cada operadora informa en sus pozos. La agregación es del registro aunque el insumo sea oficial; la advertencia del insumo vive en oficial.adjunto_iv.",
+      "type": "object",
+      "required": ["operadora", "hhp_max_informado", "desde", "hasta", "confiable"],
+      "additionalProperties": false,
+      "properties": {
+        "operadora": { "type": "string" },
+        "hhp_max_informado": { "type": "number" },
+        "hhp_p95": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "pozos_muestra": { "anyOf": [{ "type": "number" }, { "type": "null" }] },
+        "desde": { "$ref": "#/$defs/fechaOMes" },
+        "hasta": { "$ref": "#/$defs/fechaOMes" },
+        "confiable": { "type": "boolean" },
+        "nota": { "anyOf": [{ "type": "string" }, { "type": "null" }] }
+      }
+    }
+  }
+}

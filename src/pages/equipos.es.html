@@ -1,0 +1,553 @@
+<!--meta
+{
+  "title": "Registro del parque de equipos: quién perfora y quién fractura en Argentina — Matías Podeley",
+  "description": "Registro del parque de equipos de petróleo y gas activo en Argentina: 54 perforadores, quince sets de fractura, 47 equipos de workover y 72 de pulling a julio de 2026, con la ficha técnica de cada equipo que la tenga publicada y la fuente de cada cifra.",
+  "ogImage": "/assets/og/equipos.es.png",
+  "ogImageAlt": "54 rigs y quince sets de fractura activos en Argentina, y ningún padrón oficial",
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Registro del parque de equipos de perforación, fractura y workover en Argentina",
+    "url": "https://podeley.ar/equipos/",
+    "description": "Inventario de los equipos de perforación, sets de fractura hidráulica y equipos de workover y pulling activos en Argentina, con totales por segmento, conteos por empresa con rango cuando las fuentes difieren, y fichas técnicas individuales con fuente por especificación.",
+    "inLanguage": "es",
+    "creator": { "@type": "Person", "@id": "https://podeley.ar/perfil/#person", "name": "Matías Podeley", "url": "https://podeley.ar/perfil/" },
+    "dateModified": "2026-09-01",
+    "temporalCoverage": "2019-07-04/..",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      { "@type": "DataDownload",
+        "contentUrl": "https://podeley.ar/data/equipos-parque.json",
+        "encodingFormat": "application/json" }
+    ]
+  }
+}
+-->
+
+<section class="hero wrap">
+  <p class="kicker">Registro sectorial · Perforación y fractura · Argentina</p>
+  <h1>54 equipos perforando, quince sets de fractura y ningún padrón oficial</h1>
+  <p class="hero-sub">Este es el registro del parque de equipos de petróleo y gas activo en Argentina: perforación, fractura, workover y pulling, con la ficha técnica de cada equipo que la tenga publicada. Los totales vienen de los relevamientos privados que la industria usa como referencia, porque el Estado no publica ninguno. A julio de 2026: 54 perforadores, quince sets de fractura, 47 equipos de workover y 72 de pulling. Cuando dos fuentes publican cifras distintas, la fila lleva el rango y las dos fuentes.</p>
+  <p class="hero-meta"><span class="hero-when">Actualizado el 1 de septiembre de 2026</span> <a class="link-plain" href="#parque">Totales <span class="arw">↓</span></a> <a class="link-plain" href="#fractura">Fractura <span class="arw">↓</span></a> <a class="link-plain" href="#perforacion">Perforación <span class="arw">↓</span></a> <a class="link-plain" href="#workover">Workover <span class="arw">↓</span></a> <a class="link-plain" href="#oficial">Lo oficial <span class="arw">↓</span></a> <a class="link-plain" href="#limites">Límites <span class="arw">↓</span></a></p>
+
+  <aside class="aviso" id="aviso">
+    <p class="aviso-t">Aviso, y pedido</p>
+    <p>Las cifras salen de relevamientos sectoriales, documentos de empresa y prensa especializada, sin consultar antes a las empresas nombradas. Un conteo con rango no acusa a nadie de inflar ni de esconder equipos: registra que las fuentes públicas no coinciden. Una ficha con pocos campos tampoco describe un equipo pobre; describe lo poco que se publicó.</p>
+    <p>Si un dato está mal o falta un equipo, <a href="mailto:matias@podeley.ar?subject=Correcci%C3%B3n%20al%20registro%20%E2%80%94%20podeley.ar%2Fequipos&amp;body=Hola%20Matias%2C%0A%0AEquipo%20o%20empresa%3A%20%0AQu%C3%A9%20est%C3%A1%20mal%3A%20%0AFuente%3A%20%0A%0A" data-goatcounter-click="mail-equipos">escribir con la fuente</a> alcanza. Toda corrección queda anotada en el archivo de datos con fecha, qué cambió y quién lo señaló.</p>
+  </aside>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="parque">
+  <div class="section-head">
+    <p class="eyebrow">El parque</p>
+    <h2>Cuatro totales, cada uno con su fecha y su dueño</h2>
+    <p class="intro">El total de cada segmento ancla en un solo relevamiento, el de TecnoPatagonia para equipos y el de Fucello para etapas de fractura, y lleva la fecha del dato. Los relevamientos mensuales salen con dos semanas de rezago: el vigente es julio de 2026, y el de agosto no estaba publicado al cierre de esta edición. Entre workover, pulling y sets, la flota de servicios sumó 171 unidades, apenas debajo del máximo de junio.</p>
+  </div>
+
+  <!-- equipos-tablas:segmentos -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Totales vigentes por segmento. Cada total ancla en un solo relevamiento; la fecha es la del dato, no la del registro.</caption>
+      <thead>
+        <tr><th scope="col">Segmento</th><th scope="col">Activos</th><th scope="col">Detalle</th><th scope="col">Dato de</th><th scope="col">Fuente</th></tr>
+      </thead>
+      <tbody>
+        <tr id="parque-perforacion"><td>Perforación</td><td class="reg-n">54 equipos</td><td>41 shale · 13 convencional</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://dataenergia.ar/petroleo-y-combustibles/en-julio-la-flota-de-torres-de-perforacion-supero-los-40-equipos-shale-y-alcanzo-los-54-rigs-activos-202681414420" rel="noopener">dataenergia.ar</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a></td></tr>
+        <tr id="parque-fractura"><td>Fractura</td><td class="reg-n">15 sets</td><td>5 dual fuel · 4 eléctricos anunciados</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.fracstages.com/" rel="noopener">fracstages.com</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/los-sets-fractura-vaca-muerta-tienen-un-30-capacidad-ociosa-n1249194" rel="noopener">mase.lmneuquen.com</a></td></tr>
+        <tr id="parque-workover"><td>Workover</td><td class="reg-n">47 equipos</td><td></td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a></td></tr>
+        <tr id="parque-pulling"><td>Pulling</td><td class="reg-n">72 equipos</td><td></td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /equipos-tablas:segmentos -->
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fractura">
+  <div class="section-head">
+    <p class="eyebrow">Fractura</p>
+    <h2>Cinco empresas se reparten las etapas, y los sets no tienen nombre</h2>
+    <p class="intro">Halliburton, SLB, Tenaris, Calfrac y SPI ejecutan toda la fractura hidráulica del país. En julio de 2026, sobre 2,010 etapas: Halliburton 55%, SLB 26%, SPI 10%, Tenaris 8% y Calfrac 1%, un reparto que el contrato exclusivo de YPF con Halliburton reescribió durante el año.</p>
+  </div>
+
+  <p>Un rig se llama DLS-177 o SAI-652 en la prensa; un set de fractura es "el tercer set de Tenaris". No existe convención pública de identificadores para sets, así que las fichas de abajo llevan nombre del registro, y esa asimetría es un dato. La otra laguna es el motor: la única marca publicada para un set argentino es la del segundo de Tenaris, Caterpillar 3516C con transmisiones CAT y bombas SPM fabricadas por QM Equipment en Mar del Plata.</p>
+
+  <p>La transición del diésel sí está contada. Cinco de los quince sets eran dual fuel en febrero de 2026: tres de Halliburton, uno de Calfrac y uno de Tenaris. En agosto Tenaris estrenó el primer Dynamic Gas Blending Tier IV del país, que reemplaza más del 80% del diésel con gas de yacimiento. Desde octubre llegan los cuatro Zeus eléctricos del contrato YPF-Halliburton, cada uno con 20 a 30 MW de generación propia a gas.</p>
+
+  <p>La foto de julio muestra la otra cara del récord: de los quince sets activos operaron ocho, cinco no ejecutaron una sola etapa y cerca del 30% de la capacidad de bombeo quedó ociosa.</p>
+
+  <!-- equipos-tablas:fractura -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Un rango en la columna de equipos es el desacuerdo real entre fuentes, no imprecisión del registro: las fuentes de ambos extremos están citadas en la fila.</caption>
+      <thead>
+        <tr><th scope="col">Empresa</th><th scope="col">Equipos</th><th scope="col">Tecnología</th><th scope="col">Confianza</th><th scope="col">Dato de</th><th scope="col">Fuente</th></tr>
+      </thead>
+      <tbody>
+        <tr id="fractura-halliburton"><td>Halliburton</td><td class="reg-n">4–8</td><td>diésel · dual fuel</td><td class="reg-d">baja</td><td class="reg-d">enero de 2026</td><td class="reg-d"><a href="https://mase.lmneuquen.com/vaca-muerta/el-nuevo-reto-halliburton-vaca-muerta-n1224514" rel="noopener">mase.lmneuquen.com</a> · <a href="https://www.letrap.com.ar/economia/quienes-mueven-los-fierros-vaca-muerta-los-nombres-detras-los-equipos-perforacion-y-fractura-n5421081" rel="noopener">letrap.com.ar</a></td></tr>
+        <tr id="fractura-slb"><td>SLB</td><td class="reg-n">2–4</td><td>diésel</td><td class="reg-d">baja</td><td class="reg-d">enero de 2026</td><td class="reg-d"><a href="https://vacamuertanews.com/actualidad/de-la-mano-de-tenaris-vaca-muerta-sumo-un-nuevo-set-de-fractura-y-ya-son-10-los-equipos.htm" rel="noopener">vacamuertanews.com</a> · <a href="https://www.letrap.com.ar/economia/quienes-mueven-los-fierros-vaca-muerta-los-nombres-detras-los-equipos-perforacion-y-fractura-n5421081" rel="noopener">letrap.com.ar</a></td></tr>
+        <tr id="fractura-tenaris"><td>Tenaris</td><td class="reg-n">3</td><td>diésel · dual fuel · GNC</td><td class="reg-d">media</td><td class="reg-d">agosto de 2026</td><td class="reg-d"><a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a> · <a href="https://www.ambito.com/energia/tenaris-supero-5000-fracturas-vaca-muerta-invierte-us110-millones-y-suma-su-tercer-equipo-gnc-n6125028" rel="noopener">ambito.com</a></td></tr>
+        <tr id="fractura-calfrac"><td>Calfrac Well Services</td><td class="reg-n">2</td><td>diésel · dual fuel</td><td class="reg-d">alta</td><td class="reg-d">diciembre de 2025</td><td class="reg-d"><a href="https://investors.calfrac.com/static-files/3cd8e024-0cf4-4c6a-bd86-f73707917eb5" rel="noopener">investors.calfrac.com</a> · <a href="https://investors.calfrac.com/news-releases/news-release-details/calfrac-reports-first-quarter-2025-results-record-financial" rel="noopener">investors.calfrac.com</a></td></tr>
+        <tr id="fractura-spi"><td>SPI (Pluspetrol)</td><td class="reg-n">1</td><td>diésel</td><td class="reg-d">media</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.shale24.com/oil-gas/fracturas-vaca-muerta-halliburton-quedo-casi-toda-actividad-ypf-reconquisto-liderazgo-slb-consiguio-ultimo-ano-n1424" rel="noopener">shale24.com</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/pluspetrol-compra-la-division-servicios-fractura-weatherford-n1175018" rel="noopener">mase.lmneuquen.com</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /equipos-tablas:fractura -->
+
+  <p class="reg-hint">Halliburton y SLB solo tienen rango: ninguna fuente de 2026 publica sus sets con una cifra que cierre contra el total de la cuenca. El detalle está en <a href="#limites">límites</a>.</p>
+
+  <!-- equipos-tablas:fichas-fractura -->
+  <div class="fichas">
+    <details class="ficha" id="ficha-calfrac-flota-2">
+      <summary><span class="ficha-nombre">Calfrac, segunda flota</span><span class="ficha-meta"><span class="tag tag--quieto">Calfrac Well Services</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Calfrac Well Services</dd></div>
+          <div><dt>Operadora</dt><dd>Vista</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · marzo de 2025</dd></div>
+          <div><dt>Bombas de fractura</dt><dd>cerca de 25, importadas <span class="ficha-fuente-inline">(<a href="https://vacamuertanews.com/actualidad/nuevo-set-de-fractura-en-vaca-muerta-inicio-sus-operaciones-en-julio.htm" rel="noopener">vacamuertanews.com</a>)</span></dd></div>
+          <div><dt>Norma de emisiones</dt><dd>Tier II <span class="ficha-fuente-inline">(<a href="https://www.globenewswire.com/news-release/2024/08/01/2922530/0/en/Calfrac-Reports-Second-Quarter-2024-Results.html" rel="noopener">globenewswire.com</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>dual fuel <span class="ficha-fuente-inline">(<a href="https://www.globenewswire.com/news-release/2024/08/01/2922530/0/en/Calfrac-Reports-Second-Quarter-2024-Results.html" rel="noopener">globenewswire.com</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2024 <span class="ficha-fuente-inline">(<a href="https://vacamuertanews.com/actualidad/nuevo-set-de-fractura-en-vaca-muerta-inicio-sus-operaciones-en-julio.htm" rel="noopener">vacamuertanews.com</a>)</span></dd></div>
+        </dl>
+        <p>Debutó en julio de 2024 para Vista en Bajada del Palo Oeste con 160 etapas en 22 días, y es permanente desde el primer trimestre de 2025. El capex aprobado para sus bombas dual fuel fue de USD 29 M.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://vacamuertanews.com/actualidad/nuevo-set-de-fractura-en-vaca-muerta-inicio-sus-operaciones-en-julio.htm" rel="noopener">vacamuertanews.com</a> · <a href="https://investors.calfrac.com/news-releases/news-release-details/calfrac-reports-first-quarter-2025-results-record-financial" rel="noopener">investors.calfrac.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-halliburton-zeus">
+      <summary><span class="ficha-nombre">Halliburton Zeus, primer set</span><span class="ficha-meta"><span class="tag tag--quieto">Halliburton</span><span class="tag tag--caveat">anunciado</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Halliburton</dd></div>
+          <div><dt>Operadora</dt><dd>YPF</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>anunciado · abril de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>Halliburton Zeus, unidades eléctricas de 5,000 HHP, 22 BPM y 9,500 psi <span class="ficha-fuente-inline">(<a href="https://www.halliburton.com/en/products/zeus-electric-pumping-unit" rel="noopener">halliburton.com</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>eléctrico, generación en sitio a gas de 20 a 30 MW <span class="ficha-fuente-inline">(<a href="https://diarioneuquino.com.ar/halliburton-incorporara-en-vaca-muerta-un-equipo-de-fractura-electrica-que-demandara-hasta-30-mw-de-potencia/" rel="noopener">diarioneuquino.com.ar</a>)</span></dd></div>
+          <div><dt>Automatización</dt><dd>OCTIV Auto Frac <span class="ficha-fuente-inline">(<a href="https://www.globalports.com.ar/ypf-halliburton-fractura-electrica-vaca-muerta/" rel="noopener">globalports.com.ar</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://www.mejorenergia.com.ar/noticias/2026/04/27/5415-vaca-muerta-inicia-la-era-de-la-electrificacion-de-fractura-ypf-trae-en-octubre-el-primer-set-al-pais" rel="noopener">mejorenergia.com.ar</a>)</span></dd></div>
+        </dl>
+        <p>Primero de los cuatro sets del contrato exclusivo YPF-Halliburton a cinco años, primer despliegue de Zeus fuera de EE.UU.; llega en octubre de 2026. La cantidad de bombas por set y el monto del contrato no están publicados.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.shale24.com/oil-gas/vaca-muerta-primer-campo-fuera-eeuu-operar-zeus-ypf-adjudica-halliburton-contrato-exclusivo-terminaciones-convencionales-n973" rel="noopener">shale24.com</a> · <a href="https://www.mejorenergia.com.ar/noticias/2026/04/27/5415-vaca-muerta-inicia-la-era-de-la-electrificacion-de-fractura-ypf-trae-en-octubre-el-primer-set-al-pais" rel="noopener">mejorenergia.com.ar</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-spi-set">
+      <summary><span class="ficha-nombre">SPI, set ex Weatherford</span><span class="ficha-meta"><span class="tag tag--quieto">SPI (Pluspetrol)</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>SPI (Pluspetrol)</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · mayo de 2025</dd></div>
+          <div><dt>Ingreso al país</dt><dd>2025 <span class="ficha-fuente-inline">(<a href="https://mase.lmneuquen.com/vaca-muerta/pluspetrol-compra-la-division-servicios-fractura-weatherford-n1175018" rel="noopener">mase.lmneuquen.com</a>)</span></dd></div>
+        </dl>
+        <p>El set único de Weatherford Argentina, transferido a SPI en febrero de 2025 con bases y personal; opera para Pluspetrol desde mayo de 2025. Su cliente histórico fue PAE en Lindero Atravesado. Specs sin publicar.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://mase.lmneuquen.com/vaca-muerta/pluspetrol-compra-la-division-servicios-fractura-weatherford-n1175018" rel="noopener">mase.lmneuquen.com</a> · <a href="https://www.shale24.com/oil-gas/fracturas-vaca-muerta-halliburton-quedo-casi-toda-actividad-ypf-reconquisto-liderazgo-slb-consiguio-ultimo-ano-n1424" rel="noopener">shale24.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-tenaris-set-1">
+      <summary><span class="ficha-nombre">Tenaris, primer set (ex Baker Hughes)</span><span class="ficha-meta"><span class="tag tag--quieto">Tenaris</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Tenaris</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · junio de 2021</dd></div>
+          <div><dt>Ingreso al país</dt><dd>2021 <span class="ficha-fuente-inline">(<a href="https://www.tenaris.com/es/noticias/2021/tenaris-adquiere-equipos-de-fractura-hidraulica-de-baker-hughes-en-argentina" rel="noopener">tenaris.com</a>)</span></dd></div>
+        </dl>
+        <p>Adquirido a Baker Hughes en marzo de 2021 junto con coiled tubing y wireline, entre 50 y 60 equipos en total; primera fractura a los tres meses. HHP y cantidad de bombas sin publicar.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.tenaris.com/es/noticias/2021/tenaris-adquiere-equipos-de-fractura-hidraulica-de-baker-hughes-en-argentina" rel="noopener">tenaris.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-tenaris-set-2">
+      <summary><span class="ficha-nombre">Tenaris, segundo set</span><span class="ficha-meta"><span class="tag tag--quieto">Tenaris</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Tenaris</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · marzo de 2024</dd></div>
+          <div><dt>Potencia de bombeo</dt><dd>52,000 HHP <span class="ficha-fuente-inline">(<a href="https://www.tenaris.com/es/noticias/2024/fracking-en-vaca-muerta" rel="noopener">tenaris.com</a>)</span></dd></div>
+          <div><dt>Bombas de fractura</dt><dd>20 <span class="ficha-fuente-inline">(<a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a>)</span></dd></div>
+          <div><dt>Fabricante de las bombas</dt><dd>QM Equipment, bombas SPM 3000 de 3,000 HP <span class="ficha-fuente-inline">(<a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a>)</span></dd></div>
+          <div><dt>Motores</dt><dd>Caterpillar 3516C, provistos por Finning Argentina <span class="ficha-fuente-inline">(<a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a>)</span></dd></div>
+          <div><dt>Norma de emisiones</dt><dd>Tier II <span class="ficha-fuente-inline">(<a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>diésel <span class="ficha-fuente-inline">(<a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a>)</span></dd></div>
+          <div><dt>Inversión anunciada</dt><dd>USD 40 M <span class="ficha-fuente-inline">(<a href="https://www.tenaris.com/es/noticias/2024/fracking-en-vaca-muerta" rel="noopener">tenaris.com</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2024 <span class="ficha-fuente-inline">(<a href="https://vacamuertanews.com/actualidad/de-la-mano-de-tenaris-vaca-muerta-sumo-un-nuevo-set-de-fractura-y-ya-son-10-los-equipos.htm" rel="noopener">vacamuertanews.com</a>)</span></dd></div>
+        </dl>
+        <p>La única ficha del país con marca y modelo de motor publicados, con transmisiones CAT TH55-E90. Los 52,000 HHP combinan las bombas nuevas con componentes del primer equipo. La inversión según Tenaris fue USD 40 M; Bloomberg Línea publicó USD 80 M.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://elconstructor.com/fracturadores-nacionales-de-ultima-generacion-para-vaca-muerta/" rel="noopener">elconstructor.com</a> · <a href="https://www.tenaris.com/es/noticias/2024/fracking-en-vaca-muerta" rel="noopener">tenaris.com</a> · <a href="https://www.bloomberglinea.com/latinoamerica/argentina/vaca-muerta-aspira-a-sumar-mas-sets-de-fractura-pero-primero-debe-destrabar-cuellos-de-botella/" rel="noopener">bloomberglinea.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-tenaris-set-3">
+      <summary><span class="ficha-nombre">Tenaris, tercer set</span><span class="ficha-meta"><span class="tag tag--quieto">Tenaris</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Tenaris</dd></div>
+          <div><dt>Operadora</dt><dd>Tecpetrol</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · agosto de 2026</dd></div>
+          <div><dt>Potencia de bombeo</dt><dd>70,000 HHP <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Bombas de fractura</dt><dd>28 <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Fabricante de las bombas</dt><dd>QM Equipment (Mar del Plata) <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Norma de emisiones</dt><dd>DGB Tier IV <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>dual fuel, más del 80% gas de yacimiento <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Inversión anunciada</dt><dd>USD 110 M <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+        </dl>
+        <p>Primer set con Dynamic Gas Blending Tier IV del país, en marcha desde el 11 de agosto de 2026 con contrato de 18 meses en Los Toldos II Este. La inversión incluye una unidad de coiled tubing. La marca del motor no está publicada; los sets de fractura no llevan identificador público y el nombre es del registro.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.rionegro.com.ar/energia/vaca-muerta-suma-equipamiento-clave-tenaris-puso-en-marcha-su-tercer-set-de-fractura-con-una-inversion-de-us110-millones-4679792/" rel="noopener">rionegro.com.ar</a> · <a href="https://econojournal.com.ar/oilgas/tenaris-expande-su-presencia-en-vaca-muerta/" rel="noopener">econojournal.com.ar</a> · <a href="https://www.ambito.com/energia/tenaris-supero-5000-fracturas-vaca-muerta-invierte-us110-millones-y-suma-su-tercer-equipo-gnc-n6125028" rel="noopener">ambito.com</a></p>
+      </div>
+    </details>
+  </div>
+  <!-- /equipos-tablas:fichas-fractura -->
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="perforacion">
+  <div class="section-head">
+    <p class="eyebrow">Perforación</p>
+    <h2>Los rigs sí tienen nombre, y hasta sus dueños discuten cuántos hay</h2>
+    <p class="intro">Los 54 equipos activos de julio son el máximo de la serie: 41 en el shale de la cuenca Neuquina y 13 convencionales. Nabors, Helmerich &amp; Payne y DLS Archer concentran la torre de Vaca Muerta; PAE perfora con equipos propios, y una segunda liga de contratistas sostiene el convencional del Golfo San Jorge, la Cuyana y la Austral.</p>
+  </div>
+
+  <p>Acá la regla de rangos trabaja más que en ningún otro segmento. TecnoPatagonia contó 15 rigs de Nabors y 12 de H&amp;P en julio; las propias empresas declararon 13 y 9 en sus llamadas de resultados de fines de julio y principios de agosto. Las dos versiones quedan en la fila, con sus fuentes, porque miden cosas distintas: equipos en el país, equipos facturando, equipos perforando.</p>
+
+  <p>La renovación de la flota está contratada. El acuerdo de YPF con DLS Archer compromete unos USD 600 M y siete equipos con perforación de presión controlada hacia 2027, dos de ellos APEX 1500 eléctricos alquilados a Patterson-UTI; H&amp;P trae tres FlexRigs desde EE.UU. camino a 15 equipos a mediados de 2027; y el PACE-F24 que Nabors opera para Vista es el primer rig del país conectado a la red, con suministro renovable contratado a Genneia.</p>
+
+  <p>El convencional también se movió en 2026: CGC estrenó su primer equipo propio en Santa Cruz, PECOM volvió a perforar Cañadón Perdido tras 30 años con el VV51 de Venver y Crown Point espera el perforador que le aporta San Antonio. En Mendoza operan el A-302 de Aconcagua y una torre de Suren.</p>
+
+  <!-- equipos-tablas:perforacion -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Un rango en la columna de equipos es el desacuerdo real entre fuentes, no imprecisión del registro: las fuentes de ambos extremos están citadas en la fila.</caption>
+      <thead>
+        <tr><th scope="col">Empresa</th><th scope="col">Equipos</th><th scope="col">Tecnología</th><th scope="col">Confianza</th><th scope="col">Dato de</th><th scope="col">Fuente</th></tr>
+      </thead>
+      <tbody>
+        <tr id="perforacion-nabors"><td>Nabors</td><td class="reg-n">13–15</td><td>diésel · eléctrico</td><td class="reg-d">media</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.investing.com/news/transcripts/earnings-call-transcript-nabors-industries-beats-revenue-lifts-2026-outlook-in-q2-2026-93CH-4821184" rel="noopener">investing.com</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a></td></tr>
+        <tr id="perforacion-helmerich-payne"><td>Helmerich &amp; Payne</td><td class="reg-n">9–12</td><td>diésel</td><td class="reg-d">media</td><td class="reg-d">agosto de 2026</td><td class="reg-d"><a href="https://www.fool.com/earnings/call-transcripts/2026/08/13/helmerich-payne-hp-q3-2026-earnings-call-transcript/" rel="noopener">fool.com</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a></td></tr>
+        <tr id="perforacion-quintana-wellpro"><td>Quintana WellPro</td><td class="reg-n">11</td><td></td><td class="reg-d">baja</td><td class="reg-d">enero de 2026</td><td class="reg-d"><a href="https://lu17.com/contenido/113561/los-walking-rigs-cambian-la-logistica-de-perforacion-en-vaca-muerta-y-recortan-t" rel="noopener">lu17.com</a> · <a href="http://www.quintanawellpro.com/en/our-rigs/" rel="noopener">quintanawellpro.com</a></td></tr>
+        <tr id="perforacion-dls-archer"><td>DLS Archer</td><td class="reg-n">7–10</td><td>diésel · eléctrico</td><td class="reg-d">media</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.shale24.com/oil-gas/helmerich-payne-ampliara-15-sus-equipos-vaca-muerta-traera-tres-perforadores-estados-unidos-n1571" rel="noopener">shale24.com</a> · <a href="https://www.shale24.com/oil-gas/ypf-suma-tercer-perforador-dls-archer-claves-equipo-177-tecnologia-mpd-llegara-primer-trimestre-2027-n1474" rel="noopener">shale24.com</a></td></tr>
+        <tr id="perforacion-pae"><td>Pan American Energy</td><td class="reg-n">5</td><td></td><td class="reg-d">media</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.shale24.com/oil-gas/los-reyes-perforacion-vaca-muerta-nabors-helmerich-payne-dls-archer-pae-san-antonio-son-empresas-concentran-mas-actividad-n1364" rel="noopener">shale24.com</a> · <a href="https://www.adnsur.com.ar/pulso-energetico/aesa-se-va--san-antonio-vuelve-y-crown-point-pide-tiempo--el-juego-de-la-silla-petrolera_a6a5a1c4100f4220dd0957d41" rel="noopener">adnsur.com.ar</a></td></tr>
+        <tr id="perforacion-sai"><td>San Antonio Internacional</td><td class="reg-n">4–5</td><td>diésel</td><td class="reg-d">media</td><td class="reg-d">mayo de 2026</td><td class="reg-d"><a href="https://www.shale24.com/oil-gas/los-reyes-perforacion-vaca-muerta-nabors-helmerich-payne-dls-archer-pae-san-antonio-son-empresas-concentran-mas-actividad-n1364" rel="noopener">shale24.com</a> · <a href="https://www.letrap.com.ar/economia/quienes-mueven-los-fierros-vaca-muerta-los-nombres-detras-los-equipos-perforacion-y-fractura-n5421081" rel="noopener">letrap.com.ar</a></td></tr>
+        <tr id="perforacion-aconcagua-energia"><td>Aconcagua Energía</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">octubre de 2024</td><td class="reg-d"><a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a> · <a href="https://econojournal.com.ar/oilgas/aconcagua-energia-suma-un-nuevo-equipo-de-perforacion-en-la-cuenca-cuyana/" rel="noopener">econojournal.com.ar</a></td></tr>
+        <tr id="perforacion-cgc"><td>CGC</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">agosto de 2026</td><td class="reg-d"><a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a></td></tr>
+        <tr id="perforacion-suren"><td>Suren</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">mayo de 2026</td><td class="reg-d"><a href="https://www.diariouno.com.ar/economia/el-petroleo-mendocino-sumo-una-nueva-torre-evitar-la-caida-produccion-n1556253" rel="noopener">diariouno.com.ar</a></td></tr>
+        <tr id="perforacion-venver"><td>Venver</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">febrero de 2026</td><td class="reg-d"><a href="https://www.diariojornada.com.ar/411805/economia/pecom_inicia_campana_de_perforacion_en_canadon_perdido" rel="noopener">diariojornada.com.ar</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /equipos-tablas:perforacion -->
+
+  <p class="reg-hint">La fila de Quintana WellPro es flota declarada, no equipos activos: no es comparable con el total del segmento, y así lo dice su nota.</p>
+
+  <!-- equipos-tablas:fichas-perforacion -->
+  <div class="fichas">
+    <details class="ficha" id="ficha-aconcagua-a302">
+      <summary><span class="ficha-nombre">A-302</span><span class="ficha-meta"><span class="tag tag--quieto">Aconcagua Energía</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Aconcagua Energía</dd></div>
+          <div><dt>Operadora</dt><dd>Aconcagua Energía</dd></div>
+          <div><dt>Cuenca</dt><dd>Cuyana</dd></div>
+          <div><dt>Estado</dt><dd>activo · octubre de 2024</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>NOV <span class="ficha-fuente-inline">(<a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,500 HP <span class="ficha-fuente-inline">(<a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a>)</span></dd></div>
+          <div><dt>Walking rig</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a>)</span></dd></div>
+          <div><dt>Inversión anunciada</dt><dd>USD 3.1 M <span class="ficha-fuente-inline">(<a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2024 <span class="ficha-fuente-inline">(<a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a>)</span></dd></div>
+        </dl>
+        <p>Incorporado con Impulsa Mendoza Sostenible para Mendoza Norte, con primeras perforaciones en el cuarto trimestre de 2024; sin novedades públicas posteriores.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.malargue.gov.ar/aconcagua-energia-suma-un-nuevo-equipo-perforador-a-su-flota-propia-en-malargue/" rel="noopener">malargue.gov.ar</a> · <a href="https://econojournal.com.ar/oilgas/aconcagua-energia-suma-un-nuevo-equipo-de-perforacion-en-la-cuenca-cuyana/" rel="noopener">econojournal.com.ar</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-cgc-001">
+      <summary><span class="ficha-nombre">CGC-001</span><span class="ficha-meta"><span class="tag tag--quieto">CGC</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>CGC</dd></div>
+          <div><dt>Operadora</dt><dd>CGC</dd></div>
+          <div><dt>Cuenca</dt><dd>Golfo San Jorge</dd></div>
+          <div><dt>Estado</dt><dd>activo · agosto de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>Helmerich &amp; Payne FlexRig 4M <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,000 HP <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Profundidad máxima</dt><dd>3,050 m <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Capacidad de gancho</dt><dd>300,000 lb <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Bombas de lodo</dt><dd>1,150 HP <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>eléctrico con VFD y top drive de 150 t <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+        </dl>
+        <p>Primer equipo de perforación propio de CGC, comprado usado, con BOP de 11 pulgadas y 3,000 psi; se moviliza en 36 cargas y se monta sin grúa. Perfora Tres Picos y Cañadón León, en el flanco norte de Santa Cruz.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.rionegro.com.ar/energia/santa-cruz-pone-en-marcha-un-nuevo-plan-de-perforaciones-en-la-cuenca-del-golfo-san-jorge-cgc-sumo-su-primer-equipo-propio-4703677/" rel="noopener">rionegro.com.ar</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-dls-175">
+      <summary><span class="ficha-nombre">DLS-175</span><span class="ficha-meta"><span class="tag tag--quieto">DLS Archer</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>DLS Archer</dd></div>
+          <div><dt>Operadora</dt><dd>YPF</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · junio de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>Patterson-UTI APEX 1500 <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,500 HP <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>eléctrico <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Perforación con presión controlada (MPD)</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://archerwell.com/archer-secures-drilling-contract-in-vaca-muerta-with-estimated-value-of-600-million/" rel="noopener">archerwell.com</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://www.shale24.com/oil-gas/de-houston-escalas-dls-prepara-envio-dos-nuevos-perforadores-plan-ypf-n1154" rel="noopener">shale24.com</a>)</span></dd></div>
+        </dl>
+        <p>Uno de los dos APEX 1500 alquilados a Patterson-UTI y acondicionados en Houston, con top drive de 500 t. El relevamiento de TecnoPatagonia los nombra DLS-4175 y DLS-4176: mismos equipos, identificadores distintos según la fuente. El DLS-4175 arrancó en Entre Lagos y fue el pozo que cruzó el umbral de 40 rigs shale en julio.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.shale24.com/oil-gas/de-houston-escalas-dls-prepara-envio-dos-nuevos-perforadores-plan-ypf-n1154" rel="noopener">shale24.com</a> · <a href="https://energiesmedia.com/archer-ypf-vaca-muerta-rig-contract-energy/" rel="noopener">energiesmedia.com</a> · <a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a> · <a href="https://s202.q4cdn.com/927518908/files/doc_news/Patterson-UTI-Signs-Multi-Year-Agreement-to-Lease-Two-Rigs-to-Archer-for-Argentinas-Vaca-Muerta-Field-2026.pdf" rel="noopener">s202.q4cdn.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-dls-176">
+      <summary><span class="ficha-nombre">DLS-176</span><span class="ficha-meta"><span class="tag tag--quieto">DLS Archer</span><span class="tag tag--caveat">en armado</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>DLS Archer</dd></div>
+          <div><dt>Operadora</dt><dd>YPF</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>en armado · julio de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>Patterson-UTI APEX 1500 <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,500 HP <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Energía</dt><dd>eléctrico <span class="ficha-fuente-inline">(<a href="https://energiaonline.com.ar/vaca-muerta-incorpora-un-equipo-de-perforacion-de-ultima-generacion-para-2027/" rel="noopener">energiaonline.com.ar</a>)</span></dd></div>
+          <div><dt>Perforación con presión controlada (MPD)</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://archerwell.com/archer-secures-drilling-contract-in-vaca-muerta-with-estimated-value-of-600-million/" rel="noopener">archerwell.com</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://www.shale24.com/oil-gas/de-houston-escalas-dls-prepara-envio-dos-nuevos-perforadores-plan-ypf-n1154" rel="noopener">shale24.com</a>)</span></dd></div>
+        </dl>
+        <p>Segundo APEX 1500 del contrato con YPF, movilizado en julio de 2026; alias DLS-4176 en el relevamiento de TecnoPatagonia.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.shale24.com/oil-gas/de-houston-escalas-dls-prepara-envio-dos-nuevos-perforadores-plan-ypf-n1154" rel="noopener">shale24.com</a> · <a href="https://energiesmedia.com/archer-ypf-vaca-muerta-rig-contract-energy/" rel="noopener">energiesmedia.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-dls-177">
+      <summary><span class="ficha-nombre">DLS-177</span><span class="ficha-meta"><span class="tag tag--quieto">DLS Archer</span><span class="tag tag--caveat">anunciado</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>DLS Archer</dd></div>
+          <div><dt>Operadora</dt><dd>YPF</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>anunciado · julio de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>Patterson-UTI, súper high spec <span class="ficha-fuente-inline">(<a href="https://energiesmedia.com/archer-ypf-vaca-muerta-rig-contract-energy/" rel="noopener">energiesmedia.com</a>)</span></dd></div>
+          <div><dt>Perforación con presión controlada (MPD)</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://www.shale24.com/oil-gas/ypf-suma-tercer-perforador-dls-archer-claves-equipo-177-tecnologia-mpd-llegara-primer-trimestre-2027-n1474" rel="noopener">shale24.com</a>)</span></dd></div>
+        </dl>
+        <p>Tercer súper high spec para YPF, con contrato propio de USD 90 M a cinco años más dos opciones de un año; llega en el primer trimestre de 2027 y continúa la numeración de los DLS-175 y 176.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.shale24.com/oil-gas/ypf-suma-tercer-perforador-dls-archer-claves-equipo-177-tecnologia-mpd-llegara-primer-trimestre-2027-n1474" rel="noopener">shale24.com</a> · <a href="https://energiesmedia.com/archer-ypf-vaca-muerta-rig-contract-energy/" rel="noopener">energiesmedia.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-hyp-rig-230">
+      <summary><span class="ficha-nombre">Rig 230</span><span class="ficha-meta"><span class="tag tag--quieto">Helmerich &amp; Payne</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Helmerich &amp; Payne</dd></div>
+          <div><dt>Operadora</dt><dd>Phoenix Global Resources</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · agosto de 2026</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>H&amp;P FlexRig <span class="ficha-fuente-inline">(<a href="https://www.shale24.com/oil-gas/helmerich-payne-ampliara-15-sus-equipos-vaca-muerta-traera-tres-perforadores-estados-unidos-n1571" rel="noopener">shale24.com</a>)</span></dd></div>
+        </dl>
+        <p>Pozo de prueba con Phoenix Global Resources: 13% menos de tiempo y 15% menos de costo con perforación direccional automatizada y guiado avanzado.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.shale24.com/oil-gas/helmerich-payne-ampliara-15-sus-equipos-vaca-muerta-traera-tres-perforadores-estados-unidos-n1571" rel="noopener">shale24.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-nbs-f37">
+      <summary><span class="ficha-nombre">NBS-F37</span><span class="ficha-meta"><span class="tag tag--quieto">Nabors</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Nabors</dd></div>
+          <div><dt>Operadora</dt><dd>Vista</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · julio de 2026</dd></div>
+          <div><dt>Ingreso al país</dt><dd>2026 <span class="ficha-fuente-inline">(<a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a>)</span></dd></div>
+        </dl>
+        <p>El alta de julio de 2026 que llevó la cuenta de Nabors a 15 según TecnoPatagonia. Specs sin publicar.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://mase.lmneuquen.com/vaca-muerta/julio-fue-el-mes-los-rigs-vaca-muerta-supero-primera-vez-los-40-perforadores-activos-n1249740" rel="noopener">mase.lmneuquen.com</a> · <a href="https://www.shale24.com/oil-gas/vaca-muerta-perforador-su-techo-historico-38-rigs-activos-shale-11-convencional-n1446" rel="noopener">shale24.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-pace-f24">
+      <summary><span class="ficha-nombre">PACE-F24</span><span class="ficha-meta"><span class="tag tag--quieto">Nabors</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Nabors</dd></div>
+          <div><dt>Operadora</dt><dd>Vista</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>activo · abril de 2024</dd></div>
+          <div><dt>Energía</dt><dd>eléctrico, conectado al SADI con suministro renovable de Genneia <span class="ficha-fuente-inline">(<a href="https://www.ambito.com/energia/vista-electrifico-el-primer-equipo-perforacion-vaca-muerta-n5976679" rel="noopener">ambito.com</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,500 HP <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+          <div><dt>Capacidad de gancho</dt><dd>1,000,000 lb <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+          <div><dt>Bombas de lodo</dt><dd>3 × 1,600 HP, 7,500 psi <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+          <div><dt>Motores</dt><dd>4 × Caterpillar 3512C <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+          <div><dt>Walking rig</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+          <div><dt>Automatización</dt><dd>SmartROS, integración con Integra MPD <span class="ficha-fuente-inline">(<a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a>)</span></dd></div>
+        </dl>
+        <p>Primer rig electrificado de Vaca Muerta, en Bajada del Palo Oeste: subestación nueva en la ET Loma Campana y más de 30 km de línea de media tensión. La potencia, las bombas y los motores son del catálogo del modelo PACE-F de Nabors, no verificados para esta unidad, cuyos motores quedan de respaldo al operar conectado a la red.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.nabors.com/vista-nabors-vaca-muerta-argentina/" rel="noopener">nabors.com</a> · <a href="https://www.ambito.com/energia/vista-electrifico-el-primer-equipo-perforacion-vaca-muerta-n5976679" rel="noopener">ambito.com</a> · <a href="https://www.nabors.com/for-operators/onshore-smartrigs/pace-f/" rel="noopener">nabors.com</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-sai-652">
+      <summary><span class="ficha-nombre">SAI-652</span><span class="ficha-meta"><span class="tag tag--quieto">San Antonio Internacional</span><span class="tag tag--caveat">sin dato</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>San Antonio Internacional</dd></div>
+          <div><dt>Cuenca</dt><dd>Neuquina</dd></div>
+          <div><dt>Estado</dt><dd>sin dato · julio de 2019</dd></div>
+          <div><dt>Fabricante y modelo</dt><dd>NOV Ideal Prime <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Potencia</dt><dd>1,500 HP <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Capacidad de gancho</dt><dd>750,000 lb <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Walking rig</dt><dd>sí <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Bombas de lodo</dt><dd>3 × 1,600 HP, 7,500 psi <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Automatización</dt><dd>enganchador robotizado remoto, software NOVOS <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Inversión anunciada</dt><dd>USD 32 M <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+          <div><dt>Ingreso al país</dt><dd>2019 <span class="ficha-fuente-inline">(<a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a>)</span></dd></div>
+        </dl>
+        <p>La ficha técnica más completa publicada para un rig del país viene de su alta de 2019, cuando era el equipo más moderno en operación; no hay datos públicos posteriores de asignación.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.rionegro.com.ar/san-antonio-tiene-un-rig-que-pisa-fuerte-1027728/" rel="noopener">rionegro.com.ar</a></p>
+      </div>
+    </details>
+    <details class="ficha" id="ficha-vv51">
+      <summary><span class="ficha-nombre">VV51</span><span class="ficha-meta"><span class="tag tag--quieto">Venver</span></span></summary>
+      <div class="ficha-body">
+        <dl class="ficha-datos">
+          <div><dt>Empresa</dt><dd>Venver</dd></div>
+          <div><dt>Operadora</dt><dd>PECOM</dd></div>
+          <div><dt>Cuenca</dt><dd>Golfo San Jorge</dd></div>
+          <div><dt>Estado</dt><dd>activo · febrero de 2026</dd></div>
+        </dl>
+        <p>Perfora la campaña 2026 de PECOM entre El Trébol y Cañadón Perdido: 28 pozos, 9 inyectores y 19 productores, con posible segunda etapa de 53. Specs sin publicar.</p>
+        <p class="ficha-fuentes">Fuentes: <a href="https://www.diariojornada.com.ar/411805/economia/pecom_inicia_campana_de_perforacion_en_canadon_perdido" rel="noopener">diariojornada.com.ar</a></p>
+      </div>
+    </details>
+  </div>
+  <!-- /equipos-tablas:fichas-perforacion -->
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="workover">
+  <div class="section-head">
+    <p class="eyebrow">Intervención</p>
+    <h2>La flota más numerosa es la peor documentada</h2>
+    <p class="intro">Los 47 equipos de workover y 72 de pulling de julio superan juntos a perforadores y sets combinados, y ninguna fuente pública abre esos totales por empresa. El workover además está un 17% abajo de un año atrás, a la espera de las campañas de abandono de pozos en los bloques convencionales maduros.</p>
+  </div>
+
+  <p>Lo que se sabe con nombre viene de la prensa regional del Golfo San Jorge, que cuenta equipos cuando se encienden o se apagan: PAE con 7 de workover y 17 de pulling en Cerro Dragón, PECOM con los dos ex AESA en El Trébol, San Antonio y Crown Point volviendo a Santa Cruz, Velitec en Tierra del Fuego. La tabla cubre 13 de los 47 equipos de workover y 18 de los 72 de pulling; el resto opera sin atribución pública.</p>
+
+  <!-- equipos-tablas:workover -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Un rango en la columna de equipos es el desacuerdo real entre fuentes, no imprecisión del registro: las fuentes de ambos extremos están citadas en la fila.</caption>
+      <thead>
+        <tr><th scope="col">Empresa</th><th scope="col">Segmento</th><th scope="col">Equipos</th><th scope="col">Tecnología</th><th scope="col">Confianza</th><th scope="col">Dato de</th><th scope="col">Fuente</th></tr>
+      </thead>
+      <tbody>
+        <tr id="pulling-pae"><td>Pan American Energy</td><td>Pulling</td><td class="reg-n">17</td><td></td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.adnsur.com.ar/pulso-energetico/aesa-se-va--san-antonio-vuelve-y-crown-point-pide-tiempo--el-juego-de-la-silla-petrolera_a6a5a1c4100f4220dd0957d41" rel="noopener">adnsur.com.ar</a></td></tr>
+        <tr id="workover-pae"><td>Pan American Energy</td><td>Workover</td><td class="reg-n">7</td><td></td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.adnsur.com.ar/pulso-energetico/aesa-se-va--san-antonio-vuelve-y-crown-point-pide-tiempo--el-juego-de-la-silla-petrolera_a6a5a1c4100f4220dd0957d41" rel="noopener">adnsur.com.ar</a> · <a href="https://www.rionegro.com.ar/energia/pae-suma-nuevos-equipos-en-cerro-dragon-el-objetivo-esta-en-recuperar-la-actividad-en-la-cuencua-del-golfo-san-jorge-4564393/" rel="noopener">rionegro.com.ar</a></td></tr>
+        <tr id="workover-pecom"><td>PECOM</td><td>Workover</td><td class="reg-n">2</td><td></td><td class="reg-d">baja</td><td class="reg-d">junio de 2026</td><td class="reg-d"><a href="https://argentarnoticias.com.ar/reactivacion-petrolera-pecom-encendio-dos-equipos-de-workover-en-el-trebol-y-genera-expectativas-en-la-cuenca/" rel="noopener">argentarnoticias.com.ar</a></td></tr>
+        <tr id="workover-velitec"><td>Velitec</td><td>Workover</td><td class="reg-n">2</td><td></td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://runrunenergetico.com/velitec-reorganiza-la-operacion-en-tierra-del-fuego-y-revisa-pozos-destinados-al-abandono-para-recuperar-produccion-en-la-cuenca-austral/" rel="noopener">runrunenergetico.com</a></td></tr>
+        <tr id="workover-crown-point"><td>Crown Point</td><td>Workover</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.adnsur.com.ar/pulso-energetico/aesa-se-va--san-antonio-vuelve-y-crown-point-pide-tiempo--el-juego-de-la-silla-petrolera_a6a5a1c4100f4220dd0957d41" rel="noopener">adnsur.com.ar</a></td></tr>
+        <tr id="pulling-crown-point"><td>Crown Point</td><td>Pulling</td><td class="reg-n">1</td><td></td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.adnsur.com.ar/pulso-energetico/aesa-se-va--san-antonio-vuelve-y-crown-point-pide-tiempo--el-juego-de-la-silla-petrolera_a6a5a1c4100f4220dd0957d41" rel="noopener">adnsur.com.ar</a></td></tr>
+        <tr id="workover-sai"><td>San Antonio Internacional</td><td>Workover</td><td class="reg-n">1</td><td>diésel</td><td class="reg-d">baja</td><td class="reg-d">julio de 2026</td><td class="reg-d"><a href="https://www.eldiarionuevodia.com.ar/locales/san-antonio-internacional-vuelve-a-santa-cruz-que-operaciones-iniciara-y-cuantos-puestos-laborales/" rel="noopener">eldiarionuevodia.com.ar</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /equipos-tablas:workover -->
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="oficial">
+  <div class="section-head">
+    <p class="eyebrow">Reconciliación</p>
+    <h2>Lo que el Estado sí publica: potencia por pozo, sin dueño</h2>
+    <p class="intro">El catálogo de datos abiertos de la Secretaría de Energía tenía 178 datasets el 1 de septiembre de 2026 y ninguno registra equipos: las búsquedas por equipo, rig, workover, pulling y torre devuelven cero. Lo más cerca que pasa de un padrón es un campo del Adjunto IV de fractura: la potencia de equipos declarada en cada pozo.</p>
+  </div>
+
+  <p>Ese campo tiene dos defectos que impiden leerlo como censo. La empresa que informa es la operadora del pozo, no la dueña del set, así que el dato oficial no puede atribuir un equipo a Halliburton o a Calfrac. Y cada operadora reporta con su propia convención: YPF, Total y Chevron escriben la potencia nominal redondeada del set, Vista escribe la potencia realmente desplegada pozo a pozo, y Shell escribe 2,000 HP, un valor que no es plausible y que la tabla marca.</p>
+
+  <!-- equipos-tablas:hhp -->
+  <div class="reg-scroll">
+    <table class="reg">
+      <caption class="reg-cap">Derivado propio del Adjunto IV oficial: la potencia de equipos de fractura que cada operadora informa en sus pozos. La operadora marcada no entra en ningún agregado.</caption>
+      <thead>
+        <tr><th scope="col">Operadora</th><th scope="col">HHP máximo informado</th><th scope="col">Percentil 95</th><th scope="col">Pozos</th><th scope="col">Ventana</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VISTA ENERGY ARGENTINA SAU</td><td class="reg-n">58,161</td><td class="reg-n">56,800</td><td class="reg-n">36</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>PLUSPETROL CUENCA NEUQUINA S.R.L.</td><td class="reg-n">54,963</td><td class="reg-n">23,256</td><td class="reg-n">22</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>YPF S.A.</td><td class="reg-n">48,000</td><td class="reg-n">44,000</td><td class="reg-n">175</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>TOTAL AUSTRAL S.A.</td><td class="reg-n">40,000</td><td class="reg-n">40,000</td><td class="reg-n">9</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>PLUSPETROL S.A.</td><td class="reg-n">23,715</td><td class="reg-n">23,715</td><td class="reg-n">12</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>PHOENIX GLOBAL RESOURCES S.A.</td><td class="reg-n">23,162</td><td class="reg-n">23,162</td><td class="reg-n">15</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>PAMPA ENERGIA S.A.</td><td class="reg-n">21,268</td><td class="reg-n">21,268</td><td class="reg-n">12</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+        <tr><td>SHELL ARGENTINA S.A. <span class="tag tag--caveat">valor no confiable</span></td><td class="reg-n">2,000</td><td class="reg-n">2,000</td><td class="reg-n">14</td><td class="reg-d">septiembre de 2025 → agosto de 2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /equipos-tablas:hhp -->
+
+  <p class="reg-hint">La tabla se regenera desde el CSV oficial con <span class="path">tools/equipos-adjiv.mjs</span>; la ventana y la advertencia completa están en el archivo de datos.</p>
+
+  <p>El único dato de potencia por país con auditoría no es oficial: lo publica Calfrac en su Annual Information Form, 168,000 HHP activos en Argentina al 31 de diciembre de 2025, sin capacidad ociosa. Ninguna otra empresa de fractura desagrega su flota argentina en sus reportes.</p>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="limites">
+  <div class="section-head">
+    <p class="eyebrow">Límites</p>
+    <h2>Lo que este registro no puede decir</h2>
+  </div>
+
+  <ul class="rsrc">
+    <li><strong>No puede dar el número de sets de Halliburton ni de SLB.</strong> Las fuentes de 2026 publican 4 y 8 para una, 2 y 4 para la otra, y ningún desglose suma el total de la cuenca. El rango es el dato; elegir una cifra sería inventarla.</li>
+    <li><strong>No puede atribuir un set a su dueño con datos oficiales.</strong> El Adjunto IV registra la operadora del pozo, no la empresa de servicio. El puente entre las dos lo tienen solo los relevamientos privados.</li>
+    <li><strong>No puede decir el motor de casi ningún equipo.</strong> Una sola ficha del país tiene marca y modelo publicados, el segundo set de Tenaris. Los motores del PACE-F24 salen del catálogo del modelo, no de la unidad, y así está declarado en su ficha.</li>
+    <li><strong>Las specs valen al día del anuncio.</strong> Nadie las republica: la ficha del SAI-652 es de su alta de 2019 y la del A-302 de 2024. Un equipo pudo cambiar de cliente, de cuenca o de estado sin dejar rastro público.</li>
+    <li><strong>No puede confirmar si el set que NRG compró en 2024 llegó al país.</strong> La empresa entró en concurso preventivo en junio de 2025 y ninguna fuente posterior menciona el destino del equipo.</li>
+    <li><strong>No cubre a los contratistas sin prensa.</strong> Petreven tenía cinco rigs en 2023 y Ensign mantiene base en Neuquén, pero ninguno registra conteos públicos en 2024–2026, así que no tienen fila.</li>
+    <li><strong>El desglose de workover y pulling llega hasta donde llega la prensa regional.</strong> Dos tercios de esa flota operan sin atribución pública de empresa.</li>
+  </ul>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="glosario">
+  <div class="section-head">
+    <p class="eyebrow">Términos</p>
+    <h2>Cuatro distinciones que las fuentes suelen fundir</h2>
+  </div>
+
+  <div class="gloss">
+    <details class="gloss-item">
+      <summary><dfn>Set de fractura</dfn>, spread o flota</summary>
+      <p>El conjunto completo que bombea una fractura: bombas, blender, unidad de químicos, manifold y cabina de control. Su tamaño se mide en HHP, potencia hidráulica agregada de las bombas. No tiene identificador público, y por eso este registro los nombra por dueño y orden de llegada.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Dual fuel, DGB y e-frac</dfn></summary>
+      <p>Tres escalones distintos que la prensa a veces mezcla. Dual fuel: el motor diésel acepta una fracción de gas. DGB, Dynamic Gas Blending: la variante de Caterpillar que ajusta la mezcla en tiempo real y llega a sustituir más del 80% del diésel. E-frac: bombas eléctricas sin motor diésel, alimentadas por generación en sitio o por red.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Walking rig</dfn></summary>
+      <p>Perforador que se traslada entre pozos del mismo pad sin desarmarse, elevándose y deslizándose. En pads de shale con varios pozos, recorta la movilización que en un equipo convencional lleva días.</p>
+    </details>
+    <details class="gloss-item">
+      <summary><dfn>Workover y pulling</dfn></summary>
+      <p>Las dos flotas de intervención de pozos. El pulling hace el mantenimiento liviano y recurrente, sobre todo en bombeo mecánico convencional; el workover, las reparaciones mayores que requieren equipo pesado. Las fuentes a veces publican un solo número para ambas, y este registro las separa donde se puede.</p>
+    </details>
+  </div>
+</section>
+
+<div class="rule" role="presentation"></div>
+
+<section class="pd-section wrap" id="fuentes">
+  <div class="section-head">
+    <p class="eyebrow">Fuentes</p>
+    <h2>Quién cuenta cada cosa, y cómo se corrige</h2>
+  </div>
+
+  <p>Los totales por segmento salen de los relevamientos mensuales de TecnoPatagonia y de Luciano Fucello (NCS Multistage, fracstages.com), que la prensa especializada reproduce; los conteos por empresa, de esa prensa, Shale24, Mase, Data Energía, Río Negro Energía y los diarios del Golfo San Jorge, más las llamadas de resultados y comunicados de las propias empresas. Las fichas técnicas citan la fuente de cada especificación, porque se arman juntando anuncios sueltos que nadie vuelve a publicar. Algunos medios citados bloquean el acceso automatizado y pueden pedir abrir el enlace en el navegador.</p>
+
+  <p>El dataset completo está en <a href="/data/equipos-parque.json">equipos-parque.json</a>, bajo licencia CC BY 4.0, con su <a href="/data/equipos-parque.schema.json">esquema</a>. Los derivados propios llevan prefijo <span class="path">est_</span>; la ausencia de padrón oficial está documentada con fecha de consulta en el objeto <span class="path">oficial</span> del mismo archivo.</p>
+
+  <p>Las correcciones se aplican a la fila y quedan anotadas en el arreglo <span class="path">correcciones</span>, con fecha, qué cambió y quién lo señaló.</p>
+</section>

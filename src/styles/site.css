@@ -474,6 +474,9 @@ details.ficha[open] summary::after { content: "–"; }
 }
 .ficha-datos dd { margin: 0; font-size: var(--pd-fs-sm); color: var(--pd-text-muted); }
 .ficha-fuentes { font-size: var(--pd-fs-cap); }
+/* En /equipos/ la procedencia es por spec, no por ficha: el link va al lado del valor. */
+.ficha-fuente-inline { font-size: var(--pd-fs-cap); color: var(--pd-text-faint); }
+.ficha-fuente-inline a { color: inherit; }
 /* "Sin atribuir" no colapsa: es la tesis del mazo y se lee siempre. */
 .ficha--abierta { margin: var(--pd-sp-5) 0 0; padding: var(--pd-sp-4); max-width: 68ch; border-style: dashed; }
 .ficha--abierta p { margin: var(--pd-sp-3) 0 0; color: var(--pd-text-muted); font-size: var(--pd-fs-sm); line-height: var(--pd-lh-body); }

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- What the team's centaur has to know: the business (a reservoir section
+       with a well landed in the pay), the tools the models use (a terminal),
+       and what is possible today (a radar that keeps sweeping). -->
+  <defs>
+    <clipPath id="tile"><rect x="130" y="270" width="240" height="230" rx="26"/></clipPath>
+    <clipPath id="dish"><circle cx="1030" cy="385" r="110"/></clipPath>
+    <linearGradient id="sweepFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#43C59E" stop-opacity="0"/>
+      <stop offset="1" stop-color="#43C59E" stop-opacity=".55"/>
+    </linearGradient>
+    <style>
+      .sweep { animation: turn 5s linear infinite; transform-origin: 1030px 385px; }
+      .blip { animation: blip 5s ease-in-out infinite; }
+      .b2 { animation-delay: 1.6s; } .b3 { animation-delay: 3.2s; }
+      @keyframes turn { to { transform: rotate(360deg); } }
+      @keyframes blip { 0%, 100% { opacity: .35; } 12% { opacity: 1; } 45% { opacity: .35; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+
+  <!-- the business: a section, with a horizontal well in the pay -->
+  <g clip-path="url(#tile)">
+    <rect x="130" y="270" width="240" height="230" fill="#333842"/>
+    <path d="M 130 332 C 190 316 250 348 310 330 S 370 336 370 336 V 500 H 130 Z" fill="#454b57"/>
+    <path d="M 130 392 C 190 376 250 408 310 390 S 370 396 370 396 V 500 H 130 Z" fill="#F2C14E"/>
+    <path d="M 130 424 C 190 408 250 440 310 422 S 370 428 370 428 V 500 H 130 Z" fill="#2a303b"/>
+    <path d="M 130 466 C 190 452 250 480 310 464 S 370 470 370 470 V 500 H 130 Z" fill="#23272f"/>
+    <path d="M 214 270 V 384 Q 214 404 234 406 C 262 410 300 414 344 406" fill="none" stroke="#f4f4f2" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- wellhead: a cap on the bore and a short flowline -->
+  <rect x="198" y="250" width="32" height="22" rx="7" fill="#f4f4f2"/>
+  <path d="M 230 260 H 262" fill="none" stroke="#f4f4f2" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="268" cy="260" r="8" fill="#f4f4f2"/>
+
+  <!-- the tools: a terminal -->
+  <rect x="518" y="272" width="244" height="226" rx="22" fill="#15181e" stroke="#2a303b" stroke-width="4"/>
+  <g fill="#454b57">
+    <circle cx="546" cy="300" r="7"/>
+    <circle cx="570" cy="300" r="7"/>
+    <circle cx="594" cy="300" r="7"/>
+  </g>
+  <g fill="none" stroke="#4EA8DE" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="566,358 606,392 566,426"/>
+    <line x1="626" y1="430" x2="694" y2="430"/>
+  </g>
+
+  <!-- what is possible today: a radar -->
+  <circle cx="1030" cy="385" r="110" fill="#15181e" stroke="#2a303b" stroke-width="4"/>
+  <g fill="none" stroke="#2a303b" stroke-width="2.5">
+    <circle cx="1030" cy="385" r="74"/>
+    <circle cx="1030" cy="385" r="38"/>
+    <line x1="920" y1="385" x2="1140" y2="385"/>
+    <line x1="1030" y1="275" x2="1030" y2="495"/>
+  </g>
+  <g clip-path="url(#dish)">
+    <g class="sweep">
+      <path d="M 1030 385 L 952 307 A 110 110 0 0 1 1030 275 Z" fill="url(#sweepFill)"/>
+      <line x1="1030" y1="385" x2="1030" y2="275" stroke="#43C59E" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <circle class="blip" cx="1076" cy="340" r="9" fill="#F2C14E"/>
+  <circle class="blip b2" cx="1058" cy="436" r="7" fill="#F2C14E"/>
+  <circle class="blip b3" cx="978" cy="420" r="8" fill="#F2C14E"/>
+  <circle cx="1030" cy="385" r="7" fill="#43C59E"/>
+</svg>

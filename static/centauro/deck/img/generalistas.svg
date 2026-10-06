@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- The reservoir engineer as the generalist of the upstream: in the middle,
+       talking to geology, geophysics, drilling, production, facilities and
+       management. The model is one more seat at that table. -->
+  <defs>
+    <radialGradient id="glow" cx="66%" cy="46%" r="46%">
+      <stop offset="0" stop-color="#1a2230"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </radialGradient>
+    <g id="person">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#FF7B54"/>
+      <circle cx="0" cy="-150" r="31" fill="#ff9576"/>
+      <circle cx="-10" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="12" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <g stroke="#2a303b" stroke-width="4" stroke-linecap="round">
+    <line x1="850" y1="328" x2="850" y2="106"/>
+    <line x1="850" y1="328" x2="1024" y2="190" stroke="#2f7fb5"/>
+    <line x1="850" y1="328" x2="1066" y2="377"/>
+    <line x1="850" y1="328" x2="946" y2="528"/>
+    <line x1="850" y1="328" x2="754" y2="528"/>
+    <line x1="850" y1="328" x2="634" y2="377"/>
+    <line x1="850" y1="328" x2="676" y2="190"/>
+  </g>
+  <g transform="translate(850 106)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M -28 -16 q 14 -11 28 0 t 28 0 M -28 2 q 14 -11 28 0 t 28 0 M -28 20 q 14 -11 28 0 t 28 0"/></g>
+  </g>
+  <g transform="translate(1024 190)">
+    <circle r="50" fill="#15181e" stroke="#4EA8DE" stroke-width="5"/>
+    <rect x="-32" y="-30" width="64" height="58" rx="18" fill="#4EA8DE"/>
+    <circle cx="-11" cy="-2" r="5.5" fill="#0f1012"/><circle cx="11" cy="-2" r="5.5" fill="#0f1012"/>
+  </g>
+  <g transform="translate(1066 377)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-28,2 -19,-15 -9,17 1,-23 11,19 20,-9 28,2"/></g>
+  </g>
+  <g transform="translate(946 528)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M -18 25 L 0 -27 L 18 25 M -11 5 H 11 M -6 -10 H 6 M -26 25 H 26"/></g>
+  </g>
+  <g transform="translate(754 528)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 0 -27 C 14 -7 20 3 20 9 a 20 20 0 0 1 -40 0 C -20 3 -14 -7 0 -27 Z"/></g>
+  </g>
+  <g transform="translate(634 377)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="0" cy="-15" rx="23" ry="8"/><path d="M -23 -15 V 16 a 23 8 0 0 0 46 0 V -15"/></g>
+  </g>
+  <g transform="translate(676 190)">
+    <circle r="50" fill="#15181e" stroke="#454b57" stroke-width="3"/>
+    <g fill="none" stroke="#c9ced6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M -26 25 H 26"/><g fill="#c9ced6" stroke="none"><rect x="-22" y="6" width="11" height="15" rx="3"/><rect x="-5.5" y="-8" width="11" height="29" rx="3"/><rect x="11" y="-22" width="11" height="43" rx="3"/></g></g>
+  </g>
+
+  <!-- the reservoir engineer -->
+  <circle cx="850" cy="328" r="112" fill="#0f1012" opacity=".55"/>
+  <use href="#person" x="850" y="420"/>
+</svg>

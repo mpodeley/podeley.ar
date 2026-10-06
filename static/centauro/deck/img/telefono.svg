@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- The broken telephone: the person with the problem (orange) hands a clear
+       message down a long chain; each hop bends it a little more and what
+       arrives is a grey tangle. Each stage swells in turn, left to right. -->
+  <defs>
+    <g id="pn">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#7d838e"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#7d838e"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#a3a9b3"/>
+      <circle cx="0" cy="-150" r="31" fill="#c9ced6"/>
+      <circle cx="-4" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="16" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="po">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#FF7B54"/>
+      <circle cx="0" cy="-150" r="31" fill="#FF7B54"/>
+      <circle cx="-4" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="16" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#F2C14E" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#F2C14E" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .m { transform-box: fill-box; transform-origin: center; animation: pass 6s ease-in-out infinite; }
+      .m2 { animation-delay: .7s; } .m3 { animation-delay: 1.4s; } .m4 { animation-delay: 2.1s; }
+      .m5 { animation-delay: 2.8s; } .m6 { animation-delay: 3.5s; }
+      @keyframes pass { 0%, 20%, 100% { transform: scale(1); } 9% { transform: scale(1.28); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+  <rect x="0" y="560" width="1280" height="3" fill="#23272f"/>
+
+  <!-- the chain -->
+  <use href="#po" x="165" y="560"/>
+  <use href="#pn" x="355" y="560"/>
+  <use href="#pn" x="545" y="560"/>
+  <use href="#pn" x="735" y="560"/>
+  <use href="#pn" x="925" y="560"/>
+  <use href="#pn" x="1115" y="560"/>
+
+  <!-- hops -->
+  <g fill="none" stroke="#454b57" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="252,316 268,330 252,344"/>
+    <polyline points="442,316 458,330 442,344"/>
+    <polyline points="632,316 648,330 632,344"/>
+    <polyline points="822,316 838,330 822,344"/>
+    <polyline points="1012,316 1028,330 1012,344"/>
+  </g>
+
+  <!-- the message, from a clean gold circle to a grey tangle -->
+  <circle cx="165" cy="330" r="70" fill="url(#halo)"/>
+  <g transform="translate(165 330)"><circle class="m" r="30" fill="#F2C14E"/></g>
+  <g transform="translate(355 330)">
+    <path class="m m2" d="M -30 -5 C -30 -23 -14 -31 2 -30 C 21 -29 31 -16 30 0 C 29 18 16 29 0 29 C -18 29 -30 14 -30 -5 Z" fill="#d7b258"/>
+  </g>
+  <g transform="translate(545 330)">
+    <path class="m m3" d="M -31 -9 C -28 -28 -7 -25 5 -31 C 23 -34 34 -14 28 0 C 34 16 18 32 2 25 C -12 34 -34 21 -25 5 C -34 0 -34 -5 -31 -9 Z" fill="#bca362"/>
+  </g>
+  <g transform="translate(735 330)">
+    <path class="m m4" d="M -32 -14 L -9 -23 L 2 -34 L 16 -18 L 34 -12 L 23 5 L 32 23 L 9 21 L -5 32 L -16 16 L -34 14 L -23 0 Z" fill="#a1946c" stroke="#a1946c" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(925 330)">
+    <path class="m m5" d="M -34 -6 L -14 -12 L -22 -32 L -2 -20 L 10 -36 L 14 -14 L 36 -18 L 22 0 L 36 16 L 12 14 L 6 34 L -8 16 L -28 28 L -20 6 Z" fill="#868576" stroke="#868576" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(1115 330)">
+    <g class="m m6" fill="none" stroke="#6b7280" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -30 -12 C -12 -36 14 -34 22 -14 C 32 8 -8 2 -16 14 C -26 30 16 34 30 16"/>
+      <path d="M -24 20 C -34 2 -6 -20 8 -4 C 18 8 2 20 -6 10"/>
+    </g>
+  </g>
+</svg>

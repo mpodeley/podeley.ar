@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Two ways to run the loop. Left: turning knobs, value after value. Right:
+       the model draws a fault between two wells: a reason, the reservoir
+       engineer's move. -->
+  <defs>
+    <g id="model">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#4EA8DE"/>
+      <rect x="-32" y="-180" width="64" height="58" rx="18" fill="#7cc0e8"/>
+      <circle cx="-9" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="13" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="spark">
+      <circle r="13" fill="#F2C14E"/>
+      <g stroke="#F2C14E" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-26" x2="0" y2="-35"/>
+        <line x1="23" y1="-13" x2="30" y2="-18"/>
+        <line x1="-23" y1="-13" x2="-30" y2="-18"/>
+      </g>
+    </g>
+    <style>
+      .k0 { animation: turnA 3.2s ease-in-out infinite; }
+      .k1 { animation: turnB 4.1s ease-in-out infinite; }
+      .k2 { animation: turnA 5.3s ease-in-out infinite reverse; }
+      .spark { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes turnA { 0%, 100% { transform: rotate(-70deg); } 50% { transform: rotate(80deg); } }
+      @keyframes turnB { 0%, 100% { transform: rotate(120deg); } 50% { transform: rotate(-40deg); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+
+  <!-- the console -->
+  <rect x="110" y="250" width="400" height="290" rx="24" fill="#15181e" stroke="#2a303b" stroke-width="2"/>
+  <circle cx="200" cy="330" r="40" fill="#333842"/>
+  <circle cx="200" cy="330" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k0" x1="200" y1="330" x2="200" y2="301" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 200px 330px"/>
+  <circle cx="310" cy="330" r="40" fill="#333842"/>
+  <circle cx="310" cy="330" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k1" x1="310" y1="330" x2="310" y2="301" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 310px 330px"/>
+  <circle cx="420" cy="330" r="40" fill="#333842"/>
+  <circle cx="420" cy="330" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k2" x1="420" y1="330" x2="420" y2="301" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 420px 330px"/>
+  <circle cx="200" cy="450" r="40" fill="#333842"/>
+  <circle cx="200" cy="450" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k0" x1="200" y1="450" x2="200" y2="421" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 200px 450px"/>
+  <circle cx="310" cy="450" r="40" fill="#333842"/>
+  <circle cx="310" cy="450" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k1" x1="310" y1="450" x2="310" y2="421" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 310px 450px"/>
+  <circle cx="420" cy="450" r="40" fill="#333842"/>
+  <circle cx="420" cy="450" r="40" fill="none" stroke="#454b57" stroke-width="3"/>
+  <line class="k2" x1="420" y1="450" x2="420" y2="421" stroke="#f4f4f2" stroke-width="7" stroke-linecap="round" style="transform-origin: 420px 450px"/>
+
+  <!-- the map: two wells and the fault the model proposes -->
+  <rect x="690" y="250" width="400" height="290" rx="24" fill="#15181e" stroke="#2a303b" stroke-width="2"/>
+  <g fill="none" stroke="#2a303b" stroke-width="3">
+    <path d="M 730 420 C 760 330 860 290 950 310 C 1030 330 1060 400 1040 470 C 1010 520 800 520 730 420 Z"/>
+    <path d="M 800 410 C 820 360 880 340 940 355 C 990 370 1000 420 980 450 C 950 480 830 470 800 410 Z"/>
+  </g>
+  <g fill="none" stroke="#F2C14E" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 742 300 C 800 330 850 372 900 404 C 950 436 1000 470 1046 506" stroke-width="8"/>
+    <path d="M 792 327 l -9 15 M 846 366 l -9 15 M 900 404 l -9 15 M 954 441 l -9 15 M 1004 476 l -9 15" stroke-width="6"/>
+  </g>
+  <g fill="#15181e" stroke="#f4f4f2" stroke-width="5">
+    <circle cx="930" cy="330" r="12"/>
+    <circle cx="830" cy="450" r="12"/>
+  </g>
+
+  <!-- the model, pencil on the fault -->
+  <use href="#model" x="1170" y="560"/>
+  <line x1="1142" y1="470" x2="1058" y2="510" stroke="#7cc0e8" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="1048" cy="508" r="8" fill="#F2C14E"/>
+  <g transform="translate(1170 336)"><use href="#spark" class="spark"/></g>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Asking for the explanation is part of the job: the model explains at the
+       board, the person listens until it clicks. -->
+  <defs>
+    <g id="model">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#4EA8DE"/>
+      <rect x="-32" y="-180" width="64" height="58" rx="18" fill="#7cc0e8"/>
+      <circle cx="-12" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="10" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="person">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#FF7B54"/>
+      <circle cx="0" cy="-150" r="31" fill="#ff9576"/>
+      <circle cx="-6" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="16" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="spark">
+      <circle r="13" fill="#F2C14E"/>
+      <g stroke="#F2C14E" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-26" x2="0" y2="-35"/>
+        <line x1="23" y1="-13" x2="30" y2="-18"/>
+        <line x1="-23" y1="-13" x2="-30" y2="-18"/>
+      </g>
+    </g>
+    <style>
+      .spark { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .ring { animation: ring 3.8s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+      @keyframes ring { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+  <rect x="0" y="560" width="1280" height="3" fill="#23272f"/>
+
+  <!-- the board -->
+  <rect x="560" y="190" width="520" height="300" rx="16" fill="#15181e" stroke="#454b57" stroke-width="5"/>
+  <g fill="none" stroke="#f4f4f2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="606" y="232" width="92" height="56" rx="12"/>
+    <rect x="774" y="232" width="92" height="56" rx="12"/>
+    <rect x="942" y="232" width="92" height="56" rx="12"/>
+    <path d="M 708 260 H 762 M 750 250 l 12 10 l -12 10"/>
+    <path d="M 876 260 H 930 M 918 250 l 12 10 l -12 10"/>
+    <path d="M 610 448 C 700 446 760 420 830 372 C 880 340 940 330 1030 328" stroke="#4EA8DE"/>
+  </g>
+  <g fill="#f4f4f2">
+    <circle cx="640" cy="440" r="6"/>
+    <circle cx="730" cy="424" r="6"/>
+    <circle cx="820" cy="384" r="6"/>
+    <circle cx="910" cy="344" r="6"/>
+    <circle cx="1000" cy="330" r="6"/>
+  </g>
+  <rect class="ring" x="764" y="222" width="112" height="76" rx="18" fill="none" stroke="#F2C14E" stroke-width="5"/>
+
+  <!-- the model explains -->
+  <use href="#model" x="1160" y="560"/>
+  <line x1="1132" y1="468" x2="1052" y2="336" stroke="#7cc0e8" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- the person gets it -->
+  <use href="#person" x="440" y="560"/>
+  <g transform="translate(440 344)"><use href="#spark" class="spark"/></g>
+</svg>

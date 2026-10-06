@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Two starting rules: no mail, no keys. The model looks on from the side. -->
+  <defs>
+    <radialGradient id="glow" cx="55%" cy="42%" r="50%">
+      <stop offset="0" stop-color="#1a2230"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </radialGradient>
+    <style>
+      .blink { animation: blink 5s infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes blink { 0%, 46%, 50%, 100% { transform: scaleY(1); } 48% { transform: scaleY(.1); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <!-- no mail -->
+  <circle cx="500" cy="290" r="140" fill="#15181e" stroke="#2a303b" stroke-width="5"/>
+  <rect x="404" y="226" width="192" height="128" rx="14" fill="#c9ced6"/>
+  <polyline points="410,236 500,304 590,236" fill="none" stroke="#7d838e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#FF7B54" stroke-width="18" stroke-linecap="round">
+    <line x1="414" y1="204" x2="586" y2="376"/>
+    <line x1="586" y1="204" x2="414" y2="376"/>
+  </g>
+
+  <!-- no keys -->
+  <circle cx="850" cy="290" r="140" fill="#15181e" stroke="#2a303b" stroke-width="5"/>
+  <g transform="translate(850 290) rotate(-35)">
+    <rect x="-22" y="-10" width="126" height="20" rx="10" fill="#F2C14E"/>
+    <rect x="58" y="6" width="16" height="28" rx="4" fill="#F2C14E"/>
+    <rect x="84" y="6" width="16" height="20" rx="4" fill="#F2C14E"/>
+    <circle cx="-56" cy="0" r="40" fill="#F2C14E"/>
+    <circle cx="-62" cy="0" r="15" fill="#15181e"/>
+  </g>
+  <g stroke="#FF7B54" stroke-width="18" stroke-linecap="round">
+    <line x1="764" y1="204" x2="936" y2="376"/>
+    <line x1="936" y1="204" x2="764" y2="376"/>
+  </g>
+
+  <!-- the model, looking at both -->
+  <ellipse cx="1120" cy="444" rx="56" ry="8" fill="#000" opacity=".35"/>
+  <g transform="translate(1120 440)">
+    <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+    <rect x="5" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+    <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#4EA8DE"/>
+    <rect x="-32" y="-180" width="64" height="58" rx="18" fill="#7cc0e8"/>
+    <g class="blink" fill="#0f1012">
+      <circle cx="-15" cy="-152" r="5.5"/>
+      <circle cx="7" cy="-152" r="5.5"/>
+    </g>
+  </g>
+</svg>

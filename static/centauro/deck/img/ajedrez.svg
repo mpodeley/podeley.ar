@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Three moments in chess. 1997: the machine beats the champion. 1998: the
+       champion plays with the machine at his side. 2005: two amateurs with
+       three machines beat a grandmaster with a bigger one. Years are labels. -->
+  <defs>
+    <g id="model">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#2f7fb5"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#4EA8DE"/>
+      <rect x="-32" y="-180" width="64" height="58" rx="18" fill="#7cc0e8"/>
+      <circle cx="-9" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="13" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="person">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#FF7B54"/>
+      <circle cx="0" cy="-150" r="31" fill="#ff9576"/>
+      <circle cx="-10" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="12" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+    <g id="spark">
+      <circle r="13" fill="#F2C14E"/>
+      <g stroke="#F2C14E" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-26" x2="0" y2="-35"/>
+        <line x1="23" y1="-13" x2="30" y2="-18"/>
+        <line x1="-23" y1="-13" x2="-30" y2="-18"/>
+      </g>
+    </g>
+    <pattern id="tiles" width="80" height="22" patternUnits="userSpaceOnUse">
+      <rect width="40" height="22" fill="#333842"/>
+      <rect x="40" width="40" height="22" fill="#23272f"/>
+    </pattern>
+    <style>
+      .spark { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+
+  <!-- 1997 -->
+  <rect x="40" y="520" width="320" height="22" rx="4" fill="url(#tiles)"/>
+  <use href="#person" transform="translate(232 490) rotate(-90)"/>
+  <use href="#model" x="296" y="520"/>
+
+  <!-- 1998 -->
+  <rect x="440" y="520" width="240" height="22" rx="4" fill="url(#tiles)"/>
+  <use href="#person" x="516" y="520"/>
+  <use href="#model" x="604" y="520"/>
+
+  <!-- 2005 -->
+  <rect x="760" y="520" width="480" height="22" rx="4" fill="url(#tiles)"/>
+  <g transform="translate(0 520) scale(.62)">
+    <use href="#model" x="1262" y="0"/>
+    <use href="#person" x="1342" y="0"/>
+    <use href="#model" x="1422" y="0"/>
+    <use href="#person" x="1502" y="0"/>
+    <use href="#model" x="1582" y="0"/>
+  </g>
+  <g transform="translate(882 352)"><use href="#spark" class="spark"/></g>
+  <g opacity=".5">
+    <use href="#person" transform="translate(1070 520) rotate(14) scale(1.12)"/>
+    <use href="#model" transform="translate(1152 520) rotate(22) scale(1.12)"/>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajar como un centauro</title>
+<meta name="description" content="Charla sobre el trabajo de ingeniería de reservorios con agentes de inteligencia artificial: el deck y dos demos sobre datos públicos.">
+<link rel="icon" href="/assets/favicon.svg">
+<!--
+  Cover page of the talk on podeley.ar. Standalone on purpose: it does not go through the
+  site layout, so it stays out of the menu and of the sitemap. Fonts come from the site's
+  /fonts/. No scripts.
+-->
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 500; font-display: swap; src: url(/fonts/space-grotesk-500.woff2) format('woff2'); }
+  @font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-display: swap; src: url(/fonts/ibm-plex-sans-400.woff2) format('woff2'); }
+  @font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-display: swap; src: url(/fonts/ibm-plex-mono-400.woff2) format('woff2'); }
+
+  /* Layout: the deck's title slide as the hero, then three plain rows separated by hairlines. */
+  :root {
+    --bg: #0f1012; --text: #f4f4f2; --muted: #a3a9b3; --faint: #7d8591; --line: #2a303b;
+    --orange: #FF7B54; --blue: #4EA8DE; --gold: #F2C14E;
+    --disp: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); font-size: 1.0625rem; line-height: 1.55;
+    padding-inline: 16px; padding-block: 0 72px; }
+  main { max-width: 1080px; margin-inline: auto; }
+
+  .hero { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center; gap: 8px 24px; padding-block: 40px 24px; }
+  .hero h1 { font-family: var(--disp); font-weight: 500; font-size: clamp(2.4rem, 1.2rem + 4.6vw, 4.25rem); line-height: 1.04; letter-spacing: -0.01em; margin: 0; max-width: 9ch; text-wrap: balance; }
+  .hero .meta { font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 22px 0 0; }
+  .hero .que { color: var(--muted); margin: 22px 0 0; max-width: 44ch; }
+  .hero img { display: block; width: 100%; height: auto; }
+
+  ol.entradas { list-style: none; margin: 16px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  ol.entradas > li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 32px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+  h2 { font-family: var(--disp); font-weight: 500; font-size: 1.5rem; line-height: 1.2; margin: 0 0 8px; text-wrap: balance; }
+  .entradas p { margin: 0; color: var(--muted); max-width: 62ch; }
+  .entradas p.limite { margin-top: 8px; color: var(--faint); font-size: .9375rem; }
+  a.ir { display: inline-block; font-family: var(--mono); font-size: .9rem; letter-spacing: .04em; color: var(--text); text-decoration: none; white-space: nowrap;
+    border: 1px solid rgba(244, 244, 242, .34); border-radius: 999px; padding: 11px 20px; }
+  a.ir:hover { border-color: var(--orange); }
+  a.ir:focus-visible, footer a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+  footer { margin-top: 36px; font-family: var(--mono); font-size: .8rem; letter-spacing: .04em; color: var(--faint); }
+  footer a { color: var(--muted); text-underline-offset: 3px; }
+
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: minmax(0, 1fr); padding-block: 20px 16px; }
+    .hero img { order: -1; }
+    ol.entradas > li { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero img { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div>
+      <h1>Trabajar como un centauro</h1>
+      <p class="meta">Matías Podeley · Tecpetrol · 15 de octubre de 2026</p>
+      <p class="que">Una charla sobre el trabajo de un ingeniero de reservorios cuando un agente de inteligencia artificial construye y la persona define y verifica.</p>
+    </div>
+    <img src="centauro.svg" width="1280" height="720" alt="Un centauro: torso de persona sobre un cuerpo de caballo con un prompt de terminal en el flanco">
+  </section>
+
+  <ol class="entradas">
+    <li>
+      <div>
+        <h2>El deck</h2>
+        <p>33 slides, una idea por slide. Se recorre con las flechas o deslizando.</p>
+      </div>
+      <a class="ir" href="deck/">Ver el deck</a>
+    </li>
+    <li>
+      <div>
+        <h2>Fortín de Piedra desde el espacio</h2>
+        <p>El terreno baja donde hay pozos en producción. Radar Sentinel-1 de 2019 a 2026 y gas acumulado por pad del Capítulo IV, todo con datos públicos.</p>
+        <p class="limite">La coincidencia en el mapa deja sin probar el mecanismo: falta estimar presión y compactación, y no hay GNSS que valide la medida.</p>
+      </div>
+      <a class="ir" href="fortin-de-piedra/">Abrir el visor</a>
+    </li>
+    <li>
+      <div>
+        <h2>Norne: el agente propone hipótesis</h2>
+        <p>Un agente hereda el modelo de simulación de Norne, propone hipótesis y las prueba contra la historia de producción con OPM Flow. Al final se destapan dos años que no vio.</p>
+        <p class="limite">El deck público de Norne viene sin presiones ni RFT observados, así que se ajusta el reparto de fases. El resultado no permite afirmar que el agente supere a un optimizador.</p>
+      </div>
+      <a class="ir" href="norne/">Abrir el visor</a>
+    </li>
+  </ol>
+
+  <footer><a href="/">podeley.ar</a></footer>
+</main>
+</body>
+</html>

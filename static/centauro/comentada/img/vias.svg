@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Plan B: two routes to the same place. The new one (blue, the model's)
+       breaks for a moment and the work carries on along the known one.
+       The negative delay makes the still frame show exactly that moment. -->
+  <defs>
+    <radialGradient id="glow" cx="54%" cy="45%" r="50%">
+      <stop offset="0" stop-color="#1a2230"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </radialGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#F2C14E" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#F2C14E" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .run, .gap, .brk { animation-duration: 8s; animation-iteration-count: infinite; animation-delay: -3.9s; }
+      .run { animation-name: run; animation-timing-function: linear; }
+      .gap { animation-name: gap; animation-timing-function: ease-in-out; }
+      .brk { animation-name: brk; animation-timing-function: ease-in-out; }
+      @keyframes run {
+        0% { transform: translate(300px, 330px); }
+        4% { transform: translate(372px, 286px); }
+        8% { transform: translate(440px, 250px); }
+        26% { transform: translate(640px, 250px); }
+        31% { transform: translate(668px, 282px); }
+        39% { transform: translate(692px, 378px); }
+        44% { transform: translate(720px, 410px); }
+        70% { transform: translate(940px, 410px); }
+        75% { transform: translate(1008px, 374px); }
+        80%, 100% { transform: translate(1080px, 330px); }
+      }
+      @keyframes gap { 0%, 18% { opacity: 1; } 24%, 88% { opacity: 0; } 95%, 100% { opacity: 1; } }
+      @keyframes brk { 0%, 18% { opacity: 0; } 24%, 88% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <!-- the known route -->
+  <path d="M 300 330 C 360 330 380 410 440 410 H 940 C 1000 410 1020 330 1080 330" fill="none" stroke="#454b57" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 640 250 C 690 250 670 410 720 410" fill="none" stroke="#454b57" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 18"/>
+
+  <!-- the new route, with its break -->
+  <path d="M 300 330 C 360 330 380 250 440 250 H 640" fill="none" stroke="#4EA8DE" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 780 250 H 940 C 1000 250 1020 330 1080 330" fill="none" stroke="#4EA8DE" stroke-width="14" stroke-linecap="round"/>
+  <path class="gap" d="M 640 250 H 780" fill="none" stroke="#4EA8DE" stroke-width="14"/>
+  <g class="brk" stroke="#FF7B54" stroke-width="9" stroke-linecap="round">
+    <line x1="694" y1="234" x2="726" y2="266"/>
+    <line x1="726" y1="234" x2="694" y2="266"/>
+  </g>
+
+  <!-- the model rides the new route -->
+  <rect x="478" y="166" width="84" height="76" rx="23" fill="#4EA8DE"/>
+  <circle cx="506" cy="202" r="6.5" fill="#0f1012"/>
+  <circle cx="536" cy="202" r="6.5" fill="#0f1012"/>
+
+  <!-- start and destination -->
+  <circle cx="300" cy="330" r="24" fill="#FF7B54"/>
+  <circle cx="1080" cy="330" r="80" fill="url(#halo)"/>
+  <circle cx="1080" cy="330" r="30" fill="#F2C14E"/>
+
+  <!-- the work in transit -->
+  <g class="run">
+    <circle r="24" fill="#f4f4f2" opacity=".14"/>
+    <circle r="12" fill="#f4f4f2"/>
+  </g>
+</svg>

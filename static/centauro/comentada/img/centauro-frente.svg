@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- The closing centaur: the cover's centaur, now turned towards the room,
+       in full stride, holding the spark up. Brighter and more open than the
+       cover on purpose. No text. -->
+  <defs>
+    <radialGradient id="sky" cx="80%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#33435f"/>
+      <stop offset=".45" stop-color="#1a2130"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </radialGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#F2C14E" stop-opacity=".5"/>
+      <stop offset=".4" stop-color="#F2C14E" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#F2C14E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dash" x1="0" x2="1">
+      <stop offset="0" stop-color="#7cc0e8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7cc0e8" stop-opacity=".7"/>
+    </linearGradient>
+    <style>
+      .bob { animation: bob 3s ease-in-out infinite; }
+      .spark { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .halo { animation: breathe 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .tail { animation: sway 3s ease-in-out infinite; transform-box: fill-box; transform-origin: 100% 50%; }
+      .leg { transform-box: fill-box; transform-origin: 50% 8%; animation: swing 3s ease-in-out infinite; }
+      .leg.b { animation-name: swingB; }
+      .wind { animation: wind 3s linear infinite; }
+      .w2 { animation-delay: -1s; } .w3 { animation-delay: -2s; }
+      @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+      @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: .8; } }
+      @keyframes sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-6deg); } }
+      @keyframes swing { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(7deg); } }
+      @keyframes swingB { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-7deg); } }
+      @keyframes wind { 0% { transform: translateX(40px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateX(-120px); opacity: 0; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#sky)"/>
+
+  <g fill="#f4f4f2">
+    <circle cx="420" cy="110" r="2.5" opacity=".4"/>
+    <circle cx="560" cy="64" r="2" opacity=".3"/>
+    <circle cx="660" cy="170" r="3" opacity=".35"/>
+    <circle cx="760" cy="84" r="2" opacity=".4"/>
+    <circle cx="900" cy="250" r="2" opacity=".3"/>
+    <circle cx="1190" cy="120" r="3" opacity=".4"/>
+    <circle cx="1220" cy="330" r="2.5" opacity=".3"/>
+    <circle cx="1150" cy="470" r="2" opacity=".3"/>
+    <circle cx="350" cy="300" r="2" opacity=".25"/>
+  </g>
+  <g fill="#F2C14E">
+    <circle cx="1130" cy="210" r="3" opacity=".7"/>
+    <circle cx="980" cy="64" r="2.5" opacity=".6"/>
+    <circle cx="1180" cy="60" r="2" opacity=".5"/>
+  </g>
+
+  <ellipse cx="800" cy="618" rx="250" ry="16" fill="#000" opacity=".4"/>
+
+  <!-- the air it leaves behind -->
+  <g stroke="url(#dash)" stroke-width="7" stroke-linecap="round">
+    <line class="wind" x1="330" y1="372" x2="470" y2="372"/>
+    <line class="wind w2" x1="300" y1="440" x2="420" y2="440"/>
+    <line class="wind w3" x1="350" y1="500" x2="450" y2="500"/>
+  </g>
+
+  <g transform="translate(800 0)">
+    <!-- far-side legs -->
+    <g transform="rotate(8 -134 448)">
+      <g class="leg">
+        <rect x="-150" y="440" width="32" height="150" rx="16" fill="#2f7fb5"/>
+        <rect x="-150" y="570" width="32" height="24" rx="8" fill="#1d4f72"/>
+      </g>
+    </g>
+    <g transform="rotate(-16 78 448)">
+      <g class="leg b">
+        <rect x="62" y="440" width="32" height="150" rx="16" fill="#2f7fb5"/>
+        <rect x="62" y="570" width="32" height="24" rx="8" fill="#1d4f72"/>
+      </g>
+    </g>
+
+    <g class="bob">
+      <path class="tail" d="M -170 392 C -226 372 -276 388 -306 432" fill="none" stroke="#2f7fb5" stroke-width="26" stroke-linecap="round"/>
+
+      <rect x="-180" y="350" width="330" height="122" rx="61" fill="#4EA8DE"/>
+      <circle cx="118" cy="388" r="72" fill="#4EA8DE"/>
+      <g fill="none" stroke="#f4f4f2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
+        <polyline points="-84,388 -56,410 -84,432"/>
+        <line x1="-38" y1="434" x2="6" y2="434"/>
+      </g>
+
+      <!-- torso, turned to the room -->
+      <g transform="rotate(5 126 356)">
+        <path d="M 80 356 V 266 a 46 46 0 0 1 92 0 V 356 Z" fill="#FF7B54"/>
+        <rect x="76" y="350" width="100" height="16" rx="8" fill="#F2C14E"/>
+
+        <!-- the arm, and the spark held high -->
+        <circle class="halo" cx="262" cy="96" r="210" fill="url(#halo)"/>
+        <polyline points="150,266 214,226 250,146" fill="none" stroke="#ff9576" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="spark">
+          <circle cx="262" cy="110" r="22" fill="#F2C14E"/>
+          <g stroke="#F2C14E" stroke-width="6" stroke-linecap="round">
+            <line x1="262" y1="68" x2="262" y2="50"/>
+            <line x1="298" y1="82" x2="312" y2="70"/>
+            <line x1="306" y1="116" x2="324" y2="120"/>
+            <line x1="226" y1="82" x2="212" y2="70"/>
+            <line x1="292" y1="146" x2="304" y2="158"/>
+          </g>
+        </g>
+
+        <circle cx="126" cy="176" r="48" fill="#FF7B54"/>
+        <circle cx="136" cy="170" r="6.5" fill="#0f1012"/>
+        <circle cx="160" cy="170" r="6" fill="#0f1012"/>
+        <circle cx="138" cy="168" r="2" fill="#f4f4f2"/>
+        <circle cx="162" cy="168" r="1.8" fill="#f4f4f2"/>
+        <path d="M 136 192 Q 149 202 162 192" fill="none" stroke="#0f1012" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- near-side legs -->
+    <g transform="rotate(26 -105 448)">
+      <g class="leg b">
+        <rect x="-122" y="440" width="34" height="156" rx="17" fill="#4EA8DE"/>
+        <rect x="-122" y="574" width="34" height="24" rx="8" fill="#1d4f72"/>
+      </g>
+    </g>
+    <g transform="rotate(-36 117 448)">
+      <g class="leg">
+        <rect x="100" y="440" width="34" height="156" rx="17" fill="#4EA8DE"/>
+        <rect x="100" y="574" width="34" height="24" rx="8" fill="#1d4f72"/>
+      </g>
+    </g>
+  </g>
+</svg>

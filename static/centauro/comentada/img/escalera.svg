@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Three steps of adoption: a sandbox with public data, copies of low
+       sensitivity data, and finally the company's own closed systems.
+       The person is on the first step. Labels are set in the slide. -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FF7B54" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#FF7B54" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .bob { animation: bob 3.2s ease-in-out infinite; }
+      @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="#0f1012"/>
+
+  <!-- the stair -->
+  <rect x="400" y="520" width="270" height="200" fill="#1b1e24"/>
+  <rect x="670" y="420" width="270" height="300" fill="#1f232a"/>
+  <rect x="940" y="320" width="270" height="400" fill="#23272f"/>
+  <g fill="#454b57">
+    <rect x="400" y="516" width="270" height="6" rx="3"/>
+    <rect x="670" y="416" width="270" height="6" rx="3"/>
+    <rect x="940" y="316" width="270" height="6" rx="3"/>
+  </g>
+
+  <!-- step 1: a box, open data inside, an open lock -->
+  <circle cx="456" cy="430" r="120" fill="url(#glow)"/>
+  <rect x="540" y="430" width="100" height="84" rx="12" fill="#14171c" stroke="#f4f4f2" stroke-width="5"/>
+  <rect x="566" y="450" width="36" height="46" rx="5" fill="#F2C14E"/>
+  <g stroke="#c99a2c" stroke-width="4" stroke-linecap="round">
+    <line x1="574" y1="464" x2="594" y2="464"/>
+    <line x1="574" y1="474" x2="594" y2="474"/>
+    <line x1="574" y1="484" x2="588" y2="484"/>
+  </g>
+  <path d="M 612 430 V 414 a 12 12 0 0 1 24 0 V 420" fill="none" stroke="#f4f4f2" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- the person, on the first step -->
+  <g transform="translate(456 516)">
+    <g class="bob">
+      <rect x="-20" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="5" y="-26" width="15" height="26" rx="7" fill="#d9603c"/>
+      <rect x="-30" y="-116" width="60" height="96" rx="26" fill="#FF7B54"/>
+      <circle cx="0" cy="-150" r="31" fill="#FF7B54"/>
+      <circle cx="-4" cy="-152" r="5.5" fill="#0f1012"/>
+      <circle cx="16" cy="-152" r="5.5" fill="#0f1012"/>
+    </g>
+  </g>
+
+  <!-- step 2: a copy of the folder -->
+  <g opacity=".4">
+    <path d="M 742 334 h 34 l 9 11 h 50 a 7 7 0 0 1 7 7 v 52 h -100 z" fill="#c99a2c"/>
+    <rect x="742" y="350" width="100" height="54" rx="6" fill="#F2C14E"/>
+  </g>
+  <path d="M 768 346 h 34 l 9 11 h 50 a 7 7 0 0 1 7 7 v 52 h -100 z" fill="#c99a2c"/>
+  <rect x="768" y="362" width="100" height="54" rx="6" fill="#F2C14E"/>
+
+  <!-- step 3: the vault -->
+  <rect x="1012" y="196" width="126" height="120" rx="16" fill="#2f343d" stroke="#7d838e" stroke-width="5"/>
+  <circle cx="1075" cy="256" r="36" fill="#23272f" stroke="#a3a9b3" stroke-width="5"/>
+  <g stroke="#a3a9b3" stroke-width="5" stroke-linecap="round">
+    <line x1="1075" y1="228" x2="1075" y2="284"/>
+    <line x1="1051" y1="242" x2="1099" y2="270"/>
+    <line x1="1099" y1="242" x2="1051" y2="270"/>
+  </g>
+  <circle cx="1075" cy="256" r="8" fill="#4EA8DE"/>
+</svg>

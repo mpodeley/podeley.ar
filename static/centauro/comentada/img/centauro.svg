@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- The centaur: the engineer (orange) decides where to go, the machine
+       (blue) carries. Facing right. No text: labels live in the slide. -->
+  <defs>
+    <radialGradient id="glow" cx="68%" cy="52%" r="52%">
+      <stop offset="0" stop-color="#1c2533"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </radialGradient>
+    <style>
+      .bob { animation: bob 3.6s ease-in-out infinite; }
+      .spark { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .tail { animation: sway 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 100% 0%; }
+      @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: .8; } }
+      @keyframes sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(5deg); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <g fill="#f4f4f2">
+    <circle cx="560" cy="120" r="2.5" opacity=".35"/>
+    <circle cx="700" cy="70" r="2" opacity=".25"/>
+    <circle cx="1010" cy="96" r="3" opacity=".3"/>
+    <circle cx="1180" cy="170" r="2" opacity=".3"/>
+    <circle cx="1140" cy="420" r="2.5" opacity=".2"/>
+    <circle cx="600" cy="300" r="2" opacity=".2"/>
+  </g>
+
+  <ellipse cx="860" cy="606" rx="260" ry="18" fill="#000" opacity=".4"/>
+
+  <g transform="translate(860 0)">
+    <!-- far-side legs -->
+    <g fill="#2f7fb5">
+      <rect x="-150" y="440" width="32" height="150" rx="16"/>
+      <rect x="62" y="440" width="32" height="150" rx="16"/>
+    </g>
+    <g fill="#1d4f72">
+      <rect x="-150" y="570" width="32" height="24" rx="8"/>
+      <rect x="62" y="570" width="32" height="24" rx="8"/>
+    </g>
+
+    <g class="bob">
+      <path class="tail" d="M -172 398 C -236 400 -252 466 -226 522" fill="none" stroke="#2f7fb5" stroke-width="26" stroke-linecap="round"/>
+
+      <!-- horse body and chest -->
+      <rect x="-180" y="350" width="330" height="122" rx="61" fill="#4EA8DE"/>
+      <circle cx="118" cy="388" r="72" fill="#4EA8DE"/>
+
+      <!-- terminal prompt on the flank: this half is the machine -->
+      <g fill="none" stroke="#f4f4f2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
+        <polyline points="-84,388 -56,410 -84,432"/>
+        <line x1="-38" y1="434" x2="6" y2="434"/>
+      </g>
+
+      <!-- human torso -->
+      <path d="M 82 356 V 264 a 44 44 0 0 1 88 0 V 356 Z" fill="#FF7B54"/>
+      <rect x="78" y="350" width="96" height="16" rx="8" fill="#F2C14E"/>
+
+      <!-- arm and the spark it holds -->
+      <polyline points="138,272 196,312 244,280" fill="none" stroke="#ff9576" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <g class="spark">
+        <circle cx="252" cy="268" r="15" fill="#F2C14E"/>
+        <g stroke="#F2C14E" stroke-width="5" stroke-linecap="round">
+          <line x1="252" y1="236" x2="252" y2="226"/>
+          <line x1="280" y1="250" x2="288" y2="244"/>
+          <line x1="284" y1="280" x2="294" y2="284"/>
+          <line x1="226" y1="246" x2="219" y2="239"/>
+        </g>
+      </g>
+
+      <!-- head -->
+      <circle cx="128" cy="178" r="46" fill="#FF7B54"/>
+      <circle cx="148" cy="172" r="6.5" fill="#0f1012"/>
+      <circle cx="150" cy="170" r="2" fill="#f4f4f2"/>
+    </g>
+
+    <!-- near-side legs -->
+    <g fill="#4EA8DE">
+      <rect x="-122" y="440" width="34" height="156" rx="17"/>
+      <rect x="100" y="440" width="34" height="156" rx="17"/>
+    </g>
+    <g fill="#1d4f72">
+      <rect x="-122" y="574" width="34" height="24" rx="8"/>
+      <rect x="100" y="574" width="34" height="24" rx="8"/>
+    </g>
+  </g>
+</svg>

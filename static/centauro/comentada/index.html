@@ -29,6 +29,7 @@ article { margin-top: 28px; }
 /* A real 1280x720 slide, scaled to the frame. tan(atan2()) turns the ratio of two lengths into a number. */
 .lamina { position: absolute; left: 0; top: 0; transform-origin: 0 0; scale: tan(atan2(100cqw, 1280px)); overflow: hidden; }
 .lamina .fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.lamina .pieza iframe:not([src]), .lamina .pieza iframe[src="about:blank"] { visibility: hidden; }
 .lamina > .visor { position: absolute; right: 56px; top: 44px; font-family: var(--mono); font-size: 20px; letter-spacing: .04em; color: #f4f4f2;
   background: rgba(15, 16, 18, .8); border: 1px solid rgba(244, 244, 242, .32); border-radius: 999px; padding: 12px 22px; }
 .dicho { margin-top: 16px; max-width: 66ch; }
@@ -327,7 +328,7 @@ article { margin-top: 28px; }
 <article id="s4">
 <div class="marco"><div class="lamina ">
 <img class="fondo" src="img/orbita.png" alt="">
-<div class="pieza" data-src="../demos/apertura/dist/orbita.html"></div>
+<div class="pieza"><iframe data-src="piezas/orbita.html" title="Animación de esta slide"></iframe></div>
 </div></div>
 <p class="num">4</p>
 <div class="dicho">
@@ -335,6 +336,8 @@ article { margin-top: 28px; }
   <p class="dice">La pregunta fue si hay algún dato público que diga cómo se va alterando el estado geomecánico.</p>
   <p class="dice">Lo hay. A 700 km de altura pasa un radar. Da una vuelta a la Tierra cada hora y media, y cada pasada cae un poco más al oeste que la anterior.</p>
   <p class="dice">Cada doce días vuelve a pasar por el mismo lugar, y mide cuánto se movió el suelo, en milímetros. La técnica se llama InSAR.</p>
+  <p class="contexto">Con un clic, la vista baja en 8 segundos hasta Fortín de Piedra.</p>
+  <p class="contexto">En la animación están a escala la altura de la órbita, su inclinación y las 14.6 vueltas por día. La velocidad no: una vuelta de la Tierra dura dos minutos.</p>
   <p class="fuente">Sentinel-1 (ESA), órbita a 693 km, inclinación de 98.18°, repetición cada 12 días por satélite (sentiwiki.copernicus.eu/web/s1-mission). Contorno de los continentes: Natural Earth 1:110m.</p>
 </div>
 </article>
@@ -1221,5 +1224,10 @@ tiene una razón física que se escribe antes de correr.</pre>
 </div>
 </article>
 </main>
+<script>
+for (const frame of document.querySelectorAll('.pieza iframe')) {
+  new IntersectionObserver(([entry]) => { frame.src = entry.isIntersecting ? frame.dataset.src : 'about:blank'; }).observe(frame);
+}
+</script>
 </body>
 </html>

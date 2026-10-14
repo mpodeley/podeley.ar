@@ -107,6 +107,25 @@ article { margin-top: 28px; }
 .lamina .rotulo.azul { color: var(--blue); }
 .lamina .rotulo.verde { color: var(--green); }
 .lamina .rotulo.dorado { color: var(--gold); }
+.lamina .frase {
+  position: absolute;
+  margin: 0;
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--text);
+  max-width: 24ch;
+}
+.lamina .frase small {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 .lamina pre.archivo {
   font-family: var(--mono);
   font-size: 24px;
@@ -1105,6 +1124,7 @@ tiene una razón física que se escribe antes de correr.</pre>
 <article id="s50">
 <div class="marco"><div class="lamina ">
 <img class="fondo" src="img/sympathy.svg" alt="">
+<p class="frase" style="left:72px;top:96px">You don't have to be an engineer to be a racing driver, but you do have to have <em>mechanical sympathy</em>.<small>Jackie Stewart</small></p>
 <h2 style="max-width:none">Sympathy for the LLM</h2>
 <p>Qué le cuesta, qué necesita que le digan, cuándo se pierde.</p>
 </div></div>
@@ -1112,7 +1132,7 @@ tiene una razón física que se escribe antes de correr.</pre>
 <div class="dicho">
   <p class="dice">Jackie Stewart decía que para correr no hace falta ser ingeniero, pero sí tener 'mechanical sympathy': sentir cómo trabaja el auto.</p>
   <p class="dice">Con estos modelos vale lo mismo. Saber qué le cuesta, qué necesita que le digan y cuándo se está perdiendo.</p>
-  <p class="fuente">la frase de Stewart, y su paso al software con Martin Thompson (2011), en martinfowler.com/bliki/MechanicalSympathy.html.</p>
+  <p class="fuente">el término es de Stewart según Martin Thompson (2011) y martinfowler.com/bliki/MechanicalSympathy.html. La frase textual circula así en charlas de software, sin fuente primaria ubicada.</p>
 </div>
 </article>
 <p class="bloque">Cómo empezar</p>

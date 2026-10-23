@@ -58,8 +58,7 @@ en JSON:
 de esa página; un `"jsonld"` opcional se emite como `ld+json` (lo llevan el home,
 `/ciber/`, `/casos/`, `/trabajo/` y `/perfil/`). `nav` marca el item activo del menú con
 las claves de `site.config.json`, que son cuatro: `casos`, `ciber`, `trabajo`, `perfil`.
-Las páginas de sector (`/ep/`, `/mineria/`, `/energia/`) declaran `casos`, y `/cto/`
-declara `trabajo`, porque son drill-down de esos items y no items propios. `research`
+Las páginas de sector (`/ep/`, `/mineria/`, `/energia/`) declaran `casos`, porque son drill-down de ese item y no items propios. `research`
 quedó fuera del menú y `index`/`404` no lo declaran.
 
 El texto va sin escapar en el JSON (`E&P`, comillas con `\"`); en el HTML del cuerpo

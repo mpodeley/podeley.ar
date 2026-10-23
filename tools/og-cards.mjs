@@ -76,14 +76,9 @@ const CARDS = [
     title: 'active rigs and frac spreads, and no official registry' },
 
   { slug: 'trabajo', lang: 'es', eyebrow: 'Cómo trabajo · Petróleo, gas y minería',
-    title: 'Consulta, proyecto o dirección técnica' },
+    title: 'Consulta, desarrollo de negocio o IA en el equipo' },
   { slug: 'trabajo', lang: 'en', eyebrow: 'How I work · Oil, gas & mining',
-    title: 'Consult, project, or technical direction' },
-
-  { slug: 'cto', lang: 'es', eyebrow: 'CTO · Petróleo, gas y minería',
-    title: 'Dirección de tecnología con dedicación parcial' },
-  { slug: 'cto', lang: 'en', eyebrow: 'CTO · Oil, gas & mining',
-    title: 'Part-time technology leadership' },
+    title: 'Consult, business development, or AI in the team' },
 
   { slug: 'grpo-cultura', lang: 'es', eyebrow: 'Research · Nota de posición', fig: '1,200 agentes',
     title: 'improvisaron un foro, y el foro les cambió la conducta' },

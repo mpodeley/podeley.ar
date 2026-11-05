@@ -1,13 +1,13 @@
 <!--meta
 {
-  "title": "Un CERT sectorial de energía para Argentina — Matías Podeley",
-  "description": "Cómo funciona SektorCERT, cuánto costó arrancar el ISAC de petróleo y gas de Estados Unidos, y qué haría falta para montar un centro sectorial de ciberseguridad en la energía argentina: gobernanza, presupuesto, cuotas y dos borradores normativos.",
+  "title": "Un CERT sectorial para la energía argentina — Matías Podeley",
+  "description": "Cómo funciona SektorCERT, cuánto costó arrancar el ISAC de petróleo y gas de Estados Unidos, y qué haría falta para un CERT sectorial en la energía argentina: gobernanza, presupuesto, cuotas y dos borradores normativos.",
   "ogImage": "/assets/og/isac.es.png",
   "ogImageAlt": "Cuatro firmas pagan el primer año de un CERT sectorial de energía",
   "jsonld": {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Un CERT sectorial de energía para Argentina: el modelo danés y lo que costaría",
+    "headline": "Un CERT sectorial para la energía argentina: el modelo danés y lo que costaría",
     "url": "https://podeley.ar/isac/",
     "description": "Análisis comparado de centros sectoriales de ciberseguridad y de su replicabilidad en el sector energético argentino, con costos de fuente fiscal, esquema de cuotas y borradores normativos.",
     "inLanguage": "es",
@@ -22,7 +22,7 @@
 
 <section class="hero wrap">
   <p class="kicker">Memo · Ciberdefensa sectorial · Energía argentina</p>
-  <h1>Dinamarca detectó el ataque a 22 operadoras porque miraba 300 empresas a la vez</h1>
+  <h1>Un CERT sectorial para la energía argentina</h1>
   <p class="hero-sub">SektorCERT es una asociación civil danesa de 25 empleados, propiedad de sus cámaras y pagada con cuotas. Este memo explica cómo funciona y lo compara con ONE-ISAC, el ISAC de petróleo y gas de Estados Unidos, cuyo primer año costó USD 149,881. Después estima qué haría falta en Argentina: unos USD 270,000 al año, que cubren cuatro empresas ancla. Al final hay dos borradores normativos para discutir.</p>
   <p class="hero-meta"><span class="hero-when">Publicado el 8 de agosto de 2026</span> <a class="link-plain" href="#modelo">El modelo <span class="arw">↓</span></a> <a class="link-plain" href="#costo">Cuánto cuesta <span class="arw">↓</span></a> <a class="link-plain" href="#plata">El préstamo BID <span class="arw">↓</span></a> <a class="link-plain" href="#borradores">Los borradores <span class="arw">↓</span></a></p>
 </section>
@@ -32,7 +32,7 @@
 <section class="pd-section wrap" id="modelo">
   <div class="section-head">
     <p class="eyebrow">El modelo</p>
-    <h2>Veinticinco personas que ven el tráfico de borde de trescientas empresas</h2>
+    <h2>Cómo funciona SektorCERT</h2>
     <p class="intro">SektorCERT nació en abril de 2020 como EnergiCERT. Es una asociación sin fines de lucro cuyos dueños son tres cámaras, Green Power Denmark, Dansk Fjernvarme y DANVA, y Energinet, el operador del sistema eléctrico danés. Hoy cubre electricidad, calefacción distrital, agua y transporte.</p>
   </div>
 
@@ -51,14 +51,14 @@
     </table>
   </div>
 
-  <h3>Un sensor pensado para la primera pregunta del cliente</h3>
+  <h3>El sensor</h3>
   <p>Lo primero que pregunta un responsable de seguridad es quién va a mirar su tráfico. El sensor de SektorCERT está armado para esa pregunta. Es un tap pasivo que copia el tráfico sin poder alterarlo, mira solo el borde hacia internet y saca los datos cifrados por un enlace 4G propio.</p>
   <p>Suma dos cosas que un proveedor comercial no trae. Analiza protocolos industriales como Modbus y Profinet, lo que deja ver tráfico de PLC y RTU. Y ofrece un honeypot opcional en producción, un equipo que simula un PLC y alarma si alguien intenta entrar.</p>
 
   <h3>Qué contrata y qué hace en casa</h3>
   <p>El análisis lo contrata a Red Canary y el agente de endpoint es CrowdStrike. La respuesta a incidentes la cubre un retainer con mnemonic, la mayor firma nórdica del rubro: el contrato va en la cuota y las horas las paga quien las usa. En casa quedan la red de sensores, el foro cerrado entre miembros y la relación con las autoridades. Ese reparto permite pensarlo a escala argentina.</p>
 
-  <h3>Solo cuotas, por dos razones escritas</h3>
+  <h3>Por qué se financia con cuotas</h3>
   <p>El folleto de membresía da dos razones para no aceptar fondos públicos. La primera es no depender de la agenda política. La segunda pesa más acá: a una entidad privada no se le puede pedir acceso a la información, así que un incidente compartido queda confidencial.</p>
   <p>En Argentina el argumento es el mismo. La <a href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/265000-269999/265949/norma.htm" rel="noopener">Ley 27.275</a> alcanza a organismos públicos y empresas con participación estatal. Un incidente reportado al Estado lo puede pedir un tercero; reportado a una asociación civil de la industria, no.</p>
   <p>La figura de membresía que explica los 300 miembros es la de rama: la cámara firma por todos sus socios. Un proveedor crítico también puede entrar, con el aval de dos miembros.</p>
@@ -69,7 +69,7 @@
 <section class="pd-section wrap" id="caso">
   <div class="section-head">
     <p class="eyebrow">Dinamarca, mayo de 2023</p>
-    <h2>El ataque que siempre se cita, y lo que se supo después</h2>
+    <h2>El ataque de 2023</h2>
     <p class="intro">En pocos días se comprometieron veintidós empresas de la infraestructura energética danesa. Los atacantes llegaron a sistemas de control y varias empresas pasaron a operación en isla. El <a href="https://sektorcert.dk/wp-content/uploads/2023/11/SektorCERT-The-attack-against-Danish-critical-infrastructure-TLP-CLEAR.pdf" rel="noopener">reporte de SektorCERT</a> lo cuenta minuto a minuto.</p>
   </div>
   <p>La primera ola explotó CVE-2023-28771, una vulnerabilidad de firewalls Zyxel publicada con su parche el 25 de abril. Once de las 22 empresas no habían actualizado pese al aviso de SektorCERT, y recibieron una <a href="https://www.dr.dk/nyheder/viden/teknologi/forsyningsselskaber-faar-kritik-efter-historisk-cyberangreb-vi-er-heldige" rel="noopener">crítica pública</a>. Un miembro no sabía que tenía un Zyxel: lo había puesto un proveedor al instalar cámaras. Otro perdió el firewall que también ruteaba la red de operación y pasó seis días en isla, manejando los sitios remotos a mano.</p>
@@ -82,7 +82,7 @@
 <section class="pd-section wrap" id="argentina">
   <div class="section-head">
     <p class="eyebrow">Argentina</p>
-    <h2>Las cámaras que harían falta ya son dueñas de CAMMESA</h2>
+    <h2>El antecedente de CAMMESA</h2>
     <p class="intro">SektorCERT es propiedad de tres cámaras y del operador del sistema. Argentina tiene esa estructura, con los mismos actores, desde 1992.</p>
   </div>
   <p>El 80% de CAMMESA se reparte en partes iguales entre las cuatro asociaciones eléctricas: AGEERA (generadores), ATEERA (transportistas), ADEERA (distribuidores) y AGUEERA (grandes usuarios). El 20% es del Estado, que preside (<a href="https://www.argentina.gob.ar/normativa/nacional/decreto-1192-1992-9615/texto" rel="noopener">Decreto 1192/92</a>).</p>
@@ -104,7 +104,7 @@
     </table>
   </div>
 
-  <p class="aside-link">Los bancos argentinos comparten infraestructura crítica desde 1980, y el Banco Central les exige avisar un ciberincidente en la primera hora (<a href="https://www.bcra.gob.ar/archivos/Pdfs/comytexord/A8280.pdf" rel="noopener">Comunicación A 8280</a>). En energía no hay norma de reporte ni canal. Hay <a href="/incidentes/">catorce incidentes en seis años</a>, y siete se conocen porque el atacante los publicó.</p>
+  <p class="aside-link">Los bancos argentinos comparten infraestructura crítica desde 1980, y el Banco Central les exige avisar un ciberincidente en la primera hora (<a href="https://www.bcra.gob.ar/archivos/Pdfs/comytexord/A8280.pdf" rel="noopener">Comunicación A 8280</a>). En energía todavía no hay norma de reporte ni canal sectorial (ver el <a href="/incidentes/">registro</a>).</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -112,21 +112,21 @@
 <section class="pd-section wrap" id="falta">
   <div class="section-head">
     <p class="eyebrow">Lo que falta</p>
-    <h2>Dinamarca tiene tres piezas y Argentina ninguna</h2>
+    <h2>Las tres piezas del modelo danés</h2>
     <p class="intro">Lo que se llama "modelo SektorCERT" son tres instituciones que se necesitan entre sí. Solo una es privada, y fue la última en aparecer.</p>
   </div>
 
   <div class="principles">
     <div class="principle">
-      <h3>La ley que obliga</h3>
+      <h3>La ley</h3>
       <p>La <a href="https://www.retsinformation.dk/eli/lta/2025/258" rel="noopener">Lov 258</a>, vigente desde el 7 de marzo de 2025, aplica las directivas europeas NIS2 y CER a la energía y clasifica a las empresas en cinco niveles de exigencia. En Argentina ni el ente regulador ni la Secretaría de Energía piden requisitos de ciberseguridad o reporte a los operadores.</p>
     </div>
     <div class="principle">
-      <h3>La unidad estatal de estrategia</h3>
+      <h3>La unidad estatal</h3>
       <p>Funciona desde 2018 dentro de la <a href="https://ens.dk/forsyning-og-forbrug/energisektorernes-beredskab" rel="noopener">agencia danesa de energía</a> y hace estrategia sectorial, guías y ejercicios. En Argentina el Centro Nacional de Ciberseguridad es autoridad nacional, pero su primera norma técnica alcanza solo al sector público.</p>
     </div>
     <div class="principle">
-      <h3>El CERT privado que opera</h3>
+      <h3>El CERT privado</h3>
       <p>SektorCERT, desde 2020. Detecta, avisa y coordina la respuesta; no dicta norma ni fiscaliza. En América Latina el único centro sectorial privado consolidado es el financiero de Colombia.</p>
     </div>
   </div>
@@ -134,10 +134,10 @@
   <p>El Estado danés puso el mandato y la estrategia y dejó la detección en manos privadas. Es la parte del diseño que más conviene copiar.</p>
   <p>El programa argentino de infraestructura crítica financiado por el BID parte de una línea de base de 9%, medida en 2021: el porcentaje de sectores con infraestructura crítica identificada. La meta es 50% en 2028.</p>
 
-  <h3>Chile armó las tres piezas en dos años, con otro diseño</h3>
+  <h3>El camino chileno</h3>
   <p>La <a href="https://www.bcn.cl/leychile/navegar?i=1202434" rel="noopener">Ley 21.663</a> creó en 2024 la Agencia Nacional de Ciberseguridad. El 24 de julio de 2026 la agencia <a href="https://www.trendtic.cl/2026/07/anci-oficializa-segunda-nomina-de-operadores-de-importancia-vital-y-cierra-hito-clave-de-la-ley-marco-de-ciberseguridad/" rel="noopener">cerró la primera nómina de Operadores de Importancia Vital</a>, con energía eléctrica incluida.</p>
-  <p>El CSIRT eléctrico chileno lo va a operar el Coordinador Eléctrico Nacional, el equivalente de CAMMESA, con un costo que <a href="https://electromineria.cl/coordinador-cne-gastos-2026-ciberseguridad-hvdc/" rel="noopener">se va a pedir dentro de su presupuesto regulado</a>. Lo aceleró el apagón nacional del 25 de febrero de 2025. Si el sector no se organiza antes, es el camino que Argentina copiaría por inercia.</p>
-  <p>Es rápido y no le cuesta nada a quien lo propone. A cambio, poner el intercambio dentro de una entidad con participación estatal reabre lo que SektorCERT resolvió siendo privada: el acceso a la información pública y la dependencia del interés del gobierno de turno.</p>
+  <p>El CSIRT eléctrico chileno lo va a operar el Coordinador Eléctrico Nacional, el equivalente de CAMMESA, con un costo que <a href="https://electromineria.cl/coordinador-cne-gastos-2026-ciberseguridad-hvdc/" rel="noopener">se va a pedir dentro de su presupuesto regulado</a>. Lo aceleró el apagón nacional del 25 de febrero de 2025. Es la comparación más cercana para Argentina.</p>
+  <p>Su ventaja es la velocidad. A cambio, poner el intercambio dentro de una entidad con participación estatal reabre lo que SektorCERT resolvió siendo privada: el acceso a la información pública y la dependencia del interés del gobierno de turno.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -145,11 +145,11 @@
 <section class="pd-section wrap" id="costo">
   <div class="section-head">
     <p class="eyebrow">Presupuesto</p>
-    <h2>Tres escenarios; el más chico lo pagan cuatro empresas</h2>
+    <h2>Cuánto cuesta</h2>
     <p class="intro">KraftCERT, el CERT de la energía noruega, gastó NOK 19,522,718 en 2025 con 12 empleados, según sus cuentas en el registro de empresas. Son USD 2,051,838 al tipo de cambio del 7 de agosto de 2026, unos USD 171,000 por persona. Es el costo de un CERT en régimen.</p>
   </div>
 
-  <h3>Un ISAC de petróleo y gas arrancó con USD 150,000 y sin empleados</h3>
+  <h3>El arranque de ONE-ISAC</h3>
   <p>ONE-ISAC, el centro de intercambio de petróleo y gas de Estados Unidos, nació en 2014 sobre una cámara sectorial, sin ninguna ley que obligara a afiliarse. Sus declaraciones fiscales son públicas.</p>
 
   <div class="reg-scroll">
@@ -205,7 +205,7 @@
 
   <p>Cuatro anclas aportan USD 320,000 contra un costo de 270,000, y el primer año queda pago. Cuarenta miembros repartidos en los cinco tramos rinden USD 710,000, casi todo el escenario medio. SektorCERT tiene más de 300.</p>
 
-  <h3>Dónde falla el financiamiento por cuotas</h3>
+  <h3>Cuándo fallan las cuotas</h3>
   <p>MS-ISAC, el centro de los gobiernos estaduales y locales de Estados Unidos, tenía 18,574 miembros el 30 de septiembre de 2025. Ese día perdió los USD 27,000,000 anuales que le daba el gobierno federal. Pasó a cuotas desde USD 1,495 al año y <a href="https://statetechmagazine.com/article/2026/02/states-step-ms-isac-moves-paid-model-after-federal-funding-ends" rel="noopener">perdió alrededor del 70% de la membresía</a>.</p>
   <p>ONE-ISAC y WaterISAC cobran desde el primer día y llevan diez y veinticuatro años creciendo. A los miembros de MS-ISAC les pidieron pagar lo que recibían gratis, y la mayoría lo tomó como un recorte. Nacer cobrando funciona mejor que pasar a cobrar.</p>
   <p>De ahí sale una condición de diseño: la cuota de entrada tiene que ser baja. El centro vale más cuantas más empresas reportan, y una cooperativa que reporta un incidente aporta más de lo que paga. Los USD 3,000 del tramo chico están en el orden correcto, y podrían bajar.</p>
@@ -216,18 +216,17 @@
 <section class="pd-section wrap" id="plata">
   <div class="section-head">
     <p class="eyebrow">El préstamo BID</p>
-    <h2>El Estado va a saber qué está expuesto, y no tiene a quién avisarle</h2>
+    <h2>El programa del BID y el sector privado</h2>
     <p class="intro">El préstamo BID 5735/OC-AR financia el <a href="https://www.iadb.org/en/project/AR-L1343" rel="noopener">Programa de Ciberseguridad para Infraestructuras Críticas de Información</a>: USD 30,000,000 sin contraparte local, aprobados el 11 de enero de 2023 y firmados el 7 de junio. Lo ejecuta la Jefatura de Gabinete de Ministros y cierra en 2028. Las cifras que siguen son de sus documentos públicos a agosto de 2026.</p>
   </div>
-  <p>El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000578-522669563-48737" rel="noopener">informe de monitoreo de 2025</a>, validado en mayo de 2026, registra USD 2,500,000 desembolsados sobre 30 millones. Contra productos, la matriz de resultados computa USD 713,215 ejecutados en tres años: el 2.4%.</p>
-  <p>El programa igual se mueve. El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000029-368603317-139" rel="noopener">plan de adquisiciones</a> de julio de 2026 tiene 42 procesos por USD 24,385,949, con contratos firmados y licitaciones abiertas. En ese plan no aparecen las palabras "privado", "intercambio", "sectorial" ni "energía". Todo apunta al Estado.</p>
+  <p>El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000578-522669563-48737" rel="noopener">informe de monitoreo de 2025</a>, validado en mayo de 2026, registra USD 2,500,000 desembolsados sobre 30 millones.</p>
+  <p>El programa avanza. El <a href="https://www.iadb.org/document.cfm?id=EZIDB0000029-368603317-139" rel="noopener">plan de adquisiciones</a> de julio de 2026 tiene 42 procesos por USD 24,385,949, con contratos firmados y licitaciones abiertas. Los procesos se dirigen al sector público, que es el foco del programa; ninguno menciona al sector privado ni a la energía.</p>
 
-  <h3>La plataforma que se está comprando escanea todo el país</h3>
+  <h3>La plataforma de observación</h3>
   <p>La licitación más avanzada, por USD 1,200,000, se abrió en mayo de 2026 y cerró el 3 de junio; al 5 de noviembre no hay adjudicación publicada. Compra una <a href="https://www.argentina.gob.ar/sites/default/files/pliego_-_plieg-2026-44473254-apn-dpypsyeicytjgm.pdf" rel="noopener">plataforma de observación del ciberespacio</a> para el Centro Nacional de Ciberseguridad. El pliego pide escanear todas las IP asignadas a Argentina y el dominio .ar al menos cada 12 horas. Son más de 20 millones de nodos, y las vulnerabilidades se verifican sin explotarlas.</p>
-  <p>Mucho de lo que encuentre va a ser de operadores privados: transportistas y distribuidoras de gas y electricidad, productores, refinadores, generadoras. No tienen obligaciones sectoriales de ciberseguridad ni un canal establecido con el Estado. En septiembre, el entonces director del Centro Nacional de Ciberseguridad <a href="https://www.infobae.com/economia/2026/09/11/monitoreo-ciberarenas-y-alertas-tempranas-como-es-el-plan-del-gobierno-para-reforzar-las-defensas-ante-ataques-por-ia/" rel="noopener">dijo</a> que con las empresas privadas la relación es de colaboración, porque el Centro no puede imponerles regulaciones, y que ampliar sus herramientas sobre infraestructura crítica requiere una ley.</p>
-  <p>El programa prevé ese canal. Su primer componente incluye un producto de "plataformas para el análisis de amenazas e intercambio de información con el sector privado implementado", con meta de una plataforma a 2028 y USD 2,600,000 de presupuesto. Los objetivos no se reformularon. Al cierre de 2025 su avance era cero, y los USD 650,000 programados para ese año no se usaron.</p>
-  <p>En unos meses el Estado va a tener el detalle de lo que está expuesto en la energía privada. Le van a faltar una entidad sectorial con quien coordinar, un protocolo para manejar la información, un acuerdo de confidencialidad y la garantía de que un hallazgo no termine en sanción o revisión tarifaria. Avisar caso por caso en esas condiciones genera la desconfianza que después traba cualquier intercambio.</p>
-  <p>Falta saber quién firma del otro lado.</p>
+  <p>Mucho de lo que encuentre va a ser de operadoras privadas: transportistas y distribuidoras de gas y electricidad, productores, refinadores, generadoras. No tienen obligaciones sectoriales de ciberseguridad ni un canal establecido con el Estado. En septiembre, el entonces director del Centro Nacional de Ciberseguridad <a href="https://www.infobae.com/economia/2026/09/11/monitoreo-ciberarenas-y-alertas-tempranas-como-es-el-plan-del-gobierno-para-reforzar-las-defensas-ante-ataques-por-ia/" rel="noopener">dijo</a> que con las empresas privadas la relación es de colaboración, porque el Centro no puede imponerles regulaciones, y que ampliar sus herramientas sobre infraestructura crítica requiere una ley.</p>
+  <p>El programa prevé ese canal. Su primer componente incluye un producto de "plataformas para el análisis de amenazas e intercambio de información con el sector privado implementado", con meta de una plataforma a 2028 y USD 2,600,000 de presupuesto. Ese producto sigue vigente y todavía no empezó.</p>
+  <p>Cuando la plataforma funcione, el Estado va a tener el detalle de lo que está expuesto en la energía privada. Para devolver esos hallazgos van a hacer falta una entidad sectorial con quien coordinar, un protocolo para manejar la información, un acuerdo de confidencialidad y la garantía de que un hallazgo no termine en sanción o revisión tarifaria. Esa entidad es la que propone este memo.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -235,28 +234,28 @@
 <section class="pd-section wrap" id="fases">
   <div class="section-head">
     <p class="eyebrow">Secuencia</p>
-    <h2>Cuatro fases, y cada una sirve aunque la siguiente no llegue</h2>
-    <p class="intro">Si el Estado convoca antes de que haya operadores comprometidos, la mesa se llena de funcionarios y proveedores. Es lo que le pasó al programa de infraestructuras críticas de 2011.</p>
+    <h2>Por etapas</h2>
+    <p class="intro">Una convocatoria del Estado rinde más cuando ya hay un anfitrión y operadoras comprometidas. Cada etapa sirve aunque la siguiente no llegue.</p>
   </div>
 
   <p>SektorCERT llegó a los sensores con mandato legal y 300 miembros. ONE-ISAC nunca puso uno y lleva doce años funcionando. Arrancar con sensores obliga a discutir primero quién mira el tráfico, antes de que haya confianza para contestarlo.</p>
   <p>La propuesta es arrancar como ONE-ISAC y apuntar a SektorCERT a cinco años. Primero intercambio, alertas y coordinación, alojados en una cámara que ya tiene el padrón, con cuotas desde el primer día y la operación contratada. Los sensores llegan cuando el intercambio funcione y alguien los pida.</p>
   <div class="principles">
     <div class="principle">
-      <h3>Primero, el mapa</h3>
-      <p>Un mapa de la superficie de ataque del sector hecho con fuentes abiertas, sin tocar ningún sistema. Pocos dan una reunión para fundar un consorcio; casi todos la dan para ver qué se observa de su empresa desde afuera.</p>
+      <h3>El mapa y las conversaciones</h3>
+      <p>Un mapa de la superficie de ataque del sector hecho con fuentes abiertas, sin tocar ningún sistema. Ya está publicado, junto con el registro. Siguen las conversaciones con cámaras y operadoras: casi todas dan una reunión para ver qué se observa de su empresa desde afuera.</p>
     </div>
     <div class="principle">
-      <h3>La mesa, con un contrato liviano</h3>
+      <h3>La mesa</h3>
       <p>Convocatoria formal y acuerdo de confidencialidad antes de compartir nada. El vehículo es un contrato de consorcio de cooperación (artículos 1470–1478 del Código Civil y Comercial), que no crea persona jurídica ni permite dirigir a los miembros. Sin sensores, salvo que una operadora los pida.</p>
     </div>
     <div class="principle">
-      <h3>La entidad, cobrando cuotas</h3>
+      <h3>La entidad</h3>
       <p>Asociación civil con tres o cuatro anclas como socias, el escenario mínimo operando y la respuesta contratada. Acreditación internacional y acuerdo con un CERT sectorial par; los tres europeos ya firman con extranjeros.</p>
     </div>
     <div class="principle">
-      <h3>Escala y marco legal</h3>
-      <p>Agua y transporte, un ejercicio sectorial por año y el proyecto de ley. Con dos años de operación y datos propios, el consorcio llega a la discusión de la norma como fuente técnica.</p>
+      <h3>Escala y ley</h3>
+      <p>Agua y transporte, un ejercicio sectorial por año y el proyecto de ley. Con dos años de operación y datos propios, la entidad llega a la discusión de la norma como fuente técnica.</p>
     </div>
   </div>
 </section>
@@ -266,17 +265,17 @@
 <section class="pd-section wrap" id="borradores">
   <div class="section-head">
     <p class="eyebrow">Borradores</p>
-    <h2>Una resolución sin costo fiscal, y una ley para lo que la resolución no alcanza</h2>
+    <h2>Una resolución y una ley</h2>
     <p class="intro">Son borradores de trabajo, escritos por alguien que no es abogado, para que la conversación empiece con un texto. Necesitan revisión profesional antes de presentarse en cualquier ámbito.</p>
   </div>
 
-  <h3>Proyecto de resolución de la Secretaría de Energía</h3>
+  <h3>La resolución de la Secretaría de Energía</h3>
   <p>Crea la Mesa de Ciberseguridad del Sector Energético, de participación voluntaria y sin facultades de dirección ni fiscalización. La integran la Secretaría, que coordina, el ente regulador, el Centro Nacional de Ciberseguridad como invitado permanente, CAMMESA, las cuatro asociaciones eléctricas, el IAPG, MEGSA y los operadores que adhieran.</p>
   <p>La Mesa tiene dos tareas. Una es proponer el vehículo jurídico y el financiamiento de un mecanismo permanente de intercambio, operado por los propios operadores. La otra es fijar las reglas: protocolo de manejo de la información, criterios para identificar infraestructura crítica, notificación voluntaria y cambios normativos. La resolución crea también un registro voluntario de puntos de contacto, visible solo para sus inscriptos.</p>
   <p>Tres cláusulas son las que importan. Lo compartido en la Mesa no se usa para sancionar, fiscalizar ni revisar tarifas. La Mesa tiene 180 días para elevar su propuesta con presupuesto. Y no genera gasto: la secretaría técnica la ejerce sin cargo una entidad sectorial sin fines de lucro. Un artículo final invita a la Jefatura de Gabinete a asignar a esa propuesta el producto de intercambio con el sector privado del préstamo BID.</p>
   <p>La resolución no crea obligaciones para privados, ni estructura, ni cargos. El precedente es Noruega: en 2014 el regulador exhortó a la industria a armar su propio equipo, y así nació KraftCERT.</p>
 
-  <h3>Lo que solo puede hacer una ley</h3>
+  <h3>Lo que necesita una ley</h3>
   <p>Una resolución obliga solo al organismo que la dicta. No puede crear una excepción al acceso a la información pública ni eximir de responsabilidad frente a terceros. Para eso hace falta una ley, con cinco protecciones.</p>
   <div class="gloss">
     <details class="gloss-item">
@@ -297,7 +296,7 @@
     </details>
     <details class="gloss-item">
       <summary><dfn>Límite de uso</dfn></summary>
-      <p>La información compartida se usa solo con fines de ciberseguridad y no pasa a organismos de inteligencia sin orden judicial. Responde al antecedente de 2024, cuando la materia ciber pasó por la agencia de inteligencia.</p>
+      <p>La información compartida se usa solo con fines de ciberseguridad y no pasa a organismos de inteligencia sin orden judicial.</p>
     </details>
   </div>
   <p>El resto del articulado gradúa obligaciones por nivel, fija la notificación a las 3 horas, 72 horas y 15 días como la ley chilena vigente desde 2025, y crea la figura del centro sectorial reconocido. Notificar a través del centro cuenta como notificar a la autoridad, y eso cambia el incentivo.</p>
@@ -308,14 +307,13 @@
 
 <section class="pd-section wrap" id="limites">
   <div class="section-head">
-    <p class="eyebrow">Límites</p>
-    <h2>Lo que este memo no puede afirmar</h2>
+    <h2>Límites</h2>
   </div>
-  <p class="bio-text">No se puede afirmar que un consorcio hubiera evitado alguno de los catorce incidentes argentinos, ni que vaya a evitar el próximo. SektorCERT no evitó el de 2023: once de las 22 empresas no habían parcheado pese al aviso. Un centro sectorial hace que el ataque se vea y se corte antes, pero no arregla la higiene de sus miembros.</p>
+  <p class="bio-text">Un CERT sectorial no garantiza evitar incidentes. SektorCERT no evitó el de 2023: once de las 22 empresas no habían parcheado pese al aviso. Un centro sectorial hace que el ataque se vea y se corte antes, pero no arregla la higiene de sus miembros.</p>
   <p class="bio-text">Los escenarios de costo son estimaciones propias. El supuesto de USD 60,000 por persona sale de acotar entre el trabajo remoto dolarizado y el costo noruego; ninguna encuesta salarial lo respalda, y si cambia, cambia todo lo demás. Las cifras de ONE-ISAC son declaraciones fiscales de otro país y otro mercado de proveedores, y sirven solo como orden de magnitud.</p>
-  <p class="bio-text">Del préstamo BID se puede afirmar lo que dicen sus documentos públicos: el producto de intercambio con el sector privado sigue vigente y sin ejecutar, y el plan de adquisiciones no tiene procesos dirigidos al sector privado. No se puede afirmar que esos fondos estén disponibles, ni que una entidad privada pueda recibirlos, porque el prestatario es el Estado. Tampoco que el programa vaya a acelerar porque aparezca una contraparte.</p>
+  <p class="bio-text">Del préstamo BID consta lo que dicen sus documentos públicos: el producto de intercambio con el sector privado sigue vigente y pendiente, y el plan de adquisiciones no tiene procesos dirigidos al sector privado. No consta que esos fondos estén disponibles, ni que una entidad privada pueda recibirlos, porque el prestatario es el Estado.</p>
   <p class="bio-text">Que la plataforma de observación vaya a encontrar vulnerabilidades en operadoras privadas es una inferencia a partir de su alcance declarado. Que falte un mecanismo para devolverles los hallazgos tampoco está verificado: solo consta que los documentos públicos del programa no lo mencionan.</p>
-  <p class="bio-text">Tampoco se puede afirmar que no haya hoy canales informales entre responsables de seguridad de las energéticas. No hay rastro público ni institucional de ninguno, y eso no prueba que no existan.</p>
+  <p class="bio-text">Puede haber canales informales entre responsables de seguridad de las energéticas que no dejan rastro público.</p>
 </section>
 
 <div class="rule" role="presentation"></div>
@@ -333,7 +331,7 @@
 <section class="pd-section wrap" id="contacto">
   <div class="section-head">
     <p class="eyebrow">Si esto le compete</p>
-    <h2>Operadores, cámaras y organismos</h2>
+    <h2>Contacto</h2>
     <p class="intro">Si hay un error, alcanza con escribir con la fuente. Si hay interés en discutir el diseño, el presupuesto o los borradores, la conversación está abierta.</p>
   </div>
   <div class="contact-actions">

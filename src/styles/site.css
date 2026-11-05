@@ -56,7 +56,7 @@
 /* La grilla de /ciber/, que es el índice del área: el registro escrito, el mapa
    interactivo y el memo del CERT. Escala a 4-5 piezas sin tocar el CSS. */
 .piezas-g {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem;
   margin: 0; padding: 0; list-style: none;
 }
 .pieza {

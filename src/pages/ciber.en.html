@@ -1,7 +1,7 @@
 <!--meta
 {
   "title": "Cybersecurity in Argentine energy — Matías Podeley",
-  "description": "Three pieces on the exposure of the Argentine energy system: the register of the fourteen documented cyber incidents, the attack-surface map, and the memo for standing up a sector CERT.",
+  "description": "The exposure of the Argentine energy system: the register of the fourteen documented cyber incidents, the attack-surface map, the memo for standing up a sector CERT and the map of actors for building the table.",
   "ogImage": "/assets/og/ciber.en.png",
   "ogImageAlt": "Seven of fourteen cyber incidents in Argentina's energy sector are known only because the attacker published them",
   "nav": "ciber",
@@ -20,11 +20,11 @@
 <section class="hero wrap">
   <p class="kicker">Cybersecurity · Energy and critical infrastructure · Argentina</p>
   <h1>The sector learns what happened to it from whoever attacked it</h1>
-  <p class="hero-sub">Between 2020 and 2026, fourteen cyber incidents were documented across Argentine energy and critical infrastructure. Seven of them became known neither through the company nor through a regulator: they became known because the attacker published its victim on a leak site. There is no sector reporting duty, no peer-sharing mechanism, and no one has an inventory of what the sector exposes to the outside. These three pieces measure that gap from open sources, scanning no one.</p>
+  <p class="hero-sub">Between 2020 and 2026, fourteen cyber incidents were documented across Argentine energy and critical infrastructure. Seven became known because the attacker posted the victim on its leak site. There is no reporting duty and no place where companies share what they see. The first three pieces measure the exposure with open sources, without scanning anyone; the fourth proposes who sits at the table.</p>
 
   <figure class="hero-figure">
     <img src="/assets/shots/nocturno-argentina.en.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Argentina at night in the VIIRS composite, with energy facilities overlaid">
-    <figcaption>The Argentine energy system seen at night by satellite, with the critical facilities on top. Every point that falls on light is a facility that is operating, and that cross-check runs in a browser off NASA's open tiles. It is the kind of reconnaissance an attacker does for free before touching anything, and the starting point of this work: if it can be seen from outside, the defender had better have looked at it first. <a href="https://superficie.podeley.ar/en/exposicion/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie-noche">See the interactive map →</a></figcaption>
+    <figcaption>The energy system at night, on NASA's VIIRS composite, with the critical facilities on top. Every point on light is operating. The overlay runs in a browser on open tiles, and it is the reconnaissance an attacker does before touching anything. <a href="https://superficie.podeley.ar/en/exposicion/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie-noche">See the interactive map →</a></figcaption>
   </figure>
 </section>
 
@@ -34,18 +34,23 @@
   <ul class="piezas-g">
     <li class="pieza">
       <p class="pieza-h"><a href="/en/incidentes/">The register</a></p>
-      <p class="pieza-que">What happened to the sector, row by row: date, subsector, actor and a source for each, with what the organization declared and what the attacker claimed in separate columns. It includes cards for the eleven groups, the international context and the state of the legal landscape.</p>
+      <p class="pieza-que">What happened to the sector, row by row: date, subsector, actor and source, with what the organization declared and what the attacker claimed in separate columns. Plus cards on the eleven groups, the international context and the legal framework.</p>
       <p class="pieza-donde">Open register · fourteen cases · CC BY 4.0</p>
     </li>
     <li class="pieza">
       <p class="pieza-h"><a href="https://superficie.podeley.ar/en/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie">The map</a></p>
-      <p class="pieza-que">Where each incident lands on the system around it: the physical structure of gas and power, how many nodes are stranded when each point falls, the sector's internet footprint in aggregate, and who would have to respond.</p>
+      <p class="pieza-que">The physical structure of gas and power, how many nodes are stranded if each point falls, the sector's internet footprint in aggregate and who would have to respond.</p>
       <p class="pieza-donde">superficie.podeley.ar · interactive</p>
     </li>
     <li class="pieza">
       <p class="pieza-h"><a href="/en/isac/">The memo</a></p>
-      <p class="pieza-que">What it would take to stand up a sector cybersecurity center here: how the Danish model works, what it actually cost to launch the US oil and gas ISAC, and a scheme of budget, dues and two draft regulations.</p>
+      <p class="pieza-que">What it would take to stand up a sector cybersecurity center: how the Danish model works, what it cost to launch the US oil and gas ISAC, a budget and dues scheme, and two draft rules.</p>
       <p class="pieza-donde">podeley.ar/en/isac · model, cost and rule</p>
+    </li>
+    <li class="pieza">
+      <p class="pieza-h"><a href="/en/mesa/">The table</a></p>
+      <p class="pieza-que">Who would need to sit down and share threat information, what each institution brings, the phased plan and the questions for a first conversation with IAPG and ARPEL.</p>
+      <p class="pieza-donde">podeley.ar/mesa · actors and plan</p>
     </li>
   </ul>
 </section>
@@ -54,11 +59,11 @@
 
 <section class="pd-section wrap" id="importa">
   <div class="section-head">
-    <p class="eyebrow">Why it matters</p>
-    <h2>What breaks is the scheduling</h2>
+    <p class="eyebrow">What breaks</p>
+    <h2>In the Argentine cases, nomination and dispatch went down</h2>
   </div>
-  <p class="bio-text">The popular image of a cyberattack on energy is the blackout, and it is not what the Argentine cases show. In the two incidents where the affected system is known, the target was the layer that turns contracts into scheduled physical flow: nomination and dispatch. The pipe stays full and the gas keeps moving, but scheduling falls back to phone and spreadsheet, balances are reconstructed afterwards, and imbalance penalties end up in dispute. On the org chart that layer counts as administrative and in practice it is operational, which leaves it just outside the focus of the distinction the whole practice of industrial security is built on.</p>
-  <p class="bio-text">The institutional gap explains the rest. The State runs a critical-infrastructure cybersecurity program financed by the Inter-American Development Bank, with a 9% baseline measured in 2021 and a 50% target for 2028, and inside it a private-sector information-sharing output that is budgeted and unexecuted. On the other side, the pieces for seating a sector table have existed since 1992: the companies you would convene are already partners with one another in running electricity dispatch.</p>
-  <p class="bio-text">Meanwhile every operator faces the same groups one at a time, without knowing what worked for the last one. That is what these three pieces try to make visible: what happened, what is exposed, and what could be built.</p>
+  <p class="bio-text">In the two incidents where the affected system is known, the target was the layer that turns contracts into scheduled flow. The gas kept moving. Scheduling moved to phone and spreadsheet, balances were rebuilt afterward and imbalance penalties ended up in dispute. On the org chart that layer is administrative, so it falls outside the OT perimeter that industrial security is built around.</p>
+  <p class="bio-text">The State runs a critical-infrastructure cybersecurity program financed by the Inter-American Development Bank, with a 9% baseline measured in 2021 and a 50% target for 2028. It includes an information-sharing product with the private sector, budgeted and unexecuted. The companies that would need to sit at the table have been co-owners of CAMMESA, the power dispatch operator, through their associations since 1992.</p>
+  <p class="bio-text">Meanwhile each operator faces the same groups on its own, without knowing what worked for the last one.</p>
   <p class="aside-link">Every new row and every correction to the register goes out through the <a href="/ciber/feed.xml" data-goatcounter-click="feed-ciber">Atom feed</a>. If an incident is missing or something is wrong, <a href="mailto:matias@podeley.ar?subject=Cyber%20register%20%E2%80%94%20podeley.ar&amp;body=Hi%20Matias%2C%0A%0A" data-goatcounter-click="mail-ciber-en">emailing with the source</a> is enough to get it corrected.</p>
 </section>

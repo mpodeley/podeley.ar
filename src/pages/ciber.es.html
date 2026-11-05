@@ -1,7 +1,7 @@
 <!--meta
 {
   "title": "Ciberseguridad en energía argentina — Matías Podeley",
-  "description": "Tres piezas sobre la exposición del sistema energético argentino: el registro de los catorce ciberincidentes documentados, el mapa de superficie de ataque y el memo para montar un CERT sectorial.",
+  "description": "La exposición del sistema energético argentino: el registro de los catorce ciberincidentes documentados, el mapa de superficie de ataque, el memo para montar un CERT sectorial y el mapa de actores para armar la mesa.",
   "ogImage": "/assets/og/ciber.es.png",
   "ogImageAlt": "Siete de catorce ciberincidentes del sector energético argentino se conocen solo porque el atacante los publicó",
   "nav": "ciber",
@@ -20,11 +20,11 @@
 <section class="hero wrap">
   <p class="kicker">Ciberseguridad · Energía e infraestructura crítica · Argentina</p>
   <h1>El sector se entera de lo que le pasa por el que lo atacó</h1>
-  <p class="hero-sub">Entre 2020 y 2026 se documentaron catorce ciberincidentes en energía e infraestructura crítica argentina. De siete de ellos no se supo por la empresa ni por un regulador: se supieron porque el atacante publicó a su víctima en un sitio de filtración. No hay deber de reporte sectorial, no hay mecanismo de intercambio entre pares, y nadie tiene inventariado lo que el sector expone hacia afuera. Estas tres piezas miden ese hueco con fuentes abiertas, sin escanear a nadie.</p>
+  <p class="hero-sub">Entre 2020 y 2026 se documentaron catorce ciberincidentes en energía e infraestructura crítica argentina. Siete se conocieron porque el atacante publicó a la víctima en su sitio de filtración. No hay obligación de reportar ni un lugar donde las empresas compartan lo que ven. Las tres primeras piezas miden la exposición con fuentes abiertas, sin escanear a nadie; la cuarta propone quién se sienta a la mesa.</p>
 
   <figure class="hero-figure">
     <img src="/assets/shots/nocturno-argentina.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Argentina de noche en el compuesto VIIRS, con las instalaciones energéticas superpuestas">
-    <figcaption>El sistema energético argentino visto de noche por el satélite, con las instalaciones críticas encima. Cada punto que cae sobre luz es una instalación que está operando, y ese cruce se hace desde un navegador con teselas abiertas de la NASA. Es el tipo de reconocimiento que un atacante hace gratis antes de tocar nada, y el punto de partida de este trabajo: si se ve desde afuera, conviene que el que defiende lo tenga mirado primero. <a href="https://superficie.podeley.ar/exposicion/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie-noche">Ver el mapa interactivo →</a></figcaption>
+    <figcaption>El sistema energético de noche, en el compuesto VIIRS de la NASA, con las instalaciones críticas encima. Cada punto sobre luz está operando. El cruce se arma desde un navegador con teselas abiertas, y es el reconocimiento que un atacante hace antes de tocar nada. <a href="https://superficie.podeley.ar/exposicion/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie-noche">Ver el mapa interactivo →</a></figcaption>
   </figure>
 </section>
 
@@ -34,18 +34,23 @@
   <ul class="piezas-g">
     <li class="pieza">
       <p class="pieza-h"><a href="/incidentes/">El registro</a></p>
-      <p class="pieza-que">Qué le pasó al sector, fila por fila: fecha, subsector, actor y la fuente de cada una, con lo que declaró la organización y lo que reclamó el atacante en columnas separadas. Incluye las fichas de los once grupos, el contexto internacional y el estado del marco normativo.</p>
+      <p class="pieza-que">Qué le pasó al sector, fila por fila: fecha, subsector, actor y fuente, con lo que declaró la organización y lo que reclamó el atacante en columnas separadas. Suma fichas de los once grupos, el contexto internacional y el marco normativo.</p>
       <p class="pieza-donde">Registro abierto · catorce casos · CC BY 4.0</p>
     </li>
     <li class="pieza">
       <p class="pieza-h"><a href="https://superficie.podeley.ar/" target="_blank" rel="noopener" data-goatcounter-click="tool-superficie">El mapa</a></p>
-      <p class="pieza-que">Dónde cae cada incidente sobre el sistema que lo rodea: la estructura física de gas y electricidad, cuántos nodos quedan colgados si cae cada punto, la huella de internet del sector en agregado y quién tendría que responder.</p>
+      <p class="pieza-que">La estructura física de gas y electricidad, cuántos nodos quedan colgados si cae cada punto, la huella de internet del sector en agregado y quién tendría que responder.</p>
       <p class="pieza-donde">superficie.podeley.ar · interactivo</p>
     </li>
     <li class="pieza">
       <p class="pieza-h"><a href="/isac/">El memo</a></p>
-      <p class="pieza-que">Qué haría falta para montar un centro sectorial de ciberseguridad acá: cómo funciona el modelo danés, qué costó de verdad arrancar el ISAC de petróleo y gas de Estados Unidos, y un esquema de presupuesto, cuotas y dos borradores normativos.</p>
+      <p class="pieza-que">Qué haría falta para montar un centro sectorial de ciberseguridad: cómo funciona el modelo danés, cuánto costó arrancar el ISAC de petróleo y gas de Estados Unidos, un esquema de presupuesto y cuotas, y dos borradores normativos.</p>
       <p class="pieza-donde">podeley.ar/isac · modelo, costo y norma</p>
+    </li>
+    <li class="pieza">
+      <p class="pieza-h"><a href="/mesa/">La mesa</a></p>
+      <p class="pieza-que">Quién tendría que sentarse a compartir información sobre amenazas, qué aporta cada institución, el plan por fases y las preguntas para una primera conversación con IAPG y ARPEL.</p>
+      <p class="pieza-donde">podeley.ar/mesa · actores y plan</p>
     </li>
   </ul>
 </section>
@@ -54,11 +59,11 @@
 
 <section class="pd-section wrap" id="importa">
   <div class="section-head">
-    <p class="eyebrow">Por qué importa</p>
-    <h2>Lo que se rompe es la programación</h2>
+    <p class="eyebrow">Qué se rompe</p>
+    <h2>En los casos argentinos cayeron la nominación y el despacho</h2>
   </div>
-  <p class="bio-text">El imaginario del ciberataque a la energía es el apagón, y no es lo que muestran los casos argentinos. En los dos incidentes donde se sabe qué sistema cayó, el blanco fue la capa que convierte contratos en flujo físico programado: la nominación y el despacho. El caño sigue lleno y el gas sigue moviéndose, pero la programación pasa a hacerse por teléfono y planilla, los balances se reconstruyen después y las penalidades por desvío quedan en disputa. Es una capa administrativa en el organigrama y operativa en la práctica, y queda justo fuera del foco de la distinción con la que se estructura toda la seguridad industrial.</p>
-  <p class="bio-text">El hueco institucional es el que explica el resto. El Estado tiene un programa de ciberseguridad de infraestructuras críticas financiado por el Banco Interamericano de Desarrollo, con una línea de base del 9% medida en 2021 y meta de 50% para 2028. Adentro de ese programa hay un producto de intercambio de información con el sector privado, presupuestado y sin ejecutar. Del otro lado, las piezas para sentar una mesa sectorial existen desde 1992: las empresas que habría que convocar ya son socias entre sí en la administración del despacho eléctrico.</p>
-  <p class="bio-text">Mientras tanto, cada operadora enfrenta a los mismos grupos de a una, sin saber qué le funcionó a la anterior. Eso es lo que estas tres piezas intentan volver visible: qué pasó, qué hay expuesto y qué se podría construir.</p>
+  <p class="bio-text">En los dos incidentes donde se sabe qué sistema cayó, el blanco fue la capa que convierte contratos en flujo programado. El gas siguió moviéndose. La programación pasó a hacerse por teléfono y planilla, los balances se rehicieron después y las penalidades por desvío quedaron en disputa. En el organigrama esa capa es administrativa, así que queda afuera del perímetro OT que ordena la seguridad industrial.</p>
+  <p class="bio-text">El Estado tiene un programa de ciberseguridad de infraestructura crítica financiado por el BID, con una línea de base de 9% medida en 2021 y meta de 50% para 2028. Incluye un producto de intercambio de información con el sector privado, presupuestado y sin ejecutar. Las empresas que habría que sentar ya son socias en CAMMESA, a través de sus cámaras, desde 1992.</p>
+  <p class="bio-text">Mientras tanto, cada operadora enfrenta a los mismos grupos por separado, sin saber qué le funcionó a la anterior.</p>
   <p class="aside-link">Cada fila nueva y cada corrección del registro salen por el <a href="/ciber/feed.xml" data-goatcounter-click="feed-ciber">feed Atom</a>. Si falta un incidente o hay algo mal, <a href="mailto:matias@podeley.ar?subject=Registro%20ciber%20%E2%80%94%20podeley.ar&amp;body=Hola%20Matias%2C%0A%0A" data-goatcounter-click="mail-ciber">escribir con la fuente</a> alcanza para que se corrija.</p>
 </section>
